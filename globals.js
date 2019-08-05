@@ -30,8 +30,8 @@ module.exports = {
        beforeEach(browser, cb) {
         //bat
         login = browser.page.logins.login_page()    
-        energy_sales = browser.page.bat_env.verticals.energy.energy_sales_page()
-        search = browser.page.bat_env.verticals.energy.a_person_accountAndopportunity_page.sp_650_global_search()
+        energy_sales = browser.page.verticals.energy.energy_sales_page()
+        search = browser.page.verticals.energy.a_person_accountAndopportunity_page.sp_650_global_search()
           /*if (search.verify.elementPresent('@errorMsg','Browser encounters error?'))
           {
             browser
