@@ -1,0 +1,19 @@
+{
+    "salesforce": {
+        "bat": {
+            "username": "armando.navarro@iselect.com.au.bat",
+            "password": "iselect_2019"
+        },
+        "spqa": {
+            "username": "armando.navarro@iselect.com.au.spqa",
+            "password": "iselect_2019"
+
+        },
+        "isummer": {
+            "username": "armando.navarro@iselect.com.au.isummer",
+            "password": "iselect_2019"
+        }
+    }
+}
+
+
