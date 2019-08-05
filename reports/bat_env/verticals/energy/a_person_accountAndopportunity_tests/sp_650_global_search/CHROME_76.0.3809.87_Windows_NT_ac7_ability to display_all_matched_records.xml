@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites errors="1"
-            failures="2"
+            failures="0"
             tests="5">
 
   <testsuite name="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac7_ability to display_all_matched_records"
-    errors="1" failures="2" hostname="" id="" package="sp_650_global_search" skipped="0"
-    tests="5" time="104.8" timestamp="">
+    errors="1" failures="0" hostname="" id="" package="sp_650_global_search" skipped="0"
+    tests="5" time="15.77" timestamp="">
   
-    <testcase name="Login Bat Credentials" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac7_ability to display_all_matched_records" time="67.56" assertions="0">
+    <testcase name="Login Bat Credentials" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac7_ability to display_all_matched_records" time="6.733" assertions="0">
     </testcase>
   
-    <testcase name="Log in as Energy Consultant QA" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac7_ability to display_all_matched_records" time="10.77" assertions="0">
+    <testcase name="Log in as Energy Consultant QA" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac7_ability to display_all_matched_records" time="2.890" assertions="0">
     </testcase>
   
-    <testcase name="GIVEN that the results page is displayed" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac7_ability to display_all_matched_records" time="10.09" assertions="1">
+    <testcase name="GIVEN that the results page is displayed" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac7_ability to display_all_matched_records" time="5.596" assertions="1">
 
     
     </testcase>
   
-    <testcase name="WHEN I select the &#34;View More&#34; button on any of the displayed section " classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac7_ability to display_all_matched_records" time="12.14" assertions="3">  <failure message="Top Results Page is displayed? in 1000 ms. - expected [0;32m&#34;present&#34;[0m but got: [0;31m&#34;not present&#34;[0m">    at Object.WHEN I select the &#34;View More&#34; button on any of the displayed section  (C:\NightWatchSelenium\nightwatch_e2e_salesforce_tests\tests\bat_env\verticals\energy\a_person_accountAndopportunity_tests\sp_650_global_search\ac7_ability to display_all_matched_records.js:61:27)</failure>
-
-      <failure message="&#34;View more&#34; hyperlink is Visible in 1000 ms. - expected [0;32m&#34;present&#34;[0m but got: [0;31m&#34;not present&#34;[0m">    at Object.WHEN I select the &#34;View More&#34; button on any of the displayed section  (C:\NightWatchSelenium\nightwatch_e2e_salesforce_tests\tests\bat_env\verticals\energy\a_person_accountAndopportunity_tests\sp_650_global_search\ac7_ability to display_all_matched_records.js:64:25)</failure>
+    <testcase name="WHEN I select the &#34;View More&#34; button on any of the displayed section " classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac7_ability to display_all_matched_records" time="0.07300" assertions="3">
 
     
 
-    <failure message="TimeoutError: An error occurred while running .click() command on &lt;Element [name=@viewMore]&gt;:">    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
+    
+
+    
     </testcase>
   
-    <testcase name="THEN the list of matched record of the selected object is displayed" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac7_ability to display_all_matched_records" time="4.257" assertions="2">
+    <testcase name="THEN the list of matched record of the selected object is displayed" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac7_ability to display_all_matched_records" time="0.4820" assertions="2">
 
     
 

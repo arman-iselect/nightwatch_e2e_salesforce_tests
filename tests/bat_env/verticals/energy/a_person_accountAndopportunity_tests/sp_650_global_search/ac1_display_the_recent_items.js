@@ -18,87 +18,79 @@ module.exports = {
             .pause(5000);
     },
 
-    'Log in as Energy Consultant QA': function() 
+    'Log in as Energy Consultant QA': function(browser) 
     {
         console.log('Log in as Energy Consultant QA');
         
-        energy_sales
-            .url(data.energy.salesConsultant.loginTest)
+        browser
+            .url(data.energy.bat.salesConsultant.loginTest)
             .pause(3000);
     },
     
     'GIVEN I already have the First Name ': function(browser) 
     {
-        console.log('Consultant has the Customers First Name');
-            if (search.verify.elementPresent('@searchField', 'Search Field is Present?'))
+        search
+            .waitForElementPresent('@searchField', 3000, function(result)
             {
-                
-            }
-                else if (search.verify.elementNotPresent('@searchField', 'Search Field is Not Present'))
+                if (result.value)
                 {
-                    console.log('Refreshing the Page')
-                    browser
-                        .refresh();
+
                 }
-                    else 
-                        {
-                        console.log('Test has Stopped unable to locate Search Field')
-                        }
+                    else
+                    {
+                        console.log('Refreshing the Page')
+                        browser
+                            .refresh(); 
+                    }
+            })
     },
     
     'WHEN I click on the global search box': function (browser) 
     {
-        console.log('Click on the Global Search Box')
-        if (search.verify.elementPresent('@searchField', 'Search Box Clickable?'))
+        search
+            .waitForElementPresent('searchField', 3000 , function(result)
             {
-                search
-                    .click_searchField()
-               
-            }
-            else if (search.verify.elementNotPresent('@searchField', 'search Field is not visible, Refreshing the page...'))
+                if (result.value)
                 {
-                    browser
-                        .refresh();
                     search
-                        .verify.elementPresent('@searchField', 'Search Field is Present after Refresh?')
                         .click_searchField()
-                        .pause(3000);                        
                 }
-                else {
-                     }
+                    else
+                    {
+                        browser
+                            .refresh();
+                        search
+                            .verify.elementPresent('@searchField', 'Search Field is Present after Refresh?')
+                            .click_searchField()
+                            .pause(3000);
+                    }
+            })
     },
 
     'THEN the list of recent items will auto filter in the global search box': function (browser) 
     {
-        console.log('Verify the Recent Items are Visible')
-        if (search.verify.elementPresent('@recentItems', 'Recent Items are Present?'))
+        search
+            .waitForElementPresent('@recentItems', 3000 , function (result)
             {
-                search
-                    .click_searchField()
-                    .pause(3000);
-                browser
-                    .saveScreenshot('reports/bat_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac1_display_the_recent_items.png')
-                    .end();   
-            }
-            else if (search.verify.elementNotPresent('@recentItems', 'Recent Items are not visible, Refreshing the page...'))
+                if (result.value)
                 {
-                    browser
-                        .refresh();
                     search
-                        .verify.elementPresent('@searchField', 'Search Field is Present after Refresh?')
-                        .click_recentItems()
-                        .pause(3000)
-                        .verify.elementPresent('@recentItems', 'Recent Items are Present?');
+                        .click_searchField()
+                        .pause(3000);
+                    browser
+                        .saveScreenshot('reports/spqa_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac1_display_the_recent_items.png')
+                        .end();   
                 }
-                else {
-                    browser
-                        .refresh()
-                    search
-                        .verify.elementPresent('@searchField', 'Search Field is Present after Refresh?')
-                        .click_recentItems()
-                        .pause(3000)
-                        .verify.elementPresent('@recentItems', 'Recent Items are Present?');
-                     }
+                    else
+                    {
+                        browser
+                            .refresh();
+                        search
+                            .verify.elementPresent('@searchField', 'Search Field is Present after Refresh?')
+                            .click_recentItems()
+                            .pause(3000)
+                            .verify.elementPresent('@recentItems', 'Recent Items are Present?');
+                    }
+            })
     }
-
 };

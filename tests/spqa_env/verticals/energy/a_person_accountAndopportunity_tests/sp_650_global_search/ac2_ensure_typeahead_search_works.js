@@ -18,32 +18,14 @@ module.exports = {
             .pause(5000);
     },
 
-    'Log in as Energy Consultant QA': function() 
+    'Log in as Energy Consultant QA': function(browser) 
     {
         console.log('Log in as Energy Consultant QA');
         
-        energy_sales
-            .navigate()
+        browser
+            .url(data.energy.spqa.salesConsultant.loginTest)
             .pause(3000);
     },
-
-    /*'Scope 1: Global search shall be available at the top of the screen with a placeholder text of "Search Salesforce"': function(browser) {
-        console.log('Verify Search Field Placeholder contains "Search Salesforce"');
-        if (search.verify.elementPresent('@searchField'))
-        {
-            search
-                .getText('@searchField');
-        }
-            else if (search.verify.elementNotPresent('@searchField'))
-            {
-                browser
-                    .refresh();
-                search
-                    .verify.elementPresent('@searchField', 'Search Field Present after Refresh?')
-                    .getText('@searchField');
-
-            }
-    },*/
     
     'GIVEN the global search is on the page I am viewing': function(browser) 
     {

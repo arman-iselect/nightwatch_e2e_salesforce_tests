@@ -18,12 +18,12 @@ module.exports = {
             .pause(5000);
     },
 
-    'Log in as Energy Consultant QA': function() 
+    'Log in as Energy Consultant QA': function(browser) 
     {
         console.log('Log in as Energy Consultant QA');
         
-        energy_sales
-            .url(data.energy.salesConsultant.loginTest)
+        browser
+            .url(data.energy.bat.salesConsultant.loginTest)
             .pause(3000);
     },
     
@@ -34,69 +34,72 @@ module.exports = {
     
     'WHEN I enter the Last Name in Global Search Bar AND hit enter': function (browser) 
     {
-        console.log('Enter the Last Name in Global Search Bar')
-        if (search.verify.elementPresent('@searchField', 'Search Box is Present?'))
+        search
+            .waitForElementPresent('@searchField', 3000 , function(result)
             {
-                console.log('Type a random keys to the search field')
-                search
-                    .setValue('@searchField', energy.search_field.random.a );
-                console.log('Hit Enter')
-                browser
-                    .keys(browser.Keys.ENTER)
-                    .pause(5000);
-            }
-            else if (search.verify.elementNotPresent('@searchField', 'search Field is not visible, Refreshing the page...'))
+                if (result.value)
                 {
-                    console.log('Refreshing the Page')
-                    browser
-                        .refresh();
+                    console.log('Type a random keys to the search field')
                     search
-                        .verify.elementPresent('@searchField', 'Search Field is Present after Refresh?')
-                        .setValue('@searchField', energy.search_field.random.a )
-                        .pause(3000);
+                        .setValue('@searchField', energy.search_field.random.a );
+                    console.log('Hit Enter')
                     browser
-                        .Keys.ENTER()
-                        ,pause(8000);                      
+                        .keys(browser.Keys.ENTER)
+                        .pause(5000);
                 }
-                else {
-                     }
+                    else
+                    {
+                        console.log('Refreshing the Page')
+                        browser
+                            .refresh();
+                        console.log('Type a random keys to the search field')
+                        search
+                            .setValue('@searchField', energy.search_field.random.a );
+                        console.log('Hit Enter')
+                        browser
+                            .keys(browser.Keys.ENTER)
+                            .pause(5000);
+                    }
+            })
     },
    
 
     'THEN an empty result page is displayed': function (browser) 
     {
-        console.log('Verify search results returns matches from any of the primary objects')
-        if (search.verify.containsText('@selectedTab', energy.search_field.random.a , 'The searched Item is Displayed on a Tab? '))
-        {
-            browser
-                .getText('div[class="slds-text-heading--large noResultsTitle slds-p-bottom--large"]',function (result) {
-                    console.log('', result);
-                })
-                .getText('div[class="slds-text-heading--small noResultsMessage"]',function (result) {
-                    console.log('', result);
-                });
-                browser
-                    .saveScreenshot('reports/bat_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac4_display_empty_results_page.png')
-                    .end();
-        }
-
-            else if (search.verify.elementNotPresent('@selectedTab')) 
+        search
+            .waitForElementPresent('@selectedTab', 3000 , function(result)
+            {
+                if (result.value)
                 {
                     browser
-                        .refresh()
-                        .pause(3000);
-                    search
-                        .verify.containsText('@selectedTab', energy.search_field.random_a , 'Search Item is Displayed on a Tab? ');
-                    browser
                         .getText('div[class="slds-text-heading--large noResultsTitle slds-p-bottom--large"]',function (result) {
-                        console.log('', result);
-                         })
+                    console.log('', result);
+                    })
                         .getText('div[class="slds-text-heading--small noResultsMessage"]',function (result) {
-                        console.log('', result);
-                        });
+                    console.log('', result);
+                    });
                     browser
+                        .saveScreenshot('reports/spqa_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac4_display_empty_results_page.png')
                         .end();
                 }
+                    else
+                    {
+                        console.log('Refreshing the Browser')
+                        browser
+                            .refresh();
+                            browser
+                            .getText('div[class="slds-text-heading--large noResultsTitle slds-p-bottom--large"]',function (result) {
+                        console.log('', result);
+                        })
+                            .getText('div[class="slds-text-heading--small noResultsMessage"]',function (result) {
+                        console.log('', result);
+                        });
+                        browser
+                            .saveScreenshot('reports/spqa_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac4_display_empty_results_page.png')
+                            .end();
+                    }
+            })
+        
     }
 
 };

@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites errors="1"
-            failures="0"
+<testsuites errors="3"
+            failures="1"
             tests="5">
 
   <testsuite name="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac4_display_empty_results_page"
-    errors="1" failures="0" hostname="" id="" package="sp_650_global_search" skipped="0"
-    tests="5" time="108.8" timestamp="">
+    errors="3" failures="1" hostname="" id="" package="sp_650_global_search" skipped="0"
+    tests="5" time="78.99" timestamp="">
   
-    <testcase name="Login Bat Credentials" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac4_display_empty_results_page" time="69.44" assertions="0">
+    <testcase name="Login Bat Credentials" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac4_display_empty_results_page" time="33.07" assertions="0">
     </testcase>
   
-    <testcase name="Log in as Energy Consultant QA" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac4_display_empty_results_page" time="8.832" assertions="0">
+    <testcase name="Log in as Energy Consultant QA" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac4_display_empty_results_page" time="7.148" assertions="0">
     </testcase>
   
     <testcase name="GIVEN I have talked to the client" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac4_display_empty_results_page" time="0.000" assertions="0">
     </testcase>
   
-    <testcase name="WHEN I enter the Last Name in Global Search Bar AND hit enter" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac4_display_empty_results_page" time="10.60" assertions="1">
+    <testcase name="WHEN I enter the Last Name in Global Search Bar AND hit enter" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac4_display_empty_results_page" time="5.532" assertions="1">
 
     
     </testcase>
   
-    <testcase name="THEN an empty result page is displayed" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac4_display_empty_results_page" time="19.95" assertions="1">
+    <testcase name="THEN an empty result page is displayed" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac4_display_empty_results_page" time="33.24" assertions="1">  <failure message="The searched Item is Displayed on a Tab?  in 1000 ms. - expected [0;32m&#34;xzxasaxaszx&#34;[0m but got: [0;31m&#34;null&#34;[0m">    at Object.THEN an empty result page is displayed (C:\NightWatchSelenium\nightwatch_e2e_salesforce_tests\tests\bat_env\verticals\energy\a_person_accountAndopportunity_tests\sp_650_global_search\ac4_display_empty_results_page.js:69:27)</failure>
 
-    
+    <failure message="NoSuchElementError: An error occurred while running .getText() command on &lt;div[class=&#34;slds-text-heading--small noResultsMessage&#34;]&gt;:">    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
     </testcase>
   
 

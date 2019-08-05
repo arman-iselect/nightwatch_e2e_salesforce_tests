@@ -18,11 +18,11 @@ module.exports = {
             .pause(5000);
     },
 
-    'Log in as Energy Consultant QA': function() {
+    'Log in as Energy Consultant QA': function(browser) {
         console.log('Log in as Energy Consultant QA');
         
-        energy_sales
-            .url(data.energy.salesConsultant.loginTest)
+        browser
+            .url(data.energy.bat.salesConsultant.loginTest)
             .pause(3000);
     },
     
@@ -33,67 +33,71 @@ module.exports = {
     
     'WHEN I enter the Last Name in Global Search Bar AND hit enter': function (browser) 
     {
-        console.log('Enter the Last Name in Global Search Bar')
-        if (search.verify.elementPresent('@searchField', 'Search Box is Present?'))
+        search
+            .waitForElementPresent('@searchField', 3000 , function(result)
             {
-                search
-                    .setValue('@searchField', energy.search_field.last_name.sample1 );
-                browser
-                    .keys(browser.Keys.ENTER)
-                    .pause(5000);
-            }
-            else if (search.verify.elementNotPresent('@searchField', 'search Field is not visible, Refreshing the page...'))
+                if (result.value)
                 {
-                    browser
-                        .refresh();
                     search
-                        .verify.elementPresent('@searchField', 'Search Field is Present after Refresh?')
-                        .setValue('@searchField', energy.search_field.last_name.sample1 )
-                        .pause(3000);
+                        .setValue('@searchField', energy.search_field.last_name.sample1 );
                     browser
-                        .Keys.ENTER()
-                        ,pause(8000);                      
+                        .keys(browser.Keys.ENTER)
+                        .pause(5000);
                 }
-                else {
-                     }
+                    else
+                    {
+                        browser
+                            .refresh();
+                        search
+                            .verify.elementPresent('@searchField', 'Search Field is Present after Refresh?')
+                            .setValue('@searchField', energy.search_field.last_name.sample1 )
+                            .pause(3000);
+                        browser
+                            .keys(browser.Keys.ENTER)
+                            .pause(8000);
+                    }
+            })
     },
    
 
     'THEN the search result page is displayed and will return matches from any of the primary objects': function (browser) 
     {
-        console.log('Verify search results returns matches from any of the primary objects')
-        if(search.verify.elementPresent('@selectedTab'))
-        {
-            search
-                .verify.containsText('@selectedTab', energy.search_field.search_sample.search_sample1 , 'The searched Item is Displayed on a Tab? ')
-                .verify.elementPresent('@primaryObjects', 'Verify Primary Objects are returned');
-            browser 
-            .getText('div[class="resultsItem slds-col slds-no-flex slds-card"]',function(result){
-                for (var i = 380; i < result.value.length; i++)
-            console.log('Got:',result.value);
-            });
-            browser
-                .saveScreenshot('reports/bat_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac3_display_search_results_page.png')
-                .end();
-        }
-
-            else if (search.verify.elementNotPresent('@selectedTab')) 
+        search
+            .waitForElementPresent('@selectedTab', 3000 , function(result)
+            {
+                if (result.value)
                 {
-                    browser
-                        .refresh()
-                        .pause(3000);
                     search
-                        .verify.containsText('@selectedTab', energy.search_field.search_sample.search_sample1 , 'Search Item is Displayed on a Tab? ')
+                        .verify.containsText('@selectedTab', energy.search_field.search_sample.search_sample1 , 'The searched Item is Displayed on a Tab? ')
                         .verify.elementPresent('@primaryObjects', 'Verify Primary Objects are returned');
-                    browser
+                    browser 
                         .getText('div[class="resultsItem slds-col slds-no-flex slds-card"]',function(result){
-                            for (var i = 380; i < result.value.length; i++)
-                        console.log('Got:',result.value);
-                        });
+                            //for (var i = 380; i < result.value.length; i++)
+                    console.log('Got:',result.value);
+                    });
                     browser
-                        .saveScreenshot('reports/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac3_display_search_results_page.png')
+                        .saveScreenshot('reports/spqa_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac3_display_search_results_page.png')
                         .end();
                 }
+                    else
+                    {
+                        browser
+                            .refresh()
+                            .pause(3000);
+                            search
+                            .verify.containsText('@selectedTab', energy.search_field.search_sample.search_sample1 , 'The searched Item is Displayed on a Tab? ')
+                            .verify.elementPresent('@primaryObjects', 'Verify Primary Objects are returned');
+                        browser 
+                            .getText('div[class="resultsItem slds-col slds-no-flex slds-card"]',function(result){
+                                //for (var i = 380; i < result.value.length; i++)
+                        console.log('Got:',result.value);
+                        });
+                        browser
+                            .saveScreenshot('reports/spqa_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac3_display_search_results_page.png')
+                            .end();
+                    }
+            })
+        
     }
 
 };
