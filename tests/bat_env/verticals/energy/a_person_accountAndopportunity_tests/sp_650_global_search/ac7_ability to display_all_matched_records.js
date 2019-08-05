@@ -16,19 +16,21 @@ module.exports = {
             .click_loginbtn();
     },
 
-    'Log in as Energy Consultant QA': function() {
+    'Log in as Energy Consultant QA': function(browser) {
         console.log('Log in as Energy Consultant QA');
         
-        energy_sales
-            .url(data.energy.salesConsultant.loginTest)
+        browser
+            .url(data.energy.bat.salesConsultant.loginTest)
             .pause(1000);
 
     },
     
     'GIVEN that the results page is displayed': function(browser) 
     {
-        console.log('Enter the Last Name in Global Search Bar')
-        if (search.verify.elementPresent('@searchField', 'Search Box is Present?'))
+        search
+            .waitForElementPresent('@searchField', 3000, function(result) 
+        {
+            if (result.value)
             {
                 search
                     .setValue('@searchField', energy.search_field.last_name.sample1 );
@@ -36,7 +38,7 @@ module.exports = {
                     .keys(browser.Keys.ENTER)
                     .pause(5000);
             }
-            else if (search.verify.elementNotPresent('@searchField', 'search Field is not visible, Refreshing the page...'))
+                else
                 {
                     browser
                         .refresh();
@@ -46,69 +48,64 @@ module.exports = {
                         .pause(3000);
                     browser
                         .Keys.ENTER()
-                        .pause(5000);                      
+                        .pause(5000); 
                 }
-                else
-                    {
-                
-                    }
+
+        })
     },
     
     'WHEN I select the "View More" button on any of the displayed section ': function (browser) 
     {
-        console.log('Verify "View More" hyerlink is displayed')
-        if (search.verify.elementPresent('@topResults', 'Top Results Page is displayed?'))
-        {
-            search
-                .verify.elementPresent('@viewMore', '"View more" hyperlink is Visible')
-                .click_viewMore()
-                .waitForElementVisible('@pageResult');
-        }
-            else if (search.verify.elementNotPresent('@topResults', 'Top Results Page is not displayed?'))
+        search
+            .waitForElementPresent('@topResults', 3000, function (result)
+            {
+                if (result.value)
                 {
-                    console.log('Refreshing the Page...')
-                    browser
-                        .refresh()
-                        .pause(2000);
                     search
                         .verify.elementPresent('@viewMore', '"View more" hyperlink is Visible')
                         .click_viewMore()
                         .waitForElementVisible('@pageResult');
-
                 }
-                    else 
+                    else
                     {
-                        console.log('Unable to find the top results page!')
+                        console.log('Refreshing the Page...')
+                        browser
+                            .refresh()
+                            .pause(2000);
+                        search
+                            .verify.elementPresent('@viewMore', '"View more" hyperlink is Visible')
+                            .click_viewMore()
+                            .waitForElementVisible('@pageResult');   
                     }
+            })
     },
    
 
     'THEN the list of matched record of the selected object is displayed': function (browser) 
     {   //Verify matched record of the searched object is displayed
-        if (search.verify.elementPresent('@pageResult', 'View More opens more results?'))
-        {   
-            search
-                .verify.containsText('@pageResult', energy.search_field.last_name.sample1, 'The Page contains matching results ?');
-            browser
-                .saveScreenshot('reports/bat_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac7_ability to display_all_matched_records.png')            
-                .end();
-           
-        }
-            else if (search.verify.elementNotPresent('@viewMore', '"View more" hyperlink is Visible'))
+        search
+            .waitForElementPresent('@pageResult', 3000, function (result)
             {
-                console.log('Refreshing the Page')
-                browser
-                    .refresh()
-                    .pause(2000)
-                search
-                    .verify.containsText('@pageResult', energy.search_field.last_name.sample1, 'The Page contains matching results ?')
-                browser
-                    .saveScreenshot('reports/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac7_ability to display_all_matched_records.png')
-                    .end();
-            }
-                else
+                if (result.value)
+                {
+                    search
+                        .verify.containsText('@pageResult', energy.search_field.last_name.sample1, 'The Page contains matching results ?');
+                    browser
+                        .saveScreenshot('reports/bat_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac7_ability to display_all_matched_records.png')            
+                        .end(); 
+                }
+                    else
                     {
-                        console.log('Unable to Locate Elements, Ending Test')
-                    }  
+                        console.log('Refreshing the Page')
+                        browser
+                            .refresh()
+                            .pause(2000)
+                        search
+                            .verify.containsText('@pageResult', energy.search_field.last_name.sample1, 'The Page contains matching results ?')
+                        browser
+                            .saveScreenshot('reports/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac7_ability to display_all_matched_records.png')
+                            .end(); 
+                    }
+            })
     }
 };

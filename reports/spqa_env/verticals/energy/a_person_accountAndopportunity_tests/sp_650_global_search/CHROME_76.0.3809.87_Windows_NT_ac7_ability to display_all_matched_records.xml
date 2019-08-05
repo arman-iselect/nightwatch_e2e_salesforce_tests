@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="2"
+            failures="1"
+            tests="4">
+
+  <testsuite name="spqa_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac7_ability to display_all_matched_records"
+    errors="2" failures="1" hostname="" id="" package="sp_650_global_search" skipped="1"
+    tests="4" time="84.96" timestamp="">
+  
+    <testcase name="Login Bat Credentials" classname="spqa_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac7_ability to display_all_matched_records" time="36.92" assertions="0">
+    </testcase>
+  
+    <testcase name="Log in as Energy Consultant QA" classname="spqa_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac7_ability to display_all_matched_records" time="17.92" assertions="0">
+    </testcase>
+  
+    <testcase name="GIVEN that the results page is displayed" classname="spqa_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac7_ability to display_all_matched_records" time="7.695" assertions="1">
+
+    
+    </testcase>
+  
+    <testcase name="WHEN I select the &#34;View More&#34; button on any of the displayed section " classname="spqa_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac7_ability to display_all_matched_records" time="22.43" assertions="2">
+
+      <failure message="&#34;View more&#34; hyperlink is Visible in 1000 ms. - expected [0;32m&#34;present&#34;[0m but got: [0;31m&#34;not present&#34;[0m">    at Object.WHEN I select the &#34;View More&#34; button on any of the displayed section  (C:\NightWatchSelenium\nightwatch_e2e_salesforce_tests\tests\spqa_env\verticals\energy\a_person_accountAndopportunity_tests\sp_650_global_search\ac7_ability to display_all_matched_records.js:62:25)</failure>
+
+    <failure message="NoSuchElementError: Error while running &#34;waitForElementVisible&#34; command: Timed out while waiting for element &#34;a[class=&#34;slds-truncate outputLookupLink slds-truncate forceOutputLookup&#34;]&#34; with &#34;css selector&#34; to be present for 10000 milliseconds.">    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
+    </testcase>
+  
+
+  
+
+  
+    
+    <testcase
+      name="THEN the list of matched record of the selected object is displayed" classname="spqa_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac7_ability to display_all_matched_records">
+      <skipped />
+    </testcase>
+    
+  
+  </testsuite>
+</testsuites>

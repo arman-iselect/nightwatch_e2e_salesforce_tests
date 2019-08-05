@@ -16,14 +16,12 @@ module.exports = {
             .click_loginbtn();
     },
 
-    'Log in as Energy Consultant QA': function() {
+    'Log in as Energy Consultant QA': function(browser) {
         console.log('Log in as Energy Consultant QA');
         
-        energy_sales
-            .navigate()
+        browser
+            .url(data.energy.spqa.salesConsultant.loginTest)
             .pause(1000);
-        search
-           .navigate();
     },
     
     'GIVEN I have searched for the Last Name': function(browser) 

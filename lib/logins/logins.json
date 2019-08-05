@@ -1,27 +1,49 @@
 {
-    "salesforce": {
-        "bat": {
+    "salesforce": 
+    {
+        "bat": 
+        {
             "username": "armando.navarro@iselect.com.au.bat",
             "password": "iselect_2019"
         },
-        "spqa": {
+        "spqa": 
+        {
             "username": "armando.navarro@iselect.com.au.spqa",
             "password": "iselect_2019"
 
         },
-        "isummer": {
+        "isummer": 
+        {
             "username": "armando.navarro@iselect.com.au.isummer",
             "password": "iselect_2019"
         }
     },
 
-    "energy": {
-        "salesConsultant": {
+    "energy": 
+    {
+        "bat" : 
+        {
+        "salesConsultant": 
+            {
             "loginTest": "https://iselect--bat.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000B5GD&suorgadminid=005N0000005fV7d&retURL=%2F005%3FisUserEntityOverride%3D1%26id%3D00e28000002Rqzb%26appLayout%3Dsetup%26tour%3D%26isdtp%3Dp1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--bat.lightning.force.com%26sfdcIFrameHost%3Dweb%26nonce%3D0134a1fdde6c58284acc47a51fc845d46135a98a782fafbaa9ab2bc21c0489c5%26ltn_app_id%3D06mN00000009bueIAA%26clc%3D1&targetURL=%2Fhome%2Fhome.jsp&"
-        },
-        "telcosalesConsultant": {
+            },
+        "telcosalesConsultant": 
+            {
             "testTelco": ""
 
+            }
+        },
+
+        "spqa" :
+        {
+        "salesConsultant": 
+            {
+            "loginTest": "https://iselect--spqa.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000R9EZ&suorgadminid=005N0000006kYTy&retURL=%2F005%3FisUserEntityOverride%3D1%26id%3D00e28000002Rqzb%26appLayout%3Dsetup%26tour%3D%26isdtp%3Dp1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--spqa.lightning.force.com%26sfdcIFrameHost%3Dweb%26nonce%3Dc81d677eecdd3b9ee4b583487e1a28e69a6f75b2df87bad629fa55248e1cf872%26ltn_app_id%3D06m0I000001hd0GQAQ%26clc%3D1&targetURL=%2Fhome%2Fhome.jsp&"
+            },
+        "telcosalesConsultant":
+            {
+            "testTelco": ""
+            }
         }
     }
 }

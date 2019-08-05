@@ -3,7 +3,7 @@ var data = JSON.parse(fs.readFileSync("lib/logins/logins.json").toString());
 var energy = JSON.parse(fs.readFileSync("lib/verticals/energy/info.json".toString()));
 
 module.exports = {
-    tags: ['sp_650_ac1', 'sp_650'],
+    tags: ['spqa_sp_651_ac1', 'spqa_sp_651'],
 
     'Login Bat Credentials': function() 
     {
@@ -18,32 +18,14 @@ module.exports = {
             .pause(5000);
     },
 
-    'Log in as Energy Consultant QA': function() 
+    'Log in as Energy Consultant QA': function(browser) 
     {
         console.log('Log in as Energy Consultant QA');
         
-        energy_sales
-            .navigate()
+        browser
+            .url(data.energy.spqa.salesConsultant.loginTest)
             .pause(3000);
     },
-    /*
-    'Scope 1: Global search shall be available at the top of the screen with a placeholder text of "Search Salesforce"': function(browser) {
-        console.log('Verify Search Field Placeholder contains "Search Salesforce"');
-        if (search.verify.elementPresent('@searchField'))
-        {
-            search
-                .getText('@searchField');
-        }
-            else if (search.verify.elementNotPresent('@searchField'))
-            {
-                browser
-                    .refresh();
-                search
-                    .verify.elementPresent('@searchField', 'Search Field Present after Refresh?')
-                    .getText('@searchField');
-
-            }
-    },*/
     
     'GIVEN I have the potential lead in the Lead Page': function(browser) 
     {

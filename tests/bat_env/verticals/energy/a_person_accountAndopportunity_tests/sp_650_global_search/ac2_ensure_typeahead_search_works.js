@@ -18,12 +18,12 @@ module.exports = {
             .pause(5000);
     },
 
-    'Log in as Energy Consultant QA': function() 
+    'Log in as Energy Consultant QA': function(browser) 
     {
         console.log('Log in as Energy Consultant QA');
         
-        energy_sales
-            .url(data.energy.salesConsultant.loginTest)
+        browser
+            .url(data.energy.bat.salesConsultant.loginTest)
             .pause(3000);
     },
     

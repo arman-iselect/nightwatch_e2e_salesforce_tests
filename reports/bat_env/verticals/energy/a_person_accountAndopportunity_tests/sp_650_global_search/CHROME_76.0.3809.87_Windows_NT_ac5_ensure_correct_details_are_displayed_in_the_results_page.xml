@@ -1,24 +1,49 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites errors="0"
-            failures="1"
-            tests="4">
+<testsuites errors="4"
+            failures="3"
+            tests="5">
 
   <testsuite name="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac5_ensure_correct_details_are_displayed_in_the_results_page"
-    errors="0" failures="1" hostname="" id="" package="sp_650_global_search" skipped="1"
-    tests="4" time="94.69" timestamp="">
+    errors="4" failures="3" hostname="" id="" package="sp_650_global_search" skipped="0"
+    tests="5" time="62.37" timestamp="">
   
-    <testcase name="Login Bat Credentials" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac5_ensure_correct_details_are_displayed_in_the_results_page" time="52.87" assertions="0">
+    <testcase name="Login Bat Credentials" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac5_ensure_correct_details_are_displayed_in_the_results_page" time="36.38" assertions="0">
     </testcase>
   
-    <testcase name="Log in as Energy Consultant QA" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac5_ensure_correct_details_are_displayed_in_the_results_page" time="20.37" assertions="0">
+    <testcase name="Log in as Energy Consultant QA" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac5_ensure_correct_details_are_displayed_in_the_results_page" time="4.913" assertions="0">
     </testcase>
   
-    <testcase name="GIVEN I have searched for the Last Name" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac5_ensure_correct_details_are_displayed_in_the_results_page" time="20.42" assertions="1">
+    <testcase name="GIVEN I have searched for the Last Name" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac5_ensure_correct_details_are_displayed_in_the_results_page" time="11.39" assertions="1">
 
     
     </testcase>
   
-    <testcase name="WHEN the result page is displayed" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac5_ensure_correct_details_are_displayed_in_the_results_page" time="1.032" assertions="1">  <failure message="Top Results Page is displayed? in 1000 ms. - expected [0;32m&#34;present&#34;[0m but got: [0;31m&#34;not present&#34;[0m">    at Object.WHEN the result page is displayed (C:\NightWatchSelenium\nightwatch_e2e_salesforce_tests\tests\bat_env\verticals\energy\a_person_accountAndopportunity_tests\sp_650_global_search\ac5_ensure_correct_details_are_displayed_in_the_results_page.js:59:27)</failure>
+    <testcase name="WHEN the result page is displayed" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac5_ensure_correct_details_are_displayed_in_the_results_page" time="0.01300" assertions="1">
+
+    
+    </testcase>
+  
+    <testcase name="THEN I should be able to view the page" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac5_ensure_correct_details_are_displayed_in_the_results_page" time="9.670" assertions="11">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+      <failure message="The Page contains matching results ? in 1000 ms. - expected [0;32m&#34;Test&#34;[0m but got: [0;31m&#34;energy u test lead&#34;[0m">    at Object.THEN I should be able to view the page (C:\NightWatchSelenium\nightwatch_e2e_salesforce_tests\tests\bat_env\verticals\energy\a_person_accountAndopportunity_tests\sp_650_global_search\ac5_ensure_correct_details_are_displayed_in_the_results_page.js:112:25)</failure>
+
+      <failure message="The Page contains matching results ? in 1000 ms. - expected [0;32m&#34;Test&#34;[0m but got: [0;31m&#34;energy u test lead&#34;[0m">    at Object.THEN I should be able to view the page (C:\NightWatchSelenium\nightwatch_e2e_salesforce_tests\tests\bat_env\verticals\energy\a_person_accountAndopportunity_tests\sp_650_global_search\ac5_ensure_correct_details_are_displayed_in_the_results_page.js:120:25)</failure>
+
+      <failure message="The Page contains matching results ? in 1000 ms. - expected [0;32m&#34;Test&#34;[0m but got: [0;31m&#34;energy u test lead&#34;[0m">    at Object.THEN I should be able to view the page (C:\NightWatchSelenium\nightwatch_e2e_salesforce_tests\tests\bat_env\verticals\energy\a_person_accountAndopportunity_tests\sp_650_global_search\ac5_ensure_correct_details_are_displayed_in_the_results_page.js:127:25)</failure>
 
     
     </testcase>
@@ -26,13 +51,6 @@
 
   
 
-  
-    
-    <testcase
-      name="THEN I should be able to view the page" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac5_ensure_correct_details_are_displayed_in_the_results_page">
-      <skipped />
-    </testcase>
-    
   
   </testsuite>
 </testsuites>
