@@ -26,29 +26,30 @@ module.exports = {
     
     'GIVEN I have searched for the Last Name': function(browser) 
     {
-        console.log('Enter the Last Name in Global Search Bar')
-        if (search.verify.elementPresent('@searchField', 'Search Box is Present?'))
+        search
+            .waitForElementPresent('@searchField', 3000 , function(result)
             {
-                search
-                    .setValue('@searchField', energy.search_field.last_name.sample1 );
-                browser
-                    .keys(browser.Keys.ENTER)
-                    .pause(10000);
-            }
-            else if (search.verify.elementNotPresent('@searchField', 'search Field is not visible, Refreshing the page...'))
+                if (result.value)
                 {
-                    browser
-                        .refresh();
                     search
-                        .verify.elementPresent('@searchField', 'Search Field is Present after Refresh?')
-                        .setValue('@searchField', energy.search_field.last_name.sample1 )
-                        .pause(3000);
+                        .setValue('@searchField', energy.search_field.last_name.sample1 );
                     browser
-                        .Keys.ENTER()
-                        .pause(8000);                      
+                        .keys(browser.Keys.ENTER)
+                        .pause(10000);
                 }
-                else {
-                     }
+                    else
+                    {
+                        browser
+                            .refresh();
+                        search
+                            .verify.elementPresent('@searchField', 'Search Field is Present after Refresh?')
+                            .setValue('@searchField', energy.search_field.last_name.sample1 )
+                            .pause(3000);
+                        browser
+                            .Keys.ENTER()
+                            .pause(8000);  
+                    }
+            })
     },
     
     'WHEN the result page is displayed': function (browser) 

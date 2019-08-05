@@ -27,6 +27,8 @@ module.exports = {
     
     'GIVEN that the results page is displayed': function(browser) 
     {
+        search
+        
         console.log('Enter the Last Name in Global Search Bar')
         if (search.verify.elementPresent('@searchField', 'Search Box is Present?'))
             {
