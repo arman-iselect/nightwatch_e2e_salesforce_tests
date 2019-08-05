@@ -30,7 +30,9 @@ Nightwatch
 		--test_workers
 
 --Running your tests via npm commandline
+
 	1. Run specific script
-		--npm run <scripts>
+		--npm run <env_><scripts>
+		ie: npm run bat_sp650 (Will run sp650 in bat environment / see package.json for customized scripts)
 	2. Run all tests
 		--npm tests
