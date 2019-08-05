@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="1"
+            failures="0"
+            tests="5">
+
+  <testsuite name="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac4_display_empty_results_page"
+    errors="1" failures="0" hostname="" id="" package="sp_650_global_search" skipped="0"
+    tests="5" time="108.8" timestamp="">
+  
+    <testcase name="Login Bat Credentials" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac4_display_empty_results_page" time="69.44" assertions="0">
+    </testcase>
+  
+    <testcase name="Log in as Energy Consultant QA" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac4_display_empty_results_page" time="8.832" assertions="0">
+    </testcase>
+  
+    <testcase name="GIVEN I have talked to the client" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac4_display_empty_results_page" time="0.000" assertions="0">
+    </testcase>
+  
+    <testcase name="WHEN I enter the Last Name in Global Search Bar AND hit enter" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac4_display_empty_results_page" time="10.60" assertions="1">
+
+    
+    </testcase>
+  
+    <testcase name="THEN an empty result page is displayed" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac4_display_empty_results_page" time="19.95" assertions="1">
+
+    
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>

@@ -20,10 +20,9 @@ module.exports = {
         console.log('Log in as Energy Consultant QA');
         
         energy_sales
-            .navigate()
+            .url(data.energy.salesConsultant.loginTest)
             .pause(1000);
-        search
-           .navigate();
+
     },
     
     'GIVEN that the results page is displayed': function(browser) 

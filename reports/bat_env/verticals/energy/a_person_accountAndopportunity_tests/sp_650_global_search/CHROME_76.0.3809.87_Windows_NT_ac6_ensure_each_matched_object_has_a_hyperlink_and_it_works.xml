@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="2"
+            failures="2"
+            tests="4">
+
+  <testsuite name="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac6_ensure_each_matched_object_has_a_hyperlink_and_it_works"
+    errors="2" failures="2" hostname="" id="" package="sp_650_global_search" skipped="1"
+    tests="4" time="127.5" timestamp="">
+  
+    <testcase name="Login Bat Credentials" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac6_ensure_each_matched_object_has_a_hyperlink_and_it_works" time="56.59" assertions="0">
+    </testcase>
+  
+    <testcase name="Log in as Energy Consultant QA" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac6_ensure_each_matched_object_has_a_hyperlink_and_it_works" time="22.09" assertions="0">
+    </testcase>
+  
+    <testcase name="GIVEN that the results page is displayed" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac6_ensure_each_matched_object_has_a_hyperlink_and_it_works" time="11.60" assertions="1">
+
+    
+    </testcase>
+  
+    <testcase name="WHEN I select any one of the records on the results page that has a hyperlink" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac6_ensure_each_matched_object_has_a_hyperlink_and_it_works" time="37.24" assertions="2">  <failure message="Top Results Page is displayed? in 1000 ms. - expected [0;32m&#34;present&#34;[0m but got: [0;31m&#34;not present&#34;[0m">    at Object.WHEN I select any one of the records on the results page that has a hyperlink (C:\NightWatchSelenium\nightwatch_e2e_salesforce_tests\tests\bat_env\verticals\energy\a_person_accountAndopportunity_tests\sp_650_global_search\ac6_ensure_each_matched_object_has_a_hyperlink_and_it_works.js:59:27)</failure>
+
+      <failure message="Records/Hyperlinks are interactable ? in 1000 ms. - expected [0;32m&#34;present&#34;[0m but got: [0;31m&#34;not present&#34;[0m">    at Object.WHEN I select any one of the records on the results page that has a hyperlink (C:\NightWatchSelenium\nightwatch_e2e_salesforce_tests\tests\bat_env\verticals\energy\a_person_accountAndopportunity_tests\sp_650_global_search\ac6_ensure_each_matched_object_has_a_hyperlink_and_it_works.js:62:25)</failure>
+
+    <failure message="NoSuchElementError: Error while running &#34;waitForElementVisible&#34; command: Timed out while waiting for element &#34;div[class=&#34;profilePicWrapper slds-media slds-no-space&#34;]&#34; with &#34;css selector&#34; to be present for 10000 milliseconds.">    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
+    </testcase>
+  
+
+  
+
+  
+    
+    <testcase
+      name="THEN the selected record page is displayed in a new tab" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac6_ensure_each_matched_object_has_a_hyperlink_and_it_works">
+      <skipped />
+    </testcase>
+    
+  
+  </testsuite>
+</testsuites>
