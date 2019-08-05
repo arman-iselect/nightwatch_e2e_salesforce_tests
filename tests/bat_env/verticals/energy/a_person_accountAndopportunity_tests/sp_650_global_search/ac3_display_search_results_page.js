@@ -22,45 +22,13 @@ module.exports = {
         console.log('Log in as Energy Consultant QA');
         
         energy_sales
-            .navigate()
+            .url(data.energy.salesConsultant.loginTest)
             .pause(3000);
     },
-
-    /*'Scope 1: Global search shall be available at the top of the screen with a placeholder text of "Search Salesforce"': function(browser) {
-        console.log('Verify Search Field Placeholder contains "Search Salesforce"');
-        if (search.verify.elementPresent('@searchField'))
-        {
-            search
-                .getText('@searchField');
-        }
-            else if (search.verify.elementNotPresent('@searchField'))
-            {
-                browser
-                    .refresh();
-                search
-                    .verify.elementPresent('@searchField', 'Search Field Present after Refresh?')
-                    .getText('@searchField');
-
-            }
-    },*/
     
     'GIVEN I have talked to the client': function(browser) 
     {
-       /* console.log('Verify youre viewing Global Search');
-            if (search.verify.elementPresent('@searchField', 'Search Field is Present?'))
-            {
-                
-            }
-                else if (search.verify.elementNotPresent('@searchField', 'Search Field is Not Present'))
-                {
-                    console.log('Refreshing the Page')
-                    browser
-                        .refresh();
-                }
-                    else 
-                        {
-                        console.log('Test has Stopped unable to locate Search Field')
-                        } */
+
     },
     
     'WHEN I enter the Last Name in Global Search Bar AND hit enter': function (browser) 

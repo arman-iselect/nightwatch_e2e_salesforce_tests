@@ -23,7 +23,7 @@ module.exports = {
         console.log('Log in as Energy Consultant QA');
         
         energy_sales
-            .navigate()
+            .url(data.energy.salesConsultant.loginTest)
             .pause(3000);
     },
     /*

@@ -23,27 +23,9 @@ module.exports = {
         console.log('Log in as Energy Consultant QA');
         
         energy_sales
-            .navigate()
+            .url(data.energy.salesConsultant.loginTest)
             .pause(3000);
     },
-    /*
-    'Scope 1: Global search shall be available at the top of the screen with a placeholder text of "Search Salesforce"': function(browser) {
-        console.log('Verify Search Field Placeholder contains "Search Salesforce"');
-        if (search.verify.elementPresent('@searchField'))
-        {
-            search
-                .getText('@searchField');
-        }
-            else if (search.verify.elementNotPresent('@searchField'))
-            {
-                browser
-                    .refresh();
-                search
-                    .verify.elementPresent('@searchField', 'Search Field Present after Refresh?')
-                    .getText('@searchField');
-
-            }
-    },*/
     
     'GIVEN I already have the First Name ': function(browser) 
     {

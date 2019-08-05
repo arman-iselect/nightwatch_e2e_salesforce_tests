@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="5">
+
+  <testsuite name="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac2_ensure_typeahead_search_works"
+    errors="0" failures="0" hostname="" id="" package="sp_650_global_search" skipped="0"
+    tests="5" time="100.6" timestamp="">
+  
+    <testcase name="Login Bat Credentials" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac2_ensure_typeahead_search_works" time="61.39" assertions="0">
+    </testcase>
+  
+    <testcase name="Log in as Energy Consultant QA" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac2_ensure_typeahead_search_works" time="17.86" assertions="0">
+    </testcase>
+  
+    <testcase name="GIVEN the global search is on the page I am viewing" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac2_ensure_typeahead_search_works" time="0.3530" assertions="1">
+
+    
+    </testcase>
+  
+    <testcase name="WHEN I type in several characters (i.e.3) on the global search box" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac2_ensure_typeahead_search_works" time="19.80" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="THEN records in various objects that matches the entered text string is displayed as a dropdown" classname="bat_env.verticals.energy.a_person_accountAndopportunity_tests.sp_650_global_search.ac2_ensure_typeahead_search_works" time="1.180" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>

@@ -23,27 +23,13 @@ module.exports = {
         console.log('Log in as Energy Consultant QA');
         
         energy_sales
-            .navigate()
+            .url(data.energy.salesConsultant.loginTest)
             .pause(3000);
     },
     
     'GIVEN I have talked to the client': function(browser) 
     {
-       /* console.log('Verify youre viewing Global Search');
-            if (search.verify.elementPresent('@searchField', 'Search Field is Present?'))
-            {
-                
-            }
-                else if (search.verify.elementNotPresent('@searchField', 'Search Field is Not Present'))
-                {
-                    console.log('Refreshing the Page')
-                    browser
-                        .refresh();
-                }
-                    else 
-                        {
-                        console.log('Test has Stopped unable to locate Search Field')
-                        } */
+   
     },
     
     'WHEN I enter the Last Name in Global Search Bar AND hit enter': function (browser) 
