@@ -3,7 +3,7 @@ var data = JSON.parse(fs.readFileSync("lib/logins/logins.json").toString());
 var energy = JSON.parse(fs.readFileSync("lib/verticals/energy/info.json".toString()));
 
 module.exports = {
-    tags: ['spqa_sp_651_ac2', 'spqa_sp_651' , 'sp_651'],
+    tags: ['bat_sp_651_ac5', 'bat_sp_651' , 'sp_651'],
 
     'Login Bat Credentials': function() 
     {
@@ -27,33 +27,18 @@ module.exports = {
             .pause(3000);
     },
     
-    'GIVEN I have selected a lead record and clicked on the "Convert Lead" button': function(browser) 
-    {
-        
-    },
-
-    'AND the Convert Lead page is displayed': function (browser) 
+    'GIVEN I have clicked on the convert lead button on the Lead page': function(browser) 
     {
 
     },
     
-    'WHEN I select an existing person account from the displayed list': function (browser) 
-    {
-       
-    },
-
-    'AND select to convert the lead': function(browser) 
+    'WHEN the Convert Lead page is displayed': function (browser) 
     {
 
     },
 
-    'THEN the lead is converted to new opportunity and linked to the selected person account ': function (browser) 
+    'THEN I shall be able to view the following details as per the attached Lead Conversion page screenshot': function (browser) 
     {
-        
-    },
-
-    'OTHERWISE I can select cancel to close the page and the lead is not converted': function(browser)
-    {
-
+ 
     }
 };
