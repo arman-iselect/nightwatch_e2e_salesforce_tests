@@ -70,7 +70,7 @@ module.exports = {
                         search
                             .verify.elementPresent('@topResults', 'Top Results page is displayed after refresh ?')
                     }
-            }) 
+            })
     },
    
 
@@ -184,6 +184,6 @@ module.exports = {
                         browser
                             .end();
                     }
-            })
+            })     
     }
 };
