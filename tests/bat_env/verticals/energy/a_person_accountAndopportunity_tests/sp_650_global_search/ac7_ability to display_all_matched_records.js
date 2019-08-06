@@ -57,7 +57,7 @@ module.exports = {
     'WHEN I select the "View More" button on any of the displayed section ': function (browser) 
     {
         search
-            .waitForElementPresent('@topResults', 3000, function (result)
+            .waitForElementPresent('@viewMore', 15000, function (result)
             {
                 if (result.value)
                 {
@@ -84,7 +84,7 @@ module.exports = {
     'THEN the list of matched record of the selected object is displayed': function (browser) 
     {   //Verify matched record of the searched object is displayed
         search
-            .waitForElementPresent('@pageResult', 3000, function (result)
+            .waitForElementPresent('@pageResult', 15000, function (result)
             {
                 if (result.value)
                 {

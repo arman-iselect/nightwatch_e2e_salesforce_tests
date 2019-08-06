@@ -19,7 +19,7 @@ module.exports = {
         leadsSec: '[title="Leads"]',
         pageResult: 'a[class="slds-truncate outputLookupLink slds-truncate forceOutputLookup"]',
         viewMore: 'div[class="viewMore"]',
-        hyperLinktext: '[title="Test001"]',
+        hyperlinkText: '[title="Test001"]',
         profileWrap: 'div[class="profilePicWrapper slds-media slds-no-space"]',
         opportunitiesSec: '[title="Opportunities"]',
         expandList: '[class="slds-button navExpandToggle slds-text-link slds-size_1-of-1 slds-text-align_left slds-p-vertical_xx-small slds-m-left_xx-small"]',
@@ -44,9 +44,9 @@ module.exports = {
             .click('@viewMore');
         },
 
-        click_hyperLinktext() {
+        click_hyperlinkText() {
             return this
-            .click('@hyperLinktext');
+            .click('@hyperlinkText');
         },
 
         click_expandList() {

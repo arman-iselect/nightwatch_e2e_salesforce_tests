@@ -20,22 +20,20 @@ module.exports = {
         console.log('Log in as Energy Consultant QA');
         
         browser
-            .url(data.energy.bat.salesConsultant.loginTest)
-            .pause(1000);
+            .url(data.energy.bat.salesConsultant.loginTest);
     },
     
     'GIVEN I have searched for the Last Name': function(browser) 
     {
         search
-            .waitForElementPresent('@searchField', 3000 , function(result)
+            .waitForElementPresent('@searchField', 10000 , function(result)
             {
                 if (result.value)
                 {
                     search
                         .setValue('@searchField', energy.search_field.last_name.sample1 );
                     browser
-                        .keys(browser.Keys.ENTER)
-                        .pause(10000);
+                        .keys(browser.Keys.ENTER);
                 }
                     else
                     {
@@ -46,8 +44,7 @@ module.exports = {
                             .setValue('@searchField', energy.search_field.last_name.sample1 )
                             .pause(3000);
                         browser
-                            .Keys.ENTER()
-                            .pause(8000);  
+                            .keys(browser.Keys.ENTER);
                     }
             })
     },
@@ -55,7 +52,7 @@ module.exports = {
     'WHEN the result page is displayed': function (browser) 
     {
         search
-            .waitForElementPresent('@topResults', 3000 , function(result)
+            .waitForElementPresent('@topResults', 10000 , function(result)
             {
                 if (result.value)
                 {
@@ -66,7 +63,6 @@ module.exports = {
                         console.log('Refreshing the Page...')
                         browser
                             .refresh()
-                            .pause(2000);
                         search
                             .verify.elementPresent('@topResults', 'Top Results page is displayed after refresh ?')
                     }
@@ -77,7 +73,7 @@ module.exports = {
     'THEN I should be able to view the page': function (browser) 
     {   //Verify top results page is displayed
         search
-            .waitForElementPresent('@topResults', 3000 , function(result)
+            .waitForElementPresent('@topResults', 10000 , function(result)
             {
                 if (result.value)
                 {
@@ -108,24 +104,26 @@ module.exports = {
                     //Navigate to Leads
                     console.log('Navigate to Leads Section')
                     search
-                        .pause(1000)
+                        .waitForElementPresent('@leadsSec', 10000)
                         .click_leadsSec()
-                        .pause(1000)
+                        .waitForElementPresent('@pageResult', 25000)
                         .verify.containsText('@pageResult', energy.search_field.last_name.sample1, 'The Page contains matching results ?');
                     
                     //Navigate to Accounts
                     console.log('Navigate to Accounts Section')
                     search
                         .click_expandList()
+                        .waitForElementPresent('@accountSec', 10000)
                         .click_accountSec()
-                        .pause(1000)
+                        .waitForElementPresent('@pageResult', 25000)
                         .verify.containsText('@pageResult', energy.search_field.last_name.sample1, 'The Page contains matching results ?');
         
                     console.log('Navigate to Opportunities Section')
                     search
                         .click_expandList()
+                        .waitForElementPresent('@opportunitiesSec', 15000)
                         .click_opportunitiesSec()
-                        .pause(1000)
+                        .waitForElementPresent('@pageResult', 25000)
                         .verify.containsText('@pageResult', energy.search_field.last_name.sample1, 'The Page contains matching results ?');
                     browser
                         .end();
@@ -135,9 +133,10 @@ module.exports = {
                         console.log('Refreshing the Page')
                         browser
                             .refresh()
-                            .pause(2000);
                         //Verify Leads Section is Present
                         console.log('Verify if Leads section is present')
+                        browser
+                            .saveScreenshot('reports/bat_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac5_ensure_correct_details_are_displayed_in_the_results_page.png')
                         search
                             .verify.containsText('@topResults', 'Top Results', 'Top Results Page is Labeled Correctly? ')
                             .verify.elementPresent('@leadsSec')
@@ -156,30 +155,32 @@ module.exports = {
                         console.log('Get the number of Matched Results in each section')
                         browser
                             .getText('[class="navContainer slds-is-relative slds-scrollable--y slds-p-vertical--x-small"]', function(result1){
-                            //for (var i = 250; i < result.value.length; i++)
-                        console.log(result1.value);
-                        });
+                                //for (var i = 250; i < result.value.length; i++)
+                            console.log(result1.value);
+                            });
                         //Navigate to Leads
                         console.log('Navigate to Leads Section')
                         search
-                            .pause(1000)
+                            .waitForElementPresent('@leadsSec', 10000)
                             .click_leadsSec()
-                            .pause(1000)
+                            .waitForElementPresent('@pageResult', 25000)
                             .verify.containsText('@pageResult', energy.search_field.last_name.sample1, 'The Page contains matching results ?');
-                    
+                        
                         //Navigate to Accounts
                         console.log('Navigate to Accounts Section')
                         search
                             .click_expandList()
+                            .waitForElementPresent('@accountSec', 10000)
                             .click_accountSec()
-                            .pause(1000)
+                            .waitForElementPresent('@pageResult', 25000)
                             .verify.containsText('@pageResult', energy.search_field.last_name.sample1, 'The Page contains matching results ?');
-        
+            
                         console.log('Navigate to Opportunities Section')
                         search
                             .click_expandList()
+                            .waitForElementPresent('@opportunitiesSec', 15000)
                             .click_opportunitiesSec()
-                            .pause(1000)
+                            .waitForElementPresent('@pageResult', 25000)
                             .verify.containsText('@pageResult', energy.search_field.last_name.sample1, 'The Page contains matching results ?');
                         browser
                             .end();

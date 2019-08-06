@@ -57,8 +57,7 @@ module.exports = {
                             .setValue('@searchField', energy.search_field.random.a );
                         console.log('Hit Enter')
                         browser
-                            .keys(browser.Keys.ENTER)
-                            .pause(5000);
+                            .keys(browser.Keys.ENTER);
                     }
             })
     },
@@ -67,7 +66,7 @@ module.exports = {
     'THEN an empty result page is displayed': function (browser) 
     {
         search
-            .waitForElementPresent('@selectedTab', 3000 , function(result)
+            .waitForElementPresent('@selectedTab', 10000 , function(result)
             {
                 if (result.value)
                 {
@@ -95,7 +94,7 @@ module.exports = {
                         console.log('', result);
                         });
                         browser
-                            .saveScreenshot('reports/spqa_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac4_display_empty_results_page.png')
+                            .saveScreenshot('reports/bat_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac4_display_empty_results_page.png')
                             .end();
                     }
             })
