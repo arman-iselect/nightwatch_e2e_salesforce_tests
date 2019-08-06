@@ -26,167 +26,165 @@ module.exports = {
     
     'GIVEN I have searched for the Last Name': function(browser) 
     {
-        console.log('Enter the Last Name in Global Search Bar')
-        if (search.verify.elementPresent('@searchField', 'Search Box is Present?'))
+        search
+            .waitForElementPresent('@searchField', 3000 , function(result)
             {
-                search
-                    .setValue('@searchField', energy.search_field.last_name.sample1 );
-                browser
-                    .keys(browser.Keys.ENTER)
-                    .pause(10000);
-            }
-            else if (search.verify.elementNotPresent('@searchField', 'search Field is not visible, Refreshing the page...'))
+                if (result.value)
                 {
-                    browser
-                        .refresh();
                     search
-                        .verify.elementPresent('@searchField', 'Search Field is Present after Refresh?')
-                        .setValue('@searchField', energy.search_field.last_name.sample1 )
-                        .pause(3000);
+                        .setValue('@searchField', energy.search_field.last_name.sample1 );
                     browser
-                        .Keys.ENTER()
-                        .pause(8000);                      
+                        .keys(browser.Keys.ENTER)
+                        .pause(10000);
                 }
-                else {
-                     }
+                    else
+                    {
+                        browser
+                            .refresh();
+                        search
+                            .verify.elementPresent('@searchField', 'Search Field is Present after Refresh?')
+                            .setValue('@searchField', energy.search_field.last_name.sample1 )
+                            .pause(3000);
+                        browser
+                            .Keys.ENTER()
+                            .pause(8000);  
+                    }
+            })
     },
     
     'WHEN the result page is displayed': function (browser) 
     {
-        console.log('Verify Top results Page is Activated/Displayed')
-        if (search.verify.elementPresent('@topResults', 'Top Results Page is displayed?'))
-        {
-            console.log('Top Results Page is Activated!')
-        }
-            else if (search.verify.elementNotPresent('@topResults', 'Top Results Page is not displayed?'))
+        search
+            .waitForElementPresent('@topResults', 3000 , function(result)
+            {
+                if (result.value)
                 {
-                    console.log('Refreshing the Page...')
-                    browser
-                        .refresh()
-                        .pause(2000);
-                    search
-                        .verify.elementPresent('@topResults', 'Top Results page is displayed after refresh ?')
-
+                    console.log('Top Results Page is Activated!')
                 }
-                    else 
+                    else
                     {
-                        console.log('Unable to find the top results page!')
+                        console.log('Refreshing the Page...')
+                        browser
+                            .refresh()
+                            .pause(2000);
+                        search
+                            .verify.elementPresent('@topResults', 'Top Results page is displayed after refresh ?')
                     }
+            })
     },
    
 
     'THEN I should be able to view the page': function (browser) 
     {   //Verify top results page is displayed
-        if (search.verify.elementPresent('@topResults', 'Top Results'))
-        {   //Verify Leads Section is Present
-            console.log('Verify if Leads section is present')
-            browser
-                .saveScreenshot('reports/bat_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac5_ensure_correct_details_are_displayed_in_the_results_page.png')
-            search
-                .verify.containsText('@topResults', 'Top Results', 'Top Results Page is Labeled Correctly? ')
-                .verify.elementPresent('@leadsSec')
-                .verify.containsText('@leadsSec', 'Leads' , 'Leads Section is Present?');
-            //Verify Opportunities section is Present
-            console.log('Verify if Opportunities Page is present')
-            search
-                .verify.elementPresent('@opportunitiesSec')
-                .verify.containsText('@opportunitiesSec', 'Opportunities', 'Opportunities Section is Present');
-            //Verify Account Section is Present
-            console.log('Verify if Account section is present')
-            search
-                .verify.elementPresent('@accountSec')
-                .verify.containsText('@accountSec', 'Accounts', 'Account Section is Present?');
-            //Get the Matched Results is each Section
-            console.log('Get the number of Matched Results in each section')
-            browser
-                .getText('[class="navContainer slds-is-relative slds-scrollable--y slds-p-vertical--x-small"]', function(result1){
-                    //for (var i = 250; i < result.value.length; i++)
-                console.log(result1.value);
-                });
-            //Navigate to Leads
-            console.log('Navigate to Leads Section')
-            search
-                .pause(1000)
-                .click_leadsSec()
-                .pause(1000)
-                .verify.containsText('@pageResult', energy.search_field.last_name.sample1, 'The Page contains matching results ?');
-            
-            //Navigate to Accounts
-            console.log('Navigate to Accounts Section')
-            search
-                .click_expandList()
-                .click_accountSec()
-                .pause(1000)
-                .verify.containsText('@pageResult', energy.search_field.last_name.sample1, 'The Page contains matching results ?');
-
-            console.log('Navigate to Opportunities Section')
-            search
-                .click_expandList()
-                .click_opportunitiesSec()
-                .pause(1000)
-                .verify.containsText('@pageResult', energy.search_field.last_name.sample1, 'The Page contains matching results ?');
-            browser
-                .end();
-        }
-            else if (search.verify.elementNotPresent('@topResults', 'Top Results is not Displayed?'))
+        search
+            .waitForElementPresent('@topResults', 3000 , function(result)
             {
-                console.log('Refreshing the Page')
-                browser
-                    .refresh()
-                    .pause(2000);
-                //Verify Leads Section is Present
-                console.log('Verify if Leads section is present')
-                search
-                    .verify.containsText('@topResults', 'Top Results', 'Top Results Page is Labeled Correctly? ')
-                    .verify.elementPresent('@leadsSec')
-                    .verify.containsText('@leadsSec', 'Leads' , 'Leads Section is Present?');
-                //Verify Opportunities section is Present
-                console.log('Verify if Opportunities Page is present')
-                search
-                    .verify.elementPresent('@opportunitiesSec')
-                    .verify.containsText('@opportunitiesSec', 'Opportunities', 'Opportunities Section is Present');
-                //Verify Account Section is Present
-                console.log('Verify if Account section is present')
-                search
-                    .verify.elementPresent('@accountSec')
-                    .verify.containsText('@accountSec', 'Accounts', 'Account Section is Present?');
-                //Get the Matched Results is each Section
-                console.log('Get the number of Matched Results in each section')
-                browser
-                    .getText('[class="navContainer slds-is-relative slds-scrollable--y slds-p-vertical--x-small"]', function(result1){
-                    //for (var i = 250; i < result.value.length; i++)
-                console.log(result1.value);
-                });
-                //Navigate to Leads
-                console.log('Navigate to Leads Section')
-                search
-                    .pause(1000)
-                    .click_leadsSec()
-                    .pause(1000)
-                    .verify.containsText('@pageResult', energy.search_field.last_name.sample1, 'The Page contains matching results ?');
-            
-                //Navigate to Accounts
-                console.log('Navigate to Accounts Section')
-                search
-                    .click_expandList()
-                    .click_accountSec()
-                    .pause(1000)
-                    .verify.containsText('@pageResult', energy.search_field.last_name.sample1, 'The Page contains matching results ?');
-
-                console.log('Navigate to Opportunities Section')
-                search
-                    .click_expandList()
-                    .click_opportunitiesSec()
-                    .pause(1000)
-                    .verify.containsText('@pageResult', energy.search_field.last_name.sample1, 'The Page contains matching results ?');
-                browser
-                    .end();
-            }
-                else
-                    {
-                        console.log('Unable to Locate Elements, Ending Test')
-                    }
+                if (result.value)
+                {
+                    console.log('Verify if Leads section is present')
+                    browser
+                        .saveScreenshot('reports/spqa_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac5_ensure_correct_details_are_displayed_in_the_results_page.png')
+                    search
+                        .verify.containsText('@topResults', 'Top Results', 'Top Results Page is Labeled Correctly? ')
+                        .verify.elementPresent('@leadsSec')
+                        .verify.containsText('@leadsSec', 'Leads' , 'Leads Section is Present?');
+                    //Verify Opportunities section is Present
+                    console.log('Verify if Opportunities Page is present')
+                    search
+                        .verify.elementPresent('@opportunitiesSec')
+                        .verify.containsText('@opportunitiesSec', 'Opportunities', 'Opportunities Section is Present');
+                    //Verify Account Section is Present
+                    console.log('Verify if Account section is present')
+                    search
+                        .verify.elementPresent('@accountSec')
+                        .verify.containsText('@accountSec', 'Accounts', 'Account Section is Present?');
+                    //Get the Matched Results is each Section
+                    console.log('Get the number of Matched Results in each section')
+                    browser
+                        .getText('[class="navContainer slds-is-relative slds-scrollable--y slds-p-vertical--x-small"]', function(result1){
+                            //for (var i = 250; i < result.value.length; i++)
+                        console.log(result1.value);
+                        });
+                    //Navigate to Leads
+                    console.log('Navigate to Leads Section')
+                    search
+                        .pause(1000)
+                        .click_leadsSec()
+                        .pause(1000)
+                        .verify.containsText('@pageResult', energy.search_field.last_name.sample1, 'The Page contains matching results ?');
+                    
+                    //Navigate to Accounts
+                    console.log('Navigate to Accounts Section')
+                    search
+                        .click_expandList()
+                        .click_accountSec()
+                        .pause(1000)
+                        .verify.containsText('@pageResult', energy.search_field.last_name.sample1, 'The Page contains matching results ?');
         
+                    console.log('Navigate to Opportunities Section')
+                    search
+                        .click_expandList()
+                        .click_opportunitiesSec()
+                        .pause(1000)
+                        .verify.containsText('@pageResult', energy.search_field.last_name.sample1, 'The Page contains matching results ?');
+                    browser
+                        .end();
+                }
+                    else
+                    {
+                        console.log('Refreshing the Page')
+                        browser
+                            .refresh()
+                            .pause(2000);
+                        //Verify Leads Section is Present
+                        console.log('Verify if Leads section is present')
+                        search
+                            .verify.containsText('@topResults', 'Top Results', 'Top Results Page is Labeled Correctly? ')
+                            .verify.elementPresent('@leadsSec')
+                            .verify.containsText('@leadsSec', 'Leads' , 'Leads Section is Present?');
+                        //Verify Opportunities section is Present
+                        console.log('Verify if Opportunities Page is present')
+                        search
+                            .verify.elementPresent('@opportunitiesSec')
+                            .verify.containsText('@opportunitiesSec', 'Opportunities', 'Opportunities Section is Present');
+                        //Verify Account Section is Present
+                        console.log('Verify if Account section is present')
+                        search
+                            .verify.elementPresent('@accountSec')
+                            .verify.containsText('@accountSec', 'Accounts', 'Account Section is Present?');
+                        //Get the Matched Results is each Section
+                        console.log('Get the number of Matched Results in each section')
+                        browser
+                            .getText('[class="navContainer slds-is-relative slds-scrollable--y slds-p-vertical--x-small"]', function(result1){
+                            //for (var i = 250; i < result.value.length; i++)
+                        console.log(result1.value);
+                        });
+                        //Navigate to Leads
+                        console.log('Navigate to Leads Section')
+                        search
+                            .pause(1000)
+                            .click_leadsSec()
+                            .pause(1000)
+                            .verify.containsText('@pageResult', energy.search_field.last_name.sample1, 'The Page contains matching results ?');
+                    
+                        //Navigate to Accounts
+                        console.log('Navigate to Accounts Section')
+                        search
+                            .click_expandList()
+                            .click_accountSec()
+                            .pause(1000)
+                            .verify.containsText('@pageResult', energy.search_field.last_name.sample1, 'The Page contains matching results ?');
+        
+                        console.log('Navigate to Opportunities Section')
+                        search
+                            .click_expandList()
+                            .click_opportunitiesSec()
+                            .pause(1000)
+                            .verify.containsText('@pageResult', energy.search_field.last_name.sample1, 'The Page contains matching results ?');
+                        browser
+                            .end();
+                    }
+            })     
     }
 
 };
