@@ -3,7 +3,7 @@ var data = JSON.parse(fs.readFileSync("lib/logins/logins.json").toString());
 var energy = JSON.parse(fs.readFileSync("lib/verticals/energy/info.json".toString()));
 
 module.exports = {
-    tags: ['bat_sp_650_ac2', 'bat_sp_650'],
+    tags: ['bat_sp_650_ac2', 'bat_sp_650' , 'sp_650'],
 
     'Login Bat Credentials': function() 
     {
@@ -29,76 +29,71 @@ module.exports = {
     
     'GIVEN the global search is on the page I am viewing': function(browser) 
     {
-        console.log('Verify youre viewing Global Search');
-            if (search.verify.elementPresent('@searchField', 'Search Field is Present?'))
+        search
+            .waitForElementVisible('@searchField', 3000 , function (result)
             {
-                
-            }
-                else if (search.verify.elementNotPresent('@searchField', 'Search Field is Not Present'))
+                if (result.value)
                 {
-                    console.log('Refreshing the Page')
-                    browser
-                        .refresh();
+
                 }
-                    else 
+                    else
                         {
-                        console.log('Test has Stopped unable to locate Search Field')
+                            console.log('Refreshing the Page')
+                            browser
+                                .refresh();
                         }
+            })
     },
     
     'WHEN I type in several characters (i.e.3) on the global search box': function (browser) 
     {
-        console.log('Type in several character on the search box')
-        if (search.verify.elementPresent('@searchField', 'Search Box is Present?'))
+        search
+            .waitForElementVisible('@searchField', 3000 , function(result)
             {
-                search
-                    .setValue('@searchField', energy.search_field.last_name.sample1 )
-                    .pause(8000)
-                browser
-                    .saveScreenshot('reports/bat_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac2_ensure_typeahead_search_works.png')
-                search
-                    .verify.containsText('@searchResult', energy.search_field.last_name.sample1 );
-            }
-            else if (search.verify.elementNotPresent('@searchField', 'search Field is not visible, Refreshing the page...'))
+                if (result.value)
                 {
-                    browser
-                        .refresh();
                     search
-                        .verify.elementPresent('@searchField', 'Search Field is Present after Refresh?')
-                        .click_searchField()
-                        .pause(3000);                      
+                        .setValue('@searchField', energy.search_field.last_name.sample1 )
+                        .pause(8000)
+                    browser
+                        .saveScreenshot('reports/bat_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac2_ensure_typeahead_search_works.png')
+                    search
+                        .verify.containsText('@searchResult', energy.search_field.last_name.sample1 );
                 }
-                else {
-                     }
+                    else
+                    {
+                        browser
+                            .refresh();
+                        search
+                            .verify.elementPresent('@searchField', 'Search Field is Present after Refresh?')
+                            .click_searchField()
+                            browser
+                            .saveScreenshot('reports/bat_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac2_ensure_typeahead_search_works.png')
+                            .pause(3000);
+                    }
+            })
     },
 
     'THEN records in various objects that matches the entered text string is displayed as a dropdown': function (browser) 
     {
-        console.log('Verify search results from the dropdown matches the enetered text')
-        if (search.verify.elementPresent('@searchResult', 'Search Results are Present?'))
+        search
+            .waitForElementVisible('@searchResult', 3000, function(result)
             {
-                search
-                    .verify.containsText('@searchResult', energy.search_field.last_name.sample1 , 'Entered text matches search results ?' );
-                browser
-                    .end();
-            }
-            else if (search.verify.elementNotPresent('@searchResult', 'Search Results are not showing, Refreshing the page...'))
+                if (result.value)
                 {
+                    search
+                        .verify.containsText('@searchResult', energy.search_field.last_name.sample1 , 'Entered text matches search results ?' );
                     browser
+                        .end();
+                }
+                    else
+                    {
+                        browser
                         .refresh();
                     search
                         .verify.elementPresent('@searchResult', 'Search Results are not showing, Refreshing the page...')
-                        .verify.containsText('@searchResult', energy.search_field.last_name.sample1 , 'Entered text matches search result ?' );
-                }
-                else {
-                    browser
-                        .refresh()
-                    search
-                        .verify.elementPresent('@searchResult', 'Search Results are not showing, Refreshing the page...')
-                        .verify.containsText('@searchResult', energy.search_field.last_name.sample1 , 'Entered text matches search result ?' );
-                    browser
-                        .end();
+                        .verify.containsText('@searchResult', energy.search_field.last_name.sample1 , 'Entered text matches search result ?' ); 
                     }
+            })
     }
-
 };

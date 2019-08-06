@@ -3,7 +3,7 @@ var data = JSON.parse(fs.readFileSync("lib/logins/logins.json").toString());
 var energy = JSON.parse(fs.readFileSync("lib/verticals/energy/info.json".toString()));
 
 module.exports = {
-    tags: ['bat_sp_650_ac6', 'bat_sp_650'],
+    tags: ['bat_sp_650_ac6', 'bat_sp_650', 'sp_650'],
 
     'Login Bat Credentials': function() 
     {
@@ -89,7 +89,7 @@ module.exports = {
                 if (result.value)
                 {
                     browser
-                        .saveScreenshot('reports/spqa_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac6_ensure_each_matched_object_has_a_hyperlink_and_it_works.png')
+                        .saveScreenshot('reports/bat_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac6_ensure_each_matched_object_has_a_hyperlink_and_it_works.png')
                         .end();
                 }
                     else

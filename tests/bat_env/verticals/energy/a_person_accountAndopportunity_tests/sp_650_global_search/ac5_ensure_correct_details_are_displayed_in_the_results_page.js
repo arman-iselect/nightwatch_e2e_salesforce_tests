@@ -3,7 +3,7 @@ var data = JSON.parse(fs.readFileSync("lib/logins/logins.json").toString());
 var energy = JSON.parse(fs.readFileSync("lib/verticals/energy/info.json".toString()));
 
 module.exports = {
-    tags: ['bat_sp_650_ac5', 'bat_sp_650'],
+    tags: ['bat_sp_650_ac5', 'bat_sp_650', 'sp_650'],
 
     'Login Bat Credentials': function() 
     {
@@ -83,7 +83,7 @@ module.exports = {
                 {
                     console.log('Verify if Leads section is present')
                     browser
-                        .saveScreenshot('reports/spqa_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac5_ensure_correct_details_are_displayed_in_the_results_page.png')
+                        .saveScreenshot('reports/bat_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac5_ensure_correct_details_are_displayed_in_the_results_page.png')
                     search
                         .verify.containsText('@topResults', 'Top Results', 'Top Results Page is Labeled Correctly? ')
                         .verify.elementPresent('@leadsSec')
