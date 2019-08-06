@@ -1,3 +1,5 @@
+const chromedriver = require('chromedriver');
+
 module.exports = {
 
     /* generation: ('exit', function(exitCode){
@@ -21,8 +23,11 @@ module.exports = {
          }
        },
      
-       before(cb) {
+       before(cb, done) {
+         chromedriver.start();
+         done();
          console.log('Starting test')
+         
          
          cb();
        },
@@ -46,7 +51,9 @@ module.exports = {
          cb();
        },
      
-       after(cb) {
+       after(cb, done) {
+         chromedriver.stop();
+         done();
          console.log('Ending test')
          cb();
        },

@@ -56,26 +56,22 @@ module.exports = {
     'WHEN I select any one of the records on the results page that has a hyperlink': function (browser) 
     {
         search
-            .waitForElementVisible('@topResults', 3000, function(result)
+            .waitForElementVisible('@hyperlinkText', 20000, function(result)
             {
                 if (result.value)
                 {
                     search
-                        .verify.elementPresent('@hyperLinktext', 'Records/Hyperlinks are interactable ?')
-                        .click_hyperLinktext()
-                        .pause(3000)
-                        .waitForElementVisible('@profileWrap');
+                        .verify.elementPresent('@hyperlinkText', 'Records/Hyperlinks are interactable ?')
+                        .click_hyperlinkText();
                 }
                     else
                         {
                         console.log('Refreshing the Page...')
                             browser
                                 .refresh()
-                                .pause(2000);
                             search
-                                .click_hyperLinktext()
-                                .waitForElementVisible('@profileWrap');
-                        
+                                .waitForElementVisible('@hyperlinkText', 30000)
+                                .click_hyperlinkText();
                         }
             })
     },
@@ -84,12 +80,12 @@ module.exports = {
     'THEN the selected record page is displayed in a new tab': function (browser) 
     {   //Verify top results page is displayed
         search
-            .waitForElementVisible('@selectedTab', 3000 , function(result)
+            .waitForElementVisible('@profileWrap', 25000 , function(result)
             {
                 if (result.value)
                 {
                     browser
-                        .saveScreenshot('reports/bat_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac6_ensure_each_matched_object_has_a_hyperlink_and_it_works.png')
+                        .saveScreenshot('reports/bat_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac6_ensure_each_matched_object_has_a_hyperlink.png')
                         .end();
                 }
                     else
@@ -97,9 +93,10 @@ module.exports = {
                             browser
                                 .refresh()
                             search
+                                .waitForElementVisible('@selectedTab', 15000)
                                 .verify.containsText('@selectedTab', energy.search_field.last_name.sample1 , 'The hyperlink opens a new tab? ')
                              browser
-                                .saveScreenshot('reports/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac6_ensure_each_matched_object_has_a_hyperlink_and_it_works.png')
+                                .saveScreenshot('reports/bat_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac6_ensure_each_matched_object_has_a_hyperlink.png')
                                 .end(); 
                         }
             })

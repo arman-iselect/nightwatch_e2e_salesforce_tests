@@ -48,7 +48,7 @@ module.exports = {
     'WHEN I click on the global search box': function (browser) 
     {
         search
-            .waitForElementPresent('searchField', 3000 , function(result)
+            .waitForElementPresent('searchField', 10000 , function(result)
             {
                 if (result.value)
                 {
@@ -70,26 +70,29 @@ module.exports = {
     'THEN the list of recent items will auto filter in the global search box': function (browser) 
     {
         search
-        .waitForElementPresent('@recentItems', 3000 , function (result)
+        .waitForElementPresent('@recentItems', 10000 , function (result)
         {
             if (result.value)
             {
                 search
                     .click_searchField()
-                    .pause(3000);
+                    .waitForElementPresent('@recentItems', 10000)
                 browser
                     .saveScreenshot('reports/spqa_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac1_display_the_recent_items.png')
                     .end();   
             }
                 else
                 {
+                    console.log('Recent Items not found, refreshing the page')
                     browser
                         .refresh();
                     search
+                        .waitForElementPresent('@searchField', 10000)
                         .verify.elementPresent('@searchField', 'Search Field is Present after Refresh?')
-                        .click_recentItems()
-                        .pause(3000)
+                        .waitForElementPresent('@recentItems', 10000)
                         .verify.elementPresent('@recentItems', 'Recent Items are Present?');
+                    browser
+                        .end();
                 }
         })
     }

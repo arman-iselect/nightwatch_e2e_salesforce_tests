@@ -53,8 +53,7 @@ module.exports = {
                             .setValue('@searchField', energy.search_field.last_name.sample1 )
                             .pause(3000);
                         browser
-                            .keys(browser.Keys.ENTER)
-                            .pause(8000);
+                            .keys(browser.Keys.ENTER);
                     }
             })
     },
@@ -63,7 +62,7 @@ module.exports = {
     'THEN the search result page is displayed and will return matches from any of the primary objects': function (browser) 
     {
         search
-            .waitForElementPresent('@selectedTab', 3000 , function(result)
+            .waitForElementPresent('@primaryObjects', 10000 , function(result)
             {
                 if (result.value)
                 {
@@ -93,7 +92,7 @@ module.exports = {
                         console.log('Got:',result.value);
                         });
                         browser
-                            .saveScreenshot('reports/spqa_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac3_display_search_results_page.png')
+                            .saveScreenshot('reports/bat_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac3_display_search_results_page.png')
                             .end();
                     }
             })
