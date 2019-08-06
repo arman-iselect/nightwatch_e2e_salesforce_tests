@@ -3,7 +3,7 @@ var data = JSON.parse(fs.readFileSync("lib/logins/logins.json").toString());
 var energy = JSON.parse(fs.readFileSync("lib/verticals/energy/info.json".toString()));
 
 module.exports = {
-    tags: ['spqa_sp_650_ac7', 'spqa_sp_650'],
+    tags: ['spqa_sp_650_ac7', 'spqa_sp_650', 'sp_650'],
 
     'Login Bat Credentials': function() 
     {
@@ -91,7 +91,7 @@ module.exports = {
                 search
                     .verify.containsText('@pageResult', energy.search_field.last_name.sample1, 'The Page contains matching results ?');
                 browser
-                    .saveScreenshot('reports/bat_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac7_ability to display_all_matched_records.png')            
+                    .saveScreenshot('reports/spqa_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac7_ability to display_all_matched_records.png')            
                     .end(); 
             }
                 else
@@ -103,7 +103,7 @@ module.exports = {
                     search
                         .verify.containsText('@pageResult', energy.search_field.last_name.sample1, 'The Page contains matching results ?')
                     browser
-                        .saveScreenshot('reports/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac7_ability to display_all_matched_records.png')
+                        .saveScreenshot('reports/spqa_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac7_ability to display_all_matched_records.png')
                         .end(); 
                 }
         }) 

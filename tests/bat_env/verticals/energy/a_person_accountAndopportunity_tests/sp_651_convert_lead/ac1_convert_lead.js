@@ -3,7 +3,7 @@ var data = JSON.parse(fs.readFileSync("lib/logins/logins.json").toString());
 var energy = JSON.parse(fs.readFileSync("lib/verticals/energy/info.json".toString()));
 
 module.exports = {
-    tags: ['bat_sp_651_ac1', 'bat_sp_651'],
+    tags: ['bat_sp_651_ac1', 'bat_sp_651', 'sp_651'],
 
     'Login Bat Credentials': function() 
     {
@@ -77,7 +77,7 @@ module.exports = {
                     .click_searchField()
                     .pause(3000);
                 browser
-                    .saveScreenshot('reports/bat_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac1_display_the_recent_items.png')
+                    .saveScreenshot('reports/bat_env/verticals/energy/a_person_accountAndopportunity_tests/sp_651_convert_lead/ac1_convert_lead.png')
                     .end();   
             }
             else if (search.verify.elementNotPresent('@recentItems', 'Recent Items are not visible, Refreshing the page...'))

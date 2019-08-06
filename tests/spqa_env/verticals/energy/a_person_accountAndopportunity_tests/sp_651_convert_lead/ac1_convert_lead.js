@@ -3,7 +3,7 @@ var data = JSON.parse(fs.readFileSync("lib/logins/logins.json").toString());
 var energy = JSON.parse(fs.readFileSync("lib/verticals/energy/info.json".toString()));
 
 module.exports = {
-    tags: ['spqa_sp_651_ac1', 'spqa_sp_651'],
+    tags: ['spqa_sp_651_ac1', 'spqa_sp_651' , 'sp_651'],
 
     'Login Bat Credentials': function() 
     {
