@@ -1,7 +1,3 @@
-var fs = require('fs');
-var data = JSON.parse(fs.readFileSync("lib/logins/logins.json").toString());
-var energy = JSON.parse(fs.readFileSync("lib/verticals/energy/info.json".toString()));
-
 module.exports = {
     tags: ['bat_sp_650_ac2', 'bat_sp_650' , 'sp_650'],
 
@@ -13,9 +9,7 @@ module.exports = {
             .maximizeWindow()
             .setValue('@username', data.salesforce.bat.username)
             .setValue('@password', data.salesforce.bat.password)
-            .pause(3000)
-            .click_loginbtn()
-            .pause(5000);
+            .click_loginbtn();
     },
 
     'Log in as Energy Consultant QA': function(browser) 
@@ -23,14 +17,13 @@ module.exports = {
         console.log('Log in as Energy Consultant QA');
         
         browser
-            .url(data.energy.bat.salesConsultant.loginTest)
-            .pause(3000);
+            .url(data.energy.bat.salesConsultant.loginTest);
     },
     
     'GIVEN the global search is on the page I am viewing': function(browser) 
     {
         search
-            .waitForElementVisible('@searchField', 3000 , function (result)
+            .waitForElementVisible('@searchField', 10000 , function (result)
             {
                 if (result.value)
                 {

@@ -1,11 +1,7 @@
-var fs = require('fs');
-var data = JSON.parse(fs.readFileSync("lib/logins/logins.json").toString());
-var energy = JSON.parse(fs.readFileSync("lib/verticals/energy/info.json".toString()));
-
 module.exports = {
     tags: ['bat_sp_650_ac1', 'bat_sp_650' , 'sp_650'],
 
-    'Login Bat Credentials': function() 
+    'Login Bat Credentials': function(browser) 
     {
         console.log('Go to Salesforce Login Test URL and Enter Bat Credentials');
         login
@@ -13,9 +9,7 @@ module.exports = {
             .maximizeWindow()
             .setValue('@username', data.salesforce.bat.username)
             .setValue('@password', data.salesforce.bat.password)
-            .pause(3000)
-            .click_loginbtn()
-            .pause(5000);
+            .click_loginbtn();
     },
 
     'Log in as Energy Consultant QA': function(browser) 
@@ -23,18 +17,17 @@ module.exports = {
         console.log('Log in as Energy Consultant QA');
         
         browser
-            .url(data.energy.bat.salesConsultant.loginTest)
-            .pause(3000);
+            .url(data.energy.bat.salesConsultant.loginTest);
     },
     
     'GIVEN I already have the First Name ': function(browser) 
     {
         search
-            .waitForElementPresent('@searchField', 10000, function(result)
+            .waitForElementPresent('@searchField', 30000, function(result)
             {
                 if (result.value)
                 {
-
+                    
                 }
                     else
                     {
@@ -48,35 +41,16 @@ module.exports = {
     'WHEN I click on the global search box': function (browser) 
     {
         search
-            .waitForElementPresent('searchField', 10000 , function(result)
-            {
-                if (result.value)
-                {
-                    search
-                        .click_searchField()
-                }
-                    else
-                    {
-                        browser
-                            .refresh();
-                        search
-                            .verify.elementPresent('@searchField', 'Search Field is Present after Refresh?')
-                            .click_searchField()
-                            .pause(3000);
-                    }
-            })
+            .click_searchField();
     },
 
     'THEN the list of recent items will auto filter in the global search box': function (browser) 
     {
         search
-            .waitForElementPresent('@recentItems', 10000 , function (result)
+            .waitForElementPresent('@recentItems', 30000 , function (result)
             {
                 if (result.value)
                 {
-                    search
-                        .click_searchField()
-                        .waitForElementPresent('@recentItems', 10000)
                     browser
                         .saveScreenshot('reports/bat_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac1_display_the_recent_items.png')
                         .end();   
@@ -87,12 +61,12 @@ module.exports = {
                         browser
                             .refresh();
                         search
-                            .waitForElementPresent('@searchField', 10000)
                             .verify.elementPresent('@searchField', 'Search Field is Present after Refresh?')
-                            .waitForElementPresent('@recentItems', 10000)
+                            .click_searchField()
                             .verify.elementPresent('@recentItems', 'Recent Items are Present?');
                         browser
-                            .end();
+                            .saveScreenshot('reports/bat_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac1_display_the_recent_items.png')
+                            .end(); 
                     }
             })
     }
