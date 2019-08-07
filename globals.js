@@ -5,10 +5,6 @@ energy = JSON.parse(fs.readFileSync("lib/verticals/energy/info.json".toString())
 const chromedriver = require('chromedriver');
 
 module.exports = {
-
-    /* generation: ('exit', function(exitCode){
-       console.log('Generation is finished with code:', exitCode)
-     }), */
      
      waitForConditionTimeout: 10000,
  
