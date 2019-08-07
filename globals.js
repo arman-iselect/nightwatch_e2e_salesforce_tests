@@ -1,10 +1,10 @@
+fs = require('fs');
+data = JSON.parse(fs.readFileSync("lib/logins/logins.json").toString());
+energy = JSON.parse(fs.readFileSync("lib/verticals/energy/info.json".toString()));
+
 const chromedriver = require('chromedriver');
 
 module.exports = {
-
-    /* generation: ('exit', function(exitCode){
-       console.log('Generation is finished with code:', exitCode)
-     }), */
      
      waitForConditionTimeout: 10000,
  
@@ -37,6 +37,8 @@ module.exports = {
         login = browser.page.logins.login_page()    
         energy_sales = browser.page.verticals.energy.energy_sales_page()
         search = browser.page.verticals.energy.a_person_accountAndopportunity_page.sp_650_global_search()
+        convert = browser.page.verticals.energy.a_person_accountAndopportunity_page.sp_651_convert_lead()
+        create = browser.page.verticals.energy.a_person_accountAndopportunity_page.sp_652_create_person_account_from_sidebar_search_or_accounts_list_view()
           /*if (search.verify.elementPresent('@errorMsg','Browser encounters error?'))
           {
             browser

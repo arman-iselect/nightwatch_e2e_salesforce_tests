@@ -1,9 +1,12 @@
+
+
 module.exports = {
     url: 'https://iselect--bat.lightning.force.com/lightning/o/Report/home?queryScope=mru',
     elements: {
         searchField: 'input[placeholder=\"Search Salesforce\"]',
         convertLead: '[title=\"Convert Lead\"]',
         searchResult: 'ul[class=\"lookup__list  visible\"]',
+        searchLabel: 'div[class="scrollerWrapper slds-nav-vertical__section forceSearchScopesList"]',
         recentItems: '[role=\"option\"]',
         pageDescription: '[class=\"Energy Automated Test1\"]',
         primaryObjects: 'div[class="resultsItem slds-col slds-no-flex slds-card"]',
@@ -17,7 +20,7 @@ module.exports = {
         reportsSec: '[title="Reports"]',
         accountSec: '[title="Accounts"]',
         leadsSec: '[title="Leads"]',
-        pageResult: 'a[class="slds-truncate outputLookupLink slds-truncate forceOutputLookup"]',
+        pageResult: 'div[class="listViewContent slds-table--header-fixed_container"]',
         viewMore: 'div[class="viewMore"]',
         hyperlinkText: '[title="Test001"]',
         profileWrap: 'div[class="profilePicWrapper slds-media slds-no-space"]',

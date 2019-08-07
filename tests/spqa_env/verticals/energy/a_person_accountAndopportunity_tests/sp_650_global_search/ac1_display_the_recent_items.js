@@ -1,11 +1,7 @@
-var fs = require('fs');
-var data = JSON.parse(fs.readFileSync("lib/logins/logins.json").toString());
-var energy = JSON.parse(fs.readFileSync("lib/verticals/energy/info.json".toString()));
-
 module.exports = {
     tags: ['spqa_sp_650_ac1', 'spqa_sp_650', 'sp_650'],
 
-    'Login Bat Credentials': function() 
+    'Login SPQA Credentials': function() 
     {
         console.log('Go to Salesforce Login Test URL and Enter Bat Credentials');
         login
@@ -13,9 +9,7 @@ module.exports = {
             .maximizeWindow()
             .setValue('@username', data.salesforce.spqa.username)
             .setValue('@password', data.salesforce.spqa.password)
-            .pause(3000)
-            .click_loginbtn()
-            .pause(5000);
+            .click_loginbtn();
     },
 
     'Log in as Energy Consultant QA': function(browser) 
@@ -23,18 +17,17 @@ module.exports = {
         console.log('Log in as Energy Consultant QA');
         
         browser
-            .url(data.energy.spqa.salesConsultant.loginTest)
-            .pause(3000);
+            .url(data.energy.bat.salesConsultant.loginTest);
     },
     
     'GIVEN I already have the First Name ': function(browser) 
     {
         search
-            .waitForElementPresent('@searchField', 3000, function(result)
+            .waitForElementPresent('@searchField', 30000, function(result)
             {
                 if (result.value)
                 {
-
+                    
                 }
                     else
                     {
@@ -48,53 +41,34 @@ module.exports = {
     'WHEN I click on the global search box': function (browser) 
     {
         search
-            .waitForElementPresent('searchField', 10000 , function(result)
-            {
-                if (result.value)
-                {
-                    search
-                        .click_searchField()
-                }
-                    else
-                    {
-                        browser
-                            .refresh();
-                        search
-                            .verify.elementPresent('@searchField', 'Search Field is Present after Refresh?')
-                            .click_searchField()
-                            .pause(3000);
-                    }
-            })
+            .click_searchField();
     },
 
     'THEN the list of recent items will auto filter in the global search box': function (browser) 
     {
         search
-        .waitForElementPresent('@recentItems', 10000 , function (result)
-        {
-            if (result.value)
+            .waitForElementPresent('@recentItems', 30000 , function (result)
             {
-                search
-                    .click_searchField()
-                    .waitForElementPresent('@recentItems', 10000)
-                browser
-                    .saveScreenshot('reports/spqa_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac1_display_the_recent_items.png')
-                    .end();   
-            }
-                else
+                if (result.value)
                 {
-                    console.log('Recent Items not found, refreshing the page')
                     browser
-                        .refresh();
-                    search
-                        .waitForElementPresent('@searchField', 10000)
-                        .verify.elementPresent('@searchField', 'Search Field is Present after Refresh?')
-                        .waitForElementPresent('@recentItems', 10000)
-                        .verify.elementPresent('@recentItems', 'Recent Items are Present?');
-                    browser
-                        .end();
+                        .saveScreenshot('reports/spqa_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac1_display_the_recent_items.png')
+                        .end();   
                 }
-        })
+                    else
+                    {
+                        console.log('Recent Items not found, refreshing the page')
+                        browser
+                            .refresh();
+                        search
+                            .verify.elementPresent('@searchField', 'Search Field is Present after Refresh?')
+                            .click_searchField()
+                            .verify.elementPresent('@recentItems', 'Recent Items are Present?');
+                        browser
+                            .saveScreenshot('reports/spqa_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac1_display_the_recent_items.png')
+                            .end(); 
+                    }
+            })
     }
-
 };
+

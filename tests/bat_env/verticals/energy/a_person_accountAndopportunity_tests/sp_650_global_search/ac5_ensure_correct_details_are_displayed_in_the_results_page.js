@@ -1,7 +1,3 @@
-var fs = require('fs');
-var data = JSON.parse(fs.readFileSync("lib/logins/logins.json").toString());
-var energy = JSON.parse(fs.readFileSync("lib/verticals/energy/info.json".toString()));
-
 module.exports = {
     tags: ['bat_sp_650_ac5', 'bat_sp_650', 'sp_650'],
 
@@ -73,13 +69,13 @@ module.exports = {
     'THEN I should be able to view the page': function (browser) 
     {   //Verify top results page is displayed
         search
-            .waitForElementPresent('@topResults', 10000 , function(result)
+            .waitForElementVisible('@topResults', 10000 , function(result)
             {
                 if (result.value)
                 {
                     console.log('Verify if Leads section is present')
                     browser
-                        .saveScreenshot('reports/bat_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac5_ensure_correct_details_are_displayed_in_the_results_page.png')
+                        .pause(10000);
                     search
                         .verify.containsText('@topResults', 'Top Results', 'Top Results Page is Labeled Correctly? ')
                         .verify.elementPresent('@leadsSec')
@@ -101,15 +97,17 @@ module.exports = {
                             //for (var i = 250; i < result.value.length; i++)
                         console.log(result1.value);
                         });
+                    browser
+                        .saveScreenshot('reports/bat_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac5_ensure_correct_details_are_displayed_in_the_results_page.png');
                     //Navigate to Leads
                     console.log('Navigate to Leads Section')
                     search
-                        .waitForElementPresent('@leadsSec', 10000)
+                        .waitForElementVisible('@leadsSec', 10000)
                         .click_leadsSec()
-                        .waitForElementPresent('@pageResult', 25000)
+                        .waitForElementVisible('@pageResult', 25000)
                         .verify.containsText('@pageResult', energy.search_field.last_name.sample1, 'The Page contains matching results ?');
                     
-                    //Navigate to Accounts
+                    /*//Navigate to Accounts
                     console.log('Navigate to Accounts Section')
                     search
                         .click_expandList()
@@ -124,7 +122,7 @@ module.exports = {
                         .waitForElementPresent('@opportunitiesSec', 15000)
                         .click_opportunitiesSec()
                         .waitForElementPresent('@pageResult', 25000)
-                        .verify.containsText('@pageResult', energy.search_field.last_name.sample1, 'The Page contains matching results ?');
+                        .verify.containsText('@pageResult', energy.search_field.last_name.sample1, 'The Page contains matching results ?');*/
                     browser
                         .end();
                 }
@@ -136,7 +134,7 @@ module.exports = {
                         //Verify Leads Section is Present
                         console.log('Verify if Leads section is present')
                         browser
-                            .saveScreenshot('reports/bat_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac5_ensure_correct_details_are_displayed_in_the_results_page.png')
+                            .pause(10000);
                         search
                             .verify.containsText('@topResults', 'Top Results', 'Top Results Page is Labeled Correctly? ')
                             .verify.elementPresent('@leadsSec')
@@ -158,6 +156,8 @@ module.exports = {
                                 //for (var i = 250; i < result.value.length; i++)
                             console.log(result1.value);
                             });
+                        browser
+                            .saveScreenshot('reports/bat_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac5_ensure_correct_details_are_displayed_in_the_results_page.png');
                         //Navigate to Leads
                         console.log('Navigate to Leads Section')
                         search
@@ -166,7 +166,7 @@ module.exports = {
                             .waitForElementPresent('@pageResult', 25000)
                             .verify.containsText('@pageResult', energy.search_field.last_name.sample1, 'The Page contains matching results ?');
                         
-                        //Navigate to Accounts
+                        /*//Navigate to Accounts
                         console.log('Navigate to Accounts Section')
                         search
                             .click_expandList()
@@ -181,7 +181,7 @@ module.exports = {
                             .waitForElementPresent('@opportunitiesSec', 15000)
                             .click_opportunitiesSec()
                             .waitForElementPresent('@pageResult', 25000)
-                            .verify.containsText('@pageResult', energy.search_field.last_name.sample1, 'The Page contains matching results ?');
+                            .verify.containsText('@pageResult', energy.search_field.last_name.sample1, 'The Page contains matching results ?');*/
                         browser
                             .end();
                     }

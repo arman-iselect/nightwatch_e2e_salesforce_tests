@@ -1,11 +1,7 @@
-var fs = require('fs');
-var data = JSON.parse(fs.readFileSync("lib/logins/logins.json").toString());
-var energy = JSON.parse(fs.readFileSync("lib/verticals/energy/info.json".toString()));
-
 module.exports = {
     tags: ['spqa_sp_650_ac7', 'spqa_sp_650', 'sp_650'],
 
-    'Login Bat Credentials': function() 
+    'Login SPQA Credentials': function() 
     {
         console.log('Go to Salesforce Login Test URL and Enter Bat Credentials');
         login
@@ -20,15 +16,14 @@ module.exports = {
         console.log('Log in as Energy Consultant QA');
         
         browser
-            .url(data.energy.spqa.salesConsultant.loginTest)
-            .pause(1000);
+            .url(data.energy.spqa.salesConsultant.loginTest);
     },
     
     'GIVEN that the results page is displayed': function(browser) 
     {
         console.log('Enter the Last Name in Global Search Bar')
         search
-            .waitForElementPresent('@searchField', 3000, function(result) 
+            .waitForElementPresent('@searchField', 10000, function(result) 
         {
             if (result.value)
             {
@@ -63,8 +58,7 @@ module.exports = {
                 {
                     search
                         .verify.elementPresent('@viewMore', '"View more" hyperlink is Visible')
-                        .click_viewMore()
-                        .waitForElementVisible('@pageResult');
+                        .click_viewMore();
                 }
                     else
                     {
@@ -74,8 +68,7 @@ module.exports = {
                             .pause(2000);
                         search
                             .verify.elementPresent('@viewMore', '"View more" hyperlink is Visible')
-                            .click_viewMore()
-                            .waitForElementVisible('@pageResult');   
+                            .click_viewMore();   
                     }
             })
     },
@@ -84,7 +77,7 @@ module.exports = {
     'THEN the list of matched record of the selected object is displayed': function (browser) 
     {   
         search
-        .waitForElementPresent('@pageResult', 15000, function (result)
+        .waitForElementPresent('@pageResult', 30000, function (result)
         {
             if (result.value)
             {

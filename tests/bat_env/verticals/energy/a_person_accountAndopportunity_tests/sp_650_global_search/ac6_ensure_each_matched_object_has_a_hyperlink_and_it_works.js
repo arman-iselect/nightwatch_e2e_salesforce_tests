@@ -1,7 +1,3 @@
-var fs = require('fs');
-var data = JSON.parse(fs.readFileSync("lib/logins/logins.json").toString());
-var energy = JSON.parse(fs.readFileSync("lib/verticals/energy/info.json".toString()));
-
 module.exports = {
     tags: ['bat_sp_650_ac6', 'bat_sp_650', 'sp_650'],
 
@@ -20,15 +16,14 @@ module.exports = {
         console.log('Log in as Energy Consultant QA');
         
         browser
-            .url(data.energy.bat.salesConsultant.loginTest)
-            .pause(1000);
+            .url(data.energy.bat.salesConsultant.loginTest);
 
     },
     
     'GIVEN that the results page is displayed': function(browser) 
     {
         search
-            .waitForElementVisible('@searchField', 3000 , function(result)
+            .waitForElementVisible('@searchField', 10000 , function(result)
             {
                 if (result.value)
                 {
@@ -70,7 +65,7 @@ module.exports = {
                             browser
                                 .refresh()
                             search
-                                .waitForElementVisible('@hyperlinkText', 30000)
+                                .waitForElementVisible('@hyperlinkText', 10000)
                                 .click_hyperlinkText();
                         }
             })
