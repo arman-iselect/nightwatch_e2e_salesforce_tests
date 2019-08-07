@@ -52,7 +52,7 @@ module.exports = {
                 if (result.value)
                 {
                     browser
-                        .saveScreenshot('reports/bat_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac1_display_the_recent_items.png')
+                        .saveScreenshot('reports/spqa_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac1_display_the_recent_items.png')
                         .end();   
                 }
                     else
@@ -65,7 +65,7 @@ module.exports = {
                             .click_searchField()
                             .verify.elementPresent('@recentItems', 'Recent Items are Present?');
                         browser
-                            .saveScreenshot('reports/bat_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac1_display_the_recent_items.png')
+                            .saveScreenshot('reports/spqa_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac1_display_the_recent_items.png')
                             .end(); 
                     }
             })
