@@ -38,7 +38,7 @@ module.exports = {
         energy_sales = browser.page.verticals.energy.energy_sales_page()
         search = browser.page.verticals.energy.a_person_accountAndopportunity_page.sp_650_global_search()
         convert = browser.page.verticals.energy.a_person_accountAndopportunity_page.sp_651_convert_lead()
-        create = browser.page.verticals.energy.a_person_accountAndopportunity_page.sp_652_create_person_account_from_sidebar_search_or_accounts_list_view()
+        account =  browser.page.verticals.energy.a_person_accountAndopportunity_page.sp_652_create_person_account_from_sidebar_search_or_accounts_list_view()
           /*if (search.verify.elementPresent('@errorMsg','Browser encounters error?'))
           {
             browser

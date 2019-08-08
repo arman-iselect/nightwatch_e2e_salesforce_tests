@@ -21,7 +21,7 @@ module.exports =
             "desiredCapabilities": {
               "browserName": "chrome",
               "chromeOptions": {
-                  "args": ["--headless", 
+                  "args": [//"--headless", 
                             "window-size=1366,768",
                              "--disable-logging",
                              "disable-web-security",

@@ -23,5 +23,11 @@
             "search_sample1": "Test0 - Search",
             "search_sample2": "Test1 - Search"
         }
+    },
+    "account_info": {
+        "first_name": "Energy Automated",
+        "last_name": "Test0",
+        "postcode": "3000",
+        "email": "armando.navarro@iselect.com.au"
     }
 }
