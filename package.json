@@ -32,6 +32,7 @@
     "bat_sp650ac6": "nightwatch --tag bat_sp_650_ac6",
     "bat_sp650ac7": "nightwatch --tag bat_sp_650_ac7",
     "bat_sp650": "nightwatch --tag bat_sp_650",
+
     "spqa_sp651ac1": "nightwatch --tag spqa_sp_651_ac1",
     "spqa_sp651ac2": "nightwatch --tag spqa_sp_651_ac2",
     "spqa_sp651ac3": "nightwatch --tag spqa_sp_651_ac3",
@@ -45,7 +46,9 @@
     "bat_sp651ac5": "nightwatch --tag bat_sp_651_ac5",
     "bat_sp651": "nightwatch --tag bat_sp_651",
     "sp_650": "nightwatch --tag sp_650",
-    "sp_651": "nightwatch --tag sp651"
+    "sp_651": "nightwatch --tag sp651",
+
+    "bat_sp652ac1": "nightwatch --tag bat_sp_652_ac1"
   },
   "keywords": [],
   "author": "",
