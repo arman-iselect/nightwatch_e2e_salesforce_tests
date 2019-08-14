@@ -17,7 +17,7 @@ module.exports = {
         console.log('Log in as Energy Consultant QA');
         
         browser
-            .url(data.energy.bat.salesConsultant.loginTest);
+            .url(data.energy.spqa.salesConsultant.loginTest);
     },
     
     'GIVEN I already have the First Name ': function(browser) 

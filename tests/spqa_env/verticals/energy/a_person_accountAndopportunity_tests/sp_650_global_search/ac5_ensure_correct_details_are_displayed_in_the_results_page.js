@@ -98,7 +98,7 @@ module.exports = {
                         console.log(result1.value);
                         });
                     browser
-                        .saveScreenshot('reports/bat_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac5_ensure_correct_details_are_displayed_in_the_results_page.png');
+                        .saveScreenshot('reports/spqa_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac5_ensure_correct_details_are_displayed_in_the_results_page.png');
                     //Navigate to Leads
                     console.log('Navigate to Leads Section')
                     search
@@ -157,7 +157,7 @@ module.exports = {
                             console.log(result1.value);
                             });
                         browser
-                            .saveScreenshot('reports/bat_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac5_ensure_correct_details_are_displayed_in_the_results_page.png');
+                            .saveScreenshot('reports/spqa_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac5_ensure_correct_details_are_displayed_in_the_results_page.png');
                         //Navigate to Leads
                         console.log('Navigate to Leads Section')
                         search
