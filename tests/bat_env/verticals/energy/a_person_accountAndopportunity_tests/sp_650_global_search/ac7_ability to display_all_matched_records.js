@@ -96,7 +96,7 @@ module.exports = {
                         search
                             .verify.containsText('@pageResult', energy.search_field.last_name.sample1, 'The Page contains matching results ?')
                         browser
-                            .saveScreenshot('reports/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac7_ability to display_all_matched_records.png')
+                            .saveScreenshot('reports/bat_env/verticals/energy/a_person_accountAndopportunity_tests/sp_650_global_search/ac7_ability to display_all_matched_records.png')
                             .end(); 
                     }
             })
