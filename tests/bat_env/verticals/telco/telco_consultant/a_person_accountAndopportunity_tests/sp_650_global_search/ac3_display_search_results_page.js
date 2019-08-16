@@ -1,5 +1,5 @@
 module.exports = {
-    tags: ['bat_sp_650_ac3','bat_sp_650', 'sp_650'],
+    tags: ['bat_sp_650_ac3','bat_sp_650', 'sp_650','bat_telcoconsultant_sp_650_ac1', 'bat_telcoconsultant_sp_650', 'telcoconsultant_sp650'],
 
     'Login Bat Credentials': function() 
     {
