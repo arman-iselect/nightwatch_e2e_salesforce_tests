@@ -5,9 +5,16 @@ module.exports =
         "globals_path": "globals",
         "output_folder": "reports",
         "test_workers": { "enabled": true,
-                            "workers": "auto"
+                            "workers": "auto" },
 
-        },
+        "skip_testcases_on_fail": false,
+        "screenshots" : {
+          "enabled" : true,
+          "path" : "reports/verifyfail_screenshots",
+          "on_failure": true,
+          "on_error": false,
+          "log_screenshot_data": true, },
+        
         
         "webdriver" : {
           "start_process": true,
