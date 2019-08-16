@@ -35,22 +35,22 @@
 
         "gisalesConsultant": 
             {
-            "loginTest": ""
+            "loginTest": "https://iselect--bat.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000B5GD&suorgadminid=005N0000005fUkt&retURL=%2F005%3Fid%3D00e280000023q5a%26isUserEntityOverride%3D1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--bat.lightning.force.com%26clc%3D1%26appLayout%3Dsetup%26tour%3D%26isdtp%3Dp1%26sfdcIFrameHost%3Dweb%26nonce%3D72d26f460006c95ae3639dfeeb5be370e31f6c4394448ed09fc7060e8faf7efa%26ltn_app_id%3D06mN00000009bueIAA&targetURL=%2Fhome%2Fhome.jsp&"
             },
 
         "hncsalesConsultant":
             {
-            "loginTest": ""
+            "loginTest": "https://iselect--bat.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000B5GD&suorgadminid=005N0000005fV03&retURL=%2F005%3Fid%3D00eN0000000EGwB%26isUserEntityOverride%3D1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--bat.lightning.force.com%26clc%3D1%26appLayout%3Dsetup%26tour%3D%26isdtp%3Dp1%26sfdcIFrameHost%3Dweb%26nonce%3Dfea26003e4bb4f620e657415e25b09fba3fb36bec7870e5b8cdf74a9bdab0f47%26ltn_app_id%3D06mN00000009bueIAA&targetURL=%2Fhome%2Fhome.jsp&"
              },
 
         "lifeAdviser":
             {
-            "loginTest": ""
+            "loginTest": "https://iselect--bat.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000B5GD&suorgadminid=005N0000006gLSz&retURL=%2F005%3Fid%3D00e28000001hhzq%26isUserEntityOverride%3D1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--bat.lightning.force.com%26clc%3D1%26appLayout%3Dsetup%26tour%3D%26isdtp%3Dp1%26sfdcIFrameHost%3Dweb%26nonce%3Dfea26003e4bb4f620e657415e25b09fba3fb36bec7870e5b8cdf74a9bdab0f47%26ltn_app_id%3D06mN00000009bueIAA&targetURL=%2Fhome%2Fhome.jsp&"
             },
 
         "telcosalesConsultant":
             {
-            "loginTest": ""
+            "loginTest": "https://iselect--bat.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000B5GD&suorgadminid=005N0000005fVTU&retURL=%2F005%3Fid%3D00e280000023q5d%26isUserEntityOverride%3D1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--bat.lightning.force.com%26clc%3D1%26appLayout%3Dsetup%26tour%3D%26isdtp%3Dp1%26sfdcIFrameHost%3Dweb%26nonce%3Dfea26003e4bb4f620e657415e25b09fba3fb36bec7870e5b8cdf74a9bdab0f47%26ltn_app_id%3D06mN00000009bueIAA&targetURL=%2Fhome%2Fhome.jsp&"
             }
 
         },
