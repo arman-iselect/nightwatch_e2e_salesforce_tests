@@ -1,5 +1,5 @@
 module.exports = {
-    tags: ['spqa_sp_650_ac1', 'spqa_sp_650', 'sp_650'],
+    tags: ['spqa_sp_650_ac1', 'spqa_sp_650', 'sp_650', 'spqa_energysales_sp650_ac1', 'spqa_energysales_sp_650', 'energysales_sp650'],
 
     'Login SPQA Credentials': function() 
     {

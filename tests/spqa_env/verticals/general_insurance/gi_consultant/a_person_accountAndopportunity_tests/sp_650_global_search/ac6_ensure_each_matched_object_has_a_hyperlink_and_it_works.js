@@ -1,5 +1,5 @@
 module.exports = {
-    tags: ['spqa_sp_650_ac6', 'spqa_sp_650', 'sp_650'],
+    tags: ['spqa_sp_650_ac6', 'spqa_sp_650', 'sp_650', 'spqa_giconsultant_sp650_ac6', 'spqa_giconsultant_sp_650', 'giconsultant_sp650'],
 
     'Login SPQA Credentials': function() 
     {

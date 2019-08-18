@@ -1,5 +1,5 @@
 module.exports = {
-    tags: ['spqa_sp_650_ac4', 'spqa_sp_650', 'sp_650'],
+    tags: ['spqa_sp_650_ac4', 'spqa_sp_650', 'sp_650', 'spqa_lifeadviser_sp650_ac4', 'spqa_lifeadviser_sp_650', 'lifeadviser_sp650'],
 
     'Login SPQA Credentials': function() 
     {
