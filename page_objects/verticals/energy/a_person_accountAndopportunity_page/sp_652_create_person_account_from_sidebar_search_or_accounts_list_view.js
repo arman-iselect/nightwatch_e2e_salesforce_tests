@@ -29,11 +29,16 @@ module.exports = {
         emailhome: 'td[data-aura-rendered-by=\"3175:0\"]',
         contactMethod: '.pageBlockItemEditWithTooltip > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2)',
         emailPreferred: '[title=\"Email\"]',
-        personaccountTitle: 'div[title=\"Energy Automated Test0\"]',
+        personaccountTitle: '[title=\"Energy Automated Test0\"]',
         tabTitle: '[title=\"Energy Automated Test0\"]',
         tabPresent: 'li[class="tabItem slds-context-bar__item slds-context-bar__item_tab slds-is-active active hasActions hideAnimation  oneConsoleTabItem"]',
         emailPresent: '[class="emailuiFormattedEmail"]',
-
+        edit: 'div[title="Edit"]',
+        oppoName: '[class="uiInput uiInputText uiInput--default uiInput--input"]',
+        inputfirstName: '#first',
+        inputlastName: '#last',
+        inputEmail: '#email',
+        sidebarResults: 'div[class="bPageBlock brandSecondaryBrd apexDefaultPageBlock secondaryPalette"]'
     },
 
     commands: [{
