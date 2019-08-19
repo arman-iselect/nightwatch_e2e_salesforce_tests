@@ -141,22 +141,27 @@
     "spqa_telcoconsultant_sp650_ac6": "nightwatch --tag spqa_telcoconsultant_sp_650_ac6",
     "spqa_telcoconsultant_sp650_ac7": "nightwatch --tag spqa_telcoconsultant_sp_650_ac7",
 
-    "spqa_sp651ac1": "nightwatch --tag spqa_sp_651_ac1",
-    "spqa_sp651ac2": "nightwatch --tag spqa_sp_651_ac2",
-    "spqa_sp651ac3": "nightwatch --tag spqa_sp_651_ac3",
-    "spqa_sp651ac4": "nightwatch --tag spqa_sp_651_ac4",
-    "spqa_sp651ac5": "nightwatch --tag spqa_sp_651_ac5",
+    "spqa_sp651_ac1": "nightwatch --tag spqa_sp_651_ac1",
+    "spqa_sp651_ac2": "nightwatch --tag spqa_sp_651_ac2",
+    "spqa_sp651_ac3": "nightwatch --tag spqa_sp_651_ac3",
+    "spqa_sp651_ac4": "nightwatch --tag spqa_sp_651_ac4",
+    "spqa_sp651_ac5": "nightwatch --tag spqa_sp_651_ac5",
     "spqa_sp651": "nightwatch --tag spqa_sp_651",
-    "bat_sp651ac1": "nightwatch --tag bat_sp_651_ac1",
-    "bat_sp651ac2": "nightwatch --tag bat_sp_651_ac2",
-    "bat_sp651ac3": "nightwatch --tag bat_sp_651_ac3",
-    "bat_sp651ac4": "nightwatch --tag bat_sp_651_ac4",
-    "bat_sp651ac5": "nightwatch --tag bat_sp_651_ac5",
+
+    "bat_sp651_ac1": "nightwatch --tag bat_sp_651_ac1",
+    "bat_sp651_ac2": "nightwatch --tag bat_sp_651_ac2",
+    "bat_sp651_ac3": "nightwatch --tag bat_sp_651_ac3",
+    "bat_sp651_ac4": "nightwatch --tag bat_sp_651_ac4",
+    "bat_sp651_ac5": "nightwatch --tag bat_sp_651_ac5",
     "bat_sp651": "nightwatch --tag bat_sp_651",
+
     "sp_650": "nightwatch --tag sp_650",
     "sp_651": "nightwatch --tag sp651",
 
+    "bat_energysales_sp652_ac1": "nightwatch --tag bat_energysales_sp_652_ac1",
+
     "bat_sp652ac1": "nightwatch --tag bat_sp_652_ac1"
+
   },
   "keywords": [],
   "author": "",
