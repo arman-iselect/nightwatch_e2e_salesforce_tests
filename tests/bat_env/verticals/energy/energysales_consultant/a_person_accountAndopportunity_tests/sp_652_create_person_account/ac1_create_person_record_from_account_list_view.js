@@ -49,19 +49,47 @@ module.exports = {
     'WHEN I enter all the required fields and hit the Save button': function (browser) 
     {
         account
-            .click_salutationDropdown()
-            .click_salutationMr()
-            .verify.elementPresent('@firstName', 'First Name Field is Present?')
-            .setValue('@firstName', energy.account_info.first_name )
-            .verify.elementPresent('@lastName', 'Last NAme Field is Present?')
-            .setValue('@lastName', energy.account_info.last_name)
-            .verify.elementPresent('@contactMethod', 'Preferred Contact Method field Present?')
-            .click_contactMethod()
-            .click_emailPreferred()
-            .verify.elementPresent('@email', 'Email Field is Present?')
-            .setValue('@email', energy.account_info.email)
-            .click_save()
-            .pause(5000);
+            .waitForElementVisible('@salutationDropdown', 20000, function(result)
+            {
+                if (result.value)
+                {
+                    account
+                        .click_salutationDropdown()
+                        .click_salutationMr()
+                        .verify.elementPresent('@firstName', 'First Name Field is Present?')
+                        .setValue('@firstName', energy.account_info.first_name )
+                        .verify.elementPresent('@lastName', 'Last Name Field is Present?')
+                        .setValue('@lastName', energy.account_info.last_name)
+                        .verify.elementPresent('@contactMethod', 'Preferred Contact Method field Present?')
+                        .click_contactMethod()
+                        .click_emailPreferred()
+                        .verify.elementPresent('@email', 'Email Field is Present?')
+                        .setValue('@email', energy.account_info.email)
+                        .click_save()
+                        .pause(5000);
+                }
+                    else
+                    {
+                        console.log('Refreshing the Page')
+                        browser
+                            .refresh()
+                        account
+                            .click_salutationDropdown()
+                            .click_salutationMr()
+                            .verify.elementPresent('@firstName', 'First Name Field is Present?')
+                            .setValue('@firstName', energy.account_info.first_name )
+                            .verify.elementPresent('@lastName', 'Last Name Field is Present?')
+                            .setValue('@lastName', energy.account_info.last_name)
+                            .verify.elementPresent('@contactMethod', 'Preferred Contact Method field Present?')
+                            .click_contactMethod()
+                            .click_emailPreferred()
+                            .verify.elementPresent('@email', 'Email Field is Present?')
+                            .setValue('@email', energy.account_info.email)
+                            .click_save()
+                            .pause(5000);
+                    }
+            })
+        
 
 
     },
