@@ -27,8 +27,13 @@ module.exports = {
         leadName: 'th[tabindex=\"-1\"]',
         businessVertical: 'td[data-aura-rendered-by=\"3149:0\"]',
         emailhome: 'td[data-aura-rendered-by=\"3175:0\"]',
-        contactMethod: '#\32 47\:1214\;a > div > a',
-        emailPreferred: 'li.uiMenuItem:nth-child(2)',
+        contactMethod: '.pageBlockItemEditWithTooltip > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2)',
+        emailPreferred: '[title=\"Email\"]',
+        personaccountTitle: 'div[title=\"Energy Automated Test0\"]',
+        tabTitle: '[title=\"Energy Automated Test0\"]',
+        tabPresent: 'li[class="tabItem slds-context-bar__item slds-context-bar__item_tab slds-is-active active hasActions hideAnimation  oneConsoleTabItem"]',
+        emailPresent: '[class="emailuiFormattedEmail"]',
+
     },
 
     commands: [{

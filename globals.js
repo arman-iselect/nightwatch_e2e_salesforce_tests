@@ -19,7 +19,36 @@ module.exports = {
        'test_env' : {
          myGlobal: 'test_global',
          beforeEach : function() {
-     
+          login
+            .waitForElementPresent('@errorMsg1', 2000 , function(result)
+            {
+              if (result.value)
+              {
+              browser
+                .refresh();
+              }
+                else
+                {
+
+                }
+              
+            })
+
+            login
+            .waitForElementPresent('@errorMsg2', 2000 , function(result)
+            {
+              if (result.value)
+              {
+              browser
+                .refresh();
+              }
+                else
+                {
+
+                }
+              
+            })
+
          }
        },
      
@@ -39,15 +68,8 @@ module.exports = {
         search = browser.page.verticals.energy.a_person_accountAndopportunity_page.sp_650_global_search()
         convert = browser.page.verticals.energy.a_person_accountAndopportunity_page.sp_651_convert_lead()
         account =  browser.page.verticals.energy.a_person_accountAndopportunity_page.sp_652_create_person_account_from_sidebar_search_or_accounts_list_view()
-          /*if (search.verify.elementPresent('@errorMsg','Browser encounters error?'))
-          {
-            browser
-              .refresh();
-          }
-            else 
-            {
-
-            }*/
+          
+          
 
          //console.log('GLOBAL beforeEach')
          cb();
