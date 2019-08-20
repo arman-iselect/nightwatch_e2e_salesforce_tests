@@ -4,6 +4,7 @@ module.exports =
         "page_objects_path" : ["page_objects"],
         "globals_path": "globals",
         "output_folder": "reports",
+        "log_path": ["logs"],
         "test_workers": { "enabled": false,
                             "workers": "auto" },
 

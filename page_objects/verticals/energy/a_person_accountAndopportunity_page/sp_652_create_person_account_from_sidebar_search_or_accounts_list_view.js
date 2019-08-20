@@ -41,7 +41,17 @@ module.exports = {
         sidebarResults: 'div[class="bPageBlock brandSecondaryBrd apexDefaultPageBlock secondaryPalette"]',
         iframe: '.iframe-parent > iframe:nth-child(1)',
         sidebarresultsLastname: 'td.first:nth-child(4)',
-        detailsTab: '[title="Edit Account Name"]'
+        detailsTab: '[title="Edit Preferred Contact Method"]',
+        detailsfirstName: '[class="firstName compoundBorderBottom form-element__row input"]',
+        detailslastName: '[class="lastName compoundBorderBottom form-element__row input"]',
+        detailsEmail: 'input[type=\"email\"]',
+        detailspreferredContact: '.pageBlockItemEditWithTooltip',
+        detailspreferredEmail: 'li.uiMenuItem:nth-child(2) > a:nth-child(1)',
+        detailsSave: '[title="Save"]',
+        detailsInfo: 'div[class="slds-col slds-grid slds-has-flexi-truncate  full forcePageBlockItem forcePageBlockItemView"]',
+        detailsinfoEmail: '[class="emailuiFormattedEmail"]',
+
+
     },
 
     commands: [{
@@ -49,6 +59,21 @@ module.exports = {
         click_navDropdown() {
             return this
             .click('@navDropdown');
+        },
+
+        click_detailsSave() {
+            return this
+            .click('@detailsSave')
+        },
+
+        click_detailspreferredContact() {
+            return this
+            .click('@detailspreferredContact');
+        },
+
+        click_detailspreferredEmail () {
+            return this
+            .click('@detailspreferredEmail');
         },
 
         click_contactMethod() {
