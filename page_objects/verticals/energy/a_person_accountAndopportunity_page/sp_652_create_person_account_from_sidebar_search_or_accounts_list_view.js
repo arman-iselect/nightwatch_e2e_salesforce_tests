@@ -38,7 +38,10 @@ module.exports = {
         inputfirstName: '#first',
         inputlastName: '#last',
         inputEmail: '#email',
-        sidebarResults: 'div[class="bPageBlock brandSecondaryBrd apexDefaultPageBlock secondaryPalette"]'
+        sidebarResults: 'div[class="bPageBlock brandSecondaryBrd apexDefaultPageBlock secondaryPalette"]',
+        iframe: '.iframe-parent > iframe:nth-child(1)',
+        sidebarresultsLastname: 'td.first:nth-child(4)',
+        detailsTab: '[title="Edit Account Name"]'
     },
 
     commands: [{
@@ -52,7 +55,10 @@ module.exports = {
             return this
             .click('@contactMethod');
         },
-
+        click_detailsTab() {
+            return this
+            .click('@detailsTab');
+        },
         click_emailPreferred() {
             return this
             .click('@emailPreferred');

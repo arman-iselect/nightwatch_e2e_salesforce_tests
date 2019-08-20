@@ -22,7 +22,7 @@ module.exports = {
         leadsSec: '[title="Leads"]',
         pageResult: 'div[class="listViewContent slds-table--header-fixed_container"]',
         viewMore: 'div[class="viewMore"]',
-        hyperlinkText: '[title="Test001"]',
+        hyperlinkText: '[title="Energy Automated Test0"]',
         profileWrap: 'div[class="profilePicWrapper slds-media slds-no-space"]',
         opportunitiesSec: '[title="Opportunities"]',
         expandList: '[class="slds-button navExpandToggle slds-text-link slds-size_1-of-1 slds-text-align_left slds-p-vertical_xx-small slds-m-left_xx-small"]',
@@ -32,6 +32,7 @@ module.exports = {
         weSearched: 'div[class=\"slds-p-bottom--large\"]',
         tips: 'div[class=\"tips\"]',
         errorMsg: 'div[class="error strength_3 pOne uiMessage forceMessage"]',
+        hyperlinkText1: '[title="Energy Automated Test0"]'
         
     },
 
@@ -50,6 +51,11 @@ module.exports = {
         click_hyperlinkText() {
             return this
             .click('@hyperlinkText');
+        },
+
+        click_hyperlinkText1() {
+            return this
+            .click('@hyperlinkText1')
         },
 
         click_expandList() {
