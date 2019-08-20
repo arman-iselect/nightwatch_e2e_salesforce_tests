@@ -29,6 +29,8 @@
         "last_name": "Test0",
         "postcode": "3000",
         "email": "armando.navarro@iselect.com.au",
-        "account_name": "Energy Automated Test0"
+        "account_name": "Energy Automated Test0",
+        "email_label": "Email"
+
     }
 }
