@@ -17,55 +17,41 @@ module.exports = {
         console.log('Log in as Energy Consultant QA');
         
         browser
-            .url(data.energy.bat.energysalesConsultant.loginTest);
+            .url(data.energy.bat.energysalesConsultant.loginTest)
+            .url('https://iselect--bat.lightning.force.com/lightning/page/home');
     },
     
     'GIVEN I am viewing the Sidebar search results from': function(browser) 
     {
         browser
-            .url('https://iselect--bat.lightning.force.com/lightning/page/home');
-        
-        browser
-            .elements('css selector', 'iframe', function(elements)
+            .waitForElementPresent('.iframe-parent > iframe:nth-child(1)', 30000, function(result)
             {
-                elements.value.forEach(function(element)
+                if (result.value)
                 {
-                    browser.elementIdAttribute(element.Element, 'name' , function(attribute){
-                        console.log(attribute.value)
+                    browser
+                        .pause(3000)
+                        .frame(0)
+                    account
+                        .setValue('@inputfirstName', energy.account_info.first_name)
+                        .setValue('@inputEmail', energy.account_info.email)
+                    browser
+                        .keys(browser.Keys.ENTER)
+                }
+                        else
+                        {
+                        console.log('Refreshing the browser')
                         browser
-                            .frame(attribute.value)
+                            .refresh()
+                            .waitForElementVisible('.iframe-parent > iframe:nth-child(1)', 30000)
                             .pause(3000)
-                            account
-                                .waitForElementPresent('@inputfirstName', 15000, function (result)
-                            {
-                                if (result.value)
-                            {
-                                    account
-                                        .setValue('@inputfirstName', energy.account_info.first_name)
-                                        .setValue('@inputlastName', energy.account_info.last_name)
-                                        .setValue('@inputEmail', energy.account_info.email)
-                                    browser
-                                        .keys(browser.Keys.ENTER)
-                            }
-                                        else
-                                        {
-                                        console.log('Refreshing the browser')
-                                            browser
-                                                .refresh()
-                                            account
-                                                .waitForElementPresent('@inputfirstName', 15000)
-                                                .setValue('@inputfirstName', energy.account_info.first_name)
-                                                .setValue('@inputlastName', energy.account_info.last_name)
-                                                .setValue('@inputEmail', energy.account_info.email)
-                                            browser
-                                                .keys(browser.Keys.ENTER)
-                                        }             
-                            })
-                    });
-                });
-            });
-        
-
+                            .frame(0)
+                        account
+                            .setValue('@inputfirstName', energy.account_info.first_name)
+                            .setValue('@inputEmail', energy.account_info.email)
+                        browser
+                            .keys(browser.Keys.ENTER)
+                }            
+            })
     },
     
     'AND I have selected to create a new person account via the "Create New Contact"': function (browser) 
@@ -76,7 +62,8 @@ module.exports = {
                     if (result.value)
                     {
                         browser
-                            .useXpath().click('/html/body/form/div[2]/div/div[2]/div/table/tbody/tr[10]/td[1]/a[1]/i/b') 
+                            .useXpath().click('/html/body/form/div[2]/div/div[2]/div/table/tbody/tr[10]/td[1]/a[1]/i/b')
+                            .pause(20000)
                     }
                         else
                             {
