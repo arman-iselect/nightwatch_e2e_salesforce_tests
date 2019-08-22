@@ -161,6 +161,8 @@
     "bat_energysales_sp652_ac1": "nightwatch --tag bat_energysales_sp_652_ac1",
     "bat_energysales_sp652_ac2": "nightwatch --tag bat_energysales_sp_652_ac2",
     "bat_energysales_sp652_ac3": "nightwatch --tag bat_energysales_sp_652_ac3",
+    "bat_energysales_sp652_ac4": "nightwatch --tag bat_energysales_sp_652_ac4",
+    "bat_energysales_sp652_ac5": "nightwatch --tag bat_energysales_sp_652_ac5",
 
     "bat_sp652ac1": "nightwatch --tag bat_sp_652_ac1"
 

@@ -164,15 +164,17 @@ module.exports = {
                 {
                     account
                         .verify.containsText('@detailsInfo', energy.account_info.account_name , 'The Details Contains Correct Account Name ?')
-                        //.verify.containsText('@detailsinfoEmail', energy.account_info.email , ' The Details Contains Correct Email ?')
+                        .verify.containsText('@detailsinfoEmail', energy.account_info.email , ' The Details Contains Correct Email ?')
                         .verify.containsText('@detailsInfo', energy.account_info.email_label , 'The Details Contains Correct Preferred Contact Method ?')
                     browser
+                        .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3b_update_person_account_information.png')
+                    /*browser
                         .getText('div[class="slds-col slds-grid slds-has-flexi-truncate  full forcePageBlockItem forcePageBlockItemView"]', function(result1)
                         {
                             for (var i = 0; i < result.value.length; i++ )
                         account
                             .verify.containsText(result1.value, energy.account_info.email , ' The Details Contains Correct Email ?')
-                        });
+                        });*/
                 }
                     else
                     {
@@ -182,15 +184,17 @@ module.exports = {
                         account
                             .waitForElementVisible('@detailsTab', 20000)
                             .verify.containsText('@detailsInfo', energy.account_info.account_name , 'The Details Contains Correct Account Name ?')
-                            //.verify.containsText('@detailsinfoEmail', energy.account_info.email , ' The Details Contains Correct Email ?')
+                            .verify.containsText('@detailsinfoEmail', energy.account_info.email , ' The Details Contains Correct Email ?')
                             .verify.containsText('@detailsInfo', energy.account_info.emailLabel , 'The Details Contains Correct Preferred Contact Method ?')
                         browser
+                            .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3b_update_person_account_information.png')
+                        /*browser
                             .getText('div[class="slds-col slds-grid slds-has-flexi-truncate  full forcePageBlockItem forcePageBlockItemView"]', function(result1)
                             {
                                 for (var i = 0; i < result.value.length; i++ )
                             account
                                 .verify.containsText(result1.value, energy.account_info.email , ' The Details Contains Correct Email ?')
-                            });
+                            });*/
                     }
 
             })
@@ -199,6 +203,66 @@ module.exports = {
 
     'OTHERWISE an appropriate and descriptive error message shall be displayed':function (browser)
     {
-        
+        account
+            .waitForElementVisible('@detailsTab', 20000, function (result)
+        {
+            if (result.value)
+            {
+                
+                account
+                    .click_detailsTab()
+                    .click_detailspreferredContact()
+                    .pause(5000)
+                    .waitForElementVisible('@detailspreferredEmail', 5000)
+                    .click_detailspreferredEmail()
+                    .verify.elementPresent('@detailsEmail', 'Email Field is Present ?')
+                    .clearValue('@detailsEmail')
+                    .setValue('@detailsEmail', energy.account_info.email )
+                    .pause(1000)
+                browser
+                    .keys(browser.Keys.PAGEUP)
+                    .pause(1000)
+                account
+                    .verify.elementPresent('@detailsfirstName', 'First Name Details Field is Present ?')
+                    .clearValue('@detailsfirstName')
+                    .setValue('@detailsfirstName', energy.account_info.first_name )
+                    .verify.elementPresent('@detailslastName', 'Last Name Details Field is Present ?')
+                    .clearValue('@detailslastName')
+                    //.setValue('@detailslastName', energy.account_info.last_name )
+                    .click_detailsSave()
+                    .pause(5000);
+                browser
+                    .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3b_update_person_account_information.png')
+                
+            }
+                else
+                {
+                    console.log('Refreshing the page...')
+                    browser
+                        .refresh()
+                       // .keys(browser.Keys.PAGEDOWN)
+                       account
+                       .click_detailsTab()
+                       .click_detailspreferredContact()
+                       .click_detailspreferredEmail()
+                       .clearValue('@detailsEmail')
+                       .setValue('@detailsEmail', energy.account_info.email )
+                       .pause(1000)
+                   browser
+                       .keys(browser.Keys.PAGEUP)
+                       .pause(1000)
+                   account
+                       .verify.elementPresent('@detailsfirstName', 'First Name Details Field is Present ?')
+                       .clearValue('@detailsfirstName')
+                       .setValue('@detailsfirstName', energy.account_info.first_name )
+                       .verify.elementPresent('@detailslastName', 'Last Name Details Field is Present ?')
+                       .clearValue('@detailslastName')
+                       //.setValue('@detailslastName', energy.account_info.last_name )
+                       .click_detailsSave()
+                        .pause(5000);
+                   browser
+                       .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3b_update_person_account_information.png')
+                }
+        })
     }
 };

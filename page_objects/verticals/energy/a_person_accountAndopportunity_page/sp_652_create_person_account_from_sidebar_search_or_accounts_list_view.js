@@ -6,7 +6,8 @@ module.exports = {
         selected: 'a.slds-p-left--xx-small',
         newLead: '#split-left > div > div > div > div > div.slds-page-header--object-home.slds-page-header_joined.slds-page-header_bleed.slds-page-header.slds-shrink-none.test-headerRegion.forceListViewManagerHeader > div:nth-child(1) > div.slds-col.slds-no-flex.slds-grid.slds-align-top.slds-p-bottom--xx-small.test-lvmForceActionsContainer > ul > li:nth-child(1) > a',
         next: '.slds-button_brand',
-
+        inputlastName: 'input[name="j_id0:contactDetails:j_id32:j_id36:j_id38"]',
+        searched: 'div[id="container"]',
         businessverticalDropdown: 'div.slds-gutters_small:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)',
             broadband: '[title=\"Broadband\"]',
             life: '[title=\"Life\"]',
@@ -15,8 +16,10 @@ module.exports = {
             energy: '[title=\"Energy\"]',
             health: '[title=\"Health\"]',
             hc: '[title=\"Home & Contents\"]',
+        searchthisList: 'input[placeholder=\"Search this list...\"]',
         salutationDropdown: '.salutation',
         salutationMr: 'li.uiMenuItem:nth-child(4) > a:nth-child(1)',
+        tabDefault: '[title=\"Energy Automated Test0\"]',
         firstName: 'input[class=\"firstName compoundBorderBottom form-element__row input\"]',
         lastName: 'input[class=\"lastName compoundBorderBottom form-element__row input\"]',
         email: 'input[type=\"email\"]',
@@ -28,9 +31,12 @@ module.exports = {
         businessVertical: 'td[data-aura-rendered-by=\"3149:0\"]',
         emailhome: 'td[data-aura-rendered-by=\"3175:0\"]',
         contactMethod: '.pageBlockItemEditWithTooltip > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2)',
+        homePhone: 'input[type="tel"]',
         emailPreferred: '[title=\"Email\"]',
+        detailsInfo: 'div[class="slds-form-element__control slds-grid itemBody"]',
         personaccountTitle: '[title=\"Energy Automated Test0\"]',
         tabTitle: '[title=\"Energy Automated Test0\"]',
+        selectedTab: 'span[class="title slds-truncate"]',
         tabPresent: 'li[class="tabItem slds-context-bar__item slds-context-bar__item_tab slds-is-active active hasActions hideAnimation  oneConsoleTabItem"]',
         emailPresent: '[class="emailuiFormattedEmail"]',
         edit: 'div[title="Edit"]',
@@ -41,6 +47,21 @@ module.exports = {
         sidebarResults: 'div[class="bPageBlock brandSecondaryBrd apexDefaultPageBlock secondaryPalette"]',
         iframe: '.iframe-parent > iframe:nth-child(1)',
         sidebarresultsLastname: 'td.first:nth-child(4)',
+        personaccountName: 'div[class="slds-page-header__title slds-m-right--small slds-align-middle fade-text"]',
+        relatedlistTab: '[data-tab-name="relatedListsTab"]',
+        sidebarSearch: '[title="Sidebar Search"]',
+        detailstabRight: '[data-tab-name="detailTab"]',
+        relatedOpportunities: '[title="Opportunities"]',
+        relatedQuotes: '[title="Quotes"]',
+        relatedOrders: '[title="Orders"]',
+        relatedProducts: '[title="Products"]',
+        relatedDevices: '[title="Devices"]',
+        relatedEnquiries: '[title="Enquiries"]',
+        relatedNotes: '[title="Notes"]',
+        relatednotesAttachments: '[title="Notes & Attachments"]',
+        activityTab: '[title="Activity"]',
+        activitynewEvent: '[title="New Event"]',
+        activitylogaCall: '[title="Log a Call"]',
         detailsTab: '[title="Edit Preferred Contact Method"]',
         detailsfirstName: '[class="firstName compoundBorderBottom form-element__row input"]',
         detailslastName: '[class="lastName compoundBorderBottom form-element__row input"]',
@@ -61,6 +82,10 @@ module.exports = {
             .click('@navDropdown');
         },
 
+        click_activityTab() {
+            return this
+            .click('@activityTab');
+        },
         click_detailsSave() {
             return this
             .click('@detailsSave')

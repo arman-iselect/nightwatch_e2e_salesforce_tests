@@ -27,6 +27,7 @@
     "account_info": {
         "first_name": "Energy Automated",
         "last_name": "Test0",
+        "home_phone": "0412345678",
         "postcode": "3000",
         "email": "armando.navarro@iselect.com.au",
         "account_name": "Energy Automated Test0",
