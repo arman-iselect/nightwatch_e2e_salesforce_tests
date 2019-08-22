@@ -62,7 +62,9 @@ module.exports = {
                         .setValue('@lastName', energy.account_info.last_name)
                         .verify.elementPresent('@contactMethod', 'Preferred Contact Method field Present?')
                         .click_contactMethod()
+                        .pause(2000)
                         .click_emailPreferred()
+                        .setValue('@homePhone', energy.account_info.home_phone )
                         .verify.elementPresent('@email', 'Email Field is Present?')
                         .setValue('@email', energy.account_info.email)
                         .click_save()
@@ -82,16 +84,15 @@ module.exports = {
                             .setValue('@lastName', energy.account_info.last_name)
                             .verify.elementPresent('@contactMethod', 'Preferred Contact Method field Present?')
                             .click_contactMethod()
+                            .pause(2000)
                             .click_emailPreferred()
+                            .setValue('@homePhone', energy.account_info.home_phone )
                             .verify.elementPresent('@email', 'Email Field is Present?')
                             .setValue('@email', energy.account_info.email)
                             .click_save()
                             .pause(5000);
                     }
             })
-        
-
-
     },
 
     'THEN a new person account is created':function (browser)

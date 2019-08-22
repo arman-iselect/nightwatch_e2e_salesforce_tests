@@ -34,6 +34,7 @@ module.exports = {
        beforeEach(browser, cb) {
         //bat
         login = browser.page.logins.login_page()    
+        page = browser.page.logins.login_page()
         energy_sales = browser.page.verticals.energy.energy_sales_page()
         search = browser.page.verticals.energy.a_person_accountAndopportunity_page.sp_650_global_search()
         convert = browser.page.verticals.energy.a_person_accountAndopportunity_page.sp_651_convert_lead()
