@@ -34,7 +34,7 @@ module.exports = {
         emailhome: 'td[data-aura-rendered-by=\"3175:0\"]',
         contactMethod: '.pageBlockItemEditWithTooltip > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2)',
         homePhone: 'input[type="tel"]',
-        emailPreferred: '[title=\"Email\"]',
+        emailPreferred: '[title="Email"]',
         detailsInfo: 'div[class="slds-form-element__control slds-grid itemBody"]',
         personaccountTitle: '[title=\"Energy Automated Test0\"]',
         tabTitle: '[title=\"Energy Automated Test0\"]',

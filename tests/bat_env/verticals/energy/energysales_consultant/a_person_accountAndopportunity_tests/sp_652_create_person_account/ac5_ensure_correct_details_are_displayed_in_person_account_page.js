@@ -38,6 +38,7 @@ module.exports = {
                         .setValue('@lastName', energy.account_info.last_name)
                         .verify.elementPresent('@contactMethod', 'Preferred Contact Method field Present?')
                         .click_contactMethod()
+                        .waitForElementVisible('@emailPreferred', 15000)
                         .click_emailPreferred()
                         .setValue('@homePhone', energy.account_info.home_phone )
                         .verify.elementPresent('@email', 'Email Field is Present?')
@@ -59,6 +60,7 @@ module.exports = {
                             .setValue('@lastName', energy.account_info.last_name)
                             .verify.elementPresent('@contactMethod', 'Preferred Contact Method field Present?')
                             .click_contactMethod()
+                            .waitForElementVisible('@emailPreferred', 15000)
                             .click_emailPreferred()
                             .setValue('@homePhone', energy.account_info.home_phone )
                             .verify.elementPresent('@email', 'Email Field is Present?')
@@ -110,12 +112,7 @@ module.exports = {
                 browser
                     .getText('[class="emailuiFormattedEmail"]', function(result2){
                         console.log(result2.value)
-                    });
-                browser
-                    .keys(browser.Keys.PAGEDOWN)
-                    .getText('div[class="slds-form-element slds-form-element_readonly slds-form-element_edit slds-grow slds-hint-parent override--slds-form-element"]', function (result4){
-                        console.log(result4.value)
-                    });
+                    })
                 browser
                     .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac5_ensure_correct_details_displayed_account_page.png')
                 account
@@ -141,11 +138,6 @@ module.exports = {
                     browser
                         .getText('[class="emailuiFormattedEmail"]', function(result2){
                         console.log(result2.value)
-                        });
-                    browser
-                        .keys(browser.Keys.PAGEDOWN)
-                        .getText('div[class="slds-form-element slds-form-element_readonly slds-form-element_edit slds-grow slds-hint-parent override--slds-form-element"]', function (result4){
-                        console.log(result4.value)
                         });
                     browser
                         .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac5_ensure_correct_details_displayed_account_page.png')
