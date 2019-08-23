@@ -1,5 +1,5 @@
 module.exports = {
-    tags: ['bat_sp_652_ac1', 'bat_sp_652' , 'sp_652', 'bat_energysales_sp_652_ac1', 'bat_energysales_sp_652'],
+    tags: ['bat_sp_652_ac1', 'bat_sp_652' , 'sp_652','bat_hncconsultant_sp_652_ac1', 'bat_hncconsultant_sp_652', 'hncconsultant_sp652'],
 
     'Login Bat Credentials': function(browser) 
     {
@@ -17,7 +17,7 @@ module.exports = {
         console.log('Log in as Energy Consultant QA');
         
         browser
-            .url(data.energy.bat.energysalesConsultant.loginTest);
+            .url(data.energy.bat.hncsalesConsultant.loginTest);
     },
     
     'GIVEN I am viewing the Accounts list view': function(browser) 
@@ -128,7 +128,7 @@ module.exports = {
                 if (result.value)
                 {
                     browser
-                        .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac1a_create_person_record.png')
+                        .saveScreenshot('reports/bat_env/verticals/hnc/hnc_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac1a_create_person_record.png')
                 }
                     else
                     {
@@ -138,7 +138,7 @@ module.exports = {
                         account
                             .waitForElementVisible('@tabPresent', 30000)
                         browser
-                            .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac1a_create_person_record.png')
+                            .saveScreenshot('reports/bat_env/verticals/hnc/hnc_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac1a_create_person_record.png')
                     }
             })
     },
@@ -153,7 +153,7 @@ module.exports = {
                     account
                         .verify.containsText('@emailPresent', energy.account_info.email , 'The Email field is populated correctly to the Person account?')
                     browser
-                        .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac1b_create_person_record.png')
+                        .saveScreenshot('reports/bat_env/verticals/hnc/hnc_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac1b_create_person_record.png')
                     account
                         .click_closeTab();
                 }
@@ -165,7 +165,7 @@ module.exports = {
                         account
                             .verify.containsText('@emailPresent', energy.account_info.email , 'The Email field is populated correctly to the Person account?')
                         browser
-                            .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac1b_create_person_record.png')
+                            .saveScreenshot('reports/bat_env/verticals/hnc/hnc_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac1b_create_person_record.png')
                         account
                             .click_closeTab();
                     }
@@ -189,7 +189,7 @@ module.exports = {
             .click_save()
             .pause(5000)
         browser
-            .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac1c_create_person_record.png')
+            .saveScreenshot('reports/bat_env/verticals/hnc/hnc_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac1c_create_person_record.png')
         account
             .click_closenewTab();
     }

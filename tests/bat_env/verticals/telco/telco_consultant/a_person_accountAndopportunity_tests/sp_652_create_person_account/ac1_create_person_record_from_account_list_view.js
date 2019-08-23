@@ -1,5 +1,5 @@
 module.exports = {
-    tags: ['bat_sp_652_ac1', 'bat_sp_652' , 'sp_652', 'bat_energysales_sp_652_ac1', 'bat_energysales_sp_652'],
+    tags: ['bat_sp_652_ac1', 'bat_sp_652' , 'sp_652','bat_telcoconsultant_sp_652_ac1', 'bat_telcoconsultant_sp_652', 'telcoconsultant_sp652'],
 
     'Login Bat Credentials': function(browser) 
     {
@@ -17,7 +17,7 @@ module.exports = {
         console.log('Log in as Energy Consultant QA');
         
         browser
-            .url(data.energy.bat.energysalesConsultant.loginTest);
+            .url(data.energy.bat.telcosalesConsultant.loginTest);
     },
     
     'GIVEN I am viewing the Accounts list view': function(browser) 

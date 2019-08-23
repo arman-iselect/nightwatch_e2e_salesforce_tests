@@ -1,5 +1,5 @@
 module.exports = {
-    tags: ['bat_sp_652_ac1', 'bat_sp_652' , 'sp_652', 'bat_energysales_sp_652_ac5', 'bat_energysales_sp_652'],
+    tags: ['spqa_sp_652_ac5', 'spqa_sp_652', 'sp_652', 'spqa_energysales_sp652_ac5', 'spqa_energysales_sp_652', 'energysales_sp652'],
 
     'Login Bat Credentials': function(browser) 
     {
@@ -17,7 +17,7 @@ module.exports = {
         console.log('Log in as Energy Consultant QA');
         
         browser
-            .url(data.energy.bat.energysalesConsultant.loginTest);
+            .url(data.energy.spqa.energysalesConsultant.loginTest);
     },
     
     'GIVEN I have created a new person': function(browser) 
@@ -119,7 +119,7 @@ module.exports = {
                         console.log(result4.value)
                     });
                 browser
-                    .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac5_ensure_correct_details_displayed_account_page.png')
+                    .saveScreenshot('reports/spqa_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac5_ensure_correct_details_displayed_account_page.png')
                 account
                     .click_closeTab();
             }
@@ -150,7 +150,7 @@ module.exports = {
                         console.log(result4.value)
                         });
                     browser
-                        .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac5_ensure_correct_details_displayed_account_page.png')
+                        .saveScreenshot('reports/spqa_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac5_ensure_correct_details_displayed_account_page.png')
                     account
                         .click_closeTab();
                 }
