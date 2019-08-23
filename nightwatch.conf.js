@@ -29,12 +29,15 @@ module.exports =
             "desiredCapabilities": {
               "browserName": "chrome",
               "chromeOptions": {
-                  "args": [//"--headless", 
+                  "args": [//"--headless",
+                            "incognito",
                             "window-size=1366,768",
-                             "--disable-logging",
+                            "disable-shader-name-hashing",
+                             "disable-logging",
+                             "disable-popup-blocking",
                              "disable-web-security",
                              "ignore-certificate-errors",
-                             "--test-type"
+                             "test-type=browser"
               ]
               }
               /*,
