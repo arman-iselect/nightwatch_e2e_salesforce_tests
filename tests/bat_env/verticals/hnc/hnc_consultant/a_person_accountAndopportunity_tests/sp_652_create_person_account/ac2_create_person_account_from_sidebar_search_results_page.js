@@ -118,6 +118,7 @@ module.exports = {
                 if (result.value)
                 {
                     account
+                        .waitForElementPresent('@personaccountName', 30000)
                         .verify.elementPresent('@personaccountName', 'Person Account Name is Displayed ?')
                         .verify.containsText('@personaccountName',energy.account_info.account_name, 'Person account name is displayed correctly ?')
                     browser

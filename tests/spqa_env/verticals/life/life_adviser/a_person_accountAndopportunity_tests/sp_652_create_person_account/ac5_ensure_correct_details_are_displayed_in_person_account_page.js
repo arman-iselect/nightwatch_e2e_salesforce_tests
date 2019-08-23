@@ -23,70 +23,48 @@
     'GIVEN I have created a new person': function(browser) 
     {
         account
-            .navigate();
-    },
-    
-    'WHEN the person account page is displayed': function (browser) 
-    {
-        search
-            .waitForElementVisible('@searchField', 10000, function (result)
+            .navigate()
+            .click_newAccount()
+            .waitForElementVisible('@salutationDropdown', 20000, function(result)
             {
                 if (result.value)
                 {
-                    search
-                        .setValue('@searchField', energy.account_info.account_name)
-                    browser
-                        .keys(browser.Keys.ENTER)
-                        .pause(3000);
-                    search
-                        .waitForElementVisible('@hyperlinkText1', 20000, function (result)
-                        {
-                            if (result.value)
-                            {
-                                search
-                                    .click_hyperlinkText1()
-                                    .pause(3000);
-                            }
-                                else
-                                {
-                                    console.log('Refreshing the Page...')
-                                    browser
-                                        .refresh()
-                                    search
-                                        .waitForElementVisible('@hyperlinkText', 30000)
-                                        .click_hyperlinkText1()
-                                        .pause(3000);
-                                }
-                        })
+                    account
+                        .click_salutationDropdown()
+                        .click_salutationMr()
+                        .verify.elementPresent('@firstName', 'First Name Field is Present?')
+                        .setValue('@firstName', energy.account_info.first_name )
+                        .verify.elementPresent('@lastName', 'Last Name Field is Present?')
+                        .setValue('@lastName', energy.account_info.last_name)
+                        .verify.elementPresent('@contactMethod', 'Preferred Contact Method field Present?')
+                        .click_contactMethod()
+                        .click_emailPreferred()
+                        .setValue('@homePhone', energy.account_info.home_phone )
+                        .verify.elementPresent('@email', 'Email Field is Present?')
+                        .setValue('@email', energy.account_info.email)
+                        .click_save()
+                        .pause(5000);
                 }
                     else
                     {
                         console.log('Refreshing the Page')
-                        search
-                            .waitForElementVisible('@searchField', 15000)
-                            .setValue('@searchField', energy.account_info.account_name)
                         browser
-                            .keys(browser.Keys.ENTER)
-                        search
-                            .waitForElementVisible('@hyperlinkText1', 20000, function(result)
-                            {
-                                if (result.value)
-                                {
-                                    search
-                                        .click_hyperlinkText1()
-                                        .pause(3000);
-                                }
-                                    else
-                                    {
-                                        console.log('Refreshing the page...')
-                                        browser
-                                            .refresh()
-                                        search
-                                            .waitForElementVisible('@hyperlinkText', 30000)
-                                            .click_hyperlinkText1()
-                                            .pause(3000);
-                                    }
-                            })
+                            .refresh()
+                        account
+                            .click_salutationDropdown()
+                            .click_salutationMr()
+                            .verify.elementPresent('@firstName', 'First Name Field is Present?')
+                            .setValue('@firstName', energy.account_info.first_name )
+                            .verify.elementPresent('@lastName', 'Last Name Field is Present?')
+                            .setValue('@lastName', energy.account_info.last_name)
+                            .verify.elementPresent('@contactMethod', 'Preferred Contact Method field Present?')
+                            .click_contactMethod()
+                            .click_emailPreferred()
+                            .setValue('@homePhone', energy.account_info.home_phone )
+                            .verify.elementPresent('@email', 'Email Field is Present?')
+                            .setValue('@email', energy.account_info.email)
+                            .click_save()
+                            .pause(5000);
                     }
             })
     },
