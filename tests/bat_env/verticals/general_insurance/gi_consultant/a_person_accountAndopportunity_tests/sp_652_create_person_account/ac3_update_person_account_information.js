@@ -1,5 +1,5 @@
 module.exports = {
-    tags: ['bat_sp_652_ac1', 'bat_sp_652' , 'sp_652', 'bat_energysales_sp_652_ac3', 'bat_energysales_sp_652'],
+    tags: ['bat_sp_652_ac1', 'bat_sp_652' , 'sp_652','bat_giconsultant_sp_652_ac3', 'bat_giconsultant_sp_652', 'giconsultant_sp652'],
 
     'Login Bat Credentials': function(browser) 
     {
@@ -17,7 +17,7 @@ module.exports = {
         console.log('Log in as Energy Consultant QA');
         
         browser
-            .url(data.energy.bat.energysalesConsultant.loginTest);
+            .url(data.energy.bat.gisalesConsultant.loginTest);
     },
     
     'GIVEN I have navigated to view the person account page': function(browser) 
@@ -117,7 +117,7 @@ module.exports = {
                         .setValue('@detailslastName', energy.account_info.last_name )
                         .pause(2000)
                     browser
-                        .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3a_update_person_account_information.png')
+                        .saveScreenshot('reports/bat_env/verticals/general_insurance/gi_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3a_update_person_account_information.png')
                     account
                         .click_detailsSave()
                         .pause(5000);
@@ -147,7 +147,7 @@ module.exports = {
                            .setValue('@detailslastName', energy.account_info.last_name )
                            .pause(2000)
                        browser
-                           .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3a_update_person_account_information.png')
+                           .saveScreenshot('reports/bat_env/verticals/general_insurance/gi_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3a_update_person_account_information.png')
                        account
                            .click_detailsSave()
                            .pause(5000);
@@ -166,7 +166,7 @@ module.exports = {
                         .verify.containsText('@detailsInfo', energy.account_info.account_name , 'The Details Contains Correct Account Name ?')
                         .verify.containsText('@detailsinfoEmail', energy.account_info.email , ' The Details Contains Correct Email ?')
                     browser
-                        .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3b_update_person_account_information.png')
+                        .saveScreenshot('reports/bat_env/verticals/general_insurance/gi_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3b_update_person_account_information.png')
                 }
                     else
                     {
@@ -178,7 +178,7 @@ module.exports = {
                             .verify.containsText('@detailsInfo', energy.account_info.account_name , 'The Details Contains Correct Account Name ?')
                             .verify.containsText('@detailsinfoEmail', energy.account_info.email , ' The Details Contains Correct Email ?')
                         browser
-                            .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3b_update_person_account_information.png')
+                            .saveScreenshot('reports/bat_env/verticals/general_insurance/gi_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3b_update_person_account_information.png')
                     }
 
             })
@@ -216,7 +216,7 @@ module.exports = {
                     .click_detailsSave()
                     .pause(5000);
                 browser
-                    .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3c_update_person_account_information.png')
+                    .saveScreenshot('reports/bat_env/verticals/general_insurance/gi_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3c_update_person_account_information.png')
                 account
                     .click_closeTab()
                 
@@ -246,7 +246,7 @@ module.exports = {
                        .click_detailsSave()
                         .pause(5000);
                     browser
-                       .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3c_update_person_account_information.png')
+                       .saveScreenshot('reports/bat_env/verticals/general_insurance/gi_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3c_update_person_account_information.png')
                     account
                        .click_closeTab()
                 }

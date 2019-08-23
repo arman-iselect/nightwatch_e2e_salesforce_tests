@@ -20,6 +20,8 @@ module.exports = {
         salutationDropdown: '.salutation',
         salutationMr: 'li.uiMenuItem:nth-child(4) > a:nth-child(1)',
         tabDefault: '[title=\"Energy Automated Test0\"]',
+        closeTab: '[title="Close Energy Automated Test0"]',
+        closenewTab: '[title="Close New Account: Person Account"]',
         firstName: 'input[class=\"firstName compoundBorderBottom form-element__row input\"]',
         lastName: 'input[class=\"lastName compoundBorderBottom form-element__row input\"]',
         email: 'input[type=\"email\"]',
@@ -81,7 +83,16 @@ module.exports = {
             return this
             .click('@navDropdown');
         },
+        click_closeTab() {
+            return this
+            .click('@closeTab');
+        },
 
+        click_closenewTab() {
+            return this
+            .click('@closenewTab');
+        },
+        
         click_activityTab() {
             return this
             .click('@activityTab');

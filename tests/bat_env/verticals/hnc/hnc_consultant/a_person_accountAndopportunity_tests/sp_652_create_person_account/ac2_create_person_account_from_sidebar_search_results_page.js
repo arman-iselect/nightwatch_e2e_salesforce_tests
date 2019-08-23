@@ -1,5 +1,5 @@
 module.exports = {
-    tags: ['bat_sp_652_ac1', 'bat_sp_652' , 'sp_652', 'bat_energysales_sp_652_ac2', 'bat_energysales_sp_652'],
+    tags: ['bat_sp_652_ac1', 'bat_sp_652' , 'sp_652','bat_hncconsultant_sp_652_ac2', 'bat_hncconsultant_sp_652', 'hncconsultant_sp652'],
 
     'Login Bat Credentials': function(browser) 
     {
@@ -17,7 +17,7 @@ module.exports = {
         console.log('Log in as Energy Consultant QA');
         
         browser
-            .url(data.energy.bat.energysalesConsultant.loginTest)
+            .url(data.energy.bat.hncsalesConsultant.loginTest)
             .url('https://iselect--bat.lightning.force.com/lightning/page/home');
     },
     
@@ -65,7 +65,7 @@ module.exports = {
                             .useXpath().click('/html/body/form/div[2]/div/div[2]/div/table/tbody/tr[10]/td[1]/a[1]/i/b')
                             .pause(3000)
                         browser
-                            .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac2b_create_person_sidebar_result_page.png')
+                            .saveScreenshot('reports/bat_env/verticals/hnc/hnc_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac2b_create_person_sidebar_result_page.png')
                     }
                         else
                             {
@@ -78,7 +78,7 @@ module.exports = {
                                     .useXpath().click('/html/body/form/div[2]/div/div[2]/div/table/tbody/tr[10]/td[1]/a[1]/i/b') 
                                     .pause(3000)
                                 browser
-                                    .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac2b_create_person_sidebar_result_page.png')
+                                    .saveScreenshot('reports/bat_env/verticals/hnc/hnc_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac2b_create_person_sidebar_result_page.png')
                             }
                 })
     },
@@ -121,7 +121,7 @@ module.exports = {
                         .verify.elementPresent('@personaccountName', 'Person Account Name is Displayed ?')
                         .verify.containsText('@personaccountName',energy.account_info.account_name, 'Person account name is displayed correctly ?')
                     browser
-                        .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac2a_create_person_sidebar_result_page.png')
+                        .saveScreenshot('reports/bat_env/verticals/hnc/hnc_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac2a_create_person_sidebar_result_page.png')
                 }
                     else
                     {
@@ -133,7 +133,7 @@ module.exports = {
                             .verify.elementPresent('@personaccountName', 'Person Account Name is Displayed ?')
                             .verify.containsText('@personaccountName',energy.account_info.account_name, 'Person account name is displayed correctly ?')
                         browser
-                            .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac2a_create_person_sidebar_result_page.png')
+                            .saveScreenshot('reports/bat_env/verticals/hnc/hnc_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac2a_create_person_sidebar_result_page.png')
                     }
             })
     },

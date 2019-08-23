@@ -1,5 +1,5 @@
 module.exports = {
-    tags: ['bat_sp_652_ac1', 'bat_sp_652' , 'sp_652', 'bat_energysales_sp_652_ac4', 'bat_energysales_sp_652'],
+    tags: ['bat_sp_652_ac1', 'bat_sp_652' , 'sp_652','bat_giconsultant_sp_652_ac4', 'bat_giconsultant_sp_652', 'giconsultant_sp652'],
       
     'Login Bat Credentials': function(browser) 
     {
@@ -17,7 +17,7 @@ module.exports = {
         console.log('Log in as Energy Consultant QA');
         
         browser
-            .url(data.energy.bat.energysalesConsultant.loginTest)
+            .url(data.energy.bat.gisalesConsultant.loginTest)
         account
             .navigate();
     },
@@ -112,14 +112,14 @@ module.exports = {
                         .verify.elementPresent('@relatedNotes', 'Notes related list is Present ?')
                         .verify.elementPresent('@relatednotesAttachments', 'Notes and Attachments related list is Present ?')
                     browser
-                        .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac4a_ensure_person_account_page_layout_displayed_correctly.png')
+                        .saveScreenshot('reports/bat_env/verticals/general_insurance/gi_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac4a_ensure_person_account_page_layout_displayed_correctly.png')
                     account
                         .click_activityTab()
                         .waitForElementVisible('@activitynewEvent', 30000)
                         .verify.elementPresent('@activitynewEvent', 'Activity New Event is Present ?')
                         .verify.elementPresent('@activitylogaCall', 'Activity Log a Call is Present ?')
                     browser
-                        .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac4b_ensure_person_account_page_layout_displayed_correctly.png')
+                        .saveScreenshot('reports/bat_env/verticals/general_insurance/gi_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac4b_ensure_person_account_page_layout_displayed_correctly.png')
                     account
                         .click_closeTab();
                 }
@@ -145,14 +145,14 @@ module.exports = {
                             .verify.elementPresent('@relatedNotes', 'Notes related list is Present ?')
                             .verify.elementPresent('@relatednotesAttachments', 'Notes and Attachments related list is Present ?')
                         browser
-                            .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac4a_ensure_person_account_page_layout_displayed_correctly.png')
+                            .saveScreenshot('reports/bat_env/verticals/general_insurance/gi_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac4a_ensure_person_account_page_layout_displayed_correctly.png')
                         account
                             .click_activityTab()
                             .waitForElementVisible('@activitynewEvent', 30000)
                             .verify.elementPresent('@activitynewEvent', 'Activity New Event is Present ?')
                             .verify.elementPresent('@activitylogaCall', 'Activity Log a Call is Present ?')
                         browser
-                            .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac4b_ensure_person_account_page_layout_displayed_correctly.png')
+                            .saveScreenshot('reports/bat_env/verticals/general_insurance/gi_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac4b_ensure_person_account_page_layout_displayed_correctly.png')
                         account
                             .click_closeTab();
                     }
