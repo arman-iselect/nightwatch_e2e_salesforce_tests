@@ -1,3 +1,4 @@
 # ignore folder
 reports/
 logs/
+*.log
