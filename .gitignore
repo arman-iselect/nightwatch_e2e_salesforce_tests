@@ -1,4 +1,4 @@
 # ignore folder
-reports/
 logs/
 *.log
+*.png
