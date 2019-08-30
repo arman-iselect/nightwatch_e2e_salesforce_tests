@@ -1,6 +1,7 @@
 module.exports = {
     url: 'https://iselect--bat.lightning.force.com/lightning/o/Account/list?filterName=Recent',
     elements: {
+        waffle: 'div[class="slds-icon-waffle"]',
         navDropdown: '#oneHeader > div.bBottom > div > div.slds-context-bar__primary.navLeft > div.navMenu.slds-context-bar__item--divider-right.oneAppNavMenu > div > button > lightning-primitive-icon > svg',
         leadDropdown: '#navMenuList > div > ul > li:nth-child(2) > div > a',
         selected: 'a.slds-p-left--xx-small',
