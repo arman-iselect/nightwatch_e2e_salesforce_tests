@@ -30,7 +30,7 @@
 
         "energytelcosalesConsultant": 
             {
-            "loginTest": "https://iselect--bat.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000B5GD&suorgadminid=005N0000006gLUH&retURL=%2F005%3Fid%3D00eN0000000MLfU%26isUserEntityOverride%3D1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--bat.lightning.force.com%26clc%3D1%26appLayout%3Dsetup%26tour%3D%26isdtp%3Dp1%26sfdcIFrameHost%3Dweb%26nonce%3Da0f67f7b3dc2d3cafb9e16888bc04009c54b56264ca5a0ca83717d594071783e%26ltn_app_id%3D06mN0000000FvNwIAK&targetURL=%2Fhome%2Fhome.jsp&"
+            "loginTest": "https://iselect--bat.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000B5GD&suorgadminid=005N0000006gLUH&retURL=%2F005%3FisUserEntityOverride%3D1%26retURL%3D%252Fsetup%252Fhome%26appLayout%3Dsetup%26tour%3D%26isdtp%3Dp1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--bat.lightning.force.com%26sfdcIFrameHost%3Dweb%26nonce%3D8bb0d8831fc9ecc593648f4247d54bf712fac4f003a537a58b1ce84488e6564a%26clc%3D1&targetURL=%2Fhome%2Fhome.jsp&"
             },
 
         "gisalesConsultant": 
@@ -59,32 +59,32 @@
         {
         "energysalesConsultant": 
             {
-            "loginTest": "https://iselect--spqa.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000R9EZ&suorgadminid=005N0000006kYTy&retURL=%2F005%3FisUserEntityOverride%3D1%26id%3D00e28000002Rqzb%26appLayout%3Dsetup%26tour%3D%26isdtp%3Dp1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--spqa.lightning.force.com%26sfdcIFrameHost%3Dweb%26nonce%3Dc81d677eecdd3b9ee4b583487e1a28e69a6f75b2df87bad629fa55248e1cf872%26ltn_app_id%3D06m0I000001hd0GQAQ%26clc%3D1&targetURL=%2Fhome%2Fhome.jsp&"
+            "loginTest": "https://iselect--spqa.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000R9EZ&suorgadminid=005N0000007ZU5p&retURL=%2F005%3Fid%3D00e28000002Rqzb%26isUserEntityOverride%3D1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--spqa.lightning.force.com%26clc%3D1%26appLayout%3Dsetup%26tour%3D%26isdtp%3Dp1%26sfdcIFrameHost%3Dweb%26nonce%3D5aeae1655128c98b0fc916e29f07531b9e9103fea4a91681f8c48c1455aa913a%26ltn_app_id%3D06m0I000001hcilQAA&targetURL=%2Fhome%2Fhome.jsp&"
             },
 
         "energytelcosalesConsultant": 
             {
-            "loginTest": "https://iselect--spqa.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000R9EZ&suorgadminid=005N0000006kYc2&retURL=%2F005%3FisUserEntityOverride%3D1%26retURL%3D%252Fsetup%252Fhome%26appLayout%3Dsetup%26tour%3D%26isdtp%3Dp1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--spqa.lightning.force.com%26sfdcIFrameHost%3Dweb%26nonce%3D95e1f2f907faf57c4258f24c60a7ed8569036502ef5c6f5c7dd0d8c1a086e885%26ltn_app_id%3D06m28000001hMxaAAE%26clc%3D1&targetURL=%2Fhome%2Fhome.jsp&"
+            "loginTest": "https://iselect--spqa.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000R9EZ&suorgadminid=005N0000007ZXgx&retURL=%2F005%3Fid%3D00e28000002FOM6%26isUserEntityOverride%3D1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--spqa.lightning.force.com%26clc%3D1%26appLayout%3Dsetup%26tour%3D%26isdtp%3Dp1%26sfdcIFrameHost%3Dweb%26nonce%3Dc8a1a073798326b0d6cc4863f09756f85ccc02eff1bd014cb75662bb1797fc7a%26ltn_app_id%3D06m0I000001hcilQAA&targetURL=%2Fhome%2Fhome.jsp&"
             },
 
         "gisalesConsultant": 
             {
-            "loginTest": ""
+            "loginTest": "https://iselect--spqa.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000R9EZ&suorgadminid=005N0000007ZXh7&retURL=%2F005%3Fid%3D00e280000023q5a%26isUserEntityOverride%3D1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--spqa.lightning.force.com%26clc%3D1%26appLayout%3Dsetup%26tour%3D%26isdtp%3Dp1%26sfdcIFrameHost%3Dweb%26nonce%3D796295d4aa0129a18f2954e22b00342fe71d1f1d0e0c67b8a971ccf5ee74b0b5%26ltn_app_id%3D06m0I000001hcilQAA&targetURL=%2Fhome%2Fhome.jsp&"
             },
 
         "hncsalesConsultant":
             {
-            "loginTest": ""
+            "loginTest": "https://iselect--spqa.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000R9EZ&suorgadminid=005N0000007ZXh2&retURL=%2F005%3Fid%3D00e0I000000f76Q%26isUserEntityOverride%3D1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--spqa.lightning.force.com%26clc%3D1%26appLayout%3Dsetup%26tour%3D%26isdtp%3Dp1%26sfdcIFrameHost%3Dweb%26nonce%3D9f1e5db427308f7a7e71680c18c1745bcee500e63d3d039758867cafe2f7d5b9%26ltn_app_id%3D06m0I000001hd0GQAQ&targetURL=%2Fhome%2Fhome.jsp&"
              },
-
+             
         "lifeAdviser":
             {
-            "loginTest": ""
+            "loginTest": "https://iselect--spqa.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000R9EZ&suorgadminid=005N0000007ZXhC&retURL=%2F005%3Fid%3D00e28000001hhzq%26isUserEntityOverride%3D1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--spqa.lightning.force.com%26clc%3D1%26appLayout%3Dsetup%26tour%3D%26isdtp%3Dp1%26sfdcIFrameHost%3Dweb%26nonce%3D074da587740e34269300f06f2718220e251cda46701b561dcac640a9691da71f%26ltn_app_id%3D06mN000000019vtIAA&targetURL=%2Fhome%2Fhome.jsp&"
             },
 
         "telcosalesConsultant":
             {
-            "loginTest": ""
+            "loginTest": "https://iselect--spqa.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000R9EZ&suorgadminid=005N0000007ZXgg&retURL=%2F005%3FappLayout%3Dsetup%26ltn_app_id%3D06m0I000001hcilQAA%26rowsperpage%3D205%26noredirect%3D1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--spqa.lightning.force.com%26nonce%3D504366d92a9e7c54fda034094656cd3de23dbb7a56c84715cc683bc4c1beaae5%26tour%3D%26isUserEntityOverride%3D1%26sfdcIFrameHost%3Dweb%26id%3D00e280000023q5d%26clc%3D1%26isdtp%3Dp1&targetURL=%2Fhome%2Fhome.jsp&"
             }
         }
     }

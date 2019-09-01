@@ -114,7 +114,7 @@ module.exports = {
                         .verify.elementPresent('@relatedNotes', 'Notes related list is Present ?')
                         .verify.elementPresent('@relatednotesAttachments', 'Notes and Attachments related list is Present ?')
                     browser
-                        .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac4a_ensure_person_account_page_layout_displayed_correctly.png')
+                        .saveScreenshot('reports/bat_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac4a_ensure_person_account_page_layout_displayed_correctly.png')
                     account
                         .click_activityTab()
                         .waitForElementVisible('@activitynewEvent', 30000)
