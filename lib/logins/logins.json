@@ -29,11 +29,7 @@
             },
 
         "energytelcosalesConsultant": 
-<<<<<<< HEAD
-            {             
-=======
             {
->>>>>>> stage1
             "loginTest": "https://iselect--bat.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000B5GD&suorgadminid=005N0000006gLUH&retURL=%2F005%3FisUserEntityOverride%3D1%26retURL%3D%252Fsetup%252Fhome%26appLayout%3Dsetup%26tour%3D%26isdtp%3Dp1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--bat.lightning.force.com%26sfdcIFrameHost%3Dweb%26nonce%3D8bb0d8831fc9ecc593648f4247d54bf712fac4f003a537a58b1ce84488e6564a%26clc%3D1&targetURL=%2Fhome%2Fhome.jsp&"
             },
 
