@@ -1,14 +1,14 @@
 module.exports = {
-    tags: ['spqa_sp_652_ac2', 'spqa_sp_652', 'sp_652', 'spqa_telcoconsultant_sp652_ac2', 'spqa_telcoconsultant_sp_652', 'telcoconsultant_sp652'],
+    tags: ['spqa_sp_652_ac2', 'spqa_sp_652', 'sp_652', 'spqa_telcoconsultant_sp_652_ac2', 'spqa_telcoconsultant_sp_652', 'telcoconsultant_sp_652'],
 
-    'Login Bat Credentials': function(browser) 
+    'Login spqa Credentials': function(browser) 
     {
-        console.log('Go to Salesforce Login Test URL and Enter Bat Credentials');
+        console.log('Go to Salesforce Login Test URL and Enter spqa Credentials');
         login
             .navigate()
             .maximizeWindow()
-            .setValue('@username', data.salesforce.bat.username)
-            .setValue('@password', data.salesforce.bat.password)
+            .setValue('@username', data.salesforce.spqa.username)
+            .setValue('@password', data.salesforce.spqa.password)
             .click_loginbtn();
     },
 
@@ -18,7 +18,7 @@ module.exports = {
         
         browser
             .url(data.energy.spqa.telcosalesConsultant.loginTest) 
-            .url('https://iselect--bat.lightning.force.com/lightning/page/home');
+            .url('https://iselect--spqa.lightning.force.com/lightning/page/home');
     },
     
     'GIVEN I am viewing the Sidebar search results from': function(browser) 
@@ -32,8 +32,8 @@ module.exports = {
                         .pause(3000)
                         .frame(0)
                     account
-                        .setValue('@inputfirstName', energy.account_info.first_name)
-                        .setValue('@inputEmail', energy.account_info.email)
+                        .setValue('@inputfirstName', energy.telco.account_info.first_name)
+                        .setValue('@inputEmail', energy.telco.account_info.email)
                     browser
                         .keys(browser.Keys.ENTER)
                 }
@@ -46,8 +46,8 @@ module.exports = {
                             .pause(3000)
                             .frame(0)
                         account
-                            .setValue('@inputfirstName', energy.account_info.first_name)
-                            .setValue('@inputEmail', energy.account_info.email)
+                            .setValue('@inputfirstName', energy.telco.account_info.first_name)
+                            .setValue('@inputEmail', energy.telco.account_info.email)
                         browser
                             .keys(browser.Keys.ENTER)
                 }            
@@ -91,7 +91,7 @@ module.exports = {
                 if (result.value)
                 {
                     browser
-                        .useXpath().setValue('/html/body/form/div[1]/div[1]/div/div/div/div[2]/div/div/table/tbody/tr[1]/td[2]/input', energy.account_info.last_name)
+                        .useXpath().setValue('/html/body/form/div[1]/div[1]/div/div/div/div[2]/div/div/table/tbody/tr[1]/td[2]/input', energy.telco.account_info.last_name)
                     browser
                         .useXpath().click('/html/body/form/div[2]/div/div[2]/div/table/tbody/tr[10]/td[1]/a[1]/i/b')
                 }
@@ -102,7 +102,7 @@ module.exports = {
                             .refresh()
                         
                         browser
-                            .useXpath().setValue('@/html/body/form/div[1]/div[1]/div/div/div/div[2]/div/div/table/tbody/tr[1]/td[2]/input', energy.account_info.last_name)
+                            .useXpath().setValue('@/html/body/form/div[1]/div[1]/div/div/div/div[2]/div/div/table/tbody/tr[1]/td[2]/input', energy.telco.account_info.last_name)
                         browser
                             .useXpath().click('/html/body/form/div[2]/div/div[2]/div/table/tbody/tr[10]/td[1]/a[1]/i/b')
                     }
@@ -120,7 +120,7 @@ module.exports = {
                     account
                         .waitForElementPresent('@personaccountName', 30000)
                         .verify.elementPresent('@personaccountName', 'Person Account Name is Displayed ?')
-                        .verify.containsText('@personaccountName',energy.account_info.account_name, 'Person account name is displayed correctly ?')
+                        .verify.containsText('@personaccountName',energy.telco.account_info.account_name, 'Person account name is displayed correctly ?')
                     browser
                         .saveScreenshot('reports/spqa_env/verticals/telco/telco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac2a_create_person_sidebar_result_page.png')
                 }
@@ -132,7 +132,7 @@ module.exports = {
                         account
                             .waitForElementVisible('@selectedTab', 15000)
                             .verify.elementPresent('@personaccountName', 'Person Account Name is Displayed ?')
-                            .verify.containsText('@personaccountName',energy.account_info.account_name, 'Person account name is displayed correctly ?')
+                            .verify.containsText('@personaccountName',energy.telco.account_info.account_name, 'Person account name is displayed correctly ?')
                         browser
                             .saveScreenshot('reports/spqa_env/verticals/telco/telco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac2a_create_person_sidebar_result_page.png')
                     }
@@ -147,7 +147,7 @@ module.exports = {
                 if (result.value)
                 {
                     account
-                        .verify.containsText('@selectedTab', energy.account_info.account_name , 'The Created Account is Correctly Displayed in a Default Tab ?')    
+                        .verify.containsText('@selectedTab', energy.telco.account_info.account_name , 'The Created Account is Correctly Displayed in a Default Tab ?')    
                 }
                     else
                     {
@@ -156,7 +156,7 @@ module.exports = {
                             .refresh()
                         account
                             .waitForElementVisible('@selectedTab', 30000)
-                            .verify.containsText('@selectedTab', energy.account_info.account_name , 'The Created Account is Correctly Displayed in a Default Tab ?');
+                            .verify.containsText('@selectedTab', energy.telco.account_info.account_name , 'The Created Account is Correctly Displayed in a Default Tab ?');
                     }
             })
     },

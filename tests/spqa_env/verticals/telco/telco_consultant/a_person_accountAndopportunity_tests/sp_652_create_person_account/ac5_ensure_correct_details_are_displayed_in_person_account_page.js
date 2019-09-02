@@ -1,14 +1,14 @@
 module.exports = {
-    tags: ['spqa_sp_652_ac5', 'spqa_sp_652', 'sp_652', 'spqa_telcoconsultant_sp652_ac5', 'spqa_telcoconsultant_sp_652', 'telcoconsultant_sp652'],
+    tags: ['spqa_sp_652_ac5', 'spqa_sp_652', 'sp_652', 'spqa_telcoconsultant_sp_652_ac5', 'spqa_telcoconsultant_sp_652', 'telcoconsultant_sp_652'],
 
-    'Login Bat Credentials': function(browser) 
+    'Login spqa Credentials': function(browser) 
     {
-        console.log('Go to Salesforce Login Test URL and Enter Bat Credentials');
+        console.log('Go to Salesforce Login Test URL and Enter spqa Credentials');
         login
             .navigate()
             .maximizeWindow()
-            .setValue('@username', data.salesforce.bat.username)
-            .setValue('@password', data.salesforce.bat.password)
+            .setValue('@username', data.salesforce.spqa.username)
+            .setValue('@password', data.salesforce.spqa.password)
             .click_loginbtn();
     },
 
@@ -22,8 +22,9 @@ module.exports = {
     
     'GIVEN I have created a new person': function(browser) 
     {
+        browser
+            .url(data.energy.spqa.account.url)
         account
-            .navigate()
             .click_newAccount()
             .waitForElementVisible('@salutationDropdown', 20000, function(result)
             {
@@ -33,16 +34,16 @@ module.exports = {
                         .click_salutationDropdown()
                         .click_salutationMr()
                         .verify.elementPresent('@firstName', 'First Name Field is Present?')
-                        .setValue('@firstName', energy.account_info.first_name )
+                        .setValue('@firstName', energy.telco.account_info.first_name )
                         .verify.elementPresent('@lastName', 'Last Name Field is Present?')
-                        .setValue('@lastName', energy.account_info.last_name)
+                        .setValue('@lastName', energy.telco.account_info.last_name)
                         .verify.elementPresent('@contactMethod', 'Preferred Contact Method field Present?')
                         .click_contactMethod()
                         .waitForElementVisible('@emailPreferred', 15000)
                         .click_emailPreferred()
-                        .setValue('@homePhone', energy.account_info.home_phone )
+                        .setValue('@homePhone', energy.telco.account_info.home_phone )
                         .verify.elementPresent('@email', 'Email Field is Present?')
-                        .setValue('@email', energy.account_info.email)
+                        .setValue('@email', energy.telco.account_info.email)
                         .click_save()
                         .pause(5000);
                 }
@@ -55,16 +56,16 @@ module.exports = {
                             .click_salutationDropdown()
                             .click_salutationMr()
                             .verify.elementPresent('@firstName', 'First Name Field is Present?')
-                            .setValue('@firstName', energy.account_info.first_name )
+                            .setValue('@firstName', energy.telco.account_info.first_name )
                             .verify.elementPresent('@lastName', 'Last Name Field is Present?')
-                            .setValue('@lastName', energy.account_info.last_name)
+                            .setValue('@lastName', energy.telco.account_info.last_name)
                             .verify.elementPresent('@contactMethod', 'Preferred Contact Method field Present?')
                             .click_contactMethod()
                             .waitForElementVisible('@emailPreferred', 15000)
                             .click_emailPreferred()
-                            .setValue('@homePhone', energy.account_info.home_phone )
+                            .setValue('@homePhone', energy.telco.account_info.home_phone )
                             .verify.elementPresent('@email', 'Email Field is Present?')
-                            .setValue('@email', energy.account_info.email)
+                            .setValue('@email', energy.telco.account_info.email)
                             .click_save()
                             .pause(5000);
                     }
@@ -80,7 +81,7 @@ module.exports = {
             {
                 account
                     .verify.elementPresent('@personaccountName', 'Person Account Name is Displayed ?')
-                    .verify.containsText('@selectedTab', energy.account_info.account_name , 'The Created Account is Correctly Displayed in a Default Tab ?')
+                    .verify.containsText('@selectedTab', energy.telco.account_info.account_name , 'The Created Account is Correctly Displayed in a Default Tab ?')
                 browser
                     .getText('[class="slds-page-header__detail-block forceHighlightsDesktopListRecordItem"]', function (result0){
                         console.log(result0.value)
@@ -111,7 +112,7 @@ module.exports = {
                     account
                         .waitForElementVisible('@selectedTab', 30000)
                         .verify.elementPresent('@personaccountName', 'Person Account Name is Displayed ?')
-                        .verify.containsText('@selectedTab', energy.account_info.account_name , 'The Created Account is Correctly Displayed in a Default Tab ?')
+                        .verify.containsText('@selectedTab', energy.telco.account_info.account_name , 'The Created Account is Correctly Displayed in a Default Tab ?')
                     browser
                         .getText('[class="slds-page-header__detail-block forceHighlightsDesktopListRecordItem"]', function (result0){
                             console.log(result0.value)

@@ -1,14 +1,14 @@
 module.exports = {
-    tags: ['spqa_sp_652_ac1', 'spqa_sp_652', 'sp_652', 'spqa_lifeadviser_sp652_ac1', 'spqa_lifeadviser_sp_652', 'lifeadviser_sp652'],
+    tags: ['spqa_sp_652_ac1', 'spqa_sp_652', 'sp_652', 'spqa_lifeadviser_sp_652_ac1', 'spqa_lifeadviser_sp_652', 'lifeadviser_sp_652'],
 
-    'Login Bat Credentials': function(browser) 
+    'Login spqa Credentials': function(browser) 
     {
-        console.log('Go to Salesforce Login Test URL and Enter Bat Credentials');
+        console.log('Go to Salesforce Login Test URL and Enter spqa Credentials');
         login
             .navigate()
             .maximizeWindow()
-            .setValue('@username', data.salesforce.bat.username)
-            .setValue('@password', data.salesforce.bat.password)
+            .setValue('@username', data.salesforce.spqa.username)
+            .setValue('@password', data.salesforce.spqa.password)
             .click_loginbtn();
     },
 
@@ -22,8 +22,8 @@ module.exports = {
     
     'GIVEN I am viewing the Accounts list view': function(browser) 
     {
-        account
-            .navigate();
+        browser
+            .url(data.energy.spqa.account.url);
     },
     
     'AND I have selected the "New" Button and directed me to the New Person Account page': function (browser) 
@@ -57,16 +57,16 @@ module.exports = {
                         .click_salutationDropdown()
                         .click_salutationMr()
                         .verify.elementPresent('@firstName', 'First Name Field is Present?')
-                        .setValue('@firstName', energy.account_info.first_name )
+                        .setValue('@firstName', energy.lifeadviser.account_info.first_name )
                         .verify.elementPresent('@lastName', 'Last Name Field is Present?')
-                        .setValue('@lastName', energy.account_info.last_name)
+                        .setValue('@lastName', energy.lifeadviser.account_info.last_name)
                         .verify.elementPresent('@contactMethod', 'Preferred Contact Method field Present?')
                         .click_contactMethod()
                         .waitForElementVisible('@emailPreferred', 15000)
                         .click_emailPreferred()
-                        .setValue('@homePhone', energy.account_info.home_phone )
+                        .setValue('@homePhone', energy.lifeadviser.account_info.home_phone )
                         .verify.elementPresent('@email', 'Email Field is Present?')
-                        .setValue('@email', energy.account_info.email)
+                        .setValue('@email', energy.lifeadviser.account_info.email)
                         .click_save()
                         .pause(5000);
                 }
@@ -79,16 +79,16 @@ module.exports = {
                             .click_salutationDropdown()
                             .click_salutationMr()
                             .verify.elementPresent('@firstName', 'First Name Field is Present?')
-                            .setValue('@firstName', energy.account_info.first_name )
+                            .setValue('@firstName', energy.lifeadviser.account_info.first_name )
                             .verify.elementPresent('@lastName', 'Last Name Field is Present?')
-                            .setValue('@lastName', energy.account_info.last_name)
+                            .setValue('@lastName', energy.lifeadviser.account_info.last_name)
                             .verify.elementPresent('@contactMethod', 'Preferred Contact Method field Present?')
                             .click_contactMethod()
                             .waitForElementVisible('@emailPreferred', 15000)
                             .click_emailPreferred()
-                            .setValue('@homePhone', energy.account_info.home_phone )
+                            .setValue('@homePhone', energy.lifeadviser.account_info.home_phone )
                             .verify.elementPresent('@email', 'Email Field is Present?')
-                            .setValue('@email', energy.account_info.email)
+                            .setValue('@email', energy.lifeadviser.account_info.email)
                             .click_save()
                             .pause(5000);
                     }
@@ -104,7 +104,7 @@ module.exports = {
             {
                 console.log('Person account is created')
                 account
-                    .verify.containsText('@tabTitle', energy.account_info.account_name, 'The account is Opened in a new tab ?')
+                    .verify.containsText('@tabTitle', energy.lifeadviser.account_info.account_name, 'The account is Opened in a new tab ?')
             }
                 else
                 {
@@ -113,7 +113,7 @@ module.exports = {
                         .refresh()
                     account
                         .waitForElementVisible('@personaccountTitle', 2000)
-                        .verify.containsText('@tabTitle', energy.account_info.account_name , 'The account is displayed after refresh ?')
+                        .verify.containsText('@tabTitle', energy.lifeadviser.account_info.account_name , 'The account is displayed after refresh ?')
                 }
             })
             
@@ -151,7 +151,7 @@ module.exports = {
                 if (result.value)
                 {
                     account
-                        .verify.containsText('@emailPresent', energy.account_info.email , 'The Email field is populated correctly to the Person account?')
+                        .verify.containsText('@emailPresent', energy.lifeadviser.account_info.email , 'The Email field is populated correctly to the Person account?')
                     browser
                         .saveScreenshot('reports/spqa_env/verticals/life/life_adviser/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac1b_create_person_record.png')
                     account
@@ -163,7 +163,7 @@ module.exports = {
                         browser
                             .refresh()
                         account
-                            .verify.containsText('@emailPresent', energy.account_info.email , 'The Email field is populated correctly to the Person account?')
+                            .verify.containsText('@emailPresent', energy.lifeadviser.account_info.email , 'The Email field is populated correctly to the Person account?')
                         browser
                             .saveScreenshot('reports/spqa_env/verticals/life/life_adviser/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac1b_create_person_record.png')
                         account
@@ -175,17 +175,17 @@ module.exports = {
     'OTHERWISE if there are mandatory fields not populated, an error message shall be displayed AND I shall not be able to proceed any further': function(browser)
     {
         browser
-            .url('https://iselect--bat.lightning.force.com/lightning/o/Account/new?')
+            .url('https://iselect--spqa.lightning.force.com/lightning/o/Account/new?')
         account
             .click_salutationDropdown()
             .click_salutationMr()
             .verify.elementPresent('@firstName', 'First Name Field is Present?')
-            .setValue('@firstName', energy.account_info.first_name )
+            .setValue('@firstName', energy.lifeadviser.account_info.first_name )
             .verify.elementPresent('@lastName', 'Last NAme Field is Present?')
-            .setValue('@lastName', energy.account_info.last_name)
+            .setValue('@lastName', energy.lifeadviser.account_info.last_name)
             .verify.elementPresent('@contactMethod', 'Preferred Contact Method field Present?')
             .verify.elementPresent('@email', 'Email Field is Present?')
-            .setValue('@email', energy.account_info.email)
+            .setValue('@email', energy.lifeadviser.account_info.email)
             .click_save()
             .pause(5000)
         browser

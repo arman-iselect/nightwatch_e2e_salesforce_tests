@@ -57,16 +57,16 @@ module.exports = {
                         .click_salutationDropdown()
                         .click_salutationMr()
                         .verify.elementPresent('@firstName', 'First Name Field is Present?')
-                        .setValue('@firstName', energy.account_info.first_name )
+                        .setValue('@firstName', energy.energysales.account_info.first_name )
                         .verify.elementPresent('@lastName', 'Last Name Field is Present?')
-                        .setValue('@lastName', energy.account_info.last_name)
+                        .setValue('@lastName', energy.energysales.account_info.last_name)
                         .verify.elementPresent('@contactMethod', 'Preferred Contact Method field Present?')
                         .click_contactMethod()
                         .waitForElementVisible('@emailPreferred', 15000)
                         .click_emailPreferred()
-                        .setValue('@homePhone', energy.account_info.home_phone )
+                        .setValue('@homePhone', energy.energysales.account_info.home_phone )
                         .verify.elementPresent('@email', 'Email Field is Present?')
-                        .setValue('@email', energy.account_info.email)
+                        .setValue('@email', energy.energysales.account_info.email)
                         .click_save()
                         .pause(5000);
                 }
@@ -79,16 +79,16 @@ module.exports = {
                             .click_salutationDropdown()
                             .click_salutationMr()
                             .verify.elementPresent('@firstName', 'First Name Field is Present?')
-                            .setValue('@firstName', energy.account_info.first_name )
+                            .setValue('@firstName', energy.energysales.account_info.first_name )
                             .verify.elementPresent('@lastName', 'Last Name Field is Present?')
-                            .setValue('@lastName', energy.account_info.last_name)
+                            .setValue('@lastName', energy.energysales.account_info.last_name)
                             .verify.elementPresent('@contactMethod', 'Preferred Contact Method field Present?')
                             .click_contactMethod()
                             .waitForElementVisible('@emailPreferred', 15000)
                             .click_emailPreferred()
-                            .setValue('@homePhone', energy.account_info.home_phone )
+                            .setValue('@homePhone', energy.energysales.account_info.home_phone )
                             .verify.elementPresent('@email', 'Email Field is Present?')
-                            .setValue('@email', energy.account_info.email)
+                            .setValue('@email', energy.energysales.account_info.email)
                             .click_save()
                             .pause(5000);
                     }
@@ -104,7 +104,7 @@ module.exports = {
             {
                 console.log('Person account is created')
                 account
-                    .verify.containsText('@tabTitle', energy.account_info.account_name, 'The account is Opened in a new tab ?')
+                    .verify.containsText('@tabTitle', energy.energysales.account_info.account_name, 'The account is Opened in a new tab ?')
             }
                 else
                 {
@@ -113,7 +113,7 @@ module.exports = {
                         .refresh()
                     account
                         .waitForElementVisible('@personaccountTitle', 2000)
-                        .verify.containsText('@tabTitle', energy.account_info.account_name , 'The account is displayed after refresh ?')
+                        .verify.containsText('@tabTitle', energy.energysales.account_info.account_name , 'The account is displayed after refresh ?')
                 }
             })
             
@@ -151,7 +151,7 @@ module.exports = {
                 if (result.value)
                 {
                     account
-                        .verify.containsText('@emailPresent', energy.account_info.email , 'The Email field is populated correctly to the Person account?')
+                        .verify.containsText('@emailPresent', energy.energysales.account_info.email , 'The Email field is populated correctly to the Person account?')
                     browser
                         .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac1b_create_person_record.png')
                     account
@@ -163,7 +163,7 @@ module.exports = {
                         browser
                             .refresh()
                         account
-                            .verify.containsText('@emailPresent', energy.account_info.email , 'The Email field is populated correctly to the Person account?')
+                            .verify.containsText('@emailPresent', energy.energysales.account_info.email , 'The Email field is populated correctly to the Person account?')
                         browser
                             .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac1b_create_person_record.png')
                         account
@@ -180,12 +180,12 @@ module.exports = {
             .click_salutationDropdown()
             .click_salutationMr()
             .verify.elementPresent('@firstName', 'First Name Field is Present?')
-            .setValue('@firstName', energy.account_info.first_name )
+            .setValue('@firstName', energy.energysales.account_info.first_name )
             .verify.elementPresent('@lastName', 'Last NAme Field is Present?')
-            .setValue('@lastName', energy.account_info.last_name)
+            .setValue('@lastName', energy.energysales.account_info.last_name)
             .verify.elementPresent('@contactMethod', 'Preferred Contact Method field Present?')
             .verify.elementPresent('@email', 'Email Field is Present?')
-            .setValue('@email', energy.account_info.email)
+            .setValue('@email', energy.energysales.account_info.email)
             .click_save()
             .pause(5000)
         browser

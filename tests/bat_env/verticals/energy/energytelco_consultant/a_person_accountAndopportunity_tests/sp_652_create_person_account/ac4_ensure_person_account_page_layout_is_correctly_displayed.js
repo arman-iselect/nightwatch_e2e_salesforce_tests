@@ -1,5 +1,5 @@
 module.exports = {
-    tags: ['bat_sp_652_ac1', 'bat_sp_652' , 'sp_652','bat_energytelco_sp_652_ac4', 'bat_energytelco_sp_652', 'energytelco_sp652'],
+    tags: ['bat_sp_652_ac1', 'bat_sp_652' , 'sp_652','bat_energytelco_sp_652_ac4', 'bat_energytelco_sp_652', 'energytelco_sp_652'],
       
     'Login Bat Credentials': function(browser) 
     {
@@ -53,16 +53,16 @@ module.exports = {
                         .click_salutationDropdown()
                         .click_salutationMr()
                         .verify.elementPresent('@firstName', 'First Name Field is Present?')
-                        .setValue('@firstName', energy.account_info.first_name )
+                        .setValue('@firstName', energy.energytelco.account_info.first_name )
                         .verify.elementPresent('@lastName', 'Last Name Field is Present?')
-                        .setValue('@lastName', energy.account_info.last_name)
+                        .setValue('@lastName', energy.energytelco.account_info.last_name)
                         .verify.elementPresent('@contactMethod', 'Preferred Contact Method field Present?')
                         .click_contactMethod()
                         .waitForElementVisible('@emailPreferred', 15000)
                         .click_emailPreferred()
-                        .setValue('@homePhone', energy.account_info.home_phone )
+                        .setValue('@homePhone', energy.energytelco.account_info.home_phone )
                         .verify.elementPresent('@email', 'Email Field is Present?')
-                        .setValue('@email', energy.account_info.email)
+                        .setValue('@email', energy.energytelco.account_info.email)
                         .click_save()
                         .pause(5000);
                 }
@@ -75,16 +75,16 @@ module.exports = {
                             .click_salutationDropdown()
                             .click_salutationMr()
                             .verify.elementPresent('@firstName', 'First Name Field is Present?')
-                            .setValue('@firstName', energy.account_info.first_name )
+                            .setValue('@firstName', energy.energytelco.account_info.first_name )
                             .verify.elementPresent('@lastName', 'Last Name Field is Present?')
-                            .setValue('@lastName', energy.account_info.last_name)
+                            .setValue('@lastName', energy.energytelco.account_info.last_name)
                             .verify.elementPresent('@contactMethod', 'Preferred Contact Method field Present?')
                             .click_contactMethod()
                             .waitForElementVisible('@emailPreferred', 15000)
                             .click_emailPreferred()
-                            .setValue('@homePhone', energy.account_info.home_phone )
+                            .setValue('@homePhone', energy.energytelco.account_info.home_phone )
                             .verify.elementPresent('@email', 'Email Field is Present?')
-                            .setValue('@email', energy.account_info.email)
+                            .setValue('@email', energy.energytelco.account_info.email)
                             .click_save()
                             .pause(5000);
                     }
@@ -100,7 +100,7 @@ module.exports = {
                 {
                     account
                         .verify.elementPresent('@personaccountName', 'Person Account Name is Displayed ?')
-                        .verify.containsText('@personaccountName',energy.account_info.account_name, 'Person account name is displayed correctly ?')
+                        .verify.containsText('@personaccountName',energy.energytelco.account_info.account_name, 'Person account name is displayed correctly ?')
                         .verify.elementPresent('@relatedlistTab', 'Related list tab is present ?')
                         .verify.elementPresent('@sidebarSearch', 'Sidebar search is Present ?')
                         .verify.elementPresent('@detailstabRight', 'Details tab is displayed by default ?')
@@ -133,7 +133,7 @@ module.exports = {
                         account
                             .waitForElementVisible('@selectedTab', 20000)
                             .verify.elementPresent('@personaccountName', 'Person Account Name is Displayed ?')
-                            .verify.containsText('@personaccountName',energy.account_info.account_name, 'Person account name is displayed correctly ?')
+                            .verify.containsText('@personaccountName',energy.energytelco.account_info.account_name, 'Person account name is displayed correctly ?')
                             .verify.elementPresent('@relatedlistTab', 'Related list tab is present ?')
                             .verify.elementPresent('@sidebarSearch', 'Sidebar search is Present ?')
                             .verify.elementPresent('@detailstabRight', 'Details tab is displayed by default ?')

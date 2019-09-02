@@ -1,5 +1,5 @@
 module.exports = {
-    tags: ['bat_sp_652_ac1', 'bat_sp_652' , 'sp_652','bat_giconsultant_sp_652_ac3', 'bat_giconsultant_sp_652', 'giconsultant_sp652'],
+    tags: ['bat_sp_652_ac1', 'bat_sp_652' , 'sp_652','bat_giconsultant_sp_652_ac3', 'bat_giconsultant_sp_652', 'giconsultant_sp_652'],
 
     'Login Bat Credentials': function(browser) 
     {
@@ -28,7 +28,7 @@ module.exports = {
                 if (result.value)
                 {
                     search
-                        .setValue('@searchField', energy.account_info.first_name)
+                        .setValue('@searchField', energy.gi.account_info.first_name)
                     browser
                         .keys(browser.Keys.ENTER)
                         .pause(3000);
@@ -58,7 +58,7 @@ module.exports = {
                         console.log('Refreshing the Page')
                         search
                             .waitForElementVisible('@searchField', 15000)
-                            .setValue('@searchField', energy.account_info.first_name)
+                            .setValue('@searchField', energy.gi.account_info.first_name)
                         browser
                             .keys(browser.Keys.ENTER)
                         search
@@ -103,7 +103,7 @@ module.exports = {
                         .click_detailspreferredEmail()
                         .verify.elementPresent('@detailsEmail', 'Email Field is Present ?')
                         .clearValue('@detailsEmail')
-                        .setValue('@detailsEmail', energy.account_info.email )
+                        .setValue('@detailsEmail', energy.gi.account_info.email )
                         .pause(1000)
                     browser
                         .keys(browser.Keys.PAGEUP)
@@ -111,10 +111,10 @@ module.exports = {
                     account
                         .verify.elementPresent('@detailsfirstName', 'First Name Details Field is Present ?')
                         .clearValue('@detailsfirstName')
-                        .setValue('@detailsfirstName', energy.account_info.first_name )
+                        .setValue('@detailsfirstName', energy.gi.account_info.first_name )
                         .verify.elementPresent('@detailslastName', 'Last Name Details Field is Present ?')
                         .clearValue('@detailslastName')
-                        .setValue('@detailslastName', energy.account_info.last_name )
+                        .setValue('@detailslastName', energy.gi.account_info.last_name )
                         .pause(2000)
                     browser
                         .saveScreenshot('reports/bat_env/verticals/general_insurance/gi_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3a_update_person_account_information.png')
@@ -133,7 +133,7 @@ module.exports = {
                            .click_detailspreferredContact()
                            .click_detailspreferredEmail()
                            .clearValue('@detailsEmail')
-                           .setValue('@detailsEmail', energy.account_info.email )
+                           .setValue('@detailsEmail', energy.gi.account_info.email )
                            .pause(1000)
                        browser
                            .keys(browser.Keys.PAGEUP)
@@ -141,10 +141,10 @@ module.exports = {
                        account
                            .verify.elementPresent('@detailsfirstName', 'First Name Details Field is Present ?')
                            .clearValue('@detailsfirstName')
-                           .setValue('@detailsfirstName', energy.account_info.first_name )
+                           .setValue('@detailsfirstName', energy.gi.account_info.first_name )
                            .verify.elementPresent('@detailslastName', 'Last Name Details Field is Present ?')
                            .clearValue('@detailslastName')
-                           .setValue('@detailslastName', energy.account_info.last_name )
+                           .setValue('@detailslastName', energy.gi.account_info.last_name )
                            .pause(2000)
                        browser
                            .saveScreenshot('reports/bat_env/verticals/general_insurance/gi_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3a_update_person_account_information.png')
@@ -163,8 +163,8 @@ module.exports = {
                 if (result.value)
                 {
                     account
-                        .verify.containsText('@detailsInfo', energy.account_info.account_name , 'The Details Contains Correct Account Name ?')
-                        .verify.containsText('@detailsinfoEmail', energy.account_info.email , ' The Details Contains Correct Email ?')
+                        .verify.containsText('@detailsInfo', energy.gi.account_info.account_name , 'The Details Contains Correct Account Name ?')
+                        .verify.containsText('@detailsinfoEmail', energy.gi.account_info.email , ' The Details Contains Correct Email ?')
                     browser
                         .saveScreenshot('reports/bat_env/verticals/general_insurance/gi_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3b_update_person_account_information.png')
                 }
@@ -175,8 +175,8 @@ module.exports = {
                             .refresh
                         account
                             .waitForElementVisible('@detailsTab', 20000)
-                            .verify.containsText('@detailsInfo', energy.account_info.account_name , 'The Details Contains Correct Account Name ?')
-                            .verify.containsText('@detailsinfoEmail', energy.account_info.email , ' The Details Contains Correct Email ?')
+                            .verify.containsText('@detailsInfo', energy.gi.account_info.account_name , 'The Details Contains Correct Account Name ?')
+                            .verify.containsText('@detailsinfoEmail', energy.gi.account_info.email , ' The Details Contains Correct Email ?')
                         browser
                             .saveScreenshot('reports/bat_env/verticals/general_insurance/gi_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3b_update_person_account_information.png')
                     }
@@ -201,7 +201,7 @@ module.exports = {
                     .click_detailspreferredEmail()
                     .verify.elementPresent('@detailsEmail', 'Email Field is Present ?')
                     .clearValue('@detailsEmail')
-                    .setValue('@detailsEmail', energy.account_info.email )
+                    .setValue('@detailsEmail', energy.gi.account_info.email )
                     .pause(1000)
                 browser
                     .keys(browser.Keys.PAGEUP)
@@ -209,10 +209,10 @@ module.exports = {
                 account
                     .verify.elementPresent('@detailsfirstName', 'First Name Details Field is Present ?')
                     .clearValue('@detailsfirstName')
-                    .setValue('@detailsfirstName', energy.account_info.first_name )
+                    .setValue('@detailsfirstName', energy.gi.account_info.first_name )
                     .verify.elementPresent('@detailslastName', 'Last Name Details Field is Present ?')
                     .clearValue('@detailslastName')
-                    //.setValue('@detailslastName', energy.account_info.last_name )
+                    //.setValue('@detailslastName', energy.gi.account_info.last_name )
                     .click_detailsSave()
                     .pause(5000);
                 browser
@@ -231,7 +231,7 @@ module.exports = {
                        .click_detailspreferredContact()
                        .click_detailspreferredEmail()
                        .clearValue('@detailsEmail')
-                       .setValue('@detailsEmail', energy.account_info.email )
+                       .setValue('@detailsEmail', energy.gi.account_info.email )
                        .pause(1000)
                    browser
                        .keys(browser.Keys.PAGEUP)
@@ -239,10 +239,10 @@ module.exports = {
                    account
                        .verify.elementPresent('@detailsfirstName', 'First Name Details Field is Present ?')
                        .clearValue('@detailsfirstName')
-                       .setValue('@detailsfirstName', energy.account_info.first_name )
+                       .setValue('@detailsfirstName', energy.gi.account_info.first_name )
                        .verify.elementPresent('@detailslastName', 'Last Name Details Field is Present ?')
                        .clearValue('@detailslastName')
-                       //.setValue('@detailslastName', energy.account_info.last_name )
+                       //.setValue('@detailslastName', energy.gi.account_info.last_name )
                        .click_detailsSave()
                         .pause(5000);
                     browser

@@ -32,8 +32,8 @@ module.exports = {
                         .pause(3000)
                         .frame(0)
                     account
-                        .setValue('@inputfirstName', energy.account_info.first_name)
-                        .setValue('@inputEmail', energy.account_info.email)
+                        .setValue('@inputfirstName', energy.energysales.account_info.first_name)
+                        .setValue('@inputEmail', energy.energysales.account_info.email)
                     browser
                         .keys(browser.Keys.ENTER)
                 }
@@ -46,8 +46,8 @@ module.exports = {
                             .pause(3000)
                             .frame(0)
                         account
-                            .setValue('@inputfirstName', energy.account_info.first_name)
-                            .setValue('@inputEmail', energy.account_info.email)
+                            .setValue('@inputfirstName', energy.energysales.account_info.first_name)
+                            .setValue('@inputEmail', energy.energysales.account_info.email)
                         browser
                             .keys(browser.Keys.ENTER)
                 }            
@@ -91,7 +91,7 @@ module.exports = {
                 if (result.value)
                 {
                     browser
-                        .useXpath().setValue('/html/body/form/div[1]/div[1]/div/div/div/div[2]/div/div/table/tbody/tr[1]/td[2]/input', energy.account_info.last_name)
+                        .useXpath().setValue('/html/body/form/div[1]/div[1]/div/div/div/div[2]/div/div/table/tbody/tr[1]/td[2]/input', energy.energysales.account_info.last_name)
                     browser
                         .useXpath().click('/html/body/form/div[2]/div/div[2]/div/table/tbody/tr[10]/td[1]/a[1]/i/b')
                 }
@@ -102,7 +102,7 @@ module.exports = {
                             .refresh()
                         
                         browser
-                            .useXpath().setValue('@/html/body/form/div[1]/div[1]/div/div/div/div[2]/div/div/table/tbody/tr[1]/td[2]/input', energy.account_info.last_name)
+                            .useXpath().setValue('@/html/body/form/div[1]/div[1]/div/div/div/div[2]/div/div/table/tbody/tr[1]/td[2]/input', energy.energysales.account_info.last_name)
                         browser
                             .useXpath().click('/html/body/form/div[2]/div/div[2]/div/table/tbody/tr[10]/td[1]/a[1]/i/b')
                     }
@@ -120,7 +120,7 @@ module.exports = {
                     account
                         .waitForElementPresent('@personaccountName', 30000)
                         .verify.elementPresent('@personaccountName', 'Person Account Name is Displayed ?')
-                        .verify.containsText('@personaccountName',energy.account_info.account_name, 'Person account name is displayed correctly ?')
+                        .verify.containsText('@personaccountName',energy.energysales.account_info.account_name, 'Person account name is displayed correctly ?')
                     browser
                         .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac2a_create_person_sidebar_result_page.png')
                 }
@@ -132,7 +132,7 @@ module.exports = {
                         account
                             .waitForElementVisible('@selectedTab', 15000)
                             .verify.elementPresent('@personaccountName', 'Person Account Name is Displayed ?')
-                            .verify.containsText('@personaccountName',energy.account_info.account_name, 'Person account name is displayed correctly ?')
+                            .verify.containsText('@personaccountName',energy.energysales.account_info.account_name, 'Person account name is displayed correctly ?')
                         browser
                             .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac2a_create_person_sidebar_result_page.png')
                     }
@@ -147,7 +147,7 @@ module.exports = {
                 if (result.value)
                 {
                     account
-                        .verify.containsText('@selectedTab', energy.account_info.account_name , 'The Created Account is Correctly Displayed in a Default Tab ?')    
+                        .verify.containsText('@selectedTab', energy.energysales.account_info.account_name , 'The Created Account is Correctly Displayed in a Default Tab ?')    
                 }
                     else
                     {
@@ -156,7 +156,7 @@ module.exports = {
                             .refresh()
                         account
                             .waitForElementVisible('@selectedTab', 30000)
-                            .verify.containsText('@selectedTab', energy.account_info.account_name , 'The Created Account is Correctly Displayed in a Default Tab ?');
+                            .verify.containsText('@selectedTab', energy.energysales.account_info.account_name , 'The Created Account is Correctly Displayed in a Default Tab ?');
                     }
             })
     },

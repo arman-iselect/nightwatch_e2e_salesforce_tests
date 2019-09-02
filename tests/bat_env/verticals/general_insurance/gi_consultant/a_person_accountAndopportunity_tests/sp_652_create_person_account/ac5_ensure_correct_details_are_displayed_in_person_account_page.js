@@ -1,5 +1,5 @@
 module.exports = {
-    tags: ['bat_sp_652_ac1', 'bat_sp_652' , 'sp_652','bat_giconsultant_sp_652_ac5', 'bat_giconsultant_sp_652', 'giconsultant_sp652'],
+    tags: ['bat_sp_652_ac1', 'bat_sp_652' , 'sp_652','bat_giconsultant_sp_652_ac5', 'bat_giconsultant_sp_652', 'giconsultant_sp_652'],
 
     'Login Bat Credentials': function(browser) 
     {
@@ -33,16 +33,16 @@ module.exports = {
                         .click_salutationDropdown()
                         .click_salutationMr()
                         .verify.elementPresent('@firstName', 'First Name Field is Present?')
-                        .setValue('@firstName', energy.account_info.first_name )
+                        .setValue('@firstName', energy.gi.account_info.first_name )
                         .verify.elementPresent('@lastName', 'Last Name Field is Present?')
-                        .setValue('@lastName', energy.account_info.last_name)
+                        .setValue('@lastName', energy.gi.account_info.last_name)
                         .verify.elementPresent('@contactMethod', 'Preferred Contact Method field Present?')
                         .click_contactMethod()
                         .waitForElementVisible('@emailPreferred', 15000)
                         .click_emailPreferred()
-                        .setValue('@homePhone', energy.account_info.home_phone )
+                        .setValue('@homePhone', energy.gi.account_info.home_phone )
                         .verify.elementPresent('@email', 'Email Field is Present?')
-                        .setValue('@email', energy.account_info.email)
+                        .setValue('@email', energy.gi.account_info.email)
                         .click_save()
                         .pause(5000);
                 }
@@ -55,16 +55,16 @@ module.exports = {
                             .click_salutationDropdown()
                             .click_salutationMr()
                             .verify.elementPresent('@firstName', 'First Name Field is Present?')
-                            .setValue('@firstName', energy.account_info.first_name )
+                            .setValue('@firstName', energy.gi.account_info.first_name )
                             .verify.elementPresent('@lastName', 'Last Name Field is Present?')
-                            .setValue('@lastName', energy.account_info.last_name)
+                            .setValue('@lastName', energy.gi.account_info.last_name)
                             .verify.elementPresent('@contactMethod', 'Preferred Contact Method field Present?')
                             .click_contactMethod()
                             .waitForElementVisible('@emailPreferred', 15000)
                             .click_emailPreferred()
-                            .setValue('@homePhone', energy.account_info.home_phone )
+                            .setValue('@homePhone', energy.gi.account_info.home_phone )
                             .verify.elementPresent('@email', 'Email Field is Present?')
-                            .setValue('@email', energy.account_info.email)
+                            .setValue('@email', energy.gi.account_info.email)
                             .click_save()
                             .pause(5000);
                     }
@@ -80,7 +80,7 @@ module.exports = {
             {
                 account
                     .verify.elementPresent('@personaccountName', 'Person Account Name is Displayed ?')
-                    .verify.containsText('@selectedTab', energy.account_info.account_name , 'The Created Account is Correctly Displayed in a Default Tab ?')
+                    .verify.containsText('@selectedTab', energy.gi.account_info.account_name , 'The Created Account is Correctly Displayed in a Default Tab ?')
                 browser
                     .getText('[class="slds-page-header__detail-block forceHighlightsDesktopListRecordItem"]', function (result0){
                         console.log(result0.value)
@@ -111,7 +111,7 @@ module.exports = {
                     account
                         .waitForElementVisible('@selectedTab', 30000)
                         .verify.elementPresent('@personaccountName', 'Person Account Name is Displayed ?')
-                        .verify.containsText('@selectedTab', energy.account_info.account_name , 'The Created Account is Correctly Displayed in a Default Tab ?')
+                        .verify.containsText('@selectedTab', energy.gi.account_info.account_name , 'The Created Account is Correctly Displayed in a Default Tab ?')
                     browser
                         .getText('[class="slds-page-header__detail-block forceHighlightsDesktopListRecordItem"]', function (result0){
                             console.log(result0.value)

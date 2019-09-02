@@ -1,14 +1,14 @@
 module.exports = {
-    tags: ['spqa_sp_652_ac4', 'spqa_sp_652', 'sp_652', 'spqa_lifeadviser_sp652_ac4', 'spqa_lifeadviser_sp_652', 'lifeadviser_sp652'],
+    tags: ['spqa_sp_652_ac4', 'spqa_sp_652', 'sp_652', 'spqa_lifeadviser_sp_652_ac4', 'spqa_lifeadviser_sp_652', 'lifeadviser_sp_652'],
       
-    'Login Bat Credentials': function(browser) 
+    'Login spqa Credentials': function(browser) 
     {
-        console.log('Go to Salesforce Login Test URL and Enter Bat Credentials');
+        console.log('Go to Salesforce Login Test URL and Enter spqa Credentials');
         login
             .navigate()
             .maximizeWindow()
-            .setValue('@username', data.salesforce.bat.username)
-            .setValue('@password', data.salesforce.bat.password)
+            .setValue('@username', data.salesforce.spqa.username)
+            .setValue('@password', data.salesforce.spqa.password)
             .click_loginbtn();
     },
 
@@ -17,9 +17,8 @@ module.exports = {
         console.log('Log in as Energy Consultant QA');
         
         browser
-            .url(data.energy.spqa.lifeAdviser.loginTest);
-        account
-            .navigate();
+            .url(data.energy.spqa.lifeAdviser.loginTest)
+            .url(data.energy.spqa.account.url);
     },
     
     'GIVEN I have entered the relevant details to create a new person account as per AC1 and AC2': function(browser) 
@@ -53,16 +52,16 @@ module.exports = {
                         .click_salutationDropdown()
                         .click_salutationMr()
                         .verify.elementPresent('@firstName', 'First Name Field is Present?')
-                        .setValue('@firstName', energy.account_info.first_name )
+                        .setValue('@firstName', energy.lifeadviser.account_info.first_name )
                         .verify.elementPresent('@lastName', 'Last Name Field is Present?')
-                        .setValue('@lastName', energy.account_info.last_name)
+                        .setValue('@lastName', energy.lifeadviser.account_info.last_name)
                         .verify.elementPresent('@contactMethod', 'Preferred Contact Method field Present?')
                         .click_contactMethod()
                         .waitForElementVisible('@emailPreferred', 15000)
                         .click_emailPreferred()
-                        .setValue('@homePhone', energy.account_info.home_phone )
+                        .setValue('@homePhone', energy.lifeadviser.account_info.home_phone )
                         .verify.elementPresent('@email', 'Email Field is Present?')
-                        .setValue('@email', energy.account_info.email)
+                        .setValue('@email', energy.lifeadviser.account_info.email)
                         .click_save()
                         .pause(5000);
                 }
@@ -75,16 +74,16 @@ module.exports = {
                             .click_salutationDropdown()
                             .click_salutationMr()
                             .verify.elementPresent('@firstName', 'First Name Field is Present?')
-                            .setValue('@firstName', energy.account_info.first_name )
+                            .setValue('@firstName', energy.lifeadviser.account_info.first_name )
                             .verify.elementPresent('@lastName', 'Last Name Field is Present?')
-                            .setValue('@lastName', energy.account_info.last_name)
+                            .setValue('@lastName', energy.lifeadviser.account_info.last_name)
                             .verify.elementPresent('@contactMethod', 'Preferred Contact Method field Present?')
                             .click_contactMethod()
                             .waitForElementVisible('@emailPreferred', 15000)
                             .click_emailPreferred()
-                            .setValue('@homePhone', energy.account_info.home_phone )
+                            .setValue('@homePhone', energy.lifeadviser.account_info.home_phone )
                             .verify.elementPresent('@email', 'Email Field is Present?')
-                            .setValue('@email', energy.account_info.email)
+                            .setValue('@email', energy.lifeadviser.account_info.email)
                             .click_save()
                             .pause(5000);
                     }
@@ -100,7 +99,7 @@ module.exports = {
                 {
                     account
                         .verify.elementPresent('@personaccountName', 'Person Account Name is Displayed ?')
-                        .verify.containsText('@personaccountName',energy.account_info.account_name, 'Person account name is displayed correctly ?')
+                        .verify.containsText('@personaccountName',energy.lifeadviser.account_info.account_name, 'Person account name is displayed correctly ?')
                         .verify.elementPresent('@relatedlistTab', 'Related list tab is present ?')
                         .verify.elementPresent('@sidebarSearch', 'Sidebar search is Present ?')
                         .verify.elementPresent('@detailstabRight', 'Details tab is displayed by default ?')
@@ -133,7 +132,7 @@ module.exports = {
                         account
                             .waitForElementVisible('@selectedTab', 20000)
                             .verify.elementPresent('@personaccountName', 'Person Account Name is Displayed ?')
-                            .verify.containsText('@personaccountName',energy.account_info.account_name, 'Person account name is displayed correctly ?')
+                            .verify.containsText('@personaccountName',energy.lifeadviser.account_info.account_name, 'Person account name is displayed correctly ?')
                             .verify.elementPresent('@relatedlistTab', 'Related list tab is present ?')
                             .verify.elementPresent('@sidebarSearch', 'Sidebar search is Present ?')
                             .verify.elementPresent('@detailstabRight', 'Details tab is displayed by default ?')
