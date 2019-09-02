@@ -61,7 +61,7 @@ module.exports = {
                 {
                     if (result.value)
                     {
-                        browser
+                        browser                /html/body/form/div[2]/div/div[2]/div/table/tbody/tr[2]/td[1]/a[1]
                             .useXpath().click('/html/body/form/div[2]/div/div[2]/div/table/tbody/tr[10]/td[1]/a[1]/i/b')
                             .pause(3000)
                         browser

@@ -86,7 +86,7 @@ module.exports = {
                         console.log(result0.value)
                     });
                 browser
-                    .getText('[title=\"Energy Automated Test0\"]', function(result1){
+                    .getText('[title=\"Energy Telco Automated Test0\"]', function(result1){
                     console.log(result1.value)
                     });
                 browser
@@ -101,7 +101,7 @@ module.exports = {
                 browser
                     .saveScreenshot('reports/bat_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac5_ensure_correct_details_displayed_account_page.png')
                 account
-                    .click_closeTab();
+                    .click_telcocloseTab();
             }
                 else
                 {
@@ -117,7 +117,7 @@ module.exports = {
                             console.log(result0.value)
                         });
                     browser
-                        .getText('[title=\"Energy Automated Test0\"]', function(result1){
+                        .getText('[title=\"Energy Telco Automated Test0\"]', function(result1){
                         console.log(result1.value)
                         });
                     browser
@@ -132,7 +132,7 @@ module.exports = {
                     browser
                         .saveScreenshot('reports/bat_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac5_ensure_correct_details_displayed_account_page.png')
                     account
-                        .click_closeTab();
+                        .click_telcocloseTab();
                 }
         })
 

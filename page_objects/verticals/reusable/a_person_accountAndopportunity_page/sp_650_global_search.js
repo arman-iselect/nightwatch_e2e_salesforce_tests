@@ -32,7 +32,8 @@ module.exports = {
         weSearched: 'div[class=\"slds-p-bottom--large\"]',
         tips: 'div[class=\"tips\"]',
         errorMsg: 'div[class="error strength_3 pOne uiMessage forceMessage"]',
-        hyperlinkText1: '[title="Energy Automated Test0"]'
+        hyperlinkText1: '[title="Energy Automated Test0"]',
+        telcohyperlinkText1: '[title="Energy Telco Automated Test0"]'
         
     },
 
@@ -51,6 +52,11 @@ module.exports = {
         click_hyperlinkText() {
             return this
             .click('@hyperlinkText');
+        },
+
+        click_telcohyperlinkText1() {
+            return this
+            .click('@telcohyperlinkText1');
         },
 
         click_hyperlinkText1() {

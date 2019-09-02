@@ -20,8 +20,9 @@ module.exports = {
         searchthisList: 'input[placeholder=\"Search this list...\"]',
         salutationDropdown: '.salutation',
         salutationMr: 'li.uiMenuItem:nth-child(4) > a:nth-child(1)',
-        tabDefault: '[title=\"Energy Automated Test0\"]',
+        tabDefault: '[title=\"Energy Telco Automated Test0\"]',
         closeTab: '[title="Close Energy Automated Test0"]',
+        telcocloseTab: '[title="Close Energy Telco Automated Test0"]',
         closenewTab: '[title="Close New Account: Person Account"]',
         firstName: 'input[class=\"firstName compoundBorderBottom form-element__row input\"]',
         lastName: 'input[class=\"lastName compoundBorderBottom form-element__row input\"]',
@@ -38,7 +39,8 @@ module.exports = {
         emailPreferred: '[title="Email"]',
         detailsInfo: 'div[class="slds-form-element__control slds-grid itemBody"]',
         personaccountTitle: '[title=\"Energy Automated Test0\"]',
-        tabTitle: '[title=\"Energy Automated Test0\"]',
+        telcopersonaccountTitle: '[title=\"Energy Automated Test0\"]',
+        tabTitle: '[title=\"Energy Telco Automated Test0\"]',
         selectedTab: 'span[class="title slds-truncate"]',
         tabPresent: 'li[class="tabItem slds-context-bar__item slds-context-bar__item_tab slds-is-active active hasActions hideAnimation  oneConsoleTabItem"]',
         emailPresent: '[class="emailuiFormattedEmail"]',
@@ -87,6 +89,11 @@ module.exports = {
         click_closeTab() {
             return this
             .click('@closeTab');
+        },
+
+        click_telcocloseTab() {
+            return this
+            .click('@telcocloseTab');
         },
 
         click_closenewTab() {
