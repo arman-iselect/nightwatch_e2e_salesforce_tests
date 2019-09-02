@@ -98,13 +98,13 @@ module.exports = {
     'THEN a new person account is created':function (browser)
     {
         account
-            .waitForElementVisible('@personaccountTitle', 20000, function(result)
+            .waitForElementVisible('@telcopersonaccountTitle', 20000, function(result)
             {
                 if (result.value)
             {
                 console.log('Person account is created')
                 account
-                    .verify.containsText('@tabTitle', energy.energytelco.account_info.account_name, 'The account is Opened in a new tab ?')
+                    .verify.containsText('@telcotabtitle', energy.energytelco.account_info.account_name, 'The account is Opened in a new tab ?')
             }
                 else
                 {
@@ -112,8 +112,8 @@ module.exports = {
                     browser
                         .refresh()
                     account
-                        .waitForElementVisible('@personaccountTitle', 2000)
-                        .verify.containsText('@tabTitle', energy.energytelco.account_info.account_name , 'The account is displayed after refresh ?')
+                        .waitForElementVisible('@telcopersonaccountTitle', 2000)
+                        .verify.containsText('@telcotabtitle', energy.energytelco.account_info.account_name , 'The account is displayed after refresh ?')
                 }
             })
             
@@ -146,7 +146,7 @@ module.exports = {
     'AND I can view that the details that I have entered are correctly populated to the person account': function(browser)
     {
         account
-            .waitForElementVisible('@personaccountTitle', 20000, function(result)
+            .waitForElementVisible('@telcopersonaccountTitle', 20000, function(result)
             {
                 if (result.value)
                 {
@@ -155,7 +155,7 @@ module.exports = {
                     browser
                         .saveScreenshot('reports/bat_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac1b_create_person_record.png')
                     account
-                        .click_closeTab();
+                        .click_telcocloseTab();
                 }
                     else
                     {
@@ -167,7 +167,7 @@ module.exports = {
                         browser
                             .saveScreenshot('reports/bat_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac1b_create_person_record.png')
                         account
-                            .click_closeTab();
+                            .click_telcocloseTab();
                     }
             })
     },
