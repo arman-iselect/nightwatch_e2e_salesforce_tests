@@ -170,7 +170,7 @@ module.exports = {
             {
                 account
                     .verify.elementPresent('@personaccountName', 'Person Account Name is Displayed ?')
-                    .click_closeTab()
+                    .click_telcocloseTab()
 
             }
                 else
@@ -181,7 +181,7 @@ module.exports = {
                     account
                         .waitForElementVisible('@selectedTab', 15000)
                         .verify.elementPresent('@personaccountName', 'Person Account Name is Displayed ?')
-                        .click_closeTab()
+                        .click_telcocloseTab()
                 }
         })
     },

@@ -36,7 +36,7 @@ module.exports =
                              "disable-logging",
                              "disable-popup-blocking",
                              "disable-web-security",
-                             "ignore-certificate-errors",
+                             //"ignore-certificate-errors",
                              "test-type=browser"
               ]
               }

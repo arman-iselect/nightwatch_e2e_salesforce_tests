@@ -98,7 +98,7 @@ module.exports = {
     'THEN a new person account is created':function (browser)
     {
         account
-            .waitForElementVisible('@personaccountTitle', 20000, function(result)
+            .waitForElementVisible('@telcopersonaccountTitle', 20000, function(result)
             {
                 if (result.value)
             {

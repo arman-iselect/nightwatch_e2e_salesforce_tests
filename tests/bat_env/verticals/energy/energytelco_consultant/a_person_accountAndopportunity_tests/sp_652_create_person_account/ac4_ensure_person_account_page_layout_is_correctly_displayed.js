@@ -123,7 +123,7 @@ module.exports = {
                     browser
                         .saveScreenshot('reports/bat_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac4b_ensure_person_account_page_layout_displayed_correctly.png')
                     account
-                        .click_closeTab();
+                        .click_telcocloseTab();
                 }
                     else
                     {
@@ -156,7 +156,7 @@ module.exports = {
                         browser
                             .saveScreenshot('reports/bat_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac4b_ensure_person_account_page_layout_displayed_correctly.png')
                         account
-                            .click_closeTab();
+                            .click_telcocloseTab();
                     }
             })
 

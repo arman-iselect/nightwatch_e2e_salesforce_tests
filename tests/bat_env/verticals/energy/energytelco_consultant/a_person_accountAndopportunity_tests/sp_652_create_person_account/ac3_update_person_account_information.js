@@ -31,14 +31,13 @@ module.exports = {
                         .setValue('@searchField', energy.energytelco.account_info.first_name)
                     browser
                         .keys(browser.Keys.ENTER)
-                        .pause(3000);
                     search
-                        .waitForElementVisible('@hyperlinkText1', 20000, function (result)
+                        .waitForElementVisible('@telcohyperlinkText1', 20000, function (result)
                         {
                             if (result.value)
                             {
                                 search
-                                    .click_hyperlinkText1()
+                                    .click_telcohyperlinkText1()
                                     .pause(3000);
                             }
                                 else
@@ -47,8 +46,8 @@ module.exports = {
                                     browser
                                         .refresh()
                                     search
-                                        .waitForElementVisible('@hyperlinkText', 30000)
-                                        .click_hyperlinkText1()
+                                        .waitForElementVisible('@telcohyperlinkText1', 30000)
+                                        .click_telcohyperlinkText1()
                                         .pause(3000);
                                 }
                         })
@@ -62,12 +61,12 @@ module.exports = {
                         browser
                             .keys(browser.Keys.ENTER)
                         search
-                            .waitForElementVisible('@hyperlinkText1', 20000, function(result)
+                            .waitForElementVisible('@telcohyperlinkText1', 20000, function(result)
                             {
                                 if (result.value)
                                 {
                                     search
-                                        .click_hyperlinkText1()
+                                        .click_telcohyperlinkText1()
                                         .pause(3000);
                                 }
                                     else
@@ -76,8 +75,8 @@ module.exports = {
                                         browser
                                             .refresh()
                                         search
-                                            .waitForElementVisible('@hyperlinkText', 30000)
-                                            .click_hyperlinkText1()
+                                            .waitForElementVisible('@telcohyperlinkText1', 30000)
+                                            .click_telcohyperlinkText1()
                                             .pause(3000);
                                     }
                             })
@@ -218,7 +217,7 @@ module.exports = {
                 browser
                     .saveScreenshot('reports/bat_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3c_update_person_account_information.png')
                 account
-                    .click_closeTab()
+                    .click_telcocloseTab()
                 
             }
                 else
@@ -248,7 +247,7 @@ module.exports = {
                     browser
                        .saveScreenshot('reports/bat_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3c_update_person_account_information.png')
                     account
-                       .click_closeTab()
+                       .click_telcocloseTab()
                 }
         })
     }
