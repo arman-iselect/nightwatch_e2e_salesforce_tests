@@ -20,7 +20,9 @@ module.exports =
         "webdriver" : {
           "start_process": true,
           "server_path": "node_modules/chromedriver/lib/chromedriver/chromedriver.exe",
+          //"server_path": "node_modules/geckodriver/geckodriver.exe",
           "port": 9515
+          //"port": 4444
         },
       
       
@@ -51,7 +53,7 @@ module.exports =
             "desiredCapabilities": {
               "browserName": "firefox",
               "firefoxOptions": {
-                  "args": ["--headless", 
+                  "args": [//"--headless", 
                             "window-size=1366,768",
                              "--disable-logging",
                              "disable-web-security",
