@@ -1,5 +1,5 @@
 module.exports = {
-    url: 'https://iselect--bat.lightning.force.com/lightning/o/Report/home?queryScope=mru',
+    url: 'https://iselect--bat.lightning.force.com/lightning/o/Lead/list?filterName=Recent',
     elements: {
         searchField: 'input[placeholder=\"Search Salesforce\"]',
         convertLead: '[title=\"Convert Lead\"]',
