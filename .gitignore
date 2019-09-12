@@ -2,5 +2,6 @@
 logs/
 reports/
 lib/
+node_modules/
 *.log
 *.png
