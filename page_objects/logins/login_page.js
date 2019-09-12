@@ -8,6 +8,7 @@ module.exports = {
         errorMsg1: 'div[class="modal-header slds-modal__header slds-theme--info slds-theme--alert-texture"]',
         errorMsg2: 'div[class="auraErrorBox"]',
         errorMsg3: '[class="summary"]',
+        errorMsg4: '',
         errorMsg4: 'div[class="modal-header slds-modal__header"]',
     },
 
