@@ -13,11 +13,11 @@ module.exports = {
             .click_loginbtn();
     },
 
-    'Log in as Energy Consultant QA': function(browser) 
+    'Log in as Energy Consultant QA': async function(browser) 
     {
         console.log('Log in as Energy Consultant QA');
         
-        browser
+        await browser
             .url(data.energy.bat.energysalesConsultant.loginTest);
     },
     
