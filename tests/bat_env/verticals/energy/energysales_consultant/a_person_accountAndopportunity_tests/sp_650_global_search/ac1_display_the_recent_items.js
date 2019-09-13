@@ -7,16 +7,17 @@ module.exports = {
         login
             .navigate()
             .maximizeWindow()
+            //.login_admin(data.salesforce.bat.username, data.salesforce.bat.password);
             .setValue('@username', data.salesforce.bat.username)
             .setValue('@password', data.salesforce.bat.password)
             .click_loginbtn();
     },
 
-    'Log in as Energy Consultant QA': function(browser) 
+    'Log in as Energy Consultant QA': async function(browser) 
     {
         console.log('Log in as Energy Consultant QA');
         
-        browser
+        await browser
             .url(data.energy.bat.energysalesConsultant.loginTest);
     },
     
