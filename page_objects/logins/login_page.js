@@ -1,4 +1,5 @@
-module.exports = {
+module.exports = 
+{
     url: 'https://test.salesforce.com/',
     elements: {
         username: '#username',
@@ -12,11 +13,22 @@ module.exports = {
         errorMsg4: 'div[class="modal-header slds-modal__header"]',
     },
 
-    commands: [{
+    commands: 
+    {
 
-        click_loginbtn() {
+        click_loginbtn() 
+        {
             return this
             .click('@loginbtn');
-        }
-    }]
+        },
+
+       /* login_admin = function(username, password)
+        {
+            this
+            .setvalue('@username')
+            .setvalue('@password')
+            .click('@loginbtn')
+            return this;
+        }*/
+    }
 };

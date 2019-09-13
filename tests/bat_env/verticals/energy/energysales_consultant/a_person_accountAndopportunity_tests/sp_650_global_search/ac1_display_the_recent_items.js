@@ -7,6 +7,7 @@ module.exports = {
         login
             .navigate()
             .maximizeWindow()
+            //.login_admin(data.salesforce.bat.username, data.salesforce.bat.password);
             .setValue('@username', data.salesforce.bat.username)
             .setValue('@password', data.salesforce.bat.password)
             .click_loginbtn();

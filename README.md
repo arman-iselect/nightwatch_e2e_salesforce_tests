@@ -10,7 +10,7 @@ Nightwatch
 		--https://www.oracle.com/technetwork/java/javase/downloads/jdk12-downloads-5295953.html
 	2. Install node.js
 		--https://nodejs.org/en/download/
-	3. Install nightwatch
+	3. Install nightwatch (or clone the repository and run npm i)
 		--npm i nightwatch --save-dev
 	4. Install Drivers
 		--npm i chromedriver --save-dev (Chrome)
