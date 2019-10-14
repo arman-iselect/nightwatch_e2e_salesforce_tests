@@ -1,7 +1,10 @@
 # ignore folder
 logs/
 reports/
+<<<<<<< HEAD
 lib/
 node_modules/
+=======
+>>>>>>> stage21
 *.log
 *.png
