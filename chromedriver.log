@@ -1,3 +1,6 @@
 Starting ChromeDriver 76.0.3809.68 (420c9498db8ce8fcd190a954d51297672c1515d5-refs/branch-heads/3809@{#864}) on port 9515
 Only local connections are allowed.
 Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+[1571012298.144][WARNING]: This version of ChromeDriver has not been tested with Chrome version 77.
+[1571012300.147][WARNING]: Timed out connecting to Chrome, retrying...
+[1571012307.858][WARNING]: Timed out connecting to Chrome, retrying...
