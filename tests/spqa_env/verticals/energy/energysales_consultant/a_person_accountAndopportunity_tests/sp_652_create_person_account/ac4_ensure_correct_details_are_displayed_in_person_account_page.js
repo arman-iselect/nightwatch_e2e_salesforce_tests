@@ -1,14 +1,14 @@
 module.exports = {
-    tags: ['bat_sp_652_ac1', 'bat_sp_652' , 'sp_652','bat_energytelco_sp_652_ac5', 'bat_energytelco_sp_652', 'energytelco_sp_652'],
+    tags: ['spqa_sp_652_ac4', 'spqa_sp_652', 'sp_652', 'spqa_energysales_sp_652_ac4', 'spqa_energysales_sp_652', 'energysales_sp_652'],
 
-    'Login Bat Credentials': function(browser) 
+    'Login spqa Credentials': function(browser) 
     {
-        console.log('Go to Salesforce Login Test URL and Enter Bat Credentials');
+        console.log('Go to Salesforce Login Test URL and Enter spqa Credentials');
         login
             .navigate()
             .maximizeWindow()
-            .setValue('@username', data.salesforce.bat.username)
-            .setValue('@password', data.salesforce.bat.password)
+            .setValue('@username', data.salesforce.spqa.username)
+            .setValue('@password', data.salesforce.spqa.password)
             .click_loginbtn();
     },
 
@@ -17,13 +17,14 @@ module.exports = {
         console.log('Log in as Energy Consultant QA');
         
         browser
-            .url(data.energy.bat.energytelcosalesConsultant.loginTest);
+            .url(data.energy.spqa.energysalesConsultant.loginTest);
     },
     
     'GIVEN I have created a new person': function(browser) 
     {
+        browser
+            .url(data.energy.spqa.account.url)
         account
-            .navigate()
             .click_newAccount()
             .waitForElementVisible('@salutationDropdown', 20000, function(result)
             {
@@ -33,16 +34,16 @@ module.exports = {
                         .click_salutationDropdown()
                         .click_salutationMr()
                         .verify.elementPresent('@firstName', 'First Name Field is Present?')
-                        .setValue('@firstName', energy.energytelco.account_info.first_name )
+                        .setValue('@firstName', energy.energysales.account_info.first_name )
                         .verify.elementPresent('@lastName', 'Last Name Field is Present?')
-                        .setValue('@lastName', energy.energytelco.account_info.last_name)
+                        .setValue('@lastName', energy.energysales.account_info.last_name)
                         .verify.elementPresent('@contactMethod', 'Preferred Contact Method field Present?')
                         .click_contactMethod()
                         .waitForElementVisible('@emailPreferred', 15000)
                         .click_emailPreferred()
-                        .setValue('@homePhone', energy.energytelco.account_info.home_phone )
+                        .setValue('@homePhone', energy.energysales.account_info.home_phone )
                         .verify.elementPresent('@email', 'Email Field is Present?')
-                        .setValue('@email', energy.energytelco.account_info.email)
+                        .setValue('@email', energy.energysales.account_info.email)
                         .click_save()
                         .pause(5000);
                 }
@@ -55,16 +56,16 @@ module.exports = {
                             .click_salutationDropdown()
                             .click_salutationMr()
                             .verify.elementPresent('@firstName', 'First Name Field is Present?')
-                            .setValue('@firstName', energy.energytelco.account_info.first_name )
+                            .setValue('@firstName', energy.energysales.account_info.first_name )
                             .verify.elementPresent('@lastName', 'Last Name Field is Present?')
-                            .setValue('@lastName', energy.energytelco.account_info.last_name)
+                            .setValue('@lastName', energy.energysales.account_info.last_name)
                             .verify.elementPresent('@contactMethod', 'Preferred Contact Method field Present?')
                             .click_contactMethod()
                             .waitForElementVisible('@emailPreferred', 15000)
                             .click_emailPreferred()
-                            .setValue('@homePhone', energy.energytelco.account_info.home_phone )
+                            .setValue('@homePhone', energy.energysales.account_info.home_phone )
                             .verify.elementPresent('@email', 'Email Field is Present?')
-                            .setValue('@email', energy.energytelco.account_info.email)
+                            .setValue('@email', energy.energysales.account_info.email)
                             .click_save()
                             .pause(5000);
                     }
@@ -80,13 +81,13 @@ module.exports = {
             {
                 account
                     .verify.elementPresent('@personaccountName', 'Person Account Name is Displayed ?')
-                    .verify.containsText('@selectedTab', energy.energytelco.account_info.account_name , 'The Created Account is Correctly Displayed in a Default Tab ?')
+                    .verify.containsText('@selectedTab', energy.energysales.account_info.account_name , 'The Created Account is Correctly Displayed in a Default Tab ?')
                 browser
                     .getText('[class="slds-page-header__detail-block forceHighlightsDesktopListRecordItem"]', function (result0){
                         console.log(result0.value)
                     });
                 browser
-                    .getText('[title=\"Energy Telco Automated Test0\"]', function(result1){
+                    .getText('[title=\"Energy Automated Test0\"]', function(result1){
                     console.log(result1.value)
                     });
                 browser
@@ -99,9 +100,9 @@ module.exports = {
                         console.log(result4.value)
                     });
                 browser
-                    .saveScreenshot('reports/bat_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac5_ensure_correct_details_displayed_account_page.png')
+                    .saveScreenshot('reports/spqa_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac4_ensure_correct_details_displayed_account_page.png')
                 account
-                    .click_telcocloseTab();
+                    .click_closeTab();
             }
                 else
                 {
@@ -111,13 +112,13 @@ module.exports = {
                     account
                         .waitForElementVisible('@selectedTab', 30000)
                         .verify.elementPresent('@personaccountName', 'Person Account Name is Displayed ?')
-                        .verify.containsText('@selectedTab', energy.energytelco.account_info.account_name , 'The Created Account is Correctly Displayed in a Default Tab ?')
+                        .verify.containsText('@selectedTab', energy.energysales.account_info.account_name , 'The Created Account is Correctly Displayed in a Default Tab ?')
                     browser
                         .getText('[class="slds-page-header__detail-block forceHighlightsDesktopListRecordItem"]', function (result0){
                             console.log(result0.value)
                         });
                     browser
-                        .getText('[title=\"Energy Telco Automated Test0\"]', function(result1){
+                        .getText('[title=\"Energy Automated Test0\"]', function(result1){
                         console.log(result1.value)
                         });
                     browser
@@ -130,9 +131,9 @@ module.exports = {
                         console.log(result4.value)
                         });
                     browser
-                        .saveScreenshot('reports/bat_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac5_ensure_correct_details_displayed_account_page.png')
+                        .saveScreenshot('reports/spqa_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac4_ensure_correct_details_displayed_account_page.png')
                     account
-                        .click_telcocloseTab();
+                        .click_closeTab();
                 }
         })
 

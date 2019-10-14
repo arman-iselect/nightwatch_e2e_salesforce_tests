@@ -1,5 +1,5 @@
 module.exports = {
-    tags: ['bat_sp_652_ac1', 'bat_sp_652' , 'sp_652', 'bat_energysales_sp_652_ac2', 'bat_energysales_sp_652'],
+    /* tags: ['bat_sp_652_ac1', 'bat_sp_652' , 'sp_652', 'bat_energysales_sp_652_ac2', 'bat_energysales_sp_652'], */
 
     'Login Bat Credentials': function(browser) 
     {

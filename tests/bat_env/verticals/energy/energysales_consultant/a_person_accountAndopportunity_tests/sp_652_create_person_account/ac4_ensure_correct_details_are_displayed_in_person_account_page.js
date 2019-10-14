@@ -1,14 +1,14 @@
 module.exports = {
-    tags: ['spqa_sp_652_ac5', 'spqa_sp_652', 'sp_652', 'spqa_energysales_sp_652_ac5', 'spqa_energysales_sp_652', 'energysales_sp_652'],
+    tags: ['bat_sp_652_ac4', 'bat_sp_652' , 'sp_652', 'bat_energysales_sp_652_ac4', 'bat_energysales_sp_652'],
 
-    'Login spqa Credentials': function(browser) 
+    'Login Bat Credentials': function(browser) 
     {
-        console.log('Go to Salesforce Login Test URL and Enter spqa Credentials');
+        console.log('Go to Salesforce Login Test URL and Enter Bat Credentials');
         login
             .navigate()
             .maximizeWindow()
-            .setValue('@username', data.salesforce.spqa.username)
-            .setValue('@password', data.salesforce.spqa.password)
+            .setValue('@username', data.salesforce.bat.username)
+            .setValue('@password', data.salesforce.bat.password)
             .click_loginbtn();
     },
 
@@ -17,14 +17,13 @@ module.exports = {
         console.log('Log in as Energy Consultant QA');
         
         browser
-            .url(data.energy.spqa.energysalesConsultant.loginTest);
+            .url(data.energy.bat.energysalesConsultant.loginTest);
     },
     
     'GIVEN I have created a new person': function(browser) 
     {
-        browser
-            .url(data.energy.spqa.account.url)
         account
+            .navigate()
             .click_newAccount()
             .waitForElementVisible('@salutationDropdown', 20000, function(result)
             {
@@ -71,6 +70,26 @@ module.exports = {
                     }
             })
     },
+    
+    'WHEN the person account page is displayed': function (browser) 
+    {
+        account
+            .waitForElementVisible('@tabPresent', 15000, function(result)
+            {
+                if (result.value)
+                {
+
+                }
+                    else
+                    {
+                        console.log('Refreshing the Page')
+                        browser
+                            .refresh()
+                        account
+                            .waitForElementVisible('@tabPresent', 30000)
+                    }
+            })
+    },
 
     'THEN I shall be able to view the following details': function (browser) 
     {
@@ -93,14 +112,9 @@ module.exports = {
                 browser
                     .getText('[class="emailuiFormattedEmail"]', function(result2){
                         console.log(result2.value)
-                    });
+                    })
                 browser
-                    .keys(browser.Keys.PAGEDOWN)
-                    .getText('div[class="slds-form-element slds-form-element_readonly slds-form-element_edit slds-grow slds-hint-parent override--slds-form-element"]', function (result4){
-                        console.log(result4.value)
-                    });
-                browser
-                    .saveScreenshot('reports/spqa_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac5_ensure_correct_details_displayed_account_page.png')
+                    .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac4_ensure_correct_details_displayed_account_page.png')
                 account
                     .click_closeTab();
             }
@@ -126,12 +140,7 @@ module.exports = {
                         console.log(result2.value)
                         });
                     browser
-                        .keys(browser.Keys.PAGEDOWN)
-                        .getText('div[class="slds-form-element slds-form-element_readonly slds-form-element_edit slds-grow slds-hint-parent override--slds-form-element"]', function (result4){
-                        console.log(result4.value)
-                        });
-                    browser
-                        .saveScreenshot('reports/spqa_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac5_ensure_correct_details_displayed_account_page.png')
+                        .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac4_ensure_correct_details_displayed_account_page.png')
                     account
                         .click_closeTab();
                 }

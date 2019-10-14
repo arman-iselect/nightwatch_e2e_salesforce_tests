@@ -1,5 +1,5 @@
 module.exports = {
-    tags: ['spqa_sp_652_ac3', 'spqa_sp_652', 'sp_652', 'spqa_energytelco_sp_652_ac3', 'spqa_energytelco_sp_652', 'energytelco_sp_652'],
+    tags: ['spqa_sp_652_ac2', 'spqa_sp_652', 'sp_652', 'spqa_energytelco_sp_652_ac2', 'spqa_energytelco_sp_652', 'energytelco_sp_652'],
 
     'Login spqa Credentials': function(browser) 
     {
@@ -117,7 +117,7 @@ module.exports = {
                         .setValue('@detailslastName', energy.energytelco.account_info.last_name )
                         .pause(2000)
                     browser
-                        .saveScreenshot('reports/spqa_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3a_update_person_account_information.png')
+                        .saveScreenshot('reports/spqa_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac2a_update_person_account_information.png')
                     account
                         .click_detailsSave()
                         .pause(5000);
@@ -147,7 +147,7 @@ module.exports = {
                            .setValue('@detailslastName', energy.energytelco.account_info.last_name )
                            .pause(2000)
                        browser
-                           .saveScreenshot('reports/spqa_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3a_update_person_account_information.png')
+                           .saveScreenshot('reports/spqa_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac2a_update_person_account_information.png')
                        account
                            .click_detailsSave()
                            .pause(5000);
@@ -166,7 +166,7 @@ module.exports = {
                         .verify.containsText('@detailsInfo', energy.energytelco.account_info.account_name , 'The Details Contains Correct Account Name ?')
                         .verify.containsText('@detailsinfoEmail', energy.energytelco.account_info.email , ' The Details Contains Correct Email ?')
                     browser
-                        .saveScreenshot('reports/spqa_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3b_update_person_account_information.png')
+                        .saveScreenshot('reports/spqa_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac2b_update_person_account_information.png')
                 }
                     else
                     {
@@ -178,7 +178,7 @@ module.exports = {
                             .verify.containsText('@detailsInfo', energy.energytelco.account_info.account_name , 'The Details Contains Correct Account Name ?')
                             .verify.containsText('@detailsinfoEmail', energy.energytelco.account_info.email , ' The Details Contains Correct Email ?')
                         browser
-                            .saveScreenshot('reports/spqa_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3b_update_person_account_information.png')
+                            .saveScreenshot('reports/spqa_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac2b_update_person_account_information.png')
                     }
 
             })
@@ -216,7 +216,7 @@ module.exports = {
                     .click_detailsSave()
                     .pause(5000);
                 browser
-                    .saveScreenshot('reports/spqa_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3c_update_person_account_information.png')
+                    .saveScreenshot('reports/spqa_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac2c_update_person_account_information.png')
                 account
                     .click_closeTab()
                 
@@ -246,7 +246,7 @@ module.exports = {
                        .click_detailsSave()
                         .pause(5000);
                     browser
-                       .saveScreenshot('reports/spqa_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3c_update_person_account_information.png')
+                       .saveScreenshot('reports/spqa_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac2c_update_person_account_information.png')
                     account
                        .click_closeTab()
                 }

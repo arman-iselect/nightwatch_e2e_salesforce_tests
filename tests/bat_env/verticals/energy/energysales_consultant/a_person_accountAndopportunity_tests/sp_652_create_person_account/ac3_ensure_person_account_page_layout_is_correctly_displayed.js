@@ -1,5 +1,5 @@
 module.exports = {
-    tags: ['bat_sp_652_ac1', 'bat_sp_652' , 'sp_652','bat_energytelco_sp_652_ac4', 'bat_energytelco_sp_652', 'energytelco_sp_652'],
+    tags: ['bat_sp_652_ac3', 'bat_sp_652' , 'sp_652', 'bat_energysales_sp_652_ac3', 'bat_energysales_sp_652'],
       
     'Login Bat Credentials': function(browser) 
     {
@@ -17,7 +17,7 @@ module.exports = {
         console.log('Log in as Energy Consultant QA');
         
         browser
-            .url(data.energy.bat.energytelcosalesConsultant.loginTest)
+            .url(data.energy.bat.energysalesConsultant.loginTest)
         account
             .navigate();
     },
@@ -53,16 +53,16 @@ module.exports = {
                         .click_salutationDropdown()
                         .click_salutationMr()
                         .verify.elementPresent('@firstName', 'First Name Field is Present?')
-                        .setValue('@firstName', energy.energytelco.account_info.first_name )
+                        .setValue('@firstName', energy.energysales.account_info.first_name )
                         .verify.elementPresent('@lastName', 'Last Name Field is Present?')
-                        .setValue('@lastName', energy.energytelco.account_info.last_name)
+                        .setValue('@lastName', energy.energysales.account_info.last_name)
                         .verify.elementPresent('@contactMethod', 'Preferred Contact Method field Present?')
                         .click_contactMethod()
                         .waitForElementVisible('@emailPreferred', 15000)
                         .click_emailPreferred()
-                        .setValue('@homePhone', energy.energytelco.account_info.home_phone )
+                        .setValue('@homePhone', energy.energysales.account_info.home_phone )
                         .verify.elementPresent('@email', 'Email Field is Present?')
-                        .setValue('@email', energy.energytelco.account_info.email)
+                        .setValue('@email', energy.energysales.account_info.email)
                         .click_save()
                         .pause(5000);
                 }
@@ -75,16 +75,16 @@ module.exports = {
                             .click_salutationDropdown()
                             .click_salutationMr()
                             .verify.elementPresent('@firstName', 'First Name Field is Present?')
-                            .setValue('@firstName', energy.energytelco.account_info.first_name )
+                            .setValue('@firstName', energy.energysales.account_info.first_name )
                             .verify.elementPresent('@lastName', 'Last Name Field is Present?')
-                            .setValue('@lastName', energy.energytelco.account_info.last_name)
+                            .setValue('@lastName', energy.energysales.account_info.last_name)
                             .verify.elementPresent('@contactMethod', 'Preferred Contact Method field Present?')
                             .click_contactMethod()
                             .waitForElementVisible('@emailPreferred', 15000)
                             .click_emailPreferred()
-                            .setValue('@homePhone', energy.energytelco.account_info.home_phone )
+                            .setValue('@homePhone', energy.energysales.account_info.home_phone )
                             .verify.elementPresent('@email', 'Email Field is Present?')
-                            .setValue('@email', energy.energytelco.account_info.email)
+                            .setValue('@email', energy.energysales.account_info.email)
                             .click_save()
                             .pause(5000);
                     }
@@ -100,7 +100,7 @@ module.exports = {
                 {
                     account
                         .verify.elementPresent('@personaccountName', 'Person Account Name is Displayed ?')
-                        .verify.containsText('@personaccountName',energy.energytelco.account_info.account_name, 'Person account name is displayed correctly ?')
+                        .verify.containsText('@personaccountName',energy.energysales.account_info.account_name, 'Person account name is displayed correctly ?')
                         .verify.elementPresent('@relatedlistTab', 'Related list tab is present ?')
                         .verify.elementPresent('@sidebarSearch', 'Sidebar search is Present ?')
                         .verify.elementPresent('@detailstabRight', 'Details tab is displayed by default ?')
@@ -114,16 +114,16 @@ module.exports = {
                         .verify.elementPresent('@relatedNotes', 'Notes related list is Present ?')
                         .verify.elementPresent('@relatednotesAttachments', 'Notes and Attachments related list is Present ?')
                     browser
-                        .saveScreenshot('reports/bat_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac4a_ensure_person_account_page_layout_displayed_correctly.png')
+                        .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3a_ensure_person_account_page_layout_displayed_correctly.png')
                     account
                         .click_activityTab()
                         .waitForElementVisible('@activitynewEvent', 30000)
                         .verify.elementPresent('@activitynewEvent', 'Activity New Event is Present ?')
                         .verify.elementPresent('@activitylogaCall', 'Activity Log a Call is Present ?')
                     browser
-                        .saveScreenshot('reports/bat_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac4b_ensure_person_account_page_layout_displayed_correctly.png')
+                        .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3b_ensure_person_account_page_layout_displayed_correctly.png')
                     account
-                        .click_telcocloseTab();
+                        .click_closeTab();
                 }
                     else
                     {
@@ -133,7 +133,7 @@ module.exports = {
                         account
                             .waitForElementVisible('@selectedTab', 20000)
                             .verify.elementPresent('@personaccountName', 'Person Account Name is Displayed ?')
-                            .verify.containsText('@personaccountName',energy.energytelco.account_info.account_name, 'Person account name is displayed correctly ?')
+                            .verify.containsText('@personaccountName',energy.energysales.account_info.account_name, 'Person account name is displayed correctly ?')
                             .verify.elementPresent('@relatedlistTab', 'Related list tab is present ?')
                             .verify.elementPresent('@sidebarSearch', 'Sidebar search is Present ?')
                             .verify.elementPresent('@detailstabRight', 'Details tab is displayed by default ?')
@@ -147,16 +147,16 @@ module.exports = {
                             .verify.elementPresent('@relatedNotes', 'Notes related list is Present ?')
                             .verify.elementPresent('@relatednotesAttachments', 'Notes and Attachments related list is Present ?')
                         browser
-                            .saveScreenshot('reports/bat_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac4a_ensure_person_account_page_layout_displayed_correctly.png')
+                            .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3a_ensure_person_account_page_layout_displayed_correctly.png')
                         account
                             .click_activityTab()
                             .waitForElementVisible('@activitynewEvent', 30000)
                             .verify.elementPresent('@activitynewEvent', 'Activity New Event is Present ?')
                             .verify.elementPresent('@activitylogaCall', 'Activity Log a Call is Present ?')
                         browser
-                            .saveScreenshot('reports/bat_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac4b_ensure_person_account_page_layout_displayed_correctly.png')
+                            .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3b_ensure_person_account_page_layout_displayed_correctly.png')
                         account
-                            .click_telcocloseTab();
+                            .click_closeTab();
                     }
             })
 

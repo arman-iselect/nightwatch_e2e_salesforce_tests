@@ -1,5 +1,5 @@
 module.exports = {
-    tags: ['bat_sp_652_ac1', 'bat_sp_652' , 'sp_652', 'bat_energysales_sp_652_ac3', 'bat_energysales_sp_652'],
+    tags: ['bat_sp_652_ac2', 'bat_sp_652' , 'sp_652','bat_energytelco_sp_652_ac2', 'bat_energytelco_sp_652', 'energytelco_sp_652'],
 
     'Login Bat Credentials': function(browser) 
     {
@@ -17,7 +17,7 @@ module.exports = {
         console.log('Log in as Energy Consultant QA');
         
         browser
-            .url(data.energy.bat.energysalesConsultant.loginTest);
+            .url(data.energy.bat.energytelcosalesConsultant.loginTest);
     },
     
     'GIVEN I have navigated to view the person account page': function(browser) 
@@ -28,17 +28,16 @@ module.exports = {
                 if (result.value)
                 {
                     search
-                        .setValue('@searchField', energy.energysales.account_info.first_name)
+                        .setValue('@searchField', energy.energytelco.account_info.first_name)
                     browser
                         .keys(browser.Keys.ENTER)
-                        .pause(3000);
                     search
-                        .waitForElementVisible('@hyperlinkText1', 20000, function (result)
+                        .waitForElementVisible('@telcohyperlinkText1', 20000, function (result)
                         {
                             if (result.value)
                             {
                                 search
-                                    .click_hyperlinkText1()
+                                    .click_telcohyperlinkText1()
                                     .pause(3000);
                             }
                                 else
@@ -47,8 +46,8 @@ module.exports = {
                                     browser
                                         .refresh()
                                     search
-                                        .waitForElementVisible('@hyperlinkText', 30000)
-                                        .click_hyperlinkText1()
+                                        .waitForElementVisible('@telcohyperlinkText1', 30000)
+                                        .click_telcohyperlinkText1()
                                         .pause(3000);
                                 }
                         })
@@ -58,16 +57,16 @@ module.exports = {
                         console.log('Refreshing the Page')
                         search
                             .waitForElementVisible('@searchField', 15000)
-                            .setValue('@searchField', energy.energysales.account_info.first_name)
+                            .setValue('@searchField', energy.energytelco.account_info.first_name)
                         browser
                             .keys(browser.Keys.ENTER)
                         search
-                            .waitForElementVisible('@hyperlinkText1', 20000, function(result)
+                            .waitForElementVisible('@telcohyperlinkText1', 20000, function(result)
                             {
                                 if (result.value)
                                 {
                                     search
-                                        .click_hyperlinkText1()
+                                        .click_telcohyperlinkText1()
                                         .pause(3000);
                                 }
                                     else
@@ -76,8 +75,8 @@ module.exports = {
                                         browser
                                             .refresh()
                                         search
-                                            .waitForElementVisible('@hyperlinkText', 30000)
-                                            .click_hyperlinkText1()
+                                            .waitForElementVisible('@telcohyperlinkText1', 30000)
+                                            .click_telcohyperlinkText1()
                                             .pause(3000);
                                     }
                             })
@@ -103,7 +102,7 @@ module.exports = {
                         .click_detailspreferredEmail()
                         .verify.elementPresent('@detailsEmail', 'Email Field is Present ?')
                         .clearValue('@detailsEmail')
-                        .setValue('@detailsEmail', energy.energysales.account_info.email )
+                        .setValue('@detailsEmail', energy.energytelco.account_info.email )
                         .pause(1000)
                     browser
                         .keys(browser.Keys.PAGEUP)
@@ -111,13 +110,13 @@ module.exports = {
                     account
                         .verify.elementPresent('@detailsfirstName', 'First Name Details Field is Present ?')
                         .clearValue('@detailsfirstName')
-                        .setValue('@detailsfirstName', energy.energysales.account_info.first_name )
+                        .setValue('@detailsfirstName', energy.energytelco.account_info.first_name )
                         .verify.elementPresent('@detailslastName', 'Last Name Details Field is Present ?')
                         .clearValue('@detailslastName')
-                        .setValue('@detailslastName', energy.energysales.account_info.last_name )
+                        .setValue('@detailslastName', energy.energytelco.account_info.last_name )
                         .pause(2000)
                     browser
-                        .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3a_update_person_account_information.png')
+                        .saveScreenshot('reports/bat_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac2a_update_person_account_information.png')
                     account
                         .click_detailsSave()
                         .pause(5000);
@@ -133,7 +132,7 @@ module.exports = {
                            .click_detailspreferredContact()
                            .click_detailspreferredEmail()
                            .clearValue('@detailsEmail')
-                           .setValue('@detailsEmail', energy.energysales.account_info.email )
+                           .setValue('@detailsEmail', energy.energytelco.account_info.email )
                            .pause(1000)
                        browser
                            .keys(browser.Keys.PAGEUP)
@@ -141,13 +140,13 @@ module.exports = {
                        account
                            .verify.elementPresent('@detailsfirstName', 'First Name Details Field is Present ?')
                            .clearValue('@detailsfirstName')
-                           .setValue('@detailsfirstName', energy.energysales.account_info.first_name )
+                           .setValue('@detailsfirstName', energy.energytelco.account_info.first_name )
                            .verify.elementPresent('@detailslastName', 'Last Name Details Field is Present ?')
                            .clearValue('@detailslastName')
-                           .setValue('@detailslastName', energy.energysales.account_info.last_name )
+                           .setValue('@detailslastName', energy.energytelco.account_info.last_name )
                            .pause(2000)
                        browser
-                           .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3a_update_person_account_information.png')
+                           .saveScreenshot('reports/bat_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac2a_update_person_account_information.png')
                        account
                            .click_detailsSave()
                            .pause(5000);
@@ -163,10 +162,10 @@ module.exports = {
                 if (result.value)
                 {
                     account
-                        .verify.containsText('@detailsInfo', energy.energysales.account_info.account_name , 'The Details Contains Correct Account Name ?')
-                        .verify.containsText('@detailsinfoEmail', energy.energysales.account_info.email , ' The Details Contains Correct Email ?')
+                        .verify.containsText('@detailsInfo', energy.energytelco.account_info.account_name , 'The Details Contains Correct Account Name ?')
+                        .verify.containsText('@detailsinfoEmail', energy.energytelco.account_info.email , ' The Details Contains Correct Email ?')
                     browser
-                        .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3b_update_person_account_information.png')
+                        .saveScreenshot('reports/bat_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac2b_update_person_account_information.png')
                 }
                     else
                     {
@@ -175,10 +174,10 @@ module.exports = {
                             .refresh
                         account
                             .waitForElementVisible('@detailsTab', 20000)
-                            .verify.containsText('@detailsInfo', energy.energysales.account_info.account_name , 'The Details Contains Correct Account Name ?')
-                            .verify.containsText('@detailsinfoEmail', energy.energysales.account_info.email , ' The Details Contains Correct Email ?')
+                            .verify.containsText('@detailsInfo', energy.energytelco.account_info.account_name , 'The Details Contains Correct Account Name ?')
+                            .verify.containsText('@detailsinfoEmail', energy.energytelco.account_info.email , ' The Details Contains Correct Email ?')
                         browser
-                            .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3b_update_person_account_information.png')
+                            .saveScreenshot('reports/bat_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac2b_update_person_account_information.png')
                     }
 
             })
@@ -201,7 +200,7 @@ module.exports = {
                     .click_detailspreferredEmail()
                     .verify.elementPresent('@detailsEmail', 'Email Field is Present ?')
                     .clearValue('@detailsEmail')
-                    .setValue('@detailsEmail', energy.energysales.account_info.email )
+                    .setValue('@detailsEmail', energy.energytelco.account_info.email )
                     .pause(1000)
                 browser
                     .keys(browser.Keys.PAGEUP)
@@ -209,16 +208,16 @@ module.exports = {
                 account
                     .verify.elementPresent('@detailsfirstName', 'First Name Details Field is Present ?')
                     .clearValue('@detailsfirstName')
-                    .setValue('@detailsfirstName', energy.energysales.account_info.first_name )
+                    .setValue('@detailsfirstName', energy.energytelco.account_info.first_name )
                     .verify.elementPresent('@detailslastName', 'Last Name Details Field is Present ?')
                     .clearValue('@detailslastName')
-                    //.setValue('@detailslastName', energy.energysales.account_info.last_name )
+                    //.setValue('@detailslastName', energy.energytelco.account_info.last_name )
                     .click_detailsSave()
                     .pause(5000);
                 browser
-                    .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3c_update_person_account_information.png')
+                    .saveScreenshot('reports/bat_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac2c_update_person_account_information.png')
                 account
-                    .click_closeTab()
+                    .click_telcocloseTab()
                 
             }
                 else
@@ -231,7 +230,7 @@ module.exports = {
                        .click_detailspreferredContact()
                        .click_detailspreferredEmail()
                        .clearValue('@detailsEmail')
-                       .setValue('@detailsEmail', energy.energysales.account_info.email )
+                       .setValue('@detailsEmail', energy.energytelco.account_info.email )
                        .pause(1000)
                    browser
                        .keys(browser.Keys.PAGEUP)
@@ -239,16 +238,16 @@ module.exports = {
                    account
                        .verify.elementPresent('@detailsfirstName', 'First Name Details Field is Present ?')
                        .clearValue('@detailsfirstName')
-                       .setValue('@detailsfirstName', energy.energysales.account_info.first_name )
+                       .setValue('@detailsfirstName', energy.energytelco.account_info.first_name )
                        .verify.elementPresent('@detailslastName', 'Last Name Details Field is Present ?')
                        .clearValue('@detailslastName')
-                       //.setValue('@detailslastName', energy.energysales.account_info.last_name )
+                       //.setValue('@detailslastName', energy.energytelco.account_info.last_name )
                        .click_detailsSave()
                         .pause(5000);
                     browser
-                       .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3c_update_person_account_information.png')
+                       .saveScreenshot('reports/bat_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac2c_update_person_account_information.png')
                     account
-                       .click_closeTab()
+                       .click_telcocloseTab()
                 }
         })
     }
