@@ -1,14 +1,14 @@
 module.exports = {
-    tags: ['bat_sp_652_ac1', 'bat_sp_652' , 'sp_652', 'bat_energysales_sp_652_ac4', 'bat_energysales_sp_652'],
+    tags: ['spqa_sp_652_ac3', 'spqa_sp_652', 'sp_652', 'spqa_energysales_sp_652_ac3', 'spqa_energysales_sp_652', 'energysales_sp_652'],
       
-    'Login Bat Credentials': function(browser) 
+    'Login spqa Credentials': function(browser) 
     {
-        console.log('Go to Salesforce Login Test URL and Enter Bat Credentials');
+        console.log('Go to Salesforce Login Test URL and Enter spqa Credentials');
         login
             .navigate()
             .maximizeWindow()
-            .setValue('@username', data.salesforce.bat.username)
-            .setValue('@password', data.salesforce.bat.password)
+            .setValue('@username', data.salesforce.spqa.username)
+            .setValue('@password', data.salesforce.spqa.password)
             .click_loginbtn();
     },
 
@@ -17,9 +17,8 @@ module.exports = {
         console.log('Log in as Energy Consultant QA');
         
         browser
-            .url(data.energy.bat.energysalesConsultant.loginTest)
-        account
-            .navigate();
+            .url(data.energy.spqa.energysalesConsultant.loginTest)
+            .url(data.energy.spqa.account.url);
     },
     
     'GIVEN I have entered the relevant details to create a new person account as per AC1 and AC2': function(browser) 
@@ -114,14 +113,14 @@ module.exports = {
                         .verify.elementPresent('@relatedNotes', 'Notes related list is Present ?')
                         .verify.elementPresent('@relatednotesAttachments', 'Notes and Attachments related list is Present ?')
                     browser
-                        .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac4a_ensure_person_account_page_layout_displayed_correctly.png')
+                        .saveScreenshot('reports/spqa_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3a_ensure_person_account_page_layout_displayed_correctly.png')
                     account
                         .click_activityTab()
                         .waitForElementVisible('@activitynewEvent', 30000)
                         .verify.elementPresent('@activitynewEvent', 'Activity New Event is Present ?')
                         .verify.elementPresent('@activitylogaCall', 'Activity Log a Call is Present ?')
                     browser
-                        .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac4b_ensure_person_account_page_layout_displayed_correctly.png')
+                        .saveScreenshot('reports/spqa_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3b_ensure_person_account_page_layout_displayed_correctly.png')
                     account
                         .click_closeTab();
                 }
@@ -147,14 +146,14 @@ module.exports = {
                             .verify.elementPresent('@relatedNotes', 'Notes related list is Present ?')
                             .verify.elementPresent('@relatednotesAttachments', 'Notes and Attachments related list is Present ?')
                         browser
-                            .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac4a_ensure_person_account_page_layout_displayed_correctly.png')
+                            .saveScreenshot('reports/spqa_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3a_ensure_person_account_page_layout_displayed_correctly.png')
                         account
                             .click_activityTab()
                             .waitForElementVisible('@activitynewEvent', 30000)
                             .verify.elementPresent('@activitynewEvent', 'Activity New Event is Present ?')
                             .verify.elementPresent('@activitylogaCall', 'Activity Log a Call is Present ?')
                         browser
-                            .saveScreenshot('reports/bat_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac4b_ensure_person_account_page_layout_displayed_correctly.png')
+                            .saveScreenshot('reports/spqa_env/verticals/energy/energysales_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3b_ensure_person_account_page_layout_displayed_correctly.png')
                         account
                             .click_closeTab();
                     }

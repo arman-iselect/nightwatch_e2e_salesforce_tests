@@ -1,5 +1,5 @@
 module.exports = {
-    tags: ['spqa_sp_652_ac2', 'spqa_sp_652', 'sp_652', 'spqa_energysales_sp_652_ac2', 'spqa_energysales_sp_652', 'energysales_sp_652'],
+   /* tags: ['spqa_sp_652_ac2', 'spqa_sp_652', 'sp_652', 'spqa_energysales_sp_652_ac2', 'spqa_energysales_sp_652', 'energysales_sp_652'], */
 
     'Login spqa Credentials': function(browser) 
     {

@@ -1,5 +1,5 @@
 module.exports = {
-    tags: ['spqa_sp_652_ac4', 'spqa_sp_652', 'sp_652', 'spqa_energytelco_sp_652_ac4', 'spqa_energytelco_sp_652', 'energytelco_sp_652'],
+    tags: ['spqa_sp_652_ac3', 'spqa_sp_652', 'sp_652', 'spqa_energytelco_sp_652_ac3', 'spqa_energytelco_sp_652', 'energytelco_sp_652'],
       
     'Login spqa Credentials': function(browser) 
     {
@@ -113,14 +113,14 @@ module.exports = {
                         .verify.elementPresent('@relatedNotes', 'Notes related list is Present ?')
                         .verify.elementPresent('@relatednotesAttachments', 'Notes and Attachments related list is Present ?')
                     browser
-                        .saveScreenshot('reports/spqa_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac4a_ensure_person_account_page_layout_displayed_correctly.png')
+                        .saveScreenshot('reports/spqa_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3a_ensure_person_account_page_layout_displayed_correctly.png')
                     account
                         .click_activityTab()
                         .waitForElementVisible('@activitynewEvent', 30000)
                         .verify.elementPresent('@activitynewEvent', 'Activity New Event is Present ?')
                         .verify.elementPresent('@activitylogaCall', 'Activity Log a Call is Present ?')
                     browser
-                        .saveScreenshot('reports/spqa_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac4b_ensure_person_account_page_layout_displayed_correctly.png')
+                        .saveScreenshot('reports/spqa_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3b_ensure_person_account_page_layout_displayed_correctly.png')
                     account
                         .click_closeTab();
                 }
@@ -146,14 +146,14 @@ module.exports = {
                             .verify.elementPresent('@relatedNotes', 'Notes related list is Present ?')
                             .verify.elementPresent('@relatednotesAttachments', 'Notes and Attachments related list is Present ?')
                         browser
-                            .saveScreenshot('reports/spqa_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac4a_ensure_person_account_page_layout_displayed_correctly.png')
+                            .saveScreenshot('reports/spqa_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3a_ensure_person_account_page_layout_displayed_correctly.png')
                         account
                             .click_activityTab()
                             .waitForElementVisible('@activitynewEvent', 30000)
                             .verify.elementPresent('@activitynewEvent', 'Activity New Event is Present ?')
                             .verify.elementPresent('@activitylogaCall', 'Activity Log a Call is Present ?')
                         browser
-                            .saveScreenshot('reports/spqa_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac4b_ensure_person_account_page_layout_displayed_correctly.png')
+                            .saveScreenshot('reports/spqa_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac3b_ensure_person_account_page_layout_displayed_correctly.png')
                         account
                             .click_closeTab();
                     }

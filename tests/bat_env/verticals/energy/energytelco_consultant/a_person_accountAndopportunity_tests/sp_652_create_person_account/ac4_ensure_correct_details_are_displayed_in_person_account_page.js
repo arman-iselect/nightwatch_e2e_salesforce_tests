@@ -1,14 +1,14 @@
 module.exports = {
-    tags: ['spqa_sp_652_ac5', 'spqa_sp_652', 'sp_652', 'spqa_energytelco_sp_652_ac5', 'spqa_energytelco_sp_652', 'energytelco_sp_652'],
+    tags: ['bat_sp_652_ac4', 'bat_sp_652' , 'sp_652','bat_energytelco_sp_652_ac4', 'bat_energytelco_sp_652', 'energytelco_sp_652'],
 
-    'Login spqa Credentials': function(browser) 
+    'Login Bat Credentials': function(browser) 
     {
-        console.log('Go to Salesforce Login Test URL and Enter spqa Credentials');
+        console.log('Go to Salesforce Login Test URL and Enter Bat Credentials');
         login
             .navigate()
             .maximizeWindow()
-            .setValue('@username', data.salesforce.spqa.username)
-            .setValue('@password', data.salesforce.spqa.password)
+            .setValue('@username', data.salesforce.bat.username)
+            .setValue('@password', data.salesforce.bat.password)
             .click_loginbtn();
     },
 
@@ -17,14 +17,13 @@ module.exports = {
         console.log('Log in as Energy Consultant QA');
         
         browser
-            .url(data.energy.spqa.energytelcosalesConsultant.loginTest);
+            .url(data.energy.bat.energytelcosalesConsultant.loginTest);
     },
     
     'GIVEN I have created a new person': function(browser) 
     {
-        browser
-            .url(data.energy.spqa.account.url)
         account
+            .navigate()
             .click_newAccount()
             .waitForElementVisible('@salutationDropdown', 20000, function(result)
             {
@@ -87,7 +86,7 @@ module.exports = {
                         console.log(result0.value)
                     });
                 browser
-                    .getText('[title=\"Energy Automated Test0\"]', function(result1){
+                    .getText('[title=\"Energy Telco Automated Test0\"]', function(result1){
                     console.log(result1.value)
                     });
                 browser
@@ -100,9 +99,9 @@ module.exports = {
                         console.log(result4.value)
                     });
                 browser
-                    .saveScreenshot('reports/spqa_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac5_ensure_correct_details_displayed_account_page.png')
+                    .saveScreenshot('reports/bat_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac4_ensure_correct_details_displayed_account_page.png')
                 account
-                    .click_closeTab();
+                    .click_telcocloseTab();
             }
                 else
                 {
@@ -118,7 +117,7 @@ module.exports = {
                             console.log(result0.value)
                         });
                     browser
-                        .getText('[title=\"Energy Automated Test0\"]', function(result1){
+                        .getText('[title=\"Energy Telco Automated Test0\"]', function(result1){
                         console.log(result1.value)
                         });
                     browser
@@ -131,9 +130,9 @@ module.exports = {
                         console.log(result4.value)
                         });
                     browser
-                        .saveScreenshot('reports/spqa_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac5_ensure_correct_details_displayed_account_page.png')
+                        .saveScreenshot('reports/bat_env/verticals/energy/energytelco_consultant/a_person_accountAndopportunity_tests/sp_652_create_person_account/ac4_ensure_correct_details_displayed_account_page.png')
                     account
-                        .click_closeTab();
+                        .click_telcocloseTab();
                 }
         })
 
