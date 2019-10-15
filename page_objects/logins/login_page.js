@@ -18,6 +18,7 @@ const commands = {}
 commands['userLogin'] = function(username, password) {
     return this
         .navigate()
+        .maximizeWindow()
         .setValue('@username', username)
         .setValue('@password', password)
         .click('@loginbtn')
