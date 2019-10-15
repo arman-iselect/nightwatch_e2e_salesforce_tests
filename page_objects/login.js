@@ -27,5 +27,4 @@ module.exports = {
 let login = browser.page.login()
 
 login
-    .userLogin('use
-    
+    .userLogin('username')
