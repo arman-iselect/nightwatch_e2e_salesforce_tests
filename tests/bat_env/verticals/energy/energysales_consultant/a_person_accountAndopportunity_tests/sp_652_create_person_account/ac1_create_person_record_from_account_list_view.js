@@ -45,7 +45,6 @@ module.exports = {
                     }
             })            
     },
-
     'WHEN I enter all the required fields and hit the Save button': function (browser) 
     {
         account
@@ -103,8 +102,7 @@ module.exports = {
                 if (result.value)
             {
                 console.log('Person account is created')
-                account
-                    .verify.containsText('@tabTitle', energy.energysales.account_info.account_name, 'The account is Opened in a new tab ?')
+              
             }
                 else
                 {

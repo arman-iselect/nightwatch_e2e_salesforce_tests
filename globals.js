@@ -33,6 +33,9 @@ module.exports = {
      
        beforeEach(browser, cb) {
         //bat
+        //Specific for nightwatch video recorder
+        /*require('nightwatch-video-recorder').start(browser, done),*/
+
         login = browser.page.logins.login_page()    
         page = browser.page.logins.login_page()
         search = browser.page.verticals.reusable.a_person_accountAndopportunity_page.sp_650_global_search()
@@ -85,17 +88,17 @@ module.exports = {
          cb();
        },
      
-       after(cb, done) {
+       after(done) {
          chromedriver.stop();
          done();
          console.log('Ending test')
-         cb();
        },
      
        afterEach(browser, cb) {
            //console.log('GLOBAL afterEach')
-           cb();
-       },
+           //require('nightwatch-video-recorder').stop(browser, done)
+        cb();
+        },
      
        reporter(results, cb) {
          cb();

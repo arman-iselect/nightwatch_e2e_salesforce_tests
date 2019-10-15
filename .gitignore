@@ -1,4 +1,5 @@
 # ignore folder
+allure-report/
 logs/
 reports/
 lib/
