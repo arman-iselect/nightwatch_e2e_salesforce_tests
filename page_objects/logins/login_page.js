@@ -32,3 +32,8 @@ module.exports =
         }*/
     }
 };
+
+const url = function() {
+    return 'https://test.salesforce.com/'
+}
+

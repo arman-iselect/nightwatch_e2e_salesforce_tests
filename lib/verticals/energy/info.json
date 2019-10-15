@@ -1,0 +1,110 @@
+{
+    "search_field": {
+        "first_name": {
+            "sample1": "Auto0",
+            "sample2": "Auto1"
+        },
+        "last_name": {
+            "sample1": "Test0",
+            "sample2": "Test1"
+
+        },
+        "telephone_number": {
+            "sample1": "0200000000",
+            "sample2": "0200000001"
+        },
+
+        "random": {
+            "a": "xzxasaxaszx",
+            "b": "dsdsdsdsdsdsd"
+        },
+
+        "search_sample": {
+            "search_sample1": "Test0 - Search",
+            "search_sample2": "Test1 - Search"
+        }
+    },
+    "energysales": {
+
+        "account_info": {
+
+            "first_name": "Energy Automated",
+            "last_name": "Test0",
+            "home_phone": "0412345678",
+            "postcode": "3000",
+            "email": "armando.navarro@iselect.com.au",
+            "account_name": "Energy Automated Test0",
+            "email_label": "Email"
+            }
+        },
+
+    "energytelco": {
+
+        "account_info": {
+
+            "first_name": "Energy Telco Automated",
+            "last_name": "Test0",
+            "home_phone": "0412345678",
+            "postcode": "3000",
+            "email": "armando.navarro@iselect.com.au",
+            "account_name": "Energy Telco Automated Test0",
+            "email_label": "Email"
+            }
+        },
+
+    "hnc": {
+
+        "account_info": {
+
+            "first_name": "Energy HNC Automated",
+            "last_name": "Test0",
+            "home_phone": "0412345678",
+            "postcode": "3000",
+            "email": "armando.navarro@iselect.com.au",
+            "account_name": "Energy HNC Automated Test0",
+            "email_label": "Email"
+            }
+        },
+
+    "gi": {
+
+        "account_info": {
+
+            "first_name": "Energy GI Automated",
+            "last_name": "Test0",
+            "home_phone": "0412345678",
+            "postcode": "3000",
+            "email": "armando.navarro@iselect.com.au",
+            "account_name": "Energy GI Automated Test0",
+            "email_label": "Email"
+            }
+        },
+
+    "telco": {
+
+        "account_info": {
+
+            "first_name": "Telco Automated",
+            "last_name": "Test0",
+            "home_phone": "0412345678",
+            "postcode": "3000",
+            "email": "armando.navarro@iselect.com.au",
+            "account_name": "Telco Automated Test0",
+            "email_label": "Email"
+            }
+        },
+
+    "lifeadviser": {
+
+        "account_info": {
+
+            "first_name": "Life Ad Automated",
+            "last_name": "Test0",
+            "home_phone": "0412345678",
+            "postcode": "3000",
+            "email": "armando.navarro@iselect.com.au",
+            "account_name": "Life Ad Automated Test0",
+            "email_label": "Email"
+            }
+        }
+}

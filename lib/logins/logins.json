@@ -1,0 +1,114 @@
+{
+    "salesforce": 
+    {
+        "bat": 
+        {
+            "username": "armando.navarro@iselect.com.au.bat",
+            "password": "iselect_2019"
+        },
+        "spqa": 
+        {
+            "username": "armando.navarro@iselect.com.au.spqa",
+            "password": "iselect_2019"
+
+        },
+        "isummer": 
+        {
+            "username": "armando.navarro@iselect.com.au.isummer",
+            "password": "iselect_2019"
+        },
+        "isummer1": 
+        {
+            "username": "armando.navarro@iselect.com.au.isummer",
+            "password": "iselect_2019"
+        }
+    },
+
+    "energy": 
+    {
+        "bat" : 
+        {
+        "account":
+            {
+            "url": "https://iselect--bat.lightning.force.com/lightning/o/Account/list?filterName=Recent"
+            },
+        "newAccount":
+            {
+            "url": "https://iselect--bat.lightning.force.com/lightning/o/Account/new"
+            },
+        "energysalesConsultant": 
+            {
+            "loginTest": "https://iselect--bat.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000B5GD&suorgadminid=005N0000007cz1x&retURL=%2F005%3FappLayout%3Dsetup%26ltn_app_id%3D06mN0000000FvNwIAK%26isUserEntityOverride%3D1%26sfdcIFrameHost%3Dweb%26id%3D00e28000002Rqzb%26clc%3D1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--bat.lightning.force.com%26nonce%3D037a268be3d2b3d4d0797aa860b006b875e59e7727a9507e33ae5336bfd0ce55%26tour%3D%26lsr%3D65%26noredirect%3D1%26isdtp%3Dp1&targetURL=%2Fhome%2Fhome.jsp&"
+            },
+
+        "energytelcosalesConsultant": 
+            {
+            "loginTest": "https://iselect--bat.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000B5GD&suorgadminid=005N0000007cz2C&retURL=%2F005%3Fid%3D00eN0000000MLfU%26isUserEntityOverride%3D1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--bat.lightning.force.com%26clc%3D1%26appLayout%3Dsetup%26tour%3D%26isdtp%3Dp1%26sfdcIFrameHost%3Dweb%26nonce%3D19449cb1c69cbf0415d214b6c530fbf26ede1a663b7e8d94bf201fc59c09cec2%26ltn_app_id%3D06mN0000000FxwBIAS&targetURL=%2Fhome%2Fhome.jsp&"
+            },
+
+        "gisalesConsultant": 
+            {
+            "loginTest": "https://iselect--bat.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000B5GD&suorgadminid=005N0000007cz2R&retURL=%2F005%3FappLayout%3Dsetup%26ltn_app_id%3D06mN00000009bueIAA%26lsr%3D130%26noredirect%3D1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--bat.lightning.force.com%26nonce%3D98776c3f112ff1c7e0ed44d70b714a4307de18f5f7bda50128bfebfdefbe7ef4%26tour%3D%26isUserEntityOverride%3D1%26sfdcIFrameHost%3Dweb%26id%3D00e280000023q5a%26clc%3D1%26isdtp%3Dp1&targetURL=%2Fhome%2Fhome.jsp&"
+            },
+
+        "hncsalesConsultant":
+            {
+            "loginTest": "https://iselect--bat.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000B5GD&suorgadminid=005N0000007cz1F&retURL=%2F005%3Fid%3D00eN0000000EGwB%26isUserEntityOverride%3D1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--bat.lightning.force.com%26clc%3D1%26appLayout%3Dsetup%26tour%3D%26isdtp%3Dp1%26sfdcIFrameHost%3Dweb%26nonce%3D226f4023e2c86d7aefdff1e2ec885ab76817285663e6eae677ab66984cbbd85f%26ltn_app_id%3D06mN0000000FvNwIAK&targetURL=%2Fhome%2Fhome.jsp&"
+             },
+
+        "lifeAdviser":
+            {
+            "loginTest": "https://iselect--bat.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000B5GD&suorgadminid=005N0000007cz2g&retURL=%2F005%3Fid%3D00e28000001hhzq%26isUserEntityOverride%3D1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--bat.lightning.force.com%26clc%3D1%26appLayout%3Dsetup%26tour%3D%26isdtp%3Dp1%26sfdcIFrameHost%3Dweb%26nonce%3D5dd6cc53fca2118be55ee76e203857282be66a870e1b54d80d86eef407a1cfd9%26ltn_app_id%3D06mN00000009bueIAA&targetURL=%2Fhome%2Fhome.jsp&"
+            },
+
+        "telcosalesConsultant":
+            {
+            "loginTest": "https://iselect--bat.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000B5GD&suorgadminid=005N0000007cz27&retURL=%2F005%3FappLayout%3Dsetup%26ltn_app_id%3D06mN0000000FxwBIAS%26lsr%3D180%26noredirect%3D1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--bat.lightning.force.com%26nonce%3D6b8772c6bf9b46c153902a9a724a516867ae598407197d4e9c69bdec39642ce3%26tour%3D%26isUserEntityOverride%3D1%26sfdcIFrameHost%3Dweb%26id%3D00e280000023q5d%26clc%3D1%26isdtp%3Dp1&targetURL=%2Fhome%2Fhome.jsp&"
+            }
+
+        },
+
+        "spqa" :
+        {
+        "account":
+            {
+            "url": "https://iselect--spqa.lightning.force.com/lightning/o/Account/list?filterName=Recent"
+            },
+        "newAccount":
+            {
+            "url": "https://iselect--spqa.lightning.force.com/lightning/o/Account/new"
+            },
+        "energysalesConsultant": 
+            {
+            "loginTest": "https://iselect--spqa.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000R9EZ&suorgadminid=005N0000007ZU5p&retURL=%2F005%3Fid%3D00e28000002Rqzb%26isUserEntityOverride%3D1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--spqa.lightning.force.com%26clc%3D1%26appLayout%3Dsetup%26tour%3D%26isdtp%3Dp1%26sfdcIFrameHost%3Dweb%26nonce%3D5aeae1655128c98b0fc916e29f07531b9e9103fea4a91681f8c48c1455aa913a%26ltn_app_id%3D06m0I000001hcilQAA&targetURL=%2Fhome%2Fhome.jsp&"
+            },
+
+        "energytelcosalesConsultant": 
+            {
+            "loginTest": "https://iselect--spqa.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000R9EZ&suorgadminid=005N0000007ZXgx&retURL=%2F005%3Fid%3D00e28000002FOM6%26isUserEntityOverride%3D1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--spqa.lightning.force.com%26clc%3D1%26appLayout%3Dsetup%26tour%3D%26isdtp%3Dp1%26sfdcIFrameHost%3Dweb%26nonce%3Dc8a1a073798326b0d6cc4863f09756f85ccc02eff1bd014cb75662bb1797fc7a%26ltn_app_id%3D06m0I000001hcilQAA&targetURL=%2Fhome%2Fhome.jsp&"
+            },
+
+        "gisalesConsultant": 
+            {
+            "loginTest": "https://iselect--spqa.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000R9EZ&suorgadminid=005N0000007ZXh7&retURL=%2F005%3Fid%3D00e280000023q5a%26isUserEntityOverride%3D1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--spqa.lightning.force.com%26clc%3D1%26appLayout%3Dsetup%26tour%3D%26isdtp%3Dp1%26sfdcIFrameHost%3Dweb%26nonce%3D796295d4aa0129a18f2954e22b00342fe71d1f1d0e0c67b8a971ccf5ee74b0b5%26ltn_app_id%3D06m0I000001hcilQAA&targetURL=%2Fhome%2Fhome.jsp&"
+            },
+
+        "hncsalesConsultant":
+            {
+            "loginTest": "https://iselect--spqa.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000R9EZ&suorgadminid=005N0000007ZXh2&retURL=%2F005%3Fid%3D00e0I000000f76Q%26isUserEntityOverride%3D1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--spqa.lightning.force.com%26clc%3D1%26appLayout%3Dsetup%26tour%3D%26isdtp%3Dp1%26sfdcIFrameHost%3Dweb%26nonce%3D9f1e5db427308f7a7e71680c18c1745bcee500e63d3d039758867cafe2f7d5b9%26ltn_app_id%3D06m0I000001hd0GQAQ&targetURL=%2Fhome%2Fhome.jsp&"
+             },
+             
+        "lifeAdviser":
+            {
+            "loginTest": "https://iselect--spqa.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000R9EZ&suorgadminid=005N0000007ZXhC&retURL=%2F005%3Fid%3D00e28000001hhzq%26isUserEntityOverride%3D1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--spqa.lightning.force.com%26clc%3D1%26appLayout%3Dsetup%26tour%3D%26isdtp%3Dp1%26sfdcIFrameHost%3Dweb%26nonce%3D074da587740e34269300f06f2718220e251cda46701b561dcac640a9691da71f%26ltn_app_id%3D06mN000000019vtIAA&targetURL=%2Fhome%2Fhome.jsp&"
+            },
+
+        "telcosalesConsultant":
+            {
+            "loginTest": "https://iselect--spqa.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000R9EZ&suorgadminid=005N0000007ZXgg&retURL=%2F005%3FappLayout%3Dsetup%26ltn_app_id%3D06m0I000001hcilQAA%26rowsperpage%3D205%26noredirect%3D1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--spqa.lightning.force.com%26nonce%3D504366d92a9e7c54fda034094656cd3de23dbb7a56c84715cc683bc4c1beaae5%26tour%3D%26isUserEntityOverride%3D1%26sfdcIFrameHost%3Dweb%26id%3D00e280000023q5d%26clc%3D1%26isdtp%3Dp1&targetURL=%2Fhome%2Fhome.jsp&"
+            }
+        }
+    }
+}
+
+
