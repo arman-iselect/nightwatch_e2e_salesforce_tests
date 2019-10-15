@@ -103,8 +103,6 @@ module.exports = {
                 if (result.value)
             {
                 console.log('Person account is created')
-                account
-                    .verify.containsText('@tabTitle', energy.energytelco.account_info.account_name, 'The account is Opened in a new tab ?')
             }
                 else
                 {

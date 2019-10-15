@@ -31,7 +31,8 @@ module.exports = {
                         .setValue('@searchField', energy.energysales.account_info.first_name)
                     browser
                         .keys(browser.Keys.ENTER)
-                        .pause(3000);
+                        .pause(3000)
+                        .refresh();
                     search
                         .waitForElementVisible('@hyperlinkText1', 20000, function (result)
                         {
@@ -195,10 +196,9 @@ module.exports = {
                 
                 account
                     .click_detailsTab()
-                    .click_detailspreferredContact()
                     .pause(5000)
-                    .waitForElementVisible('@detailspreferredEmail', 5000)
-                    .click_detailspreferredEmail()
+                    /*.waitForElementVisible('@detailspreferredEmail', 5000)
+                    .click_detailspreferredEmail()*/
                     .verify.elementPresent('@detailsEmail', 'Email Field is Present ?')
                     .clearValue('@detailsEmail')
                     .setValue('@detailsEmail', energy.energysales.account_info.email )
@@ -228,9 +228,8 @@ module.exports = {
                         .refresh()
                        account
                        .click_detailsTab()
-                       .click_detailspreferredContact()
-                       .click_detailspreferredEmail()
-                       .clearValue('@detailsEmail')
+                       /*.click_detailspreferredEmail()
+                       .clearValue('@detailsEmail')*/
                        .setValue('@detailsEmail', energy.energysales.account_info.email )
                        .pause(1000)
                    browser

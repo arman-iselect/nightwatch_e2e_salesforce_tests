@@ -2,6 +2,7 @@ module.exports =
     {
         "src_folders" : ["tests"],
         "page_objects_path" : ["page_objects"],
+        "custom_commands": [],
         "globals_path": "globals",
         "output_folder": "reports",
         "log_path": ["logs"],
@@ -33,7 +34,7 @@ module.exports =
               "chromeOptions": {
                   "args": [//"--headless",
                             "incognito",
-                            "window-size=1366,768",
+                            "window-size=1440,900",
                             "disable-shader-name-hashing",
                              "disable-logging",
                              "disable-popup-blocking",
@@ -46,7 +47,18 @@ module.exports =
               "chromeOptions": {
                 "args": ["--headless"]
               }*/
-            }
+            }/*,
+              "videos": {
+                "enabled": true,          // Enable video recordings
+                "delete_on_pass": false,   // Delete video when tests pass
+                "dir": "reports/videos",  // Video directory
+                "ext": ".mp4",            // Video file extension
+                "resolution": "1440x900", // Display resolution
+                "fps": 15,                // Frames per second
+                "hostname": "localhost",  // X11 server hostname
+                "display": "0",           // X11 server display
+                "pixelFormat": "yuv420p"  // Output pixel format
+              }*/
           },
 
           "firefox" :  {

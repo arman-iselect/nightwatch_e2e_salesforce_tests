@@ -101,7 +101,7 @@ module.exports = {
                         .verify.elementPresent('@personaccountName', 'Person Account Name is Displayed ?')
                         .verify.containsText('@personaccountName',energy.energytelco.account_info.account_name, 'Person account name is displayed correctly ?')
                         .verify.elementPresent('@relatedlistTab', 'Related list tab is present ?')
-                        .verify.elementPresent('@sidebarSearch', 'Sidebar search is Present ?')
+                        /*.verify.elementPresent('@sidebarSearch', 'Sidebar search is Present ?')*/
                         .verify.elementPresent('@detailstabRight', 'Details tab is displayed by default ?')
                         .verify.elementPresent('@activityTab', 'Activity tab is Present ?')
                         .verify.elementPresent('@relatedOpportunities', 'Opportunity related list is Present ?')
@@ -134,7 +134,7 @@ module.exports = {
                             .verify.elementPresent('@personaccountName', 'Person Account Name is Displayed ?')
                             .verify.containsText('@personaccountName',energy.energytelco.account_info.account_name, 'Person account name is displayed correctly ?')
                             .verify.elementPresent('@relatedlistTab', 'Related list tab is present ?')
-                            .verify.elementPresent('@sidebarSearch', 'Sidebar search is Present ?')
+                            /*.verify.elementPresent('@sidebarSearch', 'Sidebar search is Present ?')*/
                             .verify.elementPresent('@detailstabRight', 'Details tab is displayed by default ?')
                             .verify.elementPresent('@activityTab', 'Activity tab is Present ?')
                             .verify.elementPresent('@relatedOpportunities', 'Opportunity related list is Present ?')

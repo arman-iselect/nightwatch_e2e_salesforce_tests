@@ -103,8 +103,6 @@ module.exports = {
                 if (result.value)
             {
                 console.log('Person account is created')
-                account
-                    .verify.containsText('@telcotabtitle', energy.energytelco.account_info.account_name, 'The account is Opened in a new tab ?')
             }
                 else
                 {
@@ -113,7 +111,7 @@ module.exports = {
                         .refresh()
                     account
                         .waitForElementVisible('@telcopersonaccountTitle', 2000)
-                        .verify.containsText('@telcotabtitle', energy.energytelco.account_info.account_name , 'The account is displayed after refresh ?')
+                        .verify.containsText('@telcotabTitle', energy.energytelco.account_info.account_name , 'The account is displayed after refresh ?')
                 }
             })
             

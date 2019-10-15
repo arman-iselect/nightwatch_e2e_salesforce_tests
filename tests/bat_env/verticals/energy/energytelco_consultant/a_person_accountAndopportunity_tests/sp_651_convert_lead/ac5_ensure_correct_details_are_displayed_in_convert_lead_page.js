@@ -17,7 +17,7 @@ module.exports = {
         console.log('Log in as Energy Consultant QA');
         
         browser
-            .url(data.energy.spqa.salesConsultant.loginTest);
+            .url(data.energy.bat.salesConsultant.loginTest);
     },
     
     'GIVEN I have clicked on the convert lead button on the Lead page': function(browser) 

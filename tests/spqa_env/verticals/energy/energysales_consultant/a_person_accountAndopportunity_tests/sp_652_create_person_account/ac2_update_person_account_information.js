@@ -31,7 +31,8 @@ module.exports = {
                         .setValue('@searchField', energy.energysales.account_info.first_name)
                     browser
                         .keys(browser.Keys.ENTER)
-                        .pause(3000);
+                        .pause(3000)
+                        .refresh();
                     search
                         .waitForElementVisible('@hyperlinkText1', 20000, function (result)
                         {
