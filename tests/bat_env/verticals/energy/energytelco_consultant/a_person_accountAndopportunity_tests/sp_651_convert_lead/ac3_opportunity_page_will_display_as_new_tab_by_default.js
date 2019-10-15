@@ -1,23 +1,10 @@
 module.exports = {
     tags: ['bat_sp_651_ac3', 'bat_sp_651' , 'sp_651'],
 
-    'Login Bat Credentials': function() 
+    'Log in as Energy Telco Consultant QA': async function(browser) 
     {
-        console.log('Go to Salesforce Login Test URL and Enter Bat Credentials');
         login
-            .navigate()
-            .maximizeWindow()
-            .setValue('@username', data.salesforce.spqa.username)
-            .setValue('@password', data.salesforce.spqa.password)
-            .click_loginbtn();
-    },
-
-    'Log in as Energy Consultant QA': function(browser) 
-    {
-        console.log('Log in as Energy Consultant QA');
-        
-        browser
-            .url(data.energy.bat.salesConsultant.loginTest);
+            .userLogin(data.energy.bat.energytelcoConsultant.username, data.energy.bat.energytelcoConsultant.password);
     },
     
     'GIVEN I have selected a lead record and clicked on the "Convert Lead" button': function(browser) 

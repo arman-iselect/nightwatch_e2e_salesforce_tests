@@ -1,24 +1,10 @@
 module.exports = {
     tags: ['bat_sp_650_ac1', 'bat_sp_650' , 'sp_650', 'bat_energysales_sp_650_ac1', 'bat_energysales_sp_650', 'energysales_sp_650'],
 
-    'Login Bat Credentials': function(browser) 
-    {
-        console.log('Go to Salesforce Login Test URL and Enter Bat Credentials');
-        login
-            .navigate()
-            .maximizeWindow()
-            //.login_admin(data.salesforce.bat.username, data.salesforce.bat.password);
-            .setValue('@username', data.salesforce.bat.username)
-            .setValue('@password', data.salesforce.bat.password)
-            .click_loginbtn();
-    },
-
     'Log in as Energy Consultant QA': async function(browser) 
     {
-        console.log('Log in as Energy Consultant QA');
-        
-        await browser
-            .url(data.energy.bat.energysalesConsultant.loginTest);
+        login
+            .userLogin(data.energy.bat.energysalesConsultant.username, data.energy.bat.energysalesConsultant.password);
     },
     
     'GIVEN I already have the First Name ': function(browser) 

@@ -38,32 +38,44 @@
             },
         "energysalesConsultant": 
             {
-            "loginTest": "https://iselect--bat.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000B5GD&suorgadminid=005N0000007cz1x&retURL=%2F005%3FappLayout%3Dsetup%26ltn_app_id%3D06mN0000000FvNwIAK%26isUserEntityOverride%3D1%26sfdcIFrameHost%3Dweb%26id%3D00e28000002Rqzb%26clc%3D1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--bat.lightning.force.com%26nonce%3D037a268be3d2b3d4d0797aa860b006b875e59e7727a9507e33ae5336bfd0ce55%26tour%3D%26lsr%3D65%26noredirect%3D1%26isdtp%3Dp1&targetURL=%2Fhome%2Fhome.jsp&"
+            "loginTest": "https://iselect--bat.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000B5GD&suorgadminid=005N0000007cz1x&retURL=%2F005%3FappLayout%3Dsetup%26ltn_app_id%3D06mN0000000FvNwIAK%26isUserEntityOverride%3D1%26sfdcIFrameHost%3Dweb%26id%3D00e28000002Rqzb%26clc%3D1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--bat.lightning.force.com%26nonce%3D037a268be3d2b3d4d0797aa860b006b875e59e7727a9507e33ae5336bfd0ce55%26tour%3D%26lsr%3D65%26noredirect%3D1%26isdtp%3Dp1&targetURL=%2Fhome%2Fhome.jsp&",
+            "username": "autotestenergy@iselect.com.bat",
+            "password": "iselect@123"
             },
 
-        "energytelcosalesConsultant": 
+        "energytelcoConsultant": 
             {
-            "loginTest": "https://iselect--bat.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000B5GD&suorgadminid=005N0000007cz2C&retURL=%2F005%3Fid%3D00eN0000000MLfU%26isUserEntityOverride%3D1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--bat.lightning.force.com%26clc%3D1%26appLayout%3Dsetup%26tour%3D%26isdtp%3Dp1%26sfdcIFrameHost%3Dweb%26nonce%3D19449cb1c69cbf0415d214b6c530fbf26ede1a663b7e8d94bf201fc59c09cec2%26ltn_app_id%3D06mN0000000FxwBIAS&targetURL=%2Fhome%2Fhome.jsp&"
+            "loginTest": "https://iselect--bat.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000B5GD&suorgadminid=005N0000007cz2C&retURL=%2F005%3Fid%3D00eN0000000MLfU%26isUserEntityOverride%3D1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--bat.lightning.force.com%26clc%3D1%26appLayout%3Dsetup%26tour%3D%26isdtp%3Dp1%26sfdcIFrameHost%3Dweb%26nonce%3D19449cb1c69cbf0415d214b6c530fbf26ede1a663b7e8d94bf201fc59c09cec2%26ltn_app_id%3D06mN0000000FxwBIAS&targetURL=%2Fhome%2Fhome.jsp&",
+            "username": "autotestenergytelco@iselect.com.au.bat",
+            "password": "iselect@123"
             },
 
         "gisalesConsultant": 
             {
-            "loginTest": "https://iselect--bat.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000B5GD&suorgadminid=005N0000007cz2R&retURL=%2F005%3FappLayout%3Dsetup%26ltn_app_id%3D06mN00000009bueIAA%26lsr%3D130%26noredirect%3D1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--bat.lightning.force.com%26nonce%3D98776c3f112ff1c7e0ed44d70b714a4307de18f5f7bda50128bfebfdefbe7ef4%26tour%3D%26isUserEntityOverride%3D1%26sfdcIFrameHost%3Dweb%26id%3D00e280000023q5a%26clc%3D1%26isdtp%3Dp1&targetURL=%2Fhome%2Fhome.jsp&"
+            "loginTest": "https://iselect--bat.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000B5GD&suorgadminid=005N0000007cz2R&retURL=%2F005%3FappLayout%3Dsetup%26ltn_app_id%3D06mN00000009bueIAA%26lsr%3D130%26noredirect%3D1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--bat.lightning.force.com%26nonce%3D98776c3f112ff1c7e0ed44d70b714a4307de18f5f7bda50128bfebfdefbe7ef4%26tour%3D%26isUserEntityOverride%3D1%26sfdcIFrameHost%3Dweb%26id%3D00e280000023q5a%26clc%3D1%26isdtp%3Dp1&targetURL=%2Fhome%2Fhome.jsp&",
+            "username": "autotestmotor@iselect.com.bat",
+            "password": "iselect@123"
             },
 
         "hncsalesConsultant":
             {
-            "loginTest": "https://iselect--bat.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000B5GD&suorgadminid=005N0000007cz1F&retURL=%2F005%3Fid%3D00eN0000000EGwB%26isUserEntityOverride%3D1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--bat.lightning.force.com%26clc%3D1%26appLayout%3Dsetup%26tour%3D%26isdtp%3Dp1%26sfdcIFrameHost%3Dweb%26nonce%3D226f4023e2c86d7aefdff1e2ec885ab76817285663e6eae677ab66984cbbd85f%26ltn_app_id%3D06mN0000000FvNwIAK&targetURL=%2Fhome%2Fhome.jsp&"
+            "loginTest": "https://iselect--bat.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000B5GD&suorgadminid=005N0000007cz1F&retURL=%2F005%3Fid%3D00eN0000000EGwB%26isUserEntityOverride%3D1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--bat.lightning.force.com%26clc%3D1%26appLayout%3Dsetup%26tour%3D%26isdtp%3Dp1%26sfdcIFrameHost%3Dweb%26nonce%3D226f4023e2c86d7aefdff1e2ec885ab76817285663e6eae677ab66984cbbd85f%26ltn_app_id%3D06mN0000000FvNwIAK&targetURL=%2Fhome%2Fhome.jsp&",
+            "username": "autotesthnc@iselect.com.bat",
+            "password": "iselect@123"
              },
 
         "lifeAdviser":
             {
-            "loginTest": "https://iselect--bat.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000B5GD&suorgadminid=005N0000007cz2g&retURL=%2F005%3Fid%3D00e28000001hhzq%26isUserEntityOverride%3D1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--bat.lightning.force.com%26clc%3D1%26appLayout%3Dsetup%26tour%3D%26isdtp%3Dp1%26sfdcIFrameHost%3Dweb%26nonce%3D5dd6cc53fca2118be55ee76e203857282be66a870e1b54d80d86eef407a1cfd9%26ltn_app_id%3D06mN00000009bueIAA&targetURL=%2Fhome%2Fhome.jsp&"
+            "loginTest": "https://iselect--bat.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000B5GD&suorgadminid=005N0000007cz2g&retURL=%2F005%3Fid%3D00e28000001hhzq%26isUserEntityOverride%3D1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--bat.lightning.force.com%26clc%3D1%26appLayout%3Dsetup%26tour%3D%26isdtp%3Dp1%26sfdcIFrameHost%3Dweb%26nonce%3D5dd6cc53fca2118be55ee76e203857282be66a870e1b54d80d86eef407a1cfd9%26ltn_app_id%3D06mN00000009bueIAA&targetURL=%2Fhome%2Fhome.jsp&",
+            "username": "autotestlife@iselect.com.bat",
+            "password": "iselect@123"
             },
 
         "telcosalesConsultant":
             {
-            "loginTest": "https://iselect--bat.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000B5GD&suorgadminid=005N0000007cz27&retURL=%2F005%3FappLayout%3Dsetup%26ltn_app_id%3D06mN0000000FxwBIAS%26lsr%3D180%26noredirect%3D1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--bat.lightning.force.com%26nonce%3D6b8772c6bf9b46c153902a9a724a516867ae598407197d4e9c69bdec39642ce3%26tour%3D%26isUserEntityOverride%3D1%26sfdcIFrameHost%3Dweb%26id%3D00e280000023q5d%26clc%3D1%26isdtp%3Dp1&targetURL=%2Fhome%2Fhome.jsp&"
+            "loginTest": "https://iselect--bat.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000B5GD&suorgadminid=005N0000007cz27&retURL=%2F005%3FappLayout%3Dsetup%26ltn_app_id%3D06mN0000000FxwBIAS%26lsr%3D180%26noredirect%3D1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--bat.lightning.force.com%26nonce%3D6b8772c6bf9b46c153902a9a724a516867ae598407197d4e9c69bdec39642ce3%26tour%3D%26isUserEntityOverride%3D1%26sfdcIFrameHost%3Dweb%26id%3D00e280000023q5d%26clc%3D1%26isdtp%3Dp1&targetURL=%2Fhome%2Fhome.jsp&",
+            "username": "autotesttelco@iselect.com.bat",
+            "password": "iselect@123"
             }
 
         },
@@ -108,6 +120,7 @@
             "loginTest": "https://iselect--spqa.cs6.my.salesforce.com/servlet/servlet.su?oid=00DN0000000R9EZ&suorgadminid=005N0000007ZXgg&retURL=%2F005%3FappLayout%3Dsetup%26ltn_app_id%3D06m0I000001hcilQAA%26rowsperpage%3D205%26noredirect%3D1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252Fiselect--spqa.lightning.force.com%26nonce%3D504366d92a9e7c54fda034094656cd3de23dbb7a56c84715cc683bc4c1beaae5%26tour%3D%26isUserEntityOverride%3D1%26sfdcIFrameHost%3Dweb%26id%3D00e280000023q5d%26clc%3D1%26isdtp%3Dp1&targetURL=%2Fhome%2Fhome.jsp&"
             }
         }
+
     }
 }
 

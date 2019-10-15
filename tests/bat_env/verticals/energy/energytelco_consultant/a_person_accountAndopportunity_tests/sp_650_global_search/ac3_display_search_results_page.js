@@ -1,22 +1,10 @@
 module.exports = {
     tags: ['bat_sp_650_ac3','bat_sp_650', 'sp_650','bat_energytelco_sp_650_ac3', 'bat_energytelco_sp_650', 'energytelco_sp_650'],
 
-    'Login Bat Credentials': function() 
+    'Log in as Energy Telco Consultant QA': async function(browser) 
     {
-        console.log('Go to Salesforce Login Test URL and Enter Bat Credentials');
         login
-            .navigate()
-            .maximizeWindow()
-            .setValue('@username', data.salesforce.bat.username)
-            .setValue('@password', data.salesforce.bat.password)
-            .click_loginbtn();
-    },
-
-    'Log in as Energy Consultant QA': function(browser) {
-        console.log('Log in as Energy Consultant QA');
-        
-        browser
-            .url(data.energy.bat.energytelcosalesConsultant.loginTest);
+            .userLogin(data.energy.bat.energytelcoConsultant.username, data.energy.bat.energytelcoConsultant.password);
     },
     
     'GIVEN I have talked to the client': function(browser) 
