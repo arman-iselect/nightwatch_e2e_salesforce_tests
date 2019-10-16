@@ -1,0 +1,14 @@
+{
+    "testdata": {
+        "first_name": "Test Lead",
+        "last_name": "Conversion",
+        "email": "armando.navarro@iselect.com.au",
+        "lead_name": "Test Lead Conversion",
+        "lead_selector": "[title=\"Test Lead Conversion\"]"
+
+    },
+
+    "lead_list": {
+        "url": "https://iselect--bat.lightning.force.com/lightning/o/Lead/list"
+    }
+}
