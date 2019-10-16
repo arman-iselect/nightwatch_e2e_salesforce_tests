@@ -207,7 +207,9 @@
         "spqa_telcoconsultant_sp652_ac2": "nightwatch --tag spqa_telcoconsultant_sp_652_ac2",
         "spqa_telcoconsultant_sp652_ac3": "nightwatch --tag spqa_telcoconsultant_sp_652_ac3",
         "spqa_telcoconsultant_sp652_ac4": "nightwatch --tag spqa_telcoconsultant_sp_652_ac4",
-        "bat_sp652ac1": "nightwatch --tag bat_sp_652_ac1"
+        "bat_sp652ac1": "nightwatch --tag bat_sp_652_ac1",
+        "bat_energysales_sc63_ac": "nightwatch --tag bat_energy_sp_651_ac",
+        "bat_energysales_sc63_ac1": "nightwatch --tag bat_energy_sp_651_ac1"
     },
     "keywords": [],
     "author": "",
