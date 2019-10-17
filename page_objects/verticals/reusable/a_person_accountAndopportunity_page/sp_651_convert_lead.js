@@ -30,6 +30,11 @@ module.exports = {
         leadsearchResult: 'table:nth-child(4) > th.slds-cell-edit:nth-child(2)',
         recentLead: 'a:contains("Test Lead Conversion")',
 
+        //Convert Lead View
+        convertleadTab: 'li.tabItem:nth-child(3) > a:nth-child(1)',
+        pageConversion: '.pageDescription',
+        convertleadFrame: '.iframe-parent > iframe:nth-child(1)',
+
         searchField: 'input[placeholder=\"Search Leads and more\"]',
         convertLead: '[title=\"Convert Lead\"]',
         searchResult: 'ul[class=\"lookup__list  visible\"]',
@@ -74,6 +79,8 @@ module.exports = {
             return this
             .click('leadlistSearch');
         },
+
+        
 
         click_recentLead() {
             return this

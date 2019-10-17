@@ -19,7 +19,8 @@ module.exports = {
                         .pause(1000);
                     convert
                         .useXpath().click('/html/body/div[5]/div[1]/div[2]/div[1]/div/div/div/div/div[2]/div/div[1]/div[2]/div[2]/div[1]/div/div/table/tbody/tr[1]/th')
-                        .pause(2000);
+                        .pause(2000)
+                        .click_convertLead();
                 }
                     else
                     {
@@ -28,7 +29,8 @@ module.exports = {
                             .pause(1000);
                         convert
                             .useXpath().click('/html/body/div[5]/div[1]/div[2]/div[1]/div/div/div/div/div[2]/div/div[1]/div[2]/div[2]/div[1]/div/div/table/tbody/tr[1]/th')
-                            .pause(2000);
+                            .pause(2000)
+                            .click_convertLead();
                     }
 
             })  
@@ -36,6 +38,19 @@ module.exports = {
     
     'WHEN I click on the Convert Lead button': function (browser) 
     {
+        /*convert
+            .waitForElementPresent('.iframe-parent > iframe:nth-child(1)', 5000, function(result)
+            {
+                if (result.value)
+                {
+                    browser
+                        .pause(2000)
+                        .frame(0)
+                    convert
+                        .click_convertLead()
+                        .pause(4000)
+                }
+            })*/
         convert
             .waitForElementPresent('@convertLead', 3000, function (result)
             {
@@ -56,6 +71,18 @@ module.exports = {
 
     'THEN I shall be able to view the Convert Lead page in a new tab': function (browser) 
     {
-       
+       convert
+        .waitForElementPresent('.iframe-parent > iframe:nth-child(1)', 5000, function(result)
+        {
+            if (result.value)
+            {
+                browser
+                    .pause(3000)
+                    .frame(0)
+                convert
+                    .verify.elementPresent('@convertleadTab',9000 , 'Convert Lead is displayed in a New Tab ?')
+                    .verify.containsText('@pageConversion', 'Test Lead Conversion', 'Convert Lead Page Loaded ?')
+            }
+        })
     }
 };
