@@ -144,12 +144,12 @@ module.exports = {
                                     arr.push(returnvalue);
                                                                             
                             }else{
-                                
+                                /*
                                 console.log('********************* Plain *********************');
                                 console.log(getHighlightPanelFieldSection.childNodes[index]);
                                 console.log(getHighlightPanelFieldSection.childNodes[index].childNodes[0].childNodes[0].textContent);
                                 console.log(getHighlightPanelFieldSection.childNodes[index].childNodes[0].childNodes[1].textContent);
-                                
+                                */
 
                                 returnvalue.key1 = getHighlightPanelFieldSection.childNodes[index].childNodes[0].childNodes[0].textContent;
 
@@ -186,7 +186,7 @@ module.exports = {
             }
                 
 
-                console.log(getHighlightPanelButtonSection.childNodes);
+                //console.log(getHighlightPanelButtonSection.childNodes);
                 for(let index = 0; index<=getHighlightPanelButtonSection.childNodes.length - 1; index++ ){
                     //if(getHighlightPanelButtonSection.childNodes[index].tagName =='LI'){
                         //console.log('*********** Test *********');
@@ -208,7 +208,20 @@ module.exports = {
         browser
         .execute(function(pageLayoutSelector) {
             let divContainerElementArray1 = document.getElementsByClassName(pageLayoutSelector);
-            console.log(divContainerElementArray1[0].childNodes[1].childNodes[3].childNodes[0]);
+            if(divContainerElementArray1[0].childNodes[1].childNodes[3].childNodes[0].childNodes.length>0){
+                for(let indx =0; indx<= divContainerElementArray1[0].childNodes[1].childNodes[3].childNodes[0].childNodes.length -1 ; indx++){
+                    
+                    let dddd =divContainerElementArray1[0].childNodes[1].childNodes[3].childNodes[0].childNodes[indx].childNodes[1].childNodes[0].childNodes;
+                    
+                    if(dddd.length>0){
+                        for(let innerindex = 0 ; innerindex<=dddd.length; innerindex++){
+                            console.log(dddd[innerindex]);
+                        } 
+                    }
+                    
+                }
+
+            }
         },
         [pageLayoutSelector],
         function(result) {
