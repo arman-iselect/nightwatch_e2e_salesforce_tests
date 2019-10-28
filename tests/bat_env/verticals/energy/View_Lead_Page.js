@@ -7,8 +7,9 @@ module.exports = {
 
     'Log in as Energy Consultant QA': async function(browser) 
     {
-        login
-            .userLogin('roger.cabatic@iselect.com.au.bat', 'Hyters123!@#');
+        login .userLogin(data.energy.bat.energysalesConsultant.username, data.energy.bat.energysalesConsultant.password);
+
+            //.userLogin('roger.cabatic@iselect.com.au.bat', 'Hyters123!@#');
     },
     '(AC-1) GIVEN that the results page is displayed': function(browser) 
     {
@@ -42,7 +43,9 @@ module.exports = {
     
     '(AC-1) WHEN I select any one of the records on the results page that has a hyperlink': function (browser) 
     {
-     
+        
+        utils.global_search_select_data(browser,  'Leads', 'Howie Newbie', 'https://iselect--bat.lightning.force.com/', null, 'resultsItem');
+        /*
         browser
         .execute(function(selector) {
             let obj = 'Leads', object_value = 'Howie Newbie';
@@ -66,23 +69,11 @@ module.exports = {
                     if(getTabletag.childNodes.length > 0){
                         console.log('Yeah 1');
                         for(var index =0; index < getTabletag.childNodes.length - 1; index++ ){
-                            
-                           /*
-                            console.log('***** TR Start  ******');
-                            console.log(getTabletag.childNodes[index].childNodes[1].childNodes[0].childNodes[2].hasAttribute('data-recordid'));
-                            console.log('***** TR End  ******');
-                            console.log(getTabletag.childNodes[index].childNodes[1].childNodes[0].childNodes[2].getAttribute('data-recordid'));
-                            console.log('********************************************************************************************');    
-                            console.log('***** get Span text Start  ******');
-                            console.log(getTabletag.childNodes[index].childNodes[1].childNodes[0].textContent);
-                            console.log('***** get Span text End  ******');
-                            */
                             if(isOutsideLooping){
                                 if(getTabletag.childNodes[index].childNodes[1].childNodes[0].textContent == object_value){
                                     if(getTabletag.childNodes[index].childNodes[1].childNodes[0].childNodes[2].hasAttribute('data-recordid')){
                                         returnvalue = getTabletag.childNodes[index].childNodes[1].childNodes[0].childNodes[2].getAttribute('data-recordid');
                                         isOutsideLooping = false;
-                                        //break;
                                     }
                                 }
                             }                                                               
@@ -100,12 +91,14 @@ module.exports = {
                 .url(recordlink).pause(10000);
 
            });
+    */
     },
     '(AC2- Check the highlight panel fields)'(browser){
 
         //let sss = leadConsultantlayout.Salesforce.highlightpanel;
         //console.log(sss);
-       
+        utils.validation_highlightpanel_field(browser,'forceRecordLayout',leadConsultantlayout.Salesforce.Lead.highlightpanelfield);
+        /*
         browser
         .execute(function(highlightPanelSelector) {
             let divContainerElementArray1 = document.getElementsByClassName(highlightPanelSelector);
@@ -123,18 +116,7 @@ module.exports = {
                                 key2: ''
                             };
                             if(getHighlightPanelFieldSection.childNodes[index].childNodes[0].classList.contains('uiMenu')){
-                                /*
-                                console.log('********************* No Plain *********************');
-                                console.log(getHighlightPanelFieldSection.childNodes[index]);
-                                console.log(getHighlightPanelFieldSection.childNodes[index].childNodes[0].childNodes[0].
-                                    childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].getAttribute('title'));
                                 
-                                    console.log(getHighlightPanelFieldSection.childNodes[index].childNodes[0].childNodes[0].childNodes[0]
-                                    .childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[1].childNodes[0].childNodes[0].childNodes[1].childNodes[1].textContent);
-                                    
-                                    console.log(getHighlightPanelFieldSection.childNodes[index].childNodes[0].childNodes[0].childNodes[0]
-                                        .childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[1].childNodes[0]);
-                                */
                                     returnvalue.key1 = getHighlightPanelFieldSection.childNodes[index].childNodes[0].childNodes[0].
                                     childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].getAttribute('title');
                                     
@@ -144,12 +126,7 @@ module.exports = {
                                     arr.push(returnvalue);
                                                                             
                             }else{
-                                /*
-                                console.log('********************* Plain *********************');
-                                console.log(getHighlightPanelFieldSection.childNodes[index]);
-                                console.log(getHighlightPanelFieldSection.childNodes[index].childNodes[0].childNodes[0].textContent);
-                                console.log(getHighlightPanelFieldSection.childNodes[index].childNodes[0].childNodes[1].textContent);
-                                */
+                                
                                 returnvalue.key1 = getHighlightPanelFieldSection.childNodes[index].childNodes[0].childNodes[0].textContent;
 
                                 returnvalue.key2 = getHighlightPanelFieldSection.childNodes[index].childNodes[0].childNodes[1].textContent;
@@ -184,10 +161,11 @@ module.exports = {
                  }
                  console.log(highlightpanelFieldArr);
         });
-
+        */
     },
     '(AC2- Check the highlight panel button)'(browser){
-
+        utils.validation_highlightpanel_button(browser,highlightPanelSelector,leadConsultantlayout.Salesforce.Lead.highlightpanelButton);
+        /*
         browser
         .execute(function(highlightPanelSelector) {
             let divContainerElementArray1 = document.getElementsByClassName(highlightPanelSelector);
@@ -236,9 +214,11 @@ module.exports = {
                 }
                  console.log(highlightpanelButton);
         });
-        
+        */
     },
     '(AC2- Check the page layout)'(browser){
+       utils.validation_pagelayout(browser,pageLayoutSelector,leadConsultantlayout.Salesforce.Lead.pagelayoutfield);
+       /* 
         browser
         .execute(function(pageLayoutSelector) {
             let divContainerElementArray1 = document.getElementsByClassName(pageLayoutSelector);
@@ -296,5 +276,13 @@ module.exports = {
                  console.log(pagelayoutFields);
                  browser.pause(100000000);  
         });
+        */
+    },
+    '(AC2- Check the related list)'(browser){
+
+    },
+    '(AC 4- Press convert lead button)'(browser){
+        
     }
+    
 }
