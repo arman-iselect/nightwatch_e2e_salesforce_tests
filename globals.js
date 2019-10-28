@@ -2,6 +2,8 @@ fs = require('fs');
 data = JSON.parse(fs.readFileSync("lib/logins/logins.json").toString());
 energy = JSON.parse(fs.readFileSync("lib/verticals/energy/info.json".toString()));
 lead = JSON.parse(fs.readFileSync("lib/verticals/energy/lead.json".toString()));
+leadConsultantlayout = JSON.parse(fs.readFileSync("lib/PageLayout/Lead/Consultant/layout.json".toString()));
+
 
 const chromedriver = require('chromedriver');
 

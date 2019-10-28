@@ -20,7 +20,7 @@ module.exports = {
                 {
                     search.pause(10000)
                     .verify.elementPresent('@searchField', 'Search Field is Present after Refresh?')
-                        .setValue('@searchField', 'Test1');
+                        .setValue('@searchField', 'Howie Newbie');
                     browser
                         .keys(browser.Keys.ENTER)
                         .pause(5000);
@@ -31,7 +31,7 @@ module.exports = {
                             .refresh().pause(50000);
                         search
                             .verify.elementPresent('@searchField', 'Search Field is Present after Refresh?')
-                            .setValue('@searchField', 'Test1')
+                            .setValue('@searchField', 'Howie Newbie')
                             .pause(10000);
                         browser
                             .keys(browser.Keys.ENTER)
@@ -45,7 +45,7 @@ module.exports = {
      
         browser
         .execute(function(selector) {
-            let obj = 'Leads', object_value = 'weSelect test';
+            let obj = 'Leads', object_value = 'Howie Newbie';
             let divContainerElementArray = document.getElementsByClassName(selector);
             let returnvalue;
             let isOutsideLooping =true;
@@ -150,7 +150,6 @@ module.exports = {
                                 console.log(getHighlightPanelFieldSection.childNodes[index].childNodes[0].childNodes[0].textContent);
                                 console.log(getHighlightPanelFieldSection.childNodes[index].childNodes[0].childNodes[1].textContent);
                                 */
-
                                 returnvalue.key1 = getHighlightPanelFieldSection.childNodes[index].childNodes[0].childNodes[0].textContent;
 
                                 returnvalue.key2 = getHighlightPanelFieldSection.childNodes[index].childNodes[0].childNodes[1].textContent;
@@ -165,7 +164,25 @@ module.exports = {
         },
         [highlightPanelSelector],
         function(result) {
-                 console.log(result);
+                console.log(result);
+                //Expected value
+                let highlightpanelFieldArr = leadConsultantlayout.Salesforce.Lead.highlightpanelfield.split(';');
+                 
+                //Actual value
+                let actualValue = result.value;
+                 for(let index=0; index<=highlightpanelFieldArr.length -1; index++){
+                     let isConditionMatch="false";
+                    for(let i =0; i<=actualValue.length -1; i++){
+                        if(isConditionMatch=="false"){
+                            if(actualValue[i].key1 == highlightpanelFieldArr[index]){
+                                isConditionMatch= "true";
+                            }
+                        }
+                    }
+                    browser.assert.equal(isConditionMatch, "true");
+                    isConditionMatch="false";
+                 }
+                 console.log(highlightpanelFieldArr);
         });
 
     },
@@ -201,6 +218,23 @@ module.exports = {
         [highlightPanelSelector],
         function(result) {
                  console.log(result.value); 
+                 //Expected value
+                 let highlightpanelButton = leadConsultantlayout.Salesforce.Lead.highlightpanelButton.split(';');
+                 //Actual value
+                let actualValue = result.value;
+                for(let index=0; index<=highlightpanelButton.length -1; index++){
+                    let isConditionMatch="false";
+                   for(let i =0; i<=actualValue.length -1; i++){
+                       if(isConditionMatch=="false"){
+                           if(actualValue[i] == highlightpanelButton[index]){
+                               isConditionMatch= "true";
+                           }
+                       }
+                   }
+                   browser.assert.equal(isConditionMatch, "true");
+                   isConditionMatch="false";
+                }
+                 console.log(highlightpanelButton);
         });
         
     },
@@ -208,24 +242,58 @@ module.exports = {
         browser
         .execute(function(pageLayoutSelector) {
             let divContainerElementArray1 = document.getElementsByClassName(pageLayoutSelector);
+            let arr = new Array();
             if(divContainerElementArray1[0].childNodes[1].childNodes[3].childNodes[0].childNodes.length>0){
                 for(let indx =0; indx<= divContainerElementArray1[0].childNodes[1].childNodes[3].childNodes[0].childNodes.length -1 ; indx++){
                     
-                    let dddd =divContainerElementArray1[0].childNodes[1].childNodes[3].childNodes[0].childNodes[indx].childNodes[1].childNodes[0].childNodes;
-                    
-                    if(dddd.length>0){
-                        for(let innerindex = 0 ; innerindex<=dddd.length; innerindex++){
-                            console.log(dddd[innerindex]);
+                    let motherElement =divContainerElementArray1[0].childNodes[1].childNodes[3].childNodes[0].childNodes[indx].childNodes[1].childNodes[0].childNodes;
+                   
+                    if(motherElement.length>0){
+                        for(let innerindex = 0 ; innerindex<=motherElement.length - 1; innerindex++){
+                            for(let dataIndex =0; dataIndex<= motherElement[innerindex].childNodes.length -1; dataIndex++ ){
+                                let returnvalue={
+                                    fieldName: '',
+                                    fieldValue: ''
+                                };
+                                console.log(motherElement[innerindex].childNodes[dataIndex]);
+                                let getFieldName = motherElement[innerindex].childNodes[dataIndex].childNodes[0].childNodes[0].childNodes[0].textContent;
+                                if(getFieldName!=null && getFieldName!=''){
+                                    let getFieldValue = motherElement[innerindex].childNodes[dataIndex].childNodes[0].childNodes[1].childNodes[0].childNodes[0].textContent;
+                                    returnvalue.fieldName = getFieldName;
+                                    returnvalue.fieldValue = getFieldValue;
+                                    returnvalue.isEditable = '';
+                                    arr.push(returnvalue);
+                                }
+                                
+                            }
                         } 
                     }
                     
                 }
 
             }
+            return arr;
         },
         [pageLayoutSelector],
         function(result) {
                  console.log(result.value);
+                 //Expected value
+                 let pagelayoutFields = leadConsultantlayout.Salesforce.Lead.pagelayoutfield.split(';');
+                 //Actual value
+                let actualValue = result.value;
+                for(let index=0; index<=pagelayoutFields.length -1; index++){
+                    let isConditionMatch="false";
+                   for(let i =0; i<=actualValue.length -1; i++){
+                       if(isConditionMatch=="false"){
+                           if(actualValue[i].fieldName == pagelayoutFields[index]){
+                               isConditionMatch= "true";
+                           }
+                       }
+                   }
+                   browser.assert.equal(isConditionMatch, "true");
+                   isConditionMatch="false";
+                }
+                 console.log(pagelayoutFields);
                  browser.pause(100000000);  
         });
     }
