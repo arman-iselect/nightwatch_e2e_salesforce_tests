@@ -1,0 +1,14 @@
+{
+    "Salesforce":{
+        "Lead":{
+            "highlightpanelfield":"Business Vertical;Lead Source;Phone;Email;Created Date/Time",
+            "highlightpanelButton":"Follow;Convert Lead",
+            "pagelayoutfield":"Name;Email;Date of birth;Mobile;Address;Notes;Reference Number;Bill Attached;Lead Owner;Business Vertical;Lead Status;Lead Source;Phone;Other Number;Best Day To Call;Best Time To Call;Media Source;Increased Interest",
+            "relatedListNames":"Notes & Attachments;Notes"
+        
+        },
+        "Account":{
+
+        }
+    }
+}

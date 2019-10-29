@@ -46,6 +46,9 @@ module.exports = {
         .click('button[title="Save"]')
         .pause(10000);
      },
+     '(AC 3- Attach Notes and Attachments)'(browser){
+      
+     },
     '(AC 4- Press convert lead button)'(browser){
         convert.click_convertLead();
         browser.pause(10000000);
