@@ -47,7 +47,9 @@ module.exports = {
         .pause(10000);
      },
      '(AC 3- Attach Notes and Attachments)'(browser){
-      
+        browser
+        .click('span[class="slds-file-selector__button slds-button slds-button_neutral"]')
+        .pause(10000000);
      },
     '(AC 4- Press convert lead button)'(browser){
         convert.click_convertLead();

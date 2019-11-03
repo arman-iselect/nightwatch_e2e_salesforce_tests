@@ -1,5 +1,8 @@
-let globaleSearchSelector = 'resultsItem';
-let highlightpanelFieldSelector = 'forceRecordLayout';
+let selector = 'resultsItem';
+let highlightPanelSelector= 'forceRecordLayout';
+let highlightPanelButton ='forceActionsContainer';
+let pageLayoutSelector ='forceDetailPanelDesktop';
+let relatedListSelector ='forceRelatedListContainer';
 const url = function() {
     return 'https://test.salesforce.com/'
 }
@@ -333,6 +336,53 @@ commands['global_search'] = (browser,searchString)=>{
                 }
     })
 };
+
+commands['validation_convert_Lead_page'] = (browser)=>{
+    return  browser
+    .execute(function(selector,expectedValue) {
+        let divContainerElementArray1 = document.getElementsByClassName('');
+       
+        let arr = new Array();
+        let relatedlistsection = divContainerElementArray1[0].childNodes[0].childNodes;
+        let nextNode=0;
+        for(let i = 0; i<= relatedlistsection.length - 1; i++){
+            if(i == nextNode){
+                let getRelatedListName = relatedlistsection[i].childNodes[1].childNodes[2].childNodes[0].childNodes[1].childNodes[0].childNodes[0].childNodes[0].textContent;
+                console.log(getRelatedListName);
+                arr.push(getRelatedListName);
+                nextNode = nextNode + 4;
+            }
+        }
+        let retArrWrapper = {
+            dataArray:arr,
+            expectedVal:expectedValue
+        }
+        return retArrWrapper;
+    },
+    [selector,expectedValue],
+    function(result) {
+            console.log(result);
+             //Expected value
+             //let pagelayoutFields = leadConsultantlayout.Salesforce.Lead.pagelayoutfield.split(';');
+             let pagelayoutFields = result.value.expectedVal.split(';');
+           
+             //Actual value
+            let actualValue = result.value.dataArray;
+            for(let index=0; index<=pagelayoutFields.length - 1; index++){
+                let isConditionMatch="false";
+                console.log('isConditionMatch:'+isConditionMatch);
+               for(let i =0; i<=actualValue.length -1; i++){
+                   if(isConditionMatch=="false"){
+                       if(actualValue[i] == pagelayoutFields[index]){
+                           isConditionMatch= "true";
+                       }
+                   }
+               }
+               browser.assert.equal(isConditionMatch, "true");
+               isConditionMatch="false";
+            }
+    });
+}
 
 module.exports = {
 
