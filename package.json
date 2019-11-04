@@ -209,7 +209,9 @@
         "spqa_telcoconsultant_sp652_ac4": "nightwatch --tag spqa_telcoconsultant_sp_652_ac4",
         "bat_sp652ac1": "nightwatch --tag bat_sp_652_ac1",
         "bat_energysales_sc63_ac": "nightwatch --tag bat_energy_sp_651_ac",
-        "bat_energysales_sc63_ac1": "nightwatch --tag bat_energy_sp_651_ac1"
+        "bat_energysales_sc63_ac1": "nightwatch --tag bat_energy_sp_651_ac1",
+        "View_Lead_Page": "nightwatch --tag View_Lead_Page",
+        "convert_lead_ac5_sc_82": "nightwatch --tag sc_82_convertLead_ac5"
     },
     "keywords": [],
     "author": "",
