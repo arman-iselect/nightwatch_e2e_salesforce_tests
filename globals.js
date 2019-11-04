@@ -38,7 +38,7 @@ module.exports = {
         //bat
         //Specific for nightwatch video recorder
         /*require('nightwatch-video-recorder').start(browser, done),*/
-
+        utils = browser.page.Utils.Utility()
         login = browser.page.logins.login_page()    
         page = browser.page.logins.login_page()
         search = browser.page.verticals.reusable.a_person_accountAndopportunity_page.sp_650_global_search()

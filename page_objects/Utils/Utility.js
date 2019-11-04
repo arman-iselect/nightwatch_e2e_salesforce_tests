@@ -3,6 +3,7 @@ let highlightPanelSelector= 'forceRecordLayout';
 let highlightPanelButton ='forceActionsContainer';
 let pageLayoutSelector ='forceDetailPanelDesktop';
 let relatedListSelector ='forceRelatedListContainer';
+let convertleadSelector = 'detailList';
 const url = function() {
     return 'https://test.salesforce.com/'
 }
@@ -382,6 +383,144 @@ commands['validation_convert_Lead_page'] = (browser)=>{
                isConditionMatch="false";
             }
     });
+}
+
+
+commands['validation_convert_lead'] = (browser, expectedValue)=>{
+    return browser
+    .pause(10000)
+    .frame(0)
+    .execute(function(convertleadSelector,expectedValue) {
+        let getDisclaimerText = document.getElementsByClassName('bPageTitle')[0].parentElement;
+        let arrDisclaimerText = new Array();
+        
+        console.log(getDisclaimerText.childNodes);
+        console.log('Yeah Yeah 26');
+        console.log(getDisclaimerText.childNodes[26]);
+        console.log('Yeah Yeah 28');
+        console.log(getDisclaimerText.childNodes[28]);
+        console.log('Yeah Yeah 30');
+        console.log(getDisclaimerText.childNodes[30]);
+        
+        arrDisclaimerText.push(getDisclaimerText.childNodes[26].data);
+        arrDisclaimerText.push(getDisclaimerText.childNodes[28].data);
+        arrDisclaimerText.push(getDisclaimerText.childNodes[30].data);
+
+        let divContainerElementArray1 = document.getElementsByClassName(convertleadSelector);
+        let arr = new Array();
+        //Convert Lead
+        let rowFieldName  = divContainerElementArray1[0].childNodes[0].childNodes[0].childNodes[0].textContent;
+        let rowFieldValue  = divContainerElementArray1[0].childNodes[0].childNodes[0].childNodes[1].textContent;
+
+        arr.push(rowFieldName);
+        //Lead Details
+        let rowFieldName1  = divContainerElementArray1[1].childNodes[0].childNodes[0].childNodes[0].textContent;
+        let rowFieldValue1  = divContainerElementArray1[1].childNodes[0].childNodes[0].childNodes[1].textContent;
+
+        let rowFieldName2  = divContainerElementArray1[1].childNodes[0].childNodes[0].childNodes[2].textContent;
+        let rowFieldValue2  = divContainerElementArray1[1].childNodes[0].childNodes[0].childNodes[3].textContent;
+
+        let rowFieldName3  = divContainerElementArray1[1].childNodes[0].childNodes[1].childNodes[0].textContent;
+        let rowFieldValue3  = divContainerElementArray1[1].childNodes[0].childNodes[1].childNodes[1].textContent;
+        
+
+        let rowFieldName4  = divContainerElementArray1[1].childNodes[0].childNodes[1].childNodes[2].textContent;
+        let rowFieldValue4  = divContainerElementArray1[1].childNodes[0].childNodes[1].childNodes[3].textContent;
+
+       
+        let rowFieldName5  = divContainerElementArray1[1].childNodes[0].childNodes[2].childNodes[0].textContent;
+        let rowFieldValue5  = divContainerElementArray1[1].childNodes[0].childNodes[2].childNodes[1].textContent;
+        
+
+        let rowFieldName6  = divContainerElementArray1[1].childNodes[0].childNodes[2].childNodes[2].textContent;
+        let rowFieldValue6  = divContainerElementArray1[1].childNodes[0].childNodes[2].childNodes[3].textContent;
+
+
+        let rowFieldName7  = divContainerElementArray1[1].childNodes[0].childNodes[3].childNodes[0].textContent;
+        let rowFieldValue7  = divContainerElementArray1[1].childNodes[0].childNodes[3].childNodes[1].textContent;
+
+        let rowFieldName8  = divContainerElementArray1[1].childNodes[0].childNodes[4].childNodes[0].textContent;
+        let rowFieldValue8  = divContainerElementArray1[1].childNodes[0].childNodes[4].childNodes[1].textContent;
+        /*
+        */
+       arr.push(rowFieldName1);
+       arr.push(rowFieldName2);
+       arr.push(rowFieldName3);
+       arr.push(rowFieldName4);
+       arr.push(rowFieldName5);
+       arr.push(rowFieldName6);
+       arr.push(rowFieldName7);
+       arr.push(rowFieldName8);
+
+         /**/
+        //Account result
+
+        let divContainerElementArray2 = document.getElementsByClassName('list');
+        let accountResultTableRow = divContainerElementArray2[0].childNodes[2].childNodes.length;
+        
+        let datawrapper = {
+            disclamerTextArr:arrDisclaimerText,
+            fieldNamesArr :arr,
+            searchAccountRowCount: accountResultTableRow
+        }
+        
+        let retArrWrapper = {
+            dataArrary:datawrapper,
+            expectedVal:expectedValue
+        }
+        return retArrWrapper;
+        
+       //return arr;
+    },
+    [convertleadSelector,expectedValue],
+    function(result) {
+            console.log(result);
+            //Expected value
+            let highlightpanelFieldArr = result.value.expectedVal.split(';');
+            //Actual value
+            let actualValue = result.value.dataArrary.fieldNamesArr;
+             for(let index=0; index<=highlightpanelFieldArr.length -1; index++){
+                 let isConditionMatch="false";
+                for(let i =0; i<=actualValue.length -1; i++){
+                    if(isConditionMatch=="false"){
+                        if(actualValue[i] == highlightpanelFieldArr[index]){
+                            isConditionMatch= "true";
+                        }
+                    }
+                }
+                browser.assert.equal(isConditionMatch, "true");
+                isConditionMatch="false";
+             }
+             console.log(highlightpanelFieldArr);
+             let actualValue1 = result.value.dataArrary.searchAccountRowCount;
+            browser.assert.notEqual(actualValue1, 0);
+
+           //check if convertbutton is visible
+             browser.isVisible('input[value="Convert"]', results=>{
+                if (results.value) { console.log('Convert visible'); }
+
+                else { console.log('Convert not visible'); }
+             });
+           //check if cancel button is visible
+           browser.isVisible('input[value="Cancel"]', results=>{
+            if (results.value) { console.log('cancel visible'); }
+
+            else { console.log('cancel not visible'); }
+            });
+
+            //Disclaimer Text checker
+            let disclaimerTextArray = result.value.dataArrary.disclamerTextArr;
+            console.log('disclaimer text');
+            console.log(disclaimerTextArray[0].replace(/[\n\r]/g,''));
+            console.log(disclaimerTextArray[1].replace(/[\n\r]/g,''));
+            console.log(disclaimerTextArray[2].replace(/[\n\r]/g,''));
+            
+            browser.assert.equal('Leads can be converted to accounts, contacts, opportunities, and follow up tasks.',disclaimerTextArray[0].replace(/[\n\r]/g,'').replace('    ',''));
+            browser.assert.equal('You should only convert a lead once you have identified it as qualified.',disclaimerTextArray[1].replace(/[\n\r]/g,'').replace('    ',''));
+            browser.assert.equal('After this lead has been converted, it can no longer be viewed or edited as a lead, but can be viewed in lead reports.',disclaimerTextArray[2].replace(/[\n\r]/g,'').replace('    ',''));
+            
+    });
+
 }
 
 module.exports = {

@@ -1,3 +1,5 @@
+let convertleadSelector = 'detailList';
+
 module.exports = {
 
     tags:['sc_82_convertLead_ac5'],
@@ -17,6 +19,10 @@ module.exports = {
     },
     '(AC 4- Press convert lead button)'(browser){
         convert.click_convertLead();
-        browser.pause(10000000);
+        
+    },
+    'Ayoko na sa earth'(browser){
+        utils.validation_convert_lead(browser,leadConsultantlayout.Salesforce.Lead.convertLeadFields);
+       
     }
 }
