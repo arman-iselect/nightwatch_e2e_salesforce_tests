@@ -391,16 +391,10 @@ commands['validation_convert_lead'] = (browser, expectedValue)=>{
     .pause(10000)
     .frame(0)
     .execute(function(convertleadSelector,expectedValue) {
+
+        //dislaimer field
         let getDisclaimerText = document.getElementsByClassName('bPageTitle')[0].parentElement;
         let arrDisclaimerText = new Array();
-        
-        console.log(getDisclaimerText.childNodes);
-        console.log('Yeah Yeah 26');
-        console.log(getDisclaimerText.childNodes[26]);
-        console.log('Yeah Yeah 28');
-        console.log(getDisclaimerText.childNodes[28]);
-        console.log('Yeah Yeah 30');
-        console.log(getDisclaimerText.childNodes[30]);
         
         arrDisclaimerText.push(getDisclaimerText.childNodes[26].data);
         arrDisclaimerText.push(getDisclaimerText.childNodes[28].data);
@@ -441,8 +435,7 @@ commands['validation_convert_lead'] = (browser, expectedValue)=>{
 
         let rowFieldName8  = divContainerElementArray1[1].childNodes[0].childNodes[4].childNodes[0].textContent;
         let rowFieldValue8  = divContainerElementArray1[1].childNodes[0].childNodes[4].childNodes[1].textContent;
-        /*
-        */
+        
        arr.push(rowFieldName1);
        arr.push(rowFieldName2);
        arr.push(rowFieldName3);
@@ -452,7 +445,6 @@ commands['validation_convert_lead'] = (browser, expectedValue)=>{
        arr.push(rowFieldName7);
        arr.push(rowFieldName8);
 
-         /**/
         //Account result
 
         let divContainerElementArray2 = document.getElementsByClassName('list');
@@ -491,29 +483,24 @@ commands['validation_convert_lead'] = (browser, expectedValue)=>{
                 browser.assert.equal(isConditionMatch, "true");
                 isConditionMatch="false";
              }
-             console.log(highlightpanelFieldArr);
              let actualValue1 = result.value.dataArrary.searchAccountRowCount;
             browser.assert.notEqual(actualValue1, 0);
 
            //check if convertbutton is visible
              browser.isVisible('input[value="Convert"]', results=>{
-                if (results.value) { console.log('Convert visible'); }
+                if (results.value) {  }
 
-                else { console.log('Convert not visible'); }
+                else {  }
              });
            //check if cancel button is visible
            browser.isVisible('input[value="Cancel"]', results=>{
-            if (results.value) { console.log('cancel visible'); }
+            if (results.value) { }
 
-            else { console.log('cancel not visible'); }
+            else { }
             });
 
             //Disclaimer Text checker
             let disclaimerTextArray = result.value.dataArrary.disclamerTextArr;
-            console.log('disclaimer text');
-            console.log(disclaimerTextArray[0].replace(/[\n\r]/g,''));
-            console.log(disclaimerTextArray[1].replace(/[\n\r]/g,''));
-            console.log(disclaimerTextArray[2].replace(/[\n\r]/g,''));
             
             browser.assert.equal('Leads can be converted to accounts, contacts, opportunities, and follow up tasks.',disclaimerTextArray[0].replace(/[\n\r]/g,'').replace('    ',''));
             browser.assert.equal('You should only convert a lead once you have identified it as qualified.',disclaimerTextArray[1].replace(/[\n\r]/g,'').replace('    ',''));
@@ -523,6 +510,12 @@ commands['validation_convert_lead'] = (browser, expectedValue)=>{
 
 }
 
+
+commands['yeah_yeah'] = (browser, fileloc, inputfilepath,donebtnclickpath)=>{
+    browser.useXpath()
+    .setValue(inputfilepath, fileloc)
+    .pause(5000).useXpath().click(donebtnclickpath);
+}
 module.exports = {
 
     url: url,
