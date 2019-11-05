@@ -21,7 +21,7 @@ module.exports = {
         convert.click_convertLead();
         
     },
-    'Ayoko na sa earth'(browser){
+    '(AC5: Ensure correct details are display in Convert Lead page)'(browser){
         utils.validation_convert_lead(browser,leadConsultantlayout.Salesforce.Lead.convertLeadFields);
        
     }
