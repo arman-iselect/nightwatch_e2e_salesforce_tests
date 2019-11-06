@@ -502,8 +502,7 @@ commands['validation_convert_lead'] = (browser, expectedValue)=>{
 
 }
 
-
-commands['yeah_yeah'] = (browser, fileloc, inputfilepath,donebtnclickpath)=>{
+commands['upload_files'] = (browser, fileloc, inputfilepath,donebtnclickpath)=>{
     browser.useXpath()
     .setValue(inputfilepath, fileloc)
     .pause(5000).useXpath().click(donebtnclickpath);
