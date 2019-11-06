@@ -20,6 +20,7 @@ const elements = {
 }
 
 const commands = {}
+
 commands['global_search_select_data'] = (browser, objName, nameSearch, baseUrl, expectedValue, selector)=>{
     return browser
     .execute(function(objName, nameSearch, baseUrl, expectedValue, selector) {
@@ -35,10 +36,6 @@ commands['global_search_select_data'] = (browser, objName, nameSearch, baseUrl, 
                 let getTabletag =element.childNodes[5].childNodes[1].childNodes[0].childNodes[0]
                                 .childNodes[1].childNodes[1].childNodes[1].childNodes[0]
                                 .childNodes[0].childNodes[3].childNodes[2];
-                                console.log(element.childNodes[5].childNodes[1].childNodes[0].childNodes[0]
-                                    .childNodes[1].childNodes[1].childNodes[1].childNodes[0]
-                                    .childNodes[0].childNodes[3].childNodes[2]);
-                                    console.log(getTabletag.childNodes.length);
                 if(getTabletag.childNodes.length > 0){
                     for(var index =0; index < getTabletag.childNodes.length - 1; index++ ){
                         if(isOutsideLooping){
@@ -76,16 +73,12 @@ commands['validation_highlightpanel_field']=(browser,selector,expectedValue)=>{
     return browser
     .execute(function(selector,expectedValue) {
         let divContainerElementArray1 = document.getElementsByClassName(selector);
-        console.log('validation_highlightpanel_field');
-        console.log(selector);
         let arr = new Array();
         if(divContainerElementArray1.length>0){
             //HighlightPanelView
             let getHighlightPanelFieldSection = divContainerElementArray1[0].childNodes[1];
-            
             if(getHighlightPanelFieldSection.childNodes.length>0 ){
                 for(let index=0; index<getHighlightPanelFieldSection.childNodes.length; index++){
-                        console.log(getHighlightPanelFieldSection.childNodes[index].childNodes[0].classList.contains('uiMenu'));
                         let returnvalue={
                             key1: '',
                             key2: ''
@@ -120,7 +113,6 @@ commands['validation_highlightpanel_field']=(browser,selector,expectedValue)=>{
     },
     [selector,expectedValue],
     function(result) {
-            console.log(result);
             //Expected value
             //let highlightpanelFieldArr = leadConsultantlayout.Salesforce.Lead.highlightpanelfield.split(';');
             let highlightpanelFieldArr = result.value.expectedVal.split(';');
@@ -138,6 +130,7 @@ commands['validation_highlightpanel_field']=(browser,selector,expectedValue)=>{
                 browser.assert.equal(isConditionMatch, "true");
                 isConditionMatch="false";
              }
+             
              console.log(highlightpanelFieldArr);
     });
 
@@ -272,7 +265,7 @@ commands['validation_relatedlist'] = (browser,selector,expectedValue)=>{
         for(let i = 0; i<= relatedlistsection.length - 1; i++){
             if(i == nextNode){
                 let getRelatedListName = relatedlistsection[i].childNodes[1].childNodes[2].childNodes[0].childNodes[1].childNodes[0].childNodes[0].childNodes[0].textContent;
-                console.log(getRelatedListName);
+                
                 arr.push(getRelatedListName);
                 nextNode = nextNode + 4;
             }
@@ -294,7 +287,6 @@ commands['validation_relatedlist'] = (browser,selector,expectedValue)=>{
             let actualValue = result.value.dataArray;
             for(let index=0; index<=pagelayoutFields.length - 1; index++){
                 let isConditionMatch="false";
-                console.log('isConditionMatch:'+isConditionMatch);
                for(let i =0; i<=actualValue.length -1; i++){
                    if(isConditionMatch=="false"){
                        if(actualValue[i] == pagelayoutFields[index]){
@@ -349,7 +341,7 @@ commands['validation_convert_Lead_page'] = (browser)=>{
         for(let i = 0; i<= relatedlistsection.length - 1; i++){
             if(i == nextNode){
                 let getRelatedListName = relatedlistsection[i].childNodes[1].childNodes[2].childNodes[0].childNodes[1].childNodes[0].childNodes[0].childNodes[0].textContent;
-                console.log(getRelatedListName);
+                
                 arr.push(getRelatedListName);
                 nextNode = nextNode + 4;
             }
