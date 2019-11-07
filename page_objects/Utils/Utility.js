@@ -4,6 +4,7 @@ let highlightPanelButton ='forceActionsContainer';
 let pageLayoutSelector ='forceDetailPanelDesktop';
 let relatedListSelector ='forceRelatedListContainer';
 let convertleadSelector = 'detailList';
+let recordTabSelector = 'tabBar';
 const url = function() {
     return 'https://test.salesforce.com/'
 }
@@ -376,7 +377,6 @@ commands['validation_convert_Lead_page'] = (browser)=>{
             }
     });
 }
-
 
 commands['validation_convert_lead'] = (browser, expectedValue)=>{
     return browser
