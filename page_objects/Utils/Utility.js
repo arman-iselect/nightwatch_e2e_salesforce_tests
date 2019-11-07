@@ -38,7 +38,7 @@ commands['global_search_select_data'] = (browser, objName, nameSearch, baseUrl, 
                                 .childNodes[1].childNodes[1].childNodes[1].childNodes[0]
                                 .childNodes[0].childNodes[3].childNodes[2];
                 if(getTabletag.childNodes.length > 0){
-                    for(var index =0; index < getTabletag.childNodes.length - 1; index++ ){
+                    for(var index =0; index <= getTabletag.childNodes.length - 1; index++ ){
                         if(isOutsideLooping){
                             if(getTabletag.childNodes[index].childNodes[1].childNodes[0].textContent == nameSearch){
                                 if(getTabletag.childNodes[index].childNodes[1].childNodes[0].childNodes[2].hasAttribute('data-recordid')){
@@ -61,8 +61,8 @@ commands['global_search_select_data'] = (browser, objName, nameSearch, baseUrl, 
 },
 [objName, nameSearch, baseUrl, expectedValue, selector],
 function(result) {
-        
             let recordlink =result.value.baseUrl+result.value.actValue;
+
             browser
             .url(recordlink).pause(10000);
 
@@ -331,54 +331,7 @@ commands['global_search'] = (browser,searchString)=>{
     })
 };
 
-commands['validation_convert_Lead_page'] = (browser)=>{
-    return  browser
-    .execute(function(selector,expectedValue) {
-        let divContainerElementArray1 = document.getElementsByClassName('');
-       
-        let arr = new Array();
-        let relatedlistsection = divContainerElementArray1[0].childNodes[0].childNodes;
-        let nextNode=0;
-        for(let i = 0; i<= relatedlistsection.length - 1; i++){
-            if(i == nextNode){
-                let getRelatedListName = relatedlistsection[i].childNodes[1].childNodes[2].childNodes[0].childNodes[1].childNodes[0].childNodes[0].childNodes[0].textContent;
-                
-                arr.push(getRelatedListName);
-                nextNode = nextNode + 4;
-            }
-        }
-        let retArrWrapper = {
-            dataArray:arr,
-            expectedVal:expectedValue
-        }
-        return retArrWrapper;
-    },
-    [selector,expectedValue],
-    function(result) {
-            console.log(result);
-             //Expected value
-             //let pagelayoutFields = leadConsultantlayout.Salesforce.Lead.pagelayoutfield.split(';');
-             let pagelayoutFields = result.value.expectedVal.split(';');
-           
-             //Actual value
-            let actualValue = result.value.dataArray;
-            for(let index=0; index<=pagelayoutFields.length - 1; index++){
-                let isConditionMatch="false";
-                console.log('isConditionMatch:'+isConditionMatch);
-               for(let i =0; i<=actualValue.length -1; i++){
-                   if(isConditionMatch=="false"){
-                       if(actualValue[i] == pagelayoutFields[index]){
-                           isConditionMatch= "true";
-                       }
-                   }
-               }
-               browser.assert.equal(isConditionMatch, "true");
-               isConditionMatch="false";
-            }
-    });
-}
-
-commands['validation_convert_lead'] = (browser, expectedValue)=>{
+commands['validation_convert_lead_page'] = (browser, expectedValue)=>{
     return browser
     .pause(10000)
     .frame(0)
@@ -507,6 +460,79 @@ commands['upload_files'] = (browser, fileloc, inputfilepath,donebtnclickpath)=>{
     .setValue(inputfilepath, fileloc)
     .pause(5000).useXpath().click(donebtnclickpath);
 }
+
+commands['delete_all_maintabs']=(browser)=>{
+    return browser.pause(10000)
+    .execute(function(recordTabSelector) {
+        let getAppName = document.getElementsByClassName('appName')[0].textContent;
+        let divContainerElementArray1 = document.getElementsByClassName(recordTabSelector);
+        let ariaLabel = 'Workspace tabs for '+getAppName;
+        let arr = new Array();
+        let navBarNode ;
+        if(divContainerElementArray1.length>0){
+            for(let index=0; index<=divContainerElementArray1.length - 1; index++){
+                console.log(divContainerElementArray1[index]);
+                console.log(divContainerElementArray1[index].ariaLabel);
+                let getariaLabel = divContainerElementArray1[index].ariaLabel
+                if(getariaLabel==ariaLabel){
+                    let latestNode = divContainerElementArray1[index].childNodes;
+                    navBarNode = latestNode;
+                    
+                    
+                }
+            }
+
+            let tabBarNode;
+            for(let index = 0; index<=navBarNode.length -1;index++){
+                let currNode =navBarNode[index];
+                if(currNode.tagName=="UL"){
+                    currNode.classList.forEach((classStr)=>{
+                        if(classStr=='tabBarItems'){
+                            tabBarNode = currNode;
+                        }
+                    });
+                    
+                }
+            }
+            
+            
+            tabBarNode.childNodes.forEach((currNode)=>{
+                if(currNode.classList!=undefined){
+                    currNode.classList.forEach((classStr)=>{
+                        if(classStr=='tabItem'){
+                            currNode.childNodes.forEach((eachItem)=>{
+                                if(eachItem.tagName == 'A'){
+                                    let getTitle = 'button[title="Close '+eachItem.title+'"]';
+                                    arr.push(getTitle);
+                                }
+                            })
+                        }
+                    })
+                }
+            })
+        }
+        let retArrWrapper = {
+            dataArray:arr
+        }
+        return retArrWrapper;
+    },
+    [recordTabSelector],
+    function(result) {
+            let dataArr = result.value.dataArray;
+            if(dataArr!=undefined){
+                for(let i=0; i<=dataArr.length -1 ; i++){
+                    browser.click(dataArr[i]).pause(1000);
+                }
+            }
+    });
+
+}
+
+commands['save_ScreenShot']=(browser, path)=>{
+    return browser
+    .saveScreenshot(path);
+}
+
 module.exports = {
 
     url: url,
