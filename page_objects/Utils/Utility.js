@@ -62,10 +62,10 @@ commands['global_search_select_data'] = (browser, objName, nameSearch, baseUrl, 
 [objName, nameSearch, baseUrl, expectedValue, selector],
 function(result) {
             let recordlink =result.value.baseUrl+result.value.actValue;
-
+            utils.save_ScreenShot(browser,'reports/bat_env/verticals/energy/ss_beforeredirect_global_search.png');
             browser
             .url(recordlink).pause(10000);
-
+            utils.save_ScreenShot(browser,'reports/bat_env/verticals/energy/ss_afterredirect_global_search.png');
        });
 }
 
@@ -131,8 +131,8 @@ commands['validation_highlightpanel_field']=(browser,selector,expectedValue)=>{
                 browser.assert.equal(isConditionMatch, "true");
                 isConditionMatch="false";
              }
-             
-             console.log(highlightpanelFieldArr);
+             utils.save_ScreenShot(browser,'reports/bat_env/verticals/energy/ss_highlightpanelField.png');
+            
     });
 
 }
@@ -188,6 +188,7 @@ commands['validation_highlightpanel_button'] = (browser,selector,expectedValue)=
                browser.assert.equal(isConditionMatch, "true");
                isConditionMatch="false";
             }
+            utils.save_ScreenShot(browser,'reports/bat_env/verticals/energy/ss_highlightpanelButton.png');
     });
 }
 
@@ -250,7 +251,7 @@ commands['validation_pagelayout'] = (browser,selector,expectedValue)=>{
                browser.assert.equal(isConditionMatch, "true");
                isConditionMatch="false";
             }
-             console.log(pagelayoutFields);
+            utils.save_ScreenShot(browser,'reports/bat_env/verticals/energy/ss_pageLayout.png');
     });
 }
 
@@ -298,6 +299,7 @@ commands['validation_relatedlist'] = (browser,selector,expectedValue)=>{
                browser.assert.equal(isConditionMatch, "true");
                isConditionMatch="false";
             }
+            utils.save_ScreenShot(browser,'reports/bat_env/verticals/energy/ss_relatedList.png');
     });
     
 }
@@ -308,18 +310,21 @@ commands['global_search'] = (browser,searchString)=>{
     {
         console.log(result.value);
         if (result.value)
-        {
+        {   
+            utils.save_ScreenShot(browser,'reports/bat_env/verticals/energy/ss_beforeGlobalSearchInputValue.png');
             search.pause(10000)
             .verify.elementPresent('@searchField', 'Search Field is Present after Refresh?')
                 .setValue('@searchField', searchString);
             browser
                 .keys(browser.Keys.ENTER)
                 .pause(5000);
+            utils.save_ScreenShot(browser,'reports/bat_env/verticals/energy/ss_afterGlobalSearchInputValue.png');
         }
             else
                 {
                 browser
                     .refresh().pause(50000);
+                utils.save_ScreenShot(browser,'reports/bat_env/verticals/energy/ss_beforeGlobalSearchInputValue.png');
                 search
                     .verify.elementPresent('@searchField', 'Search Field is Present after Refresh?')
                     .setValue('@searchField', searchString)
@@ -327,6 +332,7 @@ commands['global_search'] = (browser,searchString)=>{
                 browser
                     .keys(browser.Keys.ENTER)
                     .pause(8000);
+                utils.save_ScreenShot(browser,'reports/bat_env/verticals/energy/ss_afterGlobalSearchInputValue.png');
                 }
     })
 };
@@ -450,15 +456,17 @@ commands['validation_convert_lead_page'] = (browser, expectedValue)=>{
             browser.assert.equal('Leads can be converted to accounts, contacts, opportunities, and follow up tasks.',disclaimerTextArray[0].replace(/[\n\r]/g,'').replace('    ',''));
             browser.assert.equal('You should only convert a lead once you have identified it as qualified.',disclaimerTextArray[1].replace(/[\n\r]/g,'').replace('    ',''));
             browser.assert.equal('After this lead has been converted, it can no longer be viewed or edited as a lead, but can be viewed in lead reports.',disclaimerTextArray[2].replace(/[\n\r]/g,'').replace('    ',''));
-            
+            utils.save_ScreenShot(browser,'reports/bat_env/verticals/energy/ss_ConvertLeadPage.png');
     });
 
 }
 
 commands['upload_files'] = (browser, fileloc, inputfilepath,donebtnclickpath)=>{
+    utils.save_ScreenShot(browser,'reports/bat_env/verticals/energy/ss_beforeFileUpload.png');
     browser.useXpath()
     .setValue(inputfilepath, fileloc)
     .pause(5000).useXpath().click(donebtnclickpath);
+    utils.save_ScreenShot(browser,'reports/bat_env/verticals/energy/ss_afterFileUpload.png');
 }
 
 commands['delete_all_maintabs']=(browser)=>{
