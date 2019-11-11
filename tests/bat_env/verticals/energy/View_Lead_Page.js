@@ -34,23 +34,19 @@ module.exports = {
     '(AC2- Check the related list)'(browser){
         utils.validation_relatedlist(browser,relatedListSelector,leadConsultantlayout.Salesforce.Lead.relatedListNames);
         
-    }
-    /*,
-     '(AC 3- Attach Notes and Attachments)'(browser){
-        utils.yeah_yeah(browser, leadConsultantlayout.Salesforce.Lead.filepathtoUpload, leadConsultantlayout.Salesforce.Lead.inputFileXpath,leadConsultantlayout.Salesforce.Lead.donebtnXpath);
-    }*/,
+    },
     '(AC5- update lead information)'(browser){
         browser
         .click('button[title="Edit Name"]')
         .pause(2000)
-        .setValue('input[placeholder="Street"]', 'Newbie') //Lead Name 
+        .setValue('textarea[placeholder="Street"]', 'Newbie') //Lead Name 
         .pause(5000)
         .click('button[title="Save"]')
         .pause(1000);
      },
     '(AC 4- Press convert lead button)'(browser){
         convert.click_convertLead();
-        browser.pause(1000000).end();
+        browser.end();
     }
     
 }

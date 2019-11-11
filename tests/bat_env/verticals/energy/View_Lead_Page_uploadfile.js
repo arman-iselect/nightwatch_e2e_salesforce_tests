@@ -14,6 +14,6 @@ module.exports = {
     },
      '(AC 3- Attach Notes and Attachments)'(browser){
         utils.upload_files(browser, leadConsultantlayout.Salesforce.Lead.filepathtoUpload, leadConsultantlayout.Salesforce.Lead.inputFileXpath,leadConsultantlayout.Salesforce.Lead.donebtnXpath);
-        browser.end();
+        browser.pause(100000000).end();
     }
 }
