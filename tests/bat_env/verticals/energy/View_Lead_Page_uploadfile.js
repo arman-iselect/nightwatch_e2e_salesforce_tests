@@ -4,13 +4,16 @@ module.exports = {
     {
         login .userLogin(data.energy.bat.energysalesConsultant.username, data.energy.bat.energysalesConsultant.password);
     },
+    'Close all browser': (browser)=>{
+        utils.delete_all_maintabs(browser);
+    },
     '(AC-1) GIVEN that the results page is displayed': function(browser) 
     {
-        utils.global_search(browser,'Howie Newbie');
+        utils.global_search(browser,'Ger Ger');
     },
     '(AC-1) WHEN I select any one of the records on the results page that has a hyperlink': function (browser) 
     {
-        utils.global_search_select_data(browser,  'Leads', 'Howie Newbie', 'https://iselect--bat.lightning.force.com/', null, 'resultsItem');
+        utils.global_search_select_data(browser,  'Leads', 'Ger Ger Lead', 'https://iselect--bat.lightning.force.com/', null, 'resultsItem');
     },
      '(AC 3- Attach Notes and Attachments)'(browser){
         utils.upload_files(browser, leadConsultantlayout.Salesforce.Lead.filepathtoUpload, leadConsultantlayout.Salesforce.Lead.inputFileXpath,leadConsultantlayout.Salesforce.Lead.donebtnXpath);
