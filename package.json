@@ -214,9 +214,10 @@
         "bat_energysales_sc63_ac1": "nightwatch --tag bat_energy_sp_651_ac1",
         "View_Lead_Page": "nightwatch --tag View_Lead_Page",
         "convert_lead_ac5_sc_82": "nightwatch --tag sc_82_convertLead_ac5",
-        "View_Lead_Page_uploadfile":"nightwatch --tag View_Lead_uploadFile",
-        "sc80_Test": "nightwatch --tag sc80_Test",
-        "sc84_Test": "nightwatch --tag sc84_Test"
+        "View_Lead_Page_uploadfile": "nightwatch --tag View_Lead_uploadFile",
+        "rnd": "nightwatch --tag rnd",
+        "View_Opportunity_Page": "nightwatch --tag View_Opportunity_Page",
+        "SC_73": "nightwatch --tag SC_73"
     },
     "keywords": [],
     "author": "",

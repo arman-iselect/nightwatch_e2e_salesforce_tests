@@ -3,15 +3,21 @@
         "Lead":{
             "highlightpanelfield":"Business Vertical;Lead Source;Phone;Email;Created Date/Time",
             "highlightpanelButton":"Follow;Convert Lead",
-            "pagelayoutfield":"Name;Email;Date of birth;Mobile;Address;Notes;Reference Number;Bill Attached;Lead Owner;Business Vertical;Lead Status;Lead Source;Phone;Other Number;Best Day To Call;Best Time To Call;Media Source;Increased Interest",
-            "relatedListNames":"Notes & Attachments;Notes",
+            "pagelayoutfield":"Lead--Name;Email;Date of birth;Mobile;Address;Notes;Reference Number;Bill Attached;Lead Owner;Business Vertical;Lead Status;Lead Source;Phone;Other Number;Best Day To Call;Best Time To Call;Media Source;Increased Interest",
+            "relatedListNames":"Lead--Notes & Attachments;Notes",
             "convertLeadFields":"Record Owner;Zip/Postal Code;First Name;City;Last Name;State/Province Code;Phone;Mobile;Email",
             "inputFileXpath":"/html/body/div[5]/div[1]/div[2]/div[2]/div/div[1]/div/section/div/div[2]/div/div/div/div[1]/div/div[2]/div[1]/div[1]/div/div/div[1]/article/div[3]/div/div/div/div/div/div[2]/lightning-input/div/div/lightning-primitive-file-droppable-zone/slot/input",
             "donebtnXpath":"/html/body/div[5]/div[2]/div/div[2]/div/div[3]/div/span/div/button",
-            "filepathtoUpload":"C:/Users/Roger Cabatic/Desktop/yeah.txt"                
+            "filepathtoUpload":"C:/Users/Roger Cabatic/Desktop/yeah.txt"
         },
         "Account":{
 
+        },
+        "Opportunity":{
+            "highlightpanelfield":"Account Name;Business Vertical;Opportunity Owner;Lead Source;Close Date",
+            "highlightpanelButton":"Follow;WeSelect;Edit;New Note",
+            "pagelayoutfield":"Opportunity--Opportunity Owner;Opportunity Name;Account Name;Stage;Business Vertical;Lead Source;Media Source",
+            "relatedListNames":"Opportunity--Needs Analysis;Products;Quotes;Orders;Notes & Attachments;Notes"
         }
     }
 }

@@ -62,22 +62,36 @@ commands['global_search_select_data'] = (browser, objName, nameSearch, baseUrl, 
 [objName, nameSearch, baseUrl, expectedValue, selector],
 function(result) {
             let recordlink =result.value.baseUrl+result.value.actValue;
-            utils.save_ScreenShot(browser,'reports/bat_env/verticals/energy/ss_beforeredirect_global_search.png');
+            
             browser
             .url(recordlink).pause(10000);
+            
             utils.save_ScreenShot(browser,'reports/bat_env/verticals/energy/ss_afterredirect_global_search.png');
        });
 }
 
-commands['validation_highlightpanel_field']=(browser,selector,expectedValue)=>{
+commands['validation_highlightpanel_field']=(browser,selector,expectedValue,ObjName)=>{
     
     return browser
-    .execute(function(selector,expectedValue) {
+    .execute(function(selector,expectedValue,ObjName) {
         let divContainerElementArray1 = document.getElementsByClassName(selector);
         let arr = new Array();
         if(divContainerElementArray1.length>0){
+            let getCorrectObject;
+            divContainerElementArray1.forEach((element)=>{
+                element.classList.forEach((getClass)=>{
+                    if(getClass=='slds-page-header_record-home'){
+                        
+                        let getPanelObjectName = element.childNodes[0].childNodes[0].childNodes[1].childNodes[0].childNodes[0].textContent;
+                        if(getPanelObjectName == ObjName){
+                            getCorrectObject = element;
+                        }
+                    }
+                })
+            });
+
             //HighlightPanelView
-            let getHighlightPanelFieldSection = divContainerElementArray1[0].childNodes[1];
+            let getHighlightPanelFieldSection = getCorrectObject.childNodes[1];
             if(getHighlightPanelFieldSection.childNodes.length>0 ){
                 for(let index=0; index<getHighlightPanelFieldSection.childNodes.length; index++){
                         let returnvalue={
@@ -99,8 +113,10 @@ commands['validation_highlightpanel_field']=(browser,selector,expectedValue)=>{
                             returnvalue.key1 = getHighlightPanelFieldSection.childNodes[index].childNodes[0].childNodes[0].textContent;
 
                             returnvalue.key2 = getHighlightPanelFieldSection.childNodes[index].childNodes[0].childNodes[1].textContent;
+                            
                             arr.push(returnvalue);
                         }
+                        
                         
                 }
             }
@@ -112,9 +128,10 @@ commands['validation_highlightpanel_field']=(browser,selector,expectedValue)=>{
         return retArrWrapper;
         //return arr;
     },
-    [selector,expectedValue],
+    [selector,expectedValue,ObjName],
     function(result) {
             //Expected value
+            console.log(result);
             //let highlightpanelFieldArr = leadConsultantlayout.Salesforce.Lead.highlightpanelfield.split(';');
             let highlightpanelFieldArr = result.value.expectedVal.split(';');
             //Actual value
@@ -132,27 +149,48 @@ commands['validation_highlightpanel_field']=(browser,selector,expectedValue)=>{
                 isConditionMatch="false";
              }
              utils.save_ScreenShot(browser,'reports/bat_env/verticals/energy/ss_highlightpanelField.png');
-            
     });
 
 }
 
-commands['validation_highlightpanel_button'] = (browser,selector,expectedValue)=>{
+commands['validation_highlightpanel_button'] = (browser,selector,expectedValue,ObjName)=>{
     return browser
-    .execute(function(selector,expectedValue) {
+    .execute(function(selector,expectedValue,ObjName) {
         let divContainerElementArray1 = document.getElementsByClassName(selector);
 
         let arr = new Array();
         if(divContainerElementArray1.length>0){
+            let getCorrectObject;
+            divContainerElementArray1.forEach((element)=>{
+
+                element.classList.forEach((getClass)=>{
+                    if(getClass=='slds-page-header_record-home'){
+                        
+                        let getPanelObjectName = element.childNodes[0].childNodes[0].childNodes[1].childNodes[0].childNodes[0].textContent;
+                        if(getPanelObjectName == ObjName){
+                            getCorrectObject = element;
+                            console.log('**** Yeah *****');
+                            console.log(element);
+                        }
+                        
+                    }
+                })
+               
+            });
             //HighlightPanelView
-            let getHighlightPanelButtonSection = divContainerElementArray1[0].childNodes[0].childNodes[1].childNodes[3];
+            //let getHighlightPanelButtonSection = divContainerElementArray1[0].childNodes[0].childNodes[1].childNodes[3];
+            let getHighlightPanelButtonSection = getCorrectObject.childNodes[0].childNodes[1].childNodes[3];
             //Follow button
-            
+        /*   
         if(divContainerElementArray1[0].childNodes[0].childNodes[1].childNodes[1].textContent=='Follow'){
             arr.push(divContainerElementArray1[0].childNodes[0].childNodes[1].childNodes[1].textContent);
         }
-            
-
+        */
+         
+        if(getCorrectObject.childNodes[0].childNodes[1].childNodes[1].textContent=='Follow'){
+            arr.push(getCorrectObject.childNodes[0].childNodes[1].childNodes[1].textContent);
+        }
+       
             //console.log(getHighlightPanelButtonSection.childNodes);
             for(let index = 0; index<=getHighlightPanelButtonSection.childNodes.length - 1; index++ ){
                 //if(getHighlightPanelButtonSection.childNodes[index].tagName =='LI'){
@@ -168,7 +206,7 @@ commands['validation_highlightpanel_button'] = (browser,selector,expectedValue)=
         }
         return retArrWrapper;
     },
-    [selector,expectedValue],
+    [selector,expectedValue,ObjName],
     function(result) {
              console.log(result.value); 
              //Expected value
@@ -192,15 +230,140 @@ commands['validation_highlightpanel_button'] = (browser,selector,expectedValue)=
     });
 }
 
+let sections = {
+    opportunity: {
+      selector: `//*[contains(text(),'Opportunity')]/../../../../../../../../..//div[@class='flexipageBaseRecordHomeTemplateDesktop']`,
+      locateStrategy: 'xpath',
+      elements: {
+        x0: {
+          selector: `//span[@class='test-id__field-label']/..//*[contains(text(), 'Opportunity Owner')]`,
+          locateStrategy: 'xpath'
+        },
+        x1: {
+            selector: `//span[@class='test-id__field-label']/..//*[contains(text(), 'Opportunity Name')]`,
+            locateStrategy: 'xpath'
+        },
+        x2: {
+            selector: `//span[@class='test-id__field-label']/..//*[contains(text(), 'Stage')]`,
+            locateStrategy: 'xpath'
+        },
+        x3: {
+            selector: `//span[@class='test-id__field-label']/..//*[contains(text(), 'WeSelect Notes')]`,
+            locateStrategy: 'xpath'
+        },
+        x4: {
+            selector: `//span[@class='test-id__field-label']/..//*[contains(text(), 'Reason')]`,
+            locateStrategy: 'xpath'
+        },
+        x5: {
+            selector: `//span[@class='test-id__field-label']/..//*[contains(text(), 'Probability (%)')]`,
+            locateStrategy: 'xpath'
+        },
+        x6: {
+            selector: `//span[@class='test-id__field-label']/..//*[contains(text(), 'External Reference Number')]`,
+            locateStrategy: 'xpath'
+        },
+        x7: {
+            selector: `//span[@class='test-id__field-label']/..//*[contains(text(), 'Prospect ID')]`,
+            locateStrategy: 'xpath'
+        },
+        x8: {
+            selector: `//span[@class='test-id__field-label']/..//*[contains(text(), 'Client Services Consultant')]`,
+            locateStrategy: 'xpath'
+        },
+        x9: {
+            selector: `//span[@class='test-id__field-label']/..//*[contains(text(), 'Referrer')]`,
+            locateStrategy: 'xpath'
+        },
+        x10: {
+            selector: `//span[@class='test-id__field-label']/..//*[contains(text(), 'Cross Sale Type')]`,
+            locateStrategy: 'xpath'
+        },
+        x11: {
+            selector: `//span[@class='test-id__field-label']/..//*[contains(text(), 'Transfer Type')]`,
+            locateStrategy: 'xpath'
+        },
+        x12: {
+            selector: `//span[@class='test-id__field-label']/..//*[contains(text(), 'Callback Schedule')]`,
+            locateStrategy: 'xpath'
+        },
+        x13: {
+            selector: `//span[@class='test-id__field-label']/..//*[contains(text(), 'Opportunity Record Type')]`,
+            locateStrategy: 'xpath'
+        },
+        x14: {
+            selector: `//span[@class='test-id__field-label']/..//*[contains(text(), 'Amount')]`,
+            locateStrategy: 'xpath'
+        },
+        x15: {
+            selector: `//span[@class='test-id__field-label']/..//*[contains(text(), 'Close Date')]`,
+            locateStrategy: 'xpath'
+        },
+        x16: {
+            selector: `//span[@class='test-id__field-label']/..//*[contains(text(), 'JIRA URL')]`,
+            locateStrategy: 'xpath'
+        },
+        x17: {
+            selector: `//span[@class='test-id__field-label']/..//*[contains(text(), 'Lead Source')]`,
+            locateStrategy: 'xpath'
+        },
+        x18: {
+            selector: `//span[@class='test-id__field-label']/..//*[contains(text(), 'Media Source')]`,
+            locateStrategy: 'xpath'
+        },
+        x19: {
+            selector: `//span[@class='test-id__field-label']/..//*[contains(text(), 'Brand')]`,
+            locateStrategy: 'xpath'
+        },
+        x20: {
+            selector: `//span[@class='test-id__field-label']/..//*[contains(text(), 'Related Opportunity')]`,
+            locateStrategy: 'xpath'
+        },
+        x21: {
+            selector: `//span[@class='test-id__field-label']/..//*[contains(text(), 'Account Name')]`,
+            locateStrategy: 'xpath'
+        },
+        x22: {
+            selector: `//span[@class='test-id__field-label']/..//*[contains(text(), 'Business Vertical')]`,
+            locateStrategy: 'xpath'
+        }
+      }, 
+      commands: [commands]
+    }
+  }
+  
+  commands['populate_OpportunityName'] = function(objName, fieldName) {
+    for(let i=0; i<23; i++){
+        this
+        .waitForElementVisible(`@x${i}`,100)
+        .pause(100)
+    }
+  }
+
+commands['new_validation_pagelayout_field'] = (browser)=>{
+let sss="//*[contains(text(),'Person Account')]/../../../../../../../../../..//div[@class='flexipageBaseRecordHomeTemplateDesktop']//span[@class='test-id__field-label']/..//*[contains(text(), 'Account Name')]";
+/*
+let practiceYeah = utils.sections.opportunity;
+    practiceYeah.populate_OpportunityName();
+*/
+
+}
+
+
 commands['validation_pagelayout'] = (browser,selector,expectedValue)=>{
     return browser
     .execute(function(selector,expectedValue) {
-        let divContainerElementArray1 = document.getElementsByClassName(selector);
         let arr = new Array();
-        if(divContainerElementArray1[0].childNodes[1].childNodes[3].childNodes[0].childNodes.length>0){
-            for(let indx =0; indx<= divContainerElementArray1[0].childNodes[1].childNodes[3].childNodes[0].childNodes.length -1 ; indx++){
+        let objectNameChecker = expectedValue.split('--')[0];
+        let getIndex = 0;
+        if(objectNameChecker=='Opportunity'){
+            getIndex=1;
+        }
+        let divContainerElementArray1 = document.getElementsByClassName(selector);
+        if(divContainerElementArray1[getIndex].childNodes[1].childNodes[3].childNodes[0].childNodes.length>0){
+            for(let indx =0; indx<= divContainerElementArray1[getIndex].childNodes[1].childNodes[3].childNodes[0].childNodes.length -1 ; indx++){
                 
-                let motherElement =divContainerElementArray1[0].childNodes[1].childNodes[3].childNodes[0].childNodes[indx].childNodes[1].childNodes[0].childNodes;
+                let motherElement =divContainerElementArray1[getIndex].childNodes[1].childNodes[3].childNodes[0].childNodes[indx].childNodes[1].childNodes[0].childNodes;
                
                 if(motherElement.length>0){
                     for(let innerindex = 0 ; innerindex<=motherElement.length - 1; innerindex++){
@@ -225,15 +388,17 @@ commands['validation_pagelayout'] = (browser,selector,expectedValue)=>{
             }
 
         }
+        
         let retArrWrapper = {
             dataArray:arr,
-            expectedVal:expectedValue
+            expectedVal:expectedValue.split('--')[1]
         }
         return retArrWrapper;
     },
     [selector,expectedValue],
     function(result) {
              console.log(result.value);
+             //browser.pause(10000000);
              //Expected value
              //let pagelayoutFields = leadConsultantlayout.Salesforce.Lead.pagelayoutfield.split(';');
              let pagelayoutFields = result.value.expectedVal.split(';');
@@ -260,12 +425,18 @@ commands['validation_relatedlist'] = (browser,selector,expectedValue)=>{
    return  browser
     .execute(function(selector,expectedValue) {
         let divContainerElementArray1 = document.getElementsByClassName(selector);
-       
+        let objectNameChecker = expectedValue.split('--')[0];
         let arr = new Array();
-        let relatedlistsection = divContainerElementArray1[0].childNodes[0].childNodes;
+        let relatedlistsection;
+        let getIndex = 0;
+        if(objectNameChecker=='Opportunity'){
+            getIndex=1;
+        }
+        relatedlistsection = divContainerElementArray1[getIndex].childNodes[0].childNodes;
         let nextNode=0;
         for(let i = 0; i<= relatedlistsection.length - 1; i++){
             if(i == nextNode){
+                console.log(relatedlistsection[i].childNodes[1].childNodes[2].childNodes[0].childNodes[1].childNodes[0].childNodes[0].childNodes[0]);
                 let getRelatedListName = relatedlistsection[i].childNodes[1].childNodes[2].childNodes[0].childNodes[1].childNodes[0].childNodes[0].childNodes[0].textContent;
                 
                 arr.push(getRelatedListName);
@@ -274,7 +445,7 @@ commands['validation_relatedlist'] = (browser,selector,expectedValue)=>{
         }
         let retArrWrapper = {
             dataArray:arr,
-            expectedVal:expectedValue
+            expectedVal:expectedValue.split('--')[1]
         }
         return retArrWrapper;
     },
@@ -542,10 +713,96 @@ commands['save_ScreenShot']=(browser, path)=>{
 }
 
 
+commands['checkisRibbonActive']=(browse, status)=>{
+    browser.assert.cssClassPresent("ul.slds-path__nav li[data-name=\""+status+"\"]", "slds-is-active");
+}
+
+commands['convertLeadNewPersonAccount']=(browser)=>{
+
+}
+
+commands['convertLeadExistingPersonAccount']=(browser)=>{
+
+}
+
+commands['checkOpporunityAccountRelationship']= (browser,selector,expectedValue,ObjName,fieldName)=>{
+    
+    return browser
+    .execute(function(selector,expectedValue,ObjName,fieldName) {
+        let divContainerElementArray1 = document.getElementsByClassName(selector);
+        let arr = new Array();
+        let returnvalue='';
+        if(divContainerElementArray1.length>0){
+            let getCorrectObject;
+            divContainerElementArray1.forEach((element)=>{
+                element.classList.forEach((getClass)=>{
+                    if(getClass=='slds-page-header_record-home'){
+                        
+                        let getPanelObjectName = element.childNodes[0].childNodes[0].childNodes[1].childNodes[0].childNodes[0].textContent;
+                        if(getPanelObjectName == ObjName){
+                            getCorrectObject = element;
+                        }
+                    }
+                })
+            });
+
+            //HighlightPanelView
+            let getHighlightPanelFieldSection = getCorrectObject.childNodes[1];
+            if(getHighlightPanelFieldSection.childNodes.length>0 ){
+                for(let index=0; index<getHighlightPanelFieldSection.childNodes.length; index++){
+                        if(getHighlightPanelFieldSection.childNodes[index].childNodes[0].classList.contains('uiMenu')){
+                           
+                                let actualfieldName = getHighlightPanelFieldSection.childNodes[index].childNodes[0].childNodes[0].
+                                childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].getAttribute('title');
+                                
+                                let actualfieldValue = getHighlightPanelFieldSection.childNodes[index].childNodes[0].childNodes[0].childNodes[0]
+                                    .childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[1].childNodes[0].textContent;
+                                
+
+                                console.log(getHighlightPanelFieldSection.childNodes[index].childNodes[0].childNodes[0].childNodes[0]
+                                    .childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[1].childNodes[0]);                                    
+                                if(fieldName == actualfieldName){
+                                    returnvalue= actualfieldValue;
+                                }                                        
+                        }else{
+                         
+                            let actualfieldName = getHighlightPanelFieldSection.childNodes[index].childNodes[0].childNodes[0].textContent;
+
+                            let actualfieldValue = getHighlightPanelFieldSection.childNodes[index].childNodes[0].childNodes[1].textContent;
+                            
+
+                            console.log(getHighlightPanelFieldSection.childNodes[index].childNodes[0].childNodes[1]);
+                            if(fieldName == actualfieldName){
+                                returnvalue= actualfieldValue;
+                            }         
+                        }
+                        
+                        
+                }
+            }
+        }
+        let retArrWrapper = {
+            dataArrary:returnvalue,
+            expectedVal:expectedValue
+        }
+        return retArrWrapper;
+        //return arr;
+    },
+    [selector,expectedValue,ObjName,fieldName],
+    function(result) {
+            console.log(result);
+            let actualValue = result.value.dataArrary;
+            let expectedValue = result.value.expectedVal;
+            browser.assert.equal(actualValue, expectedValue);
+            utils.save_ScreenShot(browser,'reports/bat_env/verticals/energy/ss_highlightpanelField.png');
+    });
+
+}
 module.exports = {
 
     url: url,
     elements: elements,
+    sections: sections,
     commands: [commands]
 
 }
