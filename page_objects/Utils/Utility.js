@@ -8,17 +8,6 @@ let recordTabSelector = 'tabBar';
 const url = function() {
     return 'https://test.salesforce.com/'
 }
-const elements = {
-    username: '#username',
-    password: '#password',
-    refresh: 'dasdasdasd',
-    loginbtn: '#Login',
-    errorMsg1: 'div[class="modal-header slds-modal__header slds-theme--info slds-theme--alert-texture"]',
-    errorMsg2: 'div[class="auraErrorBox"]',
-    errorMsg3: '[class="summary"]',
-    errorMsg4: '',
-    errorMsg4: 'div[class="modal-header slds-modal__header"]',
-}
 
 const commands = {}
 
@@ -798,11 +787,182 @@ commands['checkOpporunityAccountRelationship']= (browser,selector,expectedValue,
     });
 
 }
+
+commands['navigateToNeedsAnalysisPage']=(browser)=>{
+    let expectedValue,selector;
+    return browser
+    .execute(function(selector,expectedValue) {
+        let divContainerElementArray1 = document.getElementsByClassName('tabBar');
+
+        let noOfelement = divContainerElementArray1.length;
+        let selectedsubtab, tabBarItems=null, tabCount =0;;
+        if(noOfelement>0){
+            for(let index=0; index < noOfelement; index++){
+                let element = divContainerElementArray1[index].classList;
+                for(let classIndex =0; classIndex<element.length; classIndex++){
+                    if(element[classIndex]=='slds-sub-tabs'){
+                        selectedsubtab = divContainerElementArray1[index];
+                    }
+                }
+            }
+
+            for(let index=0; index < selectedsubtab.childNodes.length; index++){
+                let element = selectedsubtab.childNodes[index].classList;
+                if(element!=undefined){
+                    if(tabBarItems==null){
+                        for(let classIndex =0; classIndex<element.length; classIndex++){
+                            if(element[classIndex]=='tabBarItems'){
+                                tabBarItems = selectedsubtab.childNodes[index];
+                            }
+                        }
+                    }
+                }
+            }
+
+            for(let index=0; index < tabBarItems.childNodes.length; index++){
+                let element = tabBarItems.childNodes[index].classList;
+                if(element!=undefined){
+                    let istabItem=false;
+                    for(let classIndex =0; classIndex<element.length; classIndex++){
+                        if(element[classIndex]=='tabItem'){
+                            //tabCount = tabCount + 1;
+                            istabItem=true;
+                        }
+                    }
+                    if(istabItem){
+                        let elementTabName = tabBarItems.childNodes[index].childNodes[0].getAttribute('title');
+                        console.log(elementTabName);
+                        if(!elementTabName.includes('Needs_Analysis__c')){
+                            tabCount = tabCount + 1;
+                        }
+                    }
+                }
+            }
+            let retArrWrapper = {
+                dataArray:tabCount
+            }
+            return retArrWrapper;
+
+        }
+    },
+    [selector,expectedValue],
+    function(result) {
+            console.log(result);
+            browser
+            .useXpath()
+            .click("/html/body/div[5]/div[1]/div[2]/div[2]/div/div/div/section["+result.value.dataArray+"]/div/div[2]/div/div/div/div[1]/div/div[3]/div[1]/div/div/div/div[1]/article/div[2]/div/div/ul/li/a")
+            .pause(4000);
+             
+    });
+}
+
+commands['needsAnalysisCheckLeadSourceIfDisable'] =(browser, expectedValue,frameNumber)=>{
+return browser.frame(frameNumber)
+.execute(function(selector,expectedValue) {
+    //let divContainerElementArray1 = document.getElementById('needAnalysisPageId:needAnalysisformId:yourUsageId');
+    let divContainerElementArray1 = document.getElementsByName('needAnalysisPageId:needAnalysisformId:j_id44');
+    
+    console.log('Testasdsadsad:');
+    console.log(divContainerElementArray1);
+
+    
+        let retArrWrapper = {
+            actualValue:divContainerElementArray1[0].disabled,
+            expectedVal:expectedValue
+        }
+        return retArrWrapper;
+        
+    
+},
+[selector,expectedValue],
+function(result) {
+        console.log(result);
+        let actual = result.value.actualValue;
+        let expectedValue = result.value.expectedVal;
+        browser.assert.equal(actual, expectedValue).pause(2000);
+         
+});
+}
+commands['click_NeedAnalysisRecord'] = (browser,selector,expectedValue,relatedListName,needsSelectedRow)=>{ 
+    return  browser
+    .execute(function(selector,expectedValue,relatedListName,needsSelectedRow) {
+        let divContainerElementArray1 = document.getElementsByClassName(selector);
+        let objectNameChecker = expectedValue.split('--')[0];
+        let arr ;
+        let relatedlistsection;
+        let getIndex = 0;
+        if(objectNameChecker=='Opportunity'){
+            getIndex=1;
+        }
+        relatedlistsection = divContainerElementArray1[getIndex].childNodes[0].childNodes;
+        let nextNode=0;
+        let relatedListSection;
+        for(let i = 0; i<= relatedlistsection.length - 1; i++){
+            if(i == nextNode){
+                console.log(relatedlistsection[i].childNodes[1].childNodes[2].childNodes[0].childNodes[1].childNodes[0].childNodes[0].childNodes[0]);
+                let getRelatedListName = relatedlistsection[i].childNodes[1].childNodes[2].childNodes[0].childNodes[1].childNodes[0].childNodes[0].childNodes[0].textContent;
+                
+                //arr.push(getRelatedListName);
+                if(relatedListName== getRelatedListName){
+                    relatedListSection = relatedlistsection[i].childNodes[1].childNodes[3].childNodes[0].childNodes[0].childNodes[1].childNodes[0].childNodes[2].childNodes[1].childNodes[0].childNodes[0].childNodes[2];
+                }
+                nextNode = nextNode + 4;
+            }
+        }
+        console.log('relatedListSection.childNodes.length');
+        console.log(relatedListSection.childNodes.length);
+        for(let tbodyIndex =0; tbodyIndex<=relatedListSection.childNodes.length - 1; tbodyIndex++){
+            let selectedRow = tbodyIndex+1;
+            if(needsSelectedRow ==selectedRow){
+                console.log('***************Table churva***********');
+                console.log(relatedListSection.childNodes[tbodyIndex].childNodes[0].childNodes[0].childNodes[2]);
+                console.log('***************Table churva data-recordid***********');
+                console.log(relatedListSection.childNodes[tbodyIndex].childNodes[0].childNodes[0].childNodes[2].getAttribute('data-recordid'));
+                arr = relatedListSection.childNodes[tbodyIndex].childNodes[0].childNodes[0].childNodes[2].getAttribute('data-recordid');
+            }
+        }
+        let retArrWrapper = {
+            dataArray:arr,
+            expectedVal:expectedValue.split('--')[1]
+        }
+        return retArrWrapper;
+    },
+    [selector,expectedValue,relatedListName,needsSelectedRow],
+    function(result) {
+            console.log(result);
+            browser.click('a[data-recordid="'+result.value.dataArray+'"]').pause(5000);
+
+    });
+}
+
+
+
 module.exports = {
 
     url: url,
-    elements: elements,
+    elements: {
+        navMenu:'button[class=\"slds-button slds-button_icon slds-p-horizontal__xxx-small slds-button_icon-small slds-button_icon-container\"]',
+        navLeadMenu:'a[href="/lightning/o/Lead/home"]',
+        secNeedsAnalysis: {
+        selector:`//h2//a//span[@title='Needs Analysis']`,
+        locateStrategy:'xpath'
+                },
+        pathRecNeedsAnalysis:{
+        selector:`//tbody//tr[1]//th//span//a`,
+        locateStrategy:'xpath'
+                },
+        pathViewRecommendation: {
+        selector:`//table//tbody//tr[1]//td//a[contains(text(),'View Recommendation')]`,
+        locateStrategy:'xpath'
+                },
+        pathBpidRequest:{
+        selector:`//tbody//tr[1]//td[6]//button[5]`,
+        locateStrategy:'xpath'
+                }
+            },
     sections: sections,
     commands: [commands]
+
+
 
 }

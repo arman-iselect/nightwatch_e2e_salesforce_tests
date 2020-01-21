@@ -217,7 +217,8 @@
         "View_Lead_Page_uploadfile": "nightwatch --tag View_Lead_uploadFile",
         "rnd": "nightwatch --tag rnd",
         "View_Opportunity_Page": "nightwatch --tag View_Opportunity_Page",
-        "SC_73": "nightwatch --tag SC_73"
+        "SC_73": "nightwatch --tag SC_73",
+        "SC_86": "nightwatch --tag SC_86"
     },
     "keywords": [],
     "author": "",
