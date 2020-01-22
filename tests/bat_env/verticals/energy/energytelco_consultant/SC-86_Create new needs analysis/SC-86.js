@@ -55,7 +55,8 @@ module.exports = {
         .click("/html/body/div[5]/div[1]/div[2]/div[2]/div/div/div/section/div/div[2]/div/div/div/div[1]/div/div[2]/div[1]/div/div/section/div/div/div/div[1]/article/div[2]/div/div/ul/li/a")
         .pause(6000);
         utils.navigateToNeedsAnalysisPage(browser);
-        utils.needsAnalysisCheckLeadSourceIfDisable(browser,false,1);        
+        utils.needsAnalysisCheckLeadSourceIfDisable(browser,false,1);     
+        utils.save_ScreenShot(browser,'reports/bat_env/verticals/energy/energy_telco_sales_SC86_AC1_Leadsource_Enable.png');   
     },
     'AC3: Create new needs analysis':(browser)=>{
         browser.frame(null);
@@ -64,6 +65,6 @@ module.exports = {
         
         utils.navigateToNeedsAnalysisPage(browser);
         utils.needsAnalysisCheckLeadSourceIfDisable(browser,true,0); 
-        browser.pause(2000000);
+        utils.save_ScreenShot(browser,'reports/bat_env/verticals/energy/energy_telco_sales_SC86_AC1_Leadsource_Disable.png'); 
     }
 }
