@@ -6,7 +6,7 @@ let relatedListSelector ='forceRelatedListContainer';
 let uploadFileSelector = 'drag-over-body';
 module.exports = {
     tags:['View_Opportunity_Page'],
-    'Log in as Energy Consultant QA': async function(browser) 
+    'Log in as Energy Telco Consultant QA': async function(browser) 
     {
         login .userLogin(data.energy.bat.energysalesConsultant.username, data.energy.bat.energysalesConsultant.password);
     },
@@ -22,7 +22,7 @@ module.exports = {
     {
         utils.save_ScreenShot(browser,'reports/bat_env/verticals/energy/ss_Page_Arrangement.png');
         utils.validation_relatedlist(browser,relatedListSelector,leadConsultantlayout.Salesforce.Opportunity.relatedListNames);
-        utils.ribbonStatusValidation(browser,'New;Quoted;Pending;Closed');
+        utils.ribbonStatusValidation(browser,leadConsultantlayout.Salesforce.Opportunity.ribbonStatus);
         utils.relatedlistChecknumofRecords(browser,'0','Notes','Opportunity');
         utils.relatedlistChecknumofRecords(browser,'0','Notes & Attachments','Opportunity');
         utils.save_ScreenShot(browser,'reports/bat_env/verticals/energy/energy_telco_sales_SC68_AC3.png');

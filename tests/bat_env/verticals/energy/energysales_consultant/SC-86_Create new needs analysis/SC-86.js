@@ -46,7 +46,7 @@ module.exports = {
     },
     'Search Lead record for creation of account before conversion': function (browser) 
     {
-        utils.global_search_select_data(browser,  'Accounts', 'Donkey Kong Country', 'https://iselect--bat.lightning.force.com/', null, 'resultsItem');
+        utils.global_search_select_data(browser,  'Accounts', 'Donkey Kong Country - (Energy)', 'https://iselect--bat.lightning.force.com/', null, 'resultsItem');
     },
     'AC1: Create New Needs Analysis from Opportunity Page New Button':(browser)=>{
         browser
