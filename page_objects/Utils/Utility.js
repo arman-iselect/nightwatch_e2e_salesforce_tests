@@ -121,7 +121,6 @@ commands['validation_highlightpanel_field']=(browser,selector,expectedValue,ObjN
     function(result) {
             //Expected value
             console.log(result);
-            //let highlightpanelFieldArr = leadConsultantlayout.Salesforce.Lead.highlightpanelfield.split(';');
             let highlightpanelFieldArr = result.value.expectedVal.split(';');
             //Actual value
             let actualValue = result.value.dataArrary;
@@ -413,7 +412,7 @@ commands['validation_relatedlist'] = (browser,selector,expectedValue)=>{
     
    return  browser
     .execute(function(selector,expectedValue) {
-        let divContainerElementArray1 = document.getElementsByClassName(selector);
+        let divContainerElementArray1 = document.getElementsByClassName('forceRelatedListContainer');
         let objectNameChecker = expectedValue.split('--')[0];
         let arr = new Array();
         let relatedlistsection;
@@ -701,7 +700,6 @@ commands['save_ScreenShot']=(browser, path)=>{
     .saveScreenshot(path);
 }
 
-
 commands['checkisRibbonActive']=(browse, status)=>{
     browser.assert.cssClassPresent("ul.slds-path__nav li[data-name=\""+status+"\"]", "slds-is-active");
 }
@@ -886,7 +884,7 @@ function(result) {
 commands['click_NeedAnalysisRecord'] = (browser,selector,expectedValue,relatedListName,needsSelectedRow)=>{ 
     return  browser
     .execute(function(selector,expectedValue,relatedListName,needsSelectedRow) {
-        let divContainerElementArray1 = document.getElementsByClassName(selector);
+        let divContainerElementArray1 = document.getElementsByClassName('forceRelatedListContainer');
         let objectNameChecker = expectedValue.split('--')[0];
         let arr ;
         let relatedlistsection;
@@ -909,15 +907,9 @@ commands['click_NeedAnalysisRecord'] = (browser,selector,expectedValue,relatedLi
                 nextNode = nextNode + 4;
             }
         }
-        console.log('relatedListSection.childNodes.length');
-        console.log(relatedListSection.childNodes.length);
         for(let tbodyIndex =0; tbodyIndex<=relatedListSection.childNodes.length - 1; tbodyIndex++){
             let selectedRow = tbodyIndex+1;
             if(needsSelectedRow ==selectedRow){
-                console.log('***************Table churva***********');
-                console.log(relatedListSection.childNodes[tbodyIndex].childNodes[0].childNodes[0].childNodes[2]);
-                console.log('***************Table churva data-recordid***********');
-                console.log(relatedListSection.childNodes[tbodyIndex].childNodes[0].childNodes[0].childNodes[2].getAttribute('data-recordid'));
                 arr = relatedListSection.childNodes[tbodyIndex].childNodes[0].childNodes[0].childNodes[2].getAttribute('data-recordid');
             }
         }
@@ -935,8 +927,99 @@ commands['click_NeedAnalysisRecord'] = (browser,selector,expectedValue,relatedLi
     });
 }
 
+commands['checkRibbonStatus']=(browser, status)=>{
+    browser.assert.cssClassPresent('ul.slds-path__nav li[data-name="'+status+'"]', "slds-is-active");
+}
+
+commands['ribbonStatusValidation']= (browser,expectedValue)=>{
+    return  browser
+    .execute(function(selector,expectedValue) {
+        let divContainerElementArray1 = document.getElementsByClassName('slds-path__nav');
+        let arr= new Array();
+        for(let index =0; index<= divContainerElementArray1[0].childNodes.length -1 ; index++){
+            let ribbonStatusName= divContainerElementArray1[0].childNodes[index].textContent;
+            if(ribbonStatusName!=null&& ribbonStatusName!='' && ribbonStatusName!=undefined){
+                arr.push(ribbonStatusName);
+            }
+            
+        }
 
 
+        let retArrWrapper = {
+            dataArray:arr,
+            expectedVal:expectedValue
+        }
+        return retArrWrapper;
+    },
+    [selector,expectedValue],
+    function(result) {
+            console.log(result);
+            
+            let expected = result.value.expectedVal.split(';');
+           
+             //Actual value
+            let actualValue = result.value.dataArray;
+            for(let index=0; index<=expected.length - 1; index++){
+                let isConditionMatch="false";
+               for(let i =0; i<=actualValue.length -1; i++){
+                   if(isConditionMatch=="false"){
+                       if(actualValue[i] == expected[index]){
+                           isConditionMatch= "true";
+                       }
+                   }
+               }
+               browser.assert.equal(isConditionMatch, "true");
+               isConditionMatch="false";
+            }
+
+    });
+}
+
+commands['relatedlistChecknumofRecords']=(browser, expectedValue, relatedListName, objectName)=>{
+    return  browser
+    .execute(function(selector,expectedValue,relatedListName,objectName) {
+        let divContainerElementArray1 = document.getElementsByClassName('forceRelatedListContainer');
+        console.log(divContainerElementArray1); 
+        let arr ;
+        let relatedlistsection;
+        let getIndex = 0;
+        if(objectName=='Opportunity'){
+            getIndex=1;
+        }
+        relatedlistsection = divContainerElementArray1[getIndex].childNodes[0].childNodes;
+        let nextNode=0;
+        let relatedListSection;
+        for(let i = 0; i<= relatedlistsection.length - 1; i++){
+            if(i == nextNode){
+                console.log(relatedlistsection[i].childNodes[1].childNodes[2].childNodes[0].childNodes[1].childNodes[0].childNodes[0].childNodes[0]);
+                let getRelatedListName = relatedlistsection[i].childNodes[1].childNodes[2].childNodes[0].childNodes[1].childNodes[0].childNodes[0].childNodes[0].textContent;
+                
+                //arr.push(getRelatedListName);
+                if(relatedListName== getRelatedListName){
+                    let numberofRecords = relatedlistsection[i].childNodes[1].childNodes[2].childNodes[0].childNodes[1].childNodes[0].childNodes[0].childNodes[1].textContent.replace('(','').replace(')','');
+                    arr =numberofRecords ;
+                }
+                nextNode = nextNode + 4;
+            }
+        }
+        let retArrWrapper = {
+            dataArray:arr,
+            expectedVal:expectedValue
+        }
+        return retArrWrapper;
+    },
+    [selector,expectedValue,relatedListName,objectName],
+    function(result) {
+            console.log(result);
+            let isMorethenzero = "false";
+            if(result.value.dataArray>result.value.expectedVal){
+                isMorethenzero="true";
+            }else{
+                isMorethenzero="false";
+            }
+            browser.assert.equal(isMorethenzero, "true");
+    });
+}
 module.exports = {
 
     url: url,
