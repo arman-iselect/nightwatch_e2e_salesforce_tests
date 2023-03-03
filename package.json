@@ -7,7 +7,7 @@
         "chromedriver": "^76.0.1",
         "find-root": "^1.1.0",
         "jquery": "^3.4.1",
-        "nightwatch": "^1.2.4",
+        "nightwatch": "^1.7.13",
         "nightwatch-video-recorder": "^3.0.0"
     },
     "devDependencies": {
